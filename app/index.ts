@@ -12,7 +12,7 @@ let position = document.getElementById("position") as ContainerElement;
 myText.text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 //Circle
 let radius: number = 120;//if negative, text is bottom curve
-let centerX: number = 168; //at (50%)
+let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
