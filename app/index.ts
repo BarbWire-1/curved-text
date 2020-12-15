@@ -1,6 +1,3 @@
-
-
-
 import document from "document"
 import {me} from "appbit"
 import { user } from "user-profile"
