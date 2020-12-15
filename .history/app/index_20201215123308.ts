@@ -28,7 +28,7 @@ let t: number;
 //textID[t].id;
 for (t = 0; t < textID.length; t++) {
 console.log("all texts ID "+textID[t].id);
-let content = textID ;
+let content[]: any = textID[t] ;
 console.log(content[t].text)
 
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
