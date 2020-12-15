@@ -25,7 +25,7 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 /*Rotate fix angle*/
 let charAngle: number = 10;//angle each char
 /*-----------------------------------------------------------------------------------------------------------------------------*/
-//NOT WORKING YET; BUT I THINK; I MIGHT BE ON THE RIGHT TRACK
+//NOT WOR
 
 let t: number;
 //textID[t].id;
@@ -37,7 +37,7 @@ console.log(content[t].text)
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 
 }
-/*---------------------------------------------------------------------------------------------------------------------------------*/
+
 //VARIABLES
 /*CENTER OF ROTATION*/
 

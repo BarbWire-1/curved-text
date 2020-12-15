@@ -9,8 +9,7 @@ let myText = document.getElementById("myText");
 let position = document.getElementById("position") as ContainerElement;
 
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-let textID = document.getElementsByClassName("textID");
-//let ID = myText
+textID = myText
 //Circle
 let radius: number = 120;//if negative, text is bottom curve
 let centerX: number = 168; //moves the centerpoint of the circle
@@ -25,19 +24,10 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 /*Rotate fix angle*/
 let charAngle: number = 10;//angle each char
 /*-----------------------------------------------------------------------------------------------------------------------------*/
-//NOT WORKING YET; BUT I THINK; I MIGHT BE ON THE RIGHT TRACK
+myText.text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 
-let t: number;
-//textID[t].id;
-for (t = 0; t < textID.length; t++) {
-console.log("all texts ID "+textID[t].id);
-let content: any = textID[t].id ;
-console.log(content[t].text)
 
-//content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 
-}
-/*---------------------------------------------------------------------------------------------------------------------------------*/
 //VARIABLES
 /*CENTER OF ROTATION*/
 

@@ -37,7 +37,7 @@ console.log(content[t].text)
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 
 }
-/*---------------------------------------------------------------------------------------------------------------------------------*/
+
 //VARIABLES
 /*CENTER OF ROTATION*/
 

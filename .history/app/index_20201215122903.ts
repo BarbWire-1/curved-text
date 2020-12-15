@@ -10,7 +10,7 @@ let position = document.getElementById("position") as ContainerElement;
 
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 let textID = document.getElementsByClassName("textID");
-//let ID = myText
+let ID = myText
 //Circle
 let radius: number = 120;//if negative, text is bottom curve
 let centerX: number = 168; //moves the centerpoint of the circle

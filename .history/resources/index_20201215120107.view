@@ -136,7 +136,6 @@
             </g>
          </g> 
       </g>
-      </svg>
       <arc x="48" y="48" width="240" height="240" fill="orange"
          arc-width="1" start-angle="0" sweep-angle="360" opacity = "0" />
    </svg>
