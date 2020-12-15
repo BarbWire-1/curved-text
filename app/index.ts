@@ -12,8 +12,8 @@ let position = document.getElementById("position") as ContainerElement;
 myText.text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 //Circle
 let radius: number = 120;//if negative, text is bottom curve
-let centerX: number = device.screen.width / 2; //at (50%) UNTESTED!!
-let centerY: number = device.screen.height / 2; // UNTESTED!!
+let centerX: number = 168; //at (50%)
+let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
 let letterSpacing: number = 10;
@@ -27,8 +27,8 @@ let charAngle: number = 10;//angle each char
 
 //VARIABLES
 /*CENTER OF ROTATION*/
-position.x = centerX -168; // -half width. why is me.screen.width / 2 not working??? Permission?
-position.y = centerY -168 ;
+position.x = centerX - device.screen.width / 2; // -half width. why is me.screen.width / 2 not working??? Permission?
+position.y = centerY - device.screen.height / 2;
 
 //PREVENT MIRRORING
 charAngle = charAngle * (radius < 0 ? -1 : 1);
