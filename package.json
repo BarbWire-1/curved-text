@@ -1,0 +1,33 @@
+{
+	"name": "circulartext",
+	"version": "0.0.1",
+	"private": true,
+	"license": "UNLICENSED",
+	"scripts": {
+		"build": "fitbit-build",
+		"debug": "fitbit"
+	},
+	"devDependencies": {
+		"@fitbit/sdk": "^5.0.1",
+		"@fitbit/sdk-cli": "^1.7.3",
+		"fitbit-sdk-types": "^6.0.1"
+	},
+	"fitbit": {
+		"appUUID": "f6a8d8d6-b958-4f42-8ba7-a1364ba89d7a",
+		"appType": "clockface",
+		"appDisplayName": "circularText",
+		"iconFile": "resources/icon.png",
+		"wipeColor": "#8bc34a",
+		"requestedPermissions": [],
+		"buildTargets": [
+			"atlas",
+			"vulcan"
+		],
+		"i18n": {
+			"en-US": {
+				"name": "circularText"
+			}
+		},
+		"defaultLanguage": "en-US"
+	}
+}
