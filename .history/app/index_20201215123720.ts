@@ -23,15 +23,6 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 /*Rotate fix angle*/
 let charAngle: number = 10;//angle each char
 /*-----------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-/*This part might probabely get "outsourced" as Module
-but would need to be adjusted for multiple text
-and perhaps might be better to write for(ele).. instead of ele[i]?
-*/
 //FIRST STEP DONE
 
 let t: number;

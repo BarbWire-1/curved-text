@@ -28,10 +28,7 @@ let charAngle: number = 10;//angle each char
 
 
 
-/*This part might probabely get "outsourced" as Module
-but would need to be adjusted for multiple text
-and perhaps might be better to write for(ele).. instead of ele[i]?
-*/
+//This part might probab
 //FIRST STEP DONE
 
 let t: number;

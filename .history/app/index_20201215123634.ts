@@ -6,7 +6,7 @@ let myText = document.getElementById("myText");
 let position = document.getElementById("position") as ContainerElement;
 
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-//control panel in index.ts
+//CONTROL
 let textID = document.getElementsByClassName("textID");
 //let ID = myText
 //Circle
@@ -23,15 +23,6 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 /*Rotate fix angle*/
 let charAngle: number = 10;//angle each char
 /*-----------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-/*This part might probabely get "outsourced" as Module
-but would need to be adjusted for multiple text
-and perhaps might be better to write for(ele).. instead of ele[i]?
-*/
 //FIRST STEP DONE
 
 let t: number;
