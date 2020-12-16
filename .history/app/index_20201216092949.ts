@@ -20,7 +20,7 @@ let myText = document.getElementById("myText");
 let position = document.getElementById("position") as ContainerElement;
 
 
-
+/*
 //YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
 //control panel in index.ts
 let textID = document.getElementsByClassName("textID");
@@ -44,7 +44,9 @@ let charAngle: number = 10;//angle each char
 
 
 
-
+This part might probabely get "outsourced" as Module
+but would need to be adjusted for multiple text
+and perhaps might be better to write for(ele).. instead of ele[i]?
 
 //FIRST STEP DONE
 
@@ -53,7 +55,7 @@ let t: number;
 for (t = 0; t < textID.length; t++) {
 console.log("all texts ID "+textID[t].id);
 let content = textID ;
-console.log("all texts by ID " + content[t].text)
+console.log(content[t].text)
 
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 
@@ -133,6 +135,6 @@ for (i = 0; i < numChars ; i++) {
 
  };
 
-
+*/
 
 

@@ -53,7 +53,7 @@ let t: number;
 for (t = 0; t < textID.length; t++) {
 console.log("all texts ID "+textID[t].id);
 let content = textID ;
-console.log("all texts by ID " + content[t].text)
+console.log("all texts Bcontent[t].text)
 
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 

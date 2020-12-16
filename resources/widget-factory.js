@@ -25,7 +25,8 @@ export default (widgetArray) => {
           return true
       }
     )
-    return widget
+      return widget
+    
   }
 
   const widgetFactory = {
