@@ -20,8 +20,8 @@ let myText = document.getElementById("myText");
 let position = document.getElementById("position") as ContainerElement;
 
 
-/*
-//YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
+/
+/*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 //control panel in index.ts
 let textID = document.getElementsByClassName("textID");
 //let ID = myText
@@ -36,18 +36,18 @@ let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
 
-//Rotate fix angle
+/*Rotate fix angle*/
 let charAngle: number = 10;//angle each char
-//-----------------------------------------------------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------------------------------------------------*/
 
 
 
 
 
-This part might probabely get "outsourced" as Module
+/*This part might probabely get "outsourced" as Module
 but would need to be adjusted for multiple text
 and perhaps might be better to write for(ele).. instead of ele[i]?
-
+*/
 //FIRST STEP DONE
 
 let t: number;
@@ -60,9 +60,9 @@ console.log(content[t].text)
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 
 }
-//---------------------------------------------------------------------------------------------------------------------------------
+/*---------------------------------------------------------------------------------------------------------------------------------*/
 //VARIABLES
-//CENTER OF ROTATION
+/*CENTER OF ROTATION*/
 
 position.x = centerX - device.screen.width / 2; // -half width. why is me.screen.width / 2 not working??? Permission?
 position.y = centerY - device.screen.height / 2;
@@ -70,14 +70,14 @@ position.y = centerY - device.screen.height / 2;
 //PREVENT MIRRORING
 charAngle = charAngle * (radius < 0 ? -1 : 1);
 
-//ASSIGN CHARS
+/*ASSIGN CHARS*/
 let chars = (myText.text.split("")); // array of char set of text to curve
 let char  = document.getElementsByClassName("char") as TextElement[];// single char textElements
 
 let width0: number = char[0].getBBox().width;//first char to calc. text-alignment
 /////let prevWidth = char[0].getBBox().width; // TODO 3 unnecessary?
 
-//CALCULATE PROPERTIES OF CHARS
+/*CALCULATE PROPERTIES OF CHARS*/
 let i;
 let numChars = chars.length
 for (i = 0; i < numChars ; i++) {
@@ -85,7 +85,7 @@ for (i = 0; i < numChars ; i++) {
     char[i].text = chars[i];// assign chars to the single textElements
     char[i].y = radius < 0 ? - radius : - radius + char[0].getBBox().height / 2;//move text it´s height downwards
 
-    //FOR AUTO MODUS
+    /*FOR AUTO MODUS*/
     if (modus == "auto") {
 
       const circ = 2 * radius * Math.PI;
@@ -112,7 +112,7 @@ for (i = 0; i < numChars ; i++) {
           /////prevWidth = nextWidth; // TODO 3 unnecessary?
         }
 
-        //TEXT-ANCHOR and ROTATION
+        /*TEXT-ANCHOR and ROTATION*/
         (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
 
                 -  (textAnchor == "middle" ? (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2
@@ -135,6 +135,6 @@ for (i = 0; i < numChars ; i++) {
 
  };
 
-*/
+
 
 

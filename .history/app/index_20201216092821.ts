@@ -21,7 +21,7 @@ let position = document.getElementById("position") as ContainerElement;
 
 
 /*
-//YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
+/*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 //control panel in index.ts
 let textID = document.getElementsByClassName("textID");
 //let ID = myText
@@ -36,18 +36,18 @@ let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
 
-//Rotate fix angle
+/*Rotate fix angle*/
 let charAngle: number = 10;//angle each char
-//-----------------------------------------------------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------------------------------------------------*/
 
 
 
 
 
-This part might probabely get "outsourced" as Module
+/*This part might probabely get "outsourced" as Module
 but would need to be adjusted for multiple text
 and perhaps might be better to write for(ele).. instead of ele[i]?
-
+*/
 //FIRST STEP DONE
 
 let t: number;
@@ -60,7 +60,7 @@ console.log(content[t].text)
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 
 }
-//---------------------------------------------------------------------------------------------------------------------------------
+/*---------------------------------------------------------------------------------------------------------------------------------*/
 //VARIABLES
 //CENTER OF ROTATION
 
@@ -85,7 +85,7 @@ for (i = 0; i < numChars ; i++) {
     char[i].text = chars[i];// assign chars to the single textElements
     char[i].y = radius < 0 ? - radius : - radius + char[0].getBBox().height / 2;//move text it´s height downwards
 
-    //FOR AUTO MODUS
+    //FOR AUTO MODUS*/
     if (modus == "auto") {
 
       const circ = 2 * radius * Math.PI;

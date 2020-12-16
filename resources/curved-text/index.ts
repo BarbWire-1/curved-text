@@ -1,5 +1,5 @@
 // TODO 3 typescript doesn't like this file much; do we need to do something with tsconfig.json?
-
+//@ts-nocheck
 import { me as device } from "device"
 
 const construct = el => {
