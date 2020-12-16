@@ -3,7 +3,7 @@
 
     <!--TEXT-->
     <svg id= "position">
-      <text id="myText" class="textID" x="50%" y="50%" opacity="0" >0123456789</text>
+      <text id="myText" class="textID" x="50%" y="50%" opacity="0" >0.0.0</text>
       <g id="textChars" transform="translate(50%,50%) rotate(0)">
          <g>
             <g >
