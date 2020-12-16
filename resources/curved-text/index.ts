@@ -7,7 +7,9 @@ const construct = el => {
   const myTextEl = el.getElementById('myText')  // TODO 3 do we need both textEl and myTextEl? 
 
   // No, I think we should adress them by the <use>´s ID
-  
+  //myText was just the ID of my play text so it should be replaced with individula text ID´s 
+  // but I´m not sure, what to change in the code in this case. so it looks so "simple-fitbit"
+  // it´s rather complex to me
 
   const positionEl = el.getElementById('position')
   const charGroupEl = el.getElementById('charGroup')
@@ -22,6 +24,7 @@ const construct = el => {
   // const timeLabel = new FitFont({ id:'timeLabel', font:'Bebas_Neue_110',halign: "middle", valign: "top", letterspacing:-1});
   // and then add rotating properties.
   // or we could only have rotating settings and font-style would have to be set manually in css or svg
+  // I think, I prefer the latter version to not overload it
 
 
   // I see that arr[i] always executes everything i times 
@@ -29,6 +32,8 @@ const construct = el => {
 
   // I absolutely don´t understand, how your uses get rotated 
   // without being grouped in the index.view :))))
+  // OH, got it! In the sub-index.view, where your symbol is defined!
+  // I think, I begin to understand, what you did!!! very, very nice!
 
 
   //Text settings
