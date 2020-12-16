@@ -2,6 +2,17 @@ import document from "document"
 import {me} from "appbit"
 import { user } from "user-profile"
 import { me as device } from "device"
+import widgetFactory from '../resources/widget-factory'
+import curvedText from '../resources/curved-text'
+
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+//Initialise widget system
+const widgets = widgetFactory([curvedText])
+widgets.registerContainer(document)
+const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
+curvedTextWidget1.rotateText = 10
+
+
 let myText = document.getElementById("myText");
 let position = document.getElementById("position") as ContainerElement;
 
