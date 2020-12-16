@@ -158,4 +158,12 @@
       <set href="#position" attributeName="r" to="100" />
    </use>
 
+   <use id="curvedText2" href="#curvedText" x="200" y="200" width="100" height="100" >
+      <set href="#text" attributeName="text-buffer" to="another one" />
+      <set href="#text" attributeName="text-anchor" to="middle" />
+      <set href="#position" attributeName="cx" to="250" />
+      <set href="#position" attributeName="cy" to="250" />
+      <set href="#position" attributeName="r" to="100" />
+   </use>
+
 </svg>

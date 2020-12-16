@@ -11,6 +11,9 @@ const widgets = widgetFactory([curvedText])
 widgets.registerContainer(document)
 const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 curvedTextWidget1.rotateText = 10
+curvedTextWidget1.redraw()
+const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
+curvedTextWidget2.redraw()
 
 
 let myText = document.getElementById("myText");

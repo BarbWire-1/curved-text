@@ -4,8 +4,14 @@ import { me as device } from "device"
 
 const construct = el => {
   const textEl = el.getElementById('text')
+  const myTextEl = el.getElementById('myText')  // TODO 3 do we need both textEl and myTextEl?
   const positionEl = el.getElementById('position')
   const charGroupEl = el.getElementById('charGroup')
+  let radius = positionEl.r
+  let textAnchor = textEl.textAnchor
+
+  // TODO 3 implement setters for all settings
+  // TODO 3 how do we change font-family, font-size, fill, etc?
 
   //Text settings
   let rotateText: number = 0      //angle to rotate whole text from its beginning
@@ -26,7 +32,7 @@ const construct = el => {
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
-    charAngle = charAngle * (positionEl.r < 0 ? -1 : 1);
+    charAngle = charAngle * (radius < 0 ? -1 : 1);
 
     /*ASSIGN CHARS*/
     let chars = (textEl.text.split("")); // array of char set of text to curve
@@ -38,6 +44,7 @@ const construct = el => {
     /*CALCULATE PROPERTIES OF CHARS*/
     let i;
     let numChars = chars.length
+    console.log(`numChars=${numChars}`)
     for (i = 0; i < numChars ; i++) {
 
         char[i].text = chars[i];// assign chars to the single textElements
@@ -53,7 +60,7 @@ const construct = el => {
 
           //@ts-ignore
           let cumWidths =  widths.map((elem: number) => i >= numChars ? sum = 0 : sum = (sum || 0) + elem); // sums up widths
-          let textWidth = (myText as TextElement).getBBox().width; // width original text
+          let textWidth = (myTextEl as TextElement).getBBox().width; // width original text
 
           let w: number;
             for (w = 1; w < numChars + 1; w++) {
@@ -73,8 +80,8 @@ const construct = el => {
             /*TEXT-ANCHOR and ROTATION*/
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
 
-                    -  (textAnchor == "middle" ? (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2
-                  :    textAnchor == "start" ? - (width0 + letterSpacing * 1/2)/2
+                    -  (textAnchor === "middle" ? (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2
+                  :    textAnchor === "start" ? - (width0 + letterSpacing * 1/2)/2
                   : +  (textWidth + (i -1/2) * letterSpacing + width0 / 2 ) * degreePx);
 
         }else{
