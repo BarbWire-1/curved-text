@@ -27,7 +27,7 @@ let charAngle: number = 10;//angle each char
 
 //VARIABLES
 /*CENTER OF ROTATION*/
-position.x = centerX - device.screen.width / 2; // -half width. why is me.screen.width / 2 not working??? Permission?
+position.x = centerX - device.screen.width / 2; // -half width
 position.y = centerY - device.screen.height / 2;
 
 //PREVENT MIRRORING
