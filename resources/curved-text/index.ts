@@ -4,7 +4,11 @@ import { me as device } from "device"
 
 const construct = el => {
   const textEl = el.getElementById('text')
-  const myTextEl = el.getElementById('myText')  // TODO 3 do we need both textEl and myTextEl?
+  const myTextEl = el.getElementById('myText')  // TODO 3 do we need both textEl and myTextEl? 
+
+  // No, I think we should adress them by the <use>´s ID
+  
+
   const positionEl = el.getElementById('position')
   const charGroupEl = el.getElementById('charGroup')
   let radius = positionEl.r
@@ -12,6 +16,20 @@ const construct = el => {
 
   // TODO 3 implement setters for all settings
   // TODO 3 how do we change font-family, font-size, fill, etc?
+
+  // Would be great to have a "line-up" in app/index similar to how fitfont does
+  // like this:
+  // const timeLabel = new FitFont({ id:'timeLabel', font:'Bebas_Neue_110',halign: "middle", valign: "top", letterspacing:-1});
+  // and then add rotating properties.
+  // or we could only have rotating settings and font-style would have to be set manually in css or svg
+
+
+  // I see that arr[i] always executes everything i times 
+  // is there a way to let it process i, i++,... without going back through all each step?
+
+  // I absolutely don´t understand, how your uses get rotated 
+  // without being grouped in the index.view :))))
+
 
   //Text settings
   let rotateText: number = 0      //angle to rotate whole text from its beginning
@@ -39,7 +57,7 @@ const construct = el => {
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
 
     let width0: number = char[0].getBBox().width;   //first char to calc. text-alignment
-    let prevWidth = char[0].getBBox().width;        // TODO 3 is this needed?
+    //let prevWidth = char[0].getBBox().width;        // TODO 3 is this needed?
 
     /*CALCULATE PROPERTIES OF CHARS*/
     let i;
@@ -61,7 +79,11 @@ const construct = el => {
           //@ts-ignore
           let cumWidths =  widths.map((elem: number) => i >= numChars ? sum = 0 : sum = (sum || 0) + elem); // sums up widths
           let textWidth = (myTextEl as TextElement).getBBox().width; // width original text
+          console.log("width myTextEl "+textWidth)
+          let textWidth2 = (textEl as TextElement).getBBox().width; // width original text
+          console.log("width textEl"+ textWidth2 )
 
+          
           let w: number;
             for (w = 1; w < numChars + 1; w++) {
               // width of the previous char
@@ -74,7 +96,7 @@ const construct = el => {
               (char[i].parent as GroupElement).groupTransform.rotate.angle =
               (cumWidths[i]  - charWidth / 2 + halfNext  + (i-1/2) * letterSpacing)  * degreePx;
 
-              prevWidth = nextWidth;
+              let prevWidth = nextWidth;
             }
 
             /*TEXT-ANCHOR and ROTATION*/

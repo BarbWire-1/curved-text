@@ -42,7 +42,7 @@ let charAngle: number = 10;//angle each char
 
 /* after I read your widgets-factory a few times, I finally understood
   this is exactly what you are going to do.
-  I´ve got to understand your construction/syntax better....
+  I´ve got to understand your construc
 //FIRST STEP DONE
 
 let t: number;
@@ -53,8 +53,8 @@ let content = textID ;
 console.log("all texts by ID " + content[t].text)
 
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
+
 }
-*/
 //---------------------------------------------------------------------------------------------------------------------------------
 //VARIABLES
 //CENTER OF ROTATION
