@@ -21,7 +21,7 @@ let position = document.getElementById("position") as ContainerElement;
 
 
 /*
-//YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
+/*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 //control panel in index.ts
 let textID = document.getElementsByClassName("textID");
 //let ID = myText
@@ -36,9 +36,9 @@ let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
 
-//Rotate fix angle
+/*Rotate fix angle*/
 let charAngle: number = 10;//angle each char
-//-----------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -60,7 +60,7 @@ console.log(content[t].text)
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 
 }
-//---------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------*/
 //VARIABLES
 //CENTER OF ROTATION
 

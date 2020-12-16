@@ -21,7 +21,7 @@ let position = document.getElementById("position") as ContainerElement;
 
 
 /*
-//YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
+/*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 //control panel in index.ts
 let textID = document.getElementsByClassName("textID");
 //let ID = myText
@@ -36,15 +36,15 @@ let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
 
-//Rotate fix angle
+/*Rotate fix angle*/
 let charAngle: number = 10;//angle each char
-//-----------------------------------------------------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------------------------------------------------*/
 
 
 
 
 
-This part might probabely get "outsourced" as Module
+/*This part might probabely get "outsourced" as Module
 but would need to be adjusted for multiple text
 and perhaps might be better to write for(ele).. instead of ele[i]?
 
@@ -60,7 +60,7 @@ console.log(content[t].text)
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 
 }
-//---------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------*/
 //VARIABLES
 //CENTER OF ROTATION
 
