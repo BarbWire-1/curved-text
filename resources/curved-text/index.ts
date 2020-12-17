@@ -69,11 +69,13 @@ const construct = el => {
     let chars = (textEl.text.split("")); // array of char set of text to curve
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
 
-    //APPLY FONT SIZE
+    //APPLY FONT FAMILY AND SIZE
     const numChars = chars.length
     const fontSize = textEl.style.fontSize
     if (fontSize > 0)
       for (i = 0; i < numChars; i++) char[i].style.fontSize = fontSize
+    const fontFamily = textEl.style.fontFamily
+    for (i = 0; i < numChars; i++) char[i].style.fontFamily = fontFamily
 
     let width0: number = char[0].getBBox().width;   //first char to calc. text-alignment
     //let prevWidth = char[0].getBBox().width;    // not used

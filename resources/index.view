@@ -162,7 +162,8 @@
    <use id="curvedText2" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="another one" />
       <set href="#text" attributeName="text-anchor" to="middle" />
-      <set href="#text" attributeName="font-size" to="15" />
+      <set href="#text" attributeName="font-family" to="Colfax-Bold" />
+      <set href="#text" attributeName="font-size" to="35" />
       <set href="#position" attributeName="cx" to="250" />
       <set href="#position" attributeName="cy" to="250" />
       <set href="#position" attributeName="r" to="60" />
