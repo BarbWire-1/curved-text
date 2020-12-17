@@ -65,16 +65,12 @@ console.log("all texts by ID " + content[t].text)
 //content[1].text = "LET ME SEE"// enter text ar data here MiW!MiW!MiW!M
 }
 
-<<<<<<< HEAD
 //outcommented to concentrate on widgetFactory, as it might become inconsistent if both run parallel
-=======
-outcommented to concentrate on widgetFactory, as it might become inconsistent if both run parallel
->>>>>>> 3b9695fb2fb77b4b50409e2a98a4592c7b2f751b
 //---------------------------------------------------------------------------------------------------------------------------------
 //VARIABLES
 
 //CENTER OF ROTATION
-/*
+
 position.x = centerX - device.screen.width / 2; // -half width. why is me.screen.width / 2 not working??? Permission?
 
 /*CENTER OF ROTATION*/
@@ -148,7 +144,3 @@ for (i = 0; i < numChars ; i++) {
     };
 
  };
-*/
-
-
-
