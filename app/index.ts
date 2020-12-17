@@ -70,7 +70,7 @@ let chars = (myText.text.split("")); // array of char set of text to curve
 let char  = document.getElementsByClassName("char") as TextElement[];// single char textElements
 
 let width0: number = char[0].getBBox().width;//first char to calc. text-alignment
-/////let prevWidth = char[0].getBBox().width; // TODO 3 unnecessary?
+//let prevWidth = char[0].getBBox().width; // not used
 
 //CALCULATE PROPERTIES OF CHARS
 let i;
@@ -104,7 +104,7 @@ for (i = 0; i < numChars ; i++) {
           (char[i].parent as GroupElement).groupTransform.rotate.angle =
           (cumWidths[i]  - charWidth / 2 + halfNext  + (i-1/2) * letterSpacing)  * degreePx;
 
-          /////prevWidth = nextWidth; // TODO 3 unnecessary?
+          //prevWidth = nextWidth; // not used
         }
 
         //TEXT-ANCHOR and ROTATION

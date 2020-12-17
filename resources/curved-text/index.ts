@@ -4,7 +4,7 @@ import { me as device } from "device"
 
 const construct = el => {
   const textEl = el.getElementById('text')
-  //const myTextEl = el.getElementById('myText')  // TODO 3 do we need both textEl and myTextEl?
+  //const myTextEl = el.getElementById('myText')  // we don't need both textEl and myTextEl
 
   // No, I think we should adress them by the <use>´s ID
   //myText was just the ID of my play text so it should be replaced with individula text ID´s
@@ -62,7 +62,7 @@ const construct = el => {
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
 
     let width0: number = char[0].getBBox().width;   //first char to calc. text-alignment
-    //let prevWidth = char[0].getBBox().width;        // TODO 3 is this needed?
+    //let prevWidth = char[0].getBBox().width;    // not used
 
     /*CALCULATE PROPERTIES OF CHARS*/
     let i;
@@ -101,7 +101,7 @@ const construct = el => {
               (char[i].parent as GroupElement).groupTransform.rotate.angle =
               (cumWidths[i]  - charWidth / 2 + halfNext  + (i-1/2) * letterSpacing)  * degreePx;
 
-              let prevWidth = nextWidth;
+              //let prevWidth = nextWidth;  // not used
             }
 
             /*TEXT-ANCHOR and ROTATION*/

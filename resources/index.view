@@ -150,7 +150,6 @@
   <use href="#lines" fill="orange" />
 
    <!-- Widgets -->
-   <!-- TODO 3 see if this works without specifying x, y, width, height -->
    <use id="curvedText1" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
