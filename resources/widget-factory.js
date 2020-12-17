@@ -19,14 +19,14 @@ export default (widgetArray) => {
           // We pass the widgetFactory to construct() just in case the widget being constructed uses other widgets.
           // It would also be possible to pass an object containing widget-specific construction args (eg, {maxValue:100}),
           // but this would be inconsistent with the normal Fitbit way of doing things.
-          widget = widgetRego.construct(widgetEl, widgetFactory)   // TODO 0 'this' may not work in this context
+          widget = widgetRego.construct(widgetEl, widgetFactory)
           return false  // stop iterating
         } else
           return true
       }
     )
       return widget
-    
+
   }
 
   const widgetFactory = {

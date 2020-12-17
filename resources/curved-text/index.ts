@@ -4,10 +4,10 @@ import { me as device } from "device"
 
 const construct = el => {
   const textEl = el.getElementById('text')
-  const myTextEl = el.getElementById('myText')  // TODO 3 do we need both textEl and myTextEl? 
+  const myTextEl = el.getElementById('myText')  // TODO 3 do we need both textEl and myTextEl?
 
   // No, I think we should adress them by the <use>´s ID
-  //myText was just the ID of my play text so it should be replaced with individula text ID´s 
+  //myText was just the ID of my play text so it should be replaced with individula text ID´s
   // but I´m not sure, what to change in the code in this case. so it looks so "simple-fitbit"
   // it´s rather complex to me
 
@@ -27,10 +27,10 @@ const construct = el => {
   // I think, I prefer the latter version to not overload it
 
 
-  // I see that arr[i] always executes everything i times 
+  // I see that arr[i] always executes everything i times
   // is there a way to let it process i, i++,... without going back through all each step?
 
-  // I absolutely don´t understand, how your uses get rotated 
+  // I absolutely don´t understand, how your uses get rotated
   // without being grouped in the index.view :))))
   // OH, got it! In the sub-index.view, where your symbol is defined!
   // I think, I begin to understand, what you did!!! very, very nice!
@@ -44,7 +44,7 @@ const construct = el => {
   /*Rotate fix angle*/
   let charAngle: number = 10;//angle each char
 
-  console.log(`text=${textEl.text} anchor=${textEl.textAnchor} r=${positionEl.r}`)
+  //console.log(`text=${textEl.text} anchor=${textEl.textAnchor} r=${positionEl.r}`)
 
   // Below, we add members to el, effectively giving it an additional interface:
   el.redraw = () => {
@@ -67,7 +67,7 @@ const construct = el => {
     /*CALCULATE PROPERTIES OF CHARS*/
     let i;
     let numChars = chars.length
-    console.log(`numChars=${numChars}`)
+    //console.log(`numChars=${numChars}`)
     for (i = 0; i < numChars ; i++) {
 
         char[i].text = chars[i];// assign chars to the single textElements
@@ -88,7 +88,7 @@ const construct = el => {
           let textWidth2 = (textEl as TextElement).getBBox().width; // width original text
           console.log("width textEl"+ textWidth2 )
 
-          
+
           let w: number;
             for (w = 1; w < numChars + 1; w++) {
               // width of the previous char
