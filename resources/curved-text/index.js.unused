@@ -17,7 +17,6 @@ const construct = el => {
   let textAnchor = textEl.textAnchor
 
   // TODO 3 implement setters for all settings
-  // TODO 3 how do we change font-family, font-size, fill, etc?
 
   // Would be great to have a "line-up" in app/index similar to how fitfont does
   // like this:

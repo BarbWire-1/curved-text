@@ -12,7 +12,6 @@ export default (widgetArray) => {
     const widgetEl = containerEl.getElementById(id)
     const widgetName = widgetEl.class
     let widget
-    console.log(`widgets=${widgets}`)
     widgets.every(
       widgetRego => {
         if (widgetRego.name === widgetName) {

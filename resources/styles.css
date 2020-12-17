@@ -3,13 +3,15 @@
     height: 100%;
     fill: black;
 }
+.curvedText {
+    fill: white;    /* default fill can't be specified in .text; doing so stops it from being over-ridden easily */
+}
 .text {
     x: 0;
     y: 0;
     font-family: Barlow-Regular;
     font-size: 30;
-    fill: white;
     text-anchor: middle;
     text-length: 150;
-    
+
 }

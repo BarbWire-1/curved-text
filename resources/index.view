@@ -2,7 +2,7 @@
     <rect id="background" />
 
     <!--TEXT-->
-    <svg id= "position">
+    <svg id= "position" fill="white">  <!-- added fill here because it got taken out of CSS so widget could over-ride it -->
       <text id="myText" class="textID" x="50%" y="50%" opacity="0" >0.0.0</text>
       <g id="textChars" transform="translate(50%,50%) rotate(0)">
          <g>
@@ -159,11 +159,11 @@
       <set href="#position" attributeName="r" to="80" />
    </use>
 
-   <use id="curvedText2" href="#curvedText" >
+   <use id="curvedText2" href="#curvedText" fill="green">
       <set href="#text" attributeName="text-buffer" to="another one" />
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="font-family" to="Colfax-Bold" />
-      <set href="#text" attributeName="font-size" to="35" />
+      <set href="#text" attributeName="font-size" to="45" />
       <set href="#position" attributeName="cx" to="250" />
       <set href="#position" attributeName="cy" to="250" />
       <set href="#position" attributeName="r" to="60" />
