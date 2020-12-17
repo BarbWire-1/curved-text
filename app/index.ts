@@ -55,11 +55,12 @@ console.log("all texts by ID " + content[t].text)
 
 //content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
 }
-*/
+
+outcommented to concentrate on widgetFactory, as it might become inconsistent if both run parallel
 //---------------------------------------------------------------------------------------------------------------------------------
 //VARIABLES
 //CENTER OF ROTATION
-
+/*
 position.x = centerX - device.screen.width / 2; // -half width. why is me.screen.width / 2 not working??? Permission?
 position.y = centerY - device.screen.height / 2;
 
@@ -130,7 +131,7 @@ for (i = 0; i < numChars ; i++) {
     };
 
  };
-
+*/
 
 
 
