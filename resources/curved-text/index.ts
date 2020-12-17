@@ -54,7 +54,7 @@ const construct = el => {
     }
   })
 
-  el.redraw = () => {
+  el.redraw = () => {   // TODO 3 does redraw() need to be public?
     //VARIABLES
     /*CENTER OF ROTATION*/
 
