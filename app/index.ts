@@ -18,9 +18,12 @@ curvedTextWidget2.redraw()
 
 
 let myText = document.getElementById("myText");
+let myText2 = document.getElementById("myText2");
 let position = document.getElementById("position") as ContainerElement;
 
+//perhaps we could have something similar to this per Label ?
 
+//const timeLabel = new curvedText({ id:'timeLabel', modus:"auto",radius:100,centerX: 168,centery:168,rotateText:0,letterSpacing:10,textAnchor:"middle"}];
 
 //YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
 //control panel in index.ts
@@ -45,6 +48,12 @@ let charAngle: number = 10;//angle each char
   this is exactly what you are going to do.
   I´ve got to understand your construction/syntax better....
 //FIRST STEP DONE
+*/
+
+myText.text ="0.0.0.0.0.0.0.0.0";
+myText2.text = "LET ME SEE"// enter text ar data here MiW!MiW!MiW!M
+
+
 
 let t: number;
 //textID[t].id;
@@ -53,10 +62,14 @@ console.log("all texts ID "+textID[t].id);
 let content = textID ;
 console.log("all texts by ID " + content[t].text)
 
-//content[0].text = "0.0.0.0.0.0.0.0.0"// enter text ar data here MiW!MiW!MiW!M
+//content[1].text = "LET ME SEE"// enter text ar data here MiW!MiW!MiW!M
 }
 
+<<<<<<< HEAD
+//outcommented to concentrate on widgetFactory, as it might become inconsistent if both run parallel
+=======
 outcommented to concentrate on widgetFactory, as it might become inconsistent if both run parallel
+>>>>>>> 3b9695fb2fb77b4b50409e2a98a4592c7b2f751b
 //---------------------------------------------------------------------------------------------------------------------------------
 //VARIABLES
 

@@ -3,7 +3,11 @@
 
     <!--TEXT-->
     <svg id= "position" fill="white">  <!-- added fill here because it got taken out of CSS so widget could over-ride it -->
+<<<<<<< HEAD
+      <text id="myText" class="textID" x="50%" y="50%" opacity="0" text-length="30">0.0.0</text>
+=======
       <text id="text"  x="50%" y="50%" opacity="0" >0.0.0</text>
+>>>>>>> 3b9695fb2fb77b4b50409e2a98a4592c7b2f751b
       <g id="textChars" transform="translate(50%,50%) rotate(0)">
          <g>
             <g >
@@ -71,7 +75,7 @@
 
       <!--TRY ON SECOND TEXT-->
       <svg id= "position">
-      <text id="myText2" class="textID" x="50%" y="50%" opacity="0" >0123456789</text>
+      <text id="myText2" class="textID" x="50%" y="50%" fill="magenta" opacity="1" text-length="30" >0123456789</text>
       <g id="textChars" transform="translate(50%,50%) rotate(0)">
          <g>
             <g >
