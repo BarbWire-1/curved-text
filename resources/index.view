@@ -153,6 +153,7 @@
    <use id="curvedText1" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
+      <set href="#text" attributeName="font-size" to="20" />
       <set href="#position" attributeName="cx" to="100" />
       <set href="#position" attributeName="cy" to="250" />
       <set href="#position" attributeName="r" to="80" />
@@ -161,9 +162,10 @@
    <use id="curvedText2" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="another one" />
       <set href="#text" attributeName="text-anchor" to="middle" />
+      <set href="#text" attributeName="font-size" to="15" />
       <set href="#position" attributeName="cx" to="250" />
       <set href="#position" attributeName="cy" to="250" />
-      <set href="#position" attributeName="r" to="80" />
+      <set href="#position" attributeName="r" to="60" />
    </use>
 
 </svg>
