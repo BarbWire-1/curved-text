@@ -4,7 +4,7 @@ import { me as device } from "device"
 
 const construct = el => {
   const textEl = el.getElementById('text')
-  const myTextEl = el.getElementById('myText')  // TODO 3 do we need both textEl and myTextEl?
+  //const myTextEl = el.getElementById('myText')  // TODO 3 do we need both textEl and myTextEl?
 
   // No, I think we should adress them by the <use>´s ID
   //myText was just the ID of my play text so it should be replaced with individula text ID´s
@@ -83,10 +83,10 @@ const construct = el => {
 
           //@ts-ignore
           let cumWidths =  widths.map((elem: number) => i >= numChars ? sum = 0 : sum = (sum || 0) + elem); // sums up widths
-          let textWidth = (myTextEl as TextElement).getBBox().width; // width original text
-          console.log("width myTextEl "+textWidth)
-          let textWidth2 = (textEl as TextElement).getBBox().width; // width original text
-          console.log("width textEl"+ textWidth2 )
+          let textWidth = (textEl as TextElement).getBBox().width; // width original text
+          //console.log("width myTextEl "+textWidth)
+          //let textWidth2 = (textEl as TextElement).getBBox().width; // width original text
+          //console.log("width textEl"+ textWidth2 )
 
 
           let w: number;
