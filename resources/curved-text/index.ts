@@ -47,6 +47,14 @@ const construct = el => {
   //console.log(`text=${textEl.text} anchor=${textEl.textAnchor} r=${positionEl.r}`)
 
   // Below, we add members to el, effectively giving it an additional interface:
+
+  Object.defineProperty(el, 'text', {  // It may be dangerous to use the property name 'value' because it's already defined on GraphicsElement.
+    set: function(newValue) {
+      textEl.text = newValue
+      el.redraw()
+    }
+  })
+
   el.redraw = () => {
     //VARIABLES
     /*CENTER OF ROTATION*/

@@ -13,6 +13,7 @@ const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as
 curvedTextWidget1.rotateText = 10
 curvedTextWidget1.redraw()
 const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
+curvedTextWidget2.text = '123'
 curvedTextWidget2.redraw()
 
 
