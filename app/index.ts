@@ -59,9 +59,13 @@ console.log("all texts by ID " + content[t].text)
 outcommented to concentrate on widgetFactory, as it might become inconsistent if both run parallel
 //---------------------------------------------------------------------------------------------------------------------------------
 //VARIABLES
+
 //CENTER OF ROTATION
 /*
 position.x = centerX - device.screen.width / 2; // -half width. why is me.screen.width / 2 not working??? Permission?
+
+/*CENTER OF ROTATION*/
+position.x = centerX - device.screen.width / 2; // -half width
 position.y = centerY - device.screen.height / 2;
 
 //PREVENT MIRRORING
