@@ -120,9 +120,9 @@ for (i = 0; i < numChars ; i++) {
         }
 
         //TEXT-ANCHOR and ROTATION
-        let last = numChars -1;
-        let lastChar = last - 1;
-        console.log("lastChar "+ last);
+        //let last = numChars -1;
+        //let lastChar = last - 1;
+        //console.log("lastChar "+ last);
         let firstChar = cumWidths[0];
         console.log("first char "+ firstChar);
 
