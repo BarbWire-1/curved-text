@@ -20,16 +20,17 @@ const construct = el => {
   // Would be great to have a "line-up" in app/index similar to how fitfont does
   // like this:
   // const timeLabel = new FitFont({ id:'timeLabel', font:'Bebas_Neue_110',halign: "middle", valign: "top", letterspacing:-1});
-  
+
 
   // I see that arr[i] always executes everything i times
   // is there a way to let it process i, i++,... without going back through all each step?
 
-  
+
 
 
   //Text settings
-  let rotateText: number = 0      //angle to rotate whole text from its beginning
+  const startAngle = el.getElementById('orientation').startAngle    // read value (if any) from SVG
+  let rotateText: number = startAngle? startAngle : 0      //angle to rotate whole text from its beginning
   let letterSpacing: number = 10
   let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
 
@@ -113,7 +114,7 @@ const construct = el => {
             }
 
 // fixed the nasty width0 thingy.... that was nearly killing me!  🙃
-// I had some scope issue, when I wrote the file I think, and then M whole logic didn´t work anymore so I badly improvised   
+// I had some scope issue, when I wrote the file I think, and then M whole logic didn´t work anymore so I badly improvised
              //TEXT-ANCHOR and ROTATION
             let last = numChars -1;
             let lastChar = last - 1;
@@ -121,9 +122,9 @@ const construct = el => {
             let firstChar = cumWidths[0];
             console.log("first char "+ firstChar);
 
-            (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = 
+            (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
 
-            rotateText       
+            rotateText
                 -  (textAnchor == "middle" ? (textWidth +  (i - 1) * letterSpacing )  * degreePx / 2
               :    textAnchor == "start" ?  (letterSpacing - firstChar) / 2  * degreePx
               : +  (textWidth + (i - 3/2 ) * letterSpacing + lastChar  / 2 ) * degreePx);
