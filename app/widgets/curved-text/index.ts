@@ -53,10 +53,10 @@ const construct = el => {
     }
   })
 
-  el.redraw = () => {   // TODO 3 does redraw() need to be public?
+  el.redraw = () => {   // TODO 3 does redraw() need to be public? NO! It shouldn´t at all in case you are asking me, haha. I remember your TODO´s were for you not meant to be answered?
     //VARIABLES
     /*CENTER OF ROTATION*/
-
+    // isn´t cx,cy misleading? as in fact it is not, but the center of rotation
     charGroupEl.x = positionEl.cx - device.screen.width / 2; // -half width. why is me.screen.width / 2 not working??? Permission?
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
@@ -77,9 +77,12 @@ const construct = el => {
     for (i = 0; i < numChars; i++) char[i].style.fontFamily = fontFamily
 
     let width0: number = char[0].getBBox().width;   //first char to calc. text-alignment // TODO 1 this worries me because char[0].text hasn't been set yet
+    //char[] has been set in line 68 and width0 is only kind of command on char[] which I execute per calling char[i].parent.parent later
+    //to get a handle on the textElement
+
     width0 = 0  // kludge to keep width0 at 0, in case char[0] had something in it from a previous call
     // TODO 1 I don't think width0 is necessary: its value is always 0. Please check all usage of it!
-    //let prevWidth = char[0].getBBox().width;    // not used
+    
 
     /*CALCULATE PROPERTIES OF CHARS*/
     for (i = 0; i < numChars ; i++) {
@@ -119,7 +122,8 @@ const construct = el => {
 
             /*TEXT-ANCHOR and ROTATION*/
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
-
+                        let width0: number = char[0].getBBox().width;
+                        console.log("width0 "+width0); //q.e.d 😛
                     -  (textAnchor === "middle" ? (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2
                   :    textAnchor === "start" ? - (width0 + letterSpacing * 1/2)/2
                   : +  (textWidth + (i -1/2) * letterSpacing + width0 / 2 ) * degreePx);
