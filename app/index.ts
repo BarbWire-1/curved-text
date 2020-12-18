@@ -2,8 +2,8 @@ import document from "document"
 import {me} from "appbit"
 import { user } from "user-profile"
 import { me as device } from "device"
-import widgetFactory from '../resources/widget-factory'
-import curvedText from '../resources/curved-text'
+import widgetFactory from './widgets/widget-factory'
+import curvedText from './widgets/curved-text'
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
 //Initialise widget system
