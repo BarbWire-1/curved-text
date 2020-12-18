@@ -13,6 +13,11 @@ const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as
 curvedTextWidget1.startAngle = 180
 const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 curvedTextWidget2.text = '123456'
+let angle = 0
+setInterval(() => {
+  angle = (angle + 5) % 360
+  curvedTextWidget1.startAngle = angle
+}, 100)
 
 
 let myText = document.getElementById("myText");

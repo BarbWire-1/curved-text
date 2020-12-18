@@ -40,7 +40,7 @@ const construct = el => {
                                                                               // That must be, where your alignment fights back
 
   /*Rotate fix angle*/
-  let charAngle: number = 10;//angle each char
+  let charAngle: number = 10;//angle each char  // TODO 3 What's this? Is 10 always going to be appropriate, or should it change with font size?
 
   //console.log(`text=${textEl.text} anchor=${textEl.textAnchor} r=${positionEl.r}`)
 
@@ -56,7 +56,7 @@ const construct = el => {
   Object.defineProperty(el, 'startAngle', {  // This isn't the ideal name, but it's consistent with the equivalent attribute in the <arc>
     set: function(newValue) {
       rotateText = newValue
-      el.redraw()
+      el.redraw()   // TODO 4 This is inefficient, because it lays out every character again. It shouldn't be used for animation, but would be okay for config changes.
     }
   })
 
