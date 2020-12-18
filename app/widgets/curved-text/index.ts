@@ -1,5 +1,4 @@
 // TODO 3 typescript doesn't like this file much; do we need to do something with tsconfig.json?
-//@ts-nocheck I´m not able to modify the the tsconfiiiiiiig.json yet, will try to find it out
 import { me as device } from "device"
 
 const construct = el => {
@@ -71,6 +70,7 @@ const construct = el => {
     //APPLY FONT FAMILY AND SIZE
     const numChars = chars.length
     const fontSize = textEl.style.fontSize
+    let i;
     if (fontSize > 0)
       for (i = 0; i < numChars; i++) char[i].style.fontSize = fontSize
     const fontFamily = textEl.style.fontFamily
@@ -80,7 +80,6 @@ const construct = el => {
     //let prevWidth = char[0].getBBox().width;    // not used
 
     /*CALCULATE PROPERTIES OF CHARS*/
-    let i;
     //console.log(`numChars=${numChars}`)
     for (i = 0; i < numChars ; i++) {
 
