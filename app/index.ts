@@ -84,7 +84,7 @@ charAngle = charAngle * (radius < 0 ? -1 : 1);
 let chars = (myText.text.split("")); // array of char set of text to curve
 let char  = document.getElementsByClassName("char") as TextElement[];// single char textElements
 
-let width0: number = char[0].getBBox().width;//first char to calc. text-alignment
+
 //let prevWidth = char[0].getBBox().width; // not used
 
 //CALCULATE PROPERTIES OF CHARS
@@ -123,8 +123,9 @@ for (i = 0; i < numChars ; i++) {
         }
 
         //TEXT-ANCHOR and ROTATION
+        let width0: number = char[0].getBBox().width;//first char to calc. text-alignment
         (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
-
+                    console.log("width0 "+width0);
                 -  (textAnchor == "middle" ? (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2
               :    textAnchor == "start" ? - (width0 + letterSpacing * 1/2)/2
               : +  (textWidth + (i -1/2) * letterSpacing + width0 / 2 ) * degreePx);

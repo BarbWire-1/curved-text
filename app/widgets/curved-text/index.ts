@@ -39,6 +39,11 @@ const construct = el => {
   let letterSpacing: number = 10
   let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
 
+// OH!!!! you use this for letter-alignment? it´s thought for alignment on the whole textElement
+// letters have to be fix "middle" to rotate them nicely
+// It changes the angle of the outer rotating group, depending on length of the text
+
+
   /*Rotate fix angle*/
   let charAngle: number = 10;//angle each char
 
@@ -76,13 +81,9 @@ const construct = el => {
     const fontFamily = textEl.style.fontFamily
     for (i = 0; i < numChars; i++) char[i].style.fontFamily = fontFamily
 
-    let width0: number = char[0].getBBox().width;   //first char to calc. text-alignment // TODO 1 this worries me because char[0].text hasn't been set yet
-    //char[] has been set in line 68 and width0 is only kind of command on char[] which I execute per calling char[i].parent.parent later
-    //to get a handle on the textElement
-
-    width0 = 0  // kludge to keep width0 at 0, in case char[0] had something in it from a previous call
-    // TODO 1 I don't think width0 is necessary: its value is always 0. Please check all usage of it!
-    
+    //and gone is the width0 it was an artifact I needed, before I had defined prevWidth and halfNext. 
+    //and then I had replaced prWidth with [i-1/2]sorry for the confusion. 
+    //luckily I could test it in my "motherfile" as I first feared we mad have interferences 🙃
 
     /*CALCULATE PROPERTIES OF CHARS*/
     for (i = 0; i < numChars ; i++) {
@@ -125,9 +126,9 @@ const construct = el => {
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
                        
                     
-                    -  (textAnchor === "middle" ? (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2
-                  :    textAnchor === "start" ? - (width0 + letterSpacing * 1/2)/2
-                  : +  (textWidth + (i -1/2) * letterSpacing + width0 / 2 ) * degreePx);
+                    -  (textAnchor === "middle" ? (textWidth + (i - 1) * letterSpacing *1/2 )  * degreePx / 2
+                  :    textAnchor === "start" ? - letterSpacing * 1/4
+                  : +  textWidth + (i -1/2) * letterSpacing  * degreePx);
 
 
 /*
