@@ -36,7 +36,7 @@ let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
 let letterSpacing: number = 10;
-let textAnchor: string = "middle"; //start, middle,  end at 0°
+let textAnchor: string = "start"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
 
@@ -123,12 +123,22 @@ for (i = 0; i < numChars ; i++) {
         }
 
         //TEXT-ANCHOR and ROTATION
-        let width0: number = char[0].getBBox().width;//first char to calc. text-alignment
-        (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
-                    console.log("width0 "+width0);
-                -  (textAnchor == "middle" ? (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2
-              :    textAnchor == "start" ? - (width0 + letterSpacing * 1/2)/2
-              : +  (textWidth + (i -1/2) * letterSpacing + width0 / 2 ) * degreePx);
+        
+
+        
+        let last = numChars -1;
+        let lastChar = last - 1;
+        console.log("lastChar "+ last);
+        let firstChar = cumWidths[0];
+        console.log("first char "+ firstChar);
+
+        (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = 
+
+            rotateText       
+                -  (textAnchor == "middle" ? (textWidth +  (i - 1) * letterSpacing )  * degreePx / 2
+              :    textAnchor == "start" ?  (letterSpacing - firstChar) / 2  * degreePx
+              
+              : +  (textWidth + (i - 3/2 ) * letterSpacing + lastChar  / 2 ) * degreePx);
 
     }else{
 

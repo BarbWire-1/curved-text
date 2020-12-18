@@ -20,18 +20,12 @@ const construct = el => {
   // Would be great to have a "line-up" in app/index similar to how fitfont does
   // like this:
   // const timeLabel = new FitFont({ id:'timeLabel', font:'Bebas_Neue_110',halign: "middle", valign: "top", letterspacing:-1});
-  // and then add rotating properties.
-  // or we could only have rotating settings and font-style would have to be set manually in css or svg
-  // I think, I prefer the latter version to not overload it
-
+  
 
   // I see that arr[i] always executes everything i times
   // is there a way to let it process i, i++,... without going back through all each step?
 
-  // I absolutely don´t understand, how your uses get rotated
-  // without being grouped in the index.view :))))
-  // OH, got it! In the sub-index.view, where your symbol is defined!
-  // I think, I begin to understand, what you did!!! very, very nice!
+  
 
 
   //Text settings
@@ -39,7 +33,7 @@ const construct = el => {
   let letterSpacing: number = 10
   let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
 
-// OH!!!! you use this for letter-alignment? it´s thought for alignment on the whole textElement
+// OH!!!! you use MODUS for letter-alignment? it´s thought for alignment of the whole textElement
 // letters have to be fix "middle" to rotate them nicely
 // It changes the angle of the outer rotating group, depending on length of the text
 
@@ -81,9 +75,6 @@ const construct = el => {
     const fontFamily = textEl.style.fontFamily
     for (i = 0; i < numChars; i++) char[i].style.fontFamily = fontFamily
 
-    //and gone is the width0 it was an artifact I needed, before I had defined prevWidth and halfNext. 
-    //and then I had replaced prWidth with [i-1/2]sorry for the confusion. 
-    //luckily I could test it in my "motherfile" as I first feared we mad have interferences 🙃
 
     /*CALCULATE PROPERTIES OF CHARS*/
     for (i = 0; i < numChars ; i++) {
@@ -121,41 +112,21 @@ const construct = el => {
               //let prevWidth = nextWidth;  // not used
             }
 
+// fixed the nasty width0 thingy.... that was nearly killing me!  🙃
+// I had some scope issue, when I wrote the file I think, and then M whole logic didn´t work anymore so I badly improvised   
+             //TEXT-ANCHOR and ROTATION
+            let last = numChars -1;
+            let lastChar = last - 1;
+            console.log("lastChar "+ last);
+            let firstChar = cumWidths[0];
+            console.log("first char "+ firstChar);
 
-            //TEXT-ANCHOR and ROTATION
-            (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
-                       
-                    
-                    -  (textAnchor === "middle" ? (textWidth + (i - 1) * letterSpacing *1/2 )  * degreePx / 2
-                  :    textAnchor === "start" ? - letterSpacing * 1/4
-                  : +  textWidth + (i -1/2) * letterSpacing  * degreePx);
+            (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = 
 
-
-/*
-
-            let alignAdjust = (char[i].parent.parent as GroupElement).groupTransform.rotate.angle 
-            
-              if (textAnchor ==="middle") {
-                alignAdjust = rotateText - (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2 ;
-                console.log(alignAdjust+"1");
-                alignAdjust = rotateText - (textWidth  + (i - 1 ) * letterSpacing )  * degreePx / 2 ;
-                console.log(alignAdjust+"2");
-              } else if (textAnchor === "start"){
-                
-                alignAdjust = rotateText -  - (width0 + letterSpacing * 1/2)/2;
-                console.log(alignAdjust+"1");
-                alignAdjust = rotateText -  - (letterSpacing * 1/2)/2;
-                console.log(alignAdjust+"2");
-              } else {
-                //(textAnchor === "end")
-                alignAdjust = rotateText - +  (textWidth + (i -1/2) * letterSpacing + width0 / 2 ) * degreePx;  
-                console.log(alignAdjust+"1");
-                alignAdjust = rotateText - +  (textWidth + (i -1/2) * letterSpacing ) * degreePx;
-                console.log(alignAdjust+"2");
-              };
-
-*/
-
+            rotateText       
+                -  (textAnchor == "middle" ? (textWidth +  (i - 1) * letterSpacing )  * degreePx / 2
+              :    textAnchor == "start" ?  (letterSpacing - firstChar) / 2  * degreePx
+              : +  (textWidth + (i - 3/2 ) * letterSpacing + lastChar  / 2 ) * degreePx);
 
 
         }else{
