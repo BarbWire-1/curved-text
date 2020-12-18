@@ -44,16 +44,14 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 let charAngle: number = 10;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-/* after I read your widgets-factory a few times, I finally understood
-  this is exactly what you are going to do.
-  I´ve got to understand your construction/syntax better....
-//FIRST STEP DONE
-*/
-
 myText.text ="0.0.0.0.0.0.0.0.0";
 myText2.text = "LET ME SEE"// enter text ar data here MiW!MiW!MiW!M
 
-
+//-----------------------------------------------------------------------------------------------------------------------------
+/* after I read your widgets-factory a few times, I finally understood   // Please delete this, if useless BW
+  this is exactly what you are going to do.
+  I´ve got to understand your construction/syntax better....
+//FIRST STEP DONE
 
 let t: number;
 //textID[t].id;
@@ -64,6 +62,7 @@ console.log("all texts by ID " + content[t].text)
 
 //content[1].text = "LET ME SEE"// enter text ar data here MiW!MiW!MiW!M
 }
+*/
 
 //outcommented to concentrate on widgetFactory, as it might become inconsistent if both run parallel
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -84,8 +83,6 @@ charAngle = charAngle * (radius < 0 ? -1 : 1);
 let chars = (myText.text.split("")); // array of char set of text to curve
 let char  = document.getElementsByClassName("char") as TextElement[];// single char textElements
 
-
-//let prevWidth = char[0].getBBox().width; // not used
 
 //CALCULATE PROPERTIES OF CHARS
 let i;
@@ -123,9 +120,6 @@ for (i = 0; i < numChars ; i++) {
         }
 
         //TEXT-ANCHOR and ROTATION
-        
-
-        
         let last = numChars -1;
         let lastChar = last - 1;
         console.log("lastChar "+ last);

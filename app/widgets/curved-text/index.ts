@@ -33,10 +33,10 @@ const construct = el => {
   let letterSpacing: number = 10
   let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
 
-// OH!!!! you use MODUS for letter-alignment? it´s thought for alignment of the whole textElement
-// letters have to be fix "middle" to rotate them nicely
-// It changes the angle of the outer rotating group, depending on length of the text
-
+                                                                              // OH!!!! you use MODUS for letter-alignment? it´s thought for alignment of the whole textElement
+                                                                              // letters have to be fix "middle" to rotate them nicely
+                                                                              // It changes the angle of the outer rotating group, depending on length of the text
+                                                                              // That must be, where your alignment fights back
 
   /*Rotate fix angle*/
   let charAngle: number = 10;//angle each char
