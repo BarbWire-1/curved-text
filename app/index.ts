@@ -10,11 +10,9 @@ import curvedText from './widgets/curved-text'
 const widgets = widgetFactory([curvedText])
 widgets.registerContainer(document)
 const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
-curvedTextWidget1.rotateText = 10
-curvedTextWidget1.redraw()
+curvedTextWidget1.startAngle = 180
 const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 curvedTextWidget2.text = '123456'
-curvedTextWidget2.redraw()
 
 
 let myText = document.getElementById("myText");
@@ -44,7 +42,7 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 let charAngle: number = 10;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-myText.text = "MiMiMiMiMiMi"  ; //"0.0.0.0.0.0.0.0.0"   
+myText.text = "MiMiMiMiMiMi"  ; //"0.0.0.0.0.0.0.0.0"
 myText2.text = "YES WE CAN"// enter text ar data here "MiMiMiMiMiMi"
 
 //-----------------------------------------------------------------------------------------------------------------------------
@@ -126,9 +124,9 @@ for (i = 0; i < numChars ; i++) {
         let firstChar = cumWidths[0];
         console.log("first char "+ firstChar);
 
-        (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = 
+        (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
 
-            rotateText       
+            rotateText
                 -  (textAnchor == "middle" ? (textWidth - firstChar / 2 +  (i-1) * letterSpacing )  * degreePx / 2
               :    textAnchor == "start" ? - (letterSpacing  / 2) ?? 0 * degreePx
 

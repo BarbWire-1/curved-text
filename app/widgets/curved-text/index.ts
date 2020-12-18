@@ -46,9 +46,16 @@ const construct = el => {
 
   // Below, we add members to el, effectively giving it an additional interface:
 
-  Object.defineProperty(el, 'text', {  // It may be dangerous to use the property name 'value' because it's already defined on GraphicsElement.
+  Object.defineProperty(el, 'text', {
     set: function(newValue) {
       textEl.text = newValue
+      el.redraw()
+    }
+  })
+
+  Object.defineProperty(el, 'startAngle', {  // This isn't the ideal name, but it's consistent with the equivalent attribute in the <arc>
+    set: function(newValue) {
+      rotateText = newValue
       el.redraw()
     }
   })
