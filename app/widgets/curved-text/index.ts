@@ -76,11 +76,12 @@ const construct = el => {
     const fontFamily = textEl.style.fontFamily
     for (i = 0; i < numChars; i++) char[i].style.fontFamily = fontFamily
 
-    let width0: number = char[0].getBBox().width;   //first char to calc. text-alignment
+    let width0: number = char[0].getBBox().width;   //first char to calc. text-alignment // TODO 1 this worries me because char[0].text hasn't been set yet
+    width0 = 0  // kludge to keep width0 at 0, in case char[0] had something in it from a previous call
+    // TODO 1 I don't think width0 is necessary: its value is always 0. Please check all usage of it!
     //let prevWidth = char[0].getBBox().width;    // not used
 
     /*CALCULATE PROPERTIES OF CHARS*/
-    //console.log(`numChars=${numChars}`)
     for (i = 0; i < numChars ; i++) {
 
         char[i].text = chars[i];// assign chars to the single textElements
@@ -107,7 +108,6 @@ const construct = el => {
               // width of the previous char
               let nextWidth = char[w].getBBox().width;
               let halfNext = nextWidth / 2;
-
 
               //calculates rotation angle for each char
               //to define distance : half width previous char + half width current char + half letterspacing
