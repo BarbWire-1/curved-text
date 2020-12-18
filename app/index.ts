@@ -35,8 +35,8 @@ let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-let letterSpacing: number = 10;
-let textAnchor: string = "start"; //start, middle,  end at 0°
+let letterSpacing: number = 5;
+let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
 
@@ -44,16 +44,14 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 let charAngle: number = 10;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-/* after I read your widgets-factory a few times, I finally understood
+myText.text = "MiMiMiMiMiMi"  ; //"0.0.0.0.0.0.0.0.0"   
+myText2.text = "YES WE CAN"// enter text ar data here "MiMiMiMiMiMi"
+
+//-----------------------------------------------------------------------------------------------------------------------------
+/* after I read your widgets-factory a few times, I finally understood   // Please delete this, if useless BW
   this is exactly what you are going to do.
   I´ve got to understand your construction/syntax better....
 //FIRST STEP DONE
-*/
-
-myText.text ="0.0.0.0.0.0.0.0.0";
-myText2.text = "LET ME SEE"// enter text ar data here MiW!MiW!MiW!M
-
-
 
 let t: number;
 //textID[t].id;
@@ -64,6 +62,7 @@ console.log("all texts by ID " + content[t].text)
 
 //content[1].text = "LET ME SEE"// enter text ar data here MiW!MiW!MiW!M
 }
+*/
 
 //outcommented to concentrate on widgetFactory, as it might become inconsistent if both run parallel
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -84,8 +83,6 @@ charAngle = charAngle * (radius < 0 ? -1 : 1);
 let chars = (myText.text.split("")); // array of char set of text to curve
 let char  = document.getElementsByClassName("char") as TextElement[];// single char textElements
 
-
-//let prevWidth = char[0].getBBox().width; // not used
 
 //CALCULATE PROPERTIES OF CHARS
 let i;
@@ -123,9 +120,6 @@ for (i = 0; i < numChars ; i++) {
         }
 
         //TEXT-ANCHOR and ROTATION
-        
-
-        
         let last = numChars -1;
         let lastChar = last - 1;
         console.log("lastChar "+ last);
@@ -135,10 +129,10 @@ for (i = 0; i < numChars ; i++) {
         (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = 
 
             rotateText       
-                -  (textAnchor == "middle" ? (textWidth +  (i - 1) * letterSpacing )  * degreePx / 2
-              :    textAnchor == "start" ?  (letterSpacing - firstChar) / 2  * degreePx
-              
-              : +  (textWidth + (i - 3/2 ) * letterSpacing + lastChar  / 2 ) * degreePx);
+                -  (textAnchor == "middle" ? (textWidth - firstChar / 2 +  (i-1) * letterSpacing )  * degreePx / 2
+              :    textAnchor == "start" ? - (letterSpacing  / 2) ?? 0 * degreePx
+
+              : +  (textWidth + (i -1/2 )* letterSpacing ) * degreePx);
 
     }else{
 
