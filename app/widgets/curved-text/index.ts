@@ -120,13 +120,42 @@ const construct = el => {
               //let prevWidth = nextWidth;  // not used
             }
 
-            /*TEXT-ANCHOR and ROTATION*/
+
+            //TEXT-ANCHOR and ROTATION
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
-                        let width0: number = char[0].getBBox().width;
-                        console.log("width0 "+width0); //q.e.d 😛
+                       
+                    
                     -  (textAnchor === "middle" ? (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2
                   :    textAnchor === "start" ? - (width0 + letterSpacing * 1/2)/2
                   : +  (textWidth + (i -1/2) * letterSpacing + width0 / 2 ) * degreePx);
+
+
+/*
+
+            let alignAdjust = (char[i].parent.parent as GroupElement).groupTransform.rotate.angle 
+            
+              if (textAnchor ==="middle") {
+                alignAdjust = rotateText - (textWidth + 2*width0  + (i - 1 ) * letterSpacing )  * degreePx / 2 ;
+                console.log(alignAdjust+"1");
+                alignAdjust = rotateText - (textWidth  + (i - 1 ) * letterSpacing )  * degreePx / 2 ;
+                console.log(alignAdjust+"2");
+              } else if (textAnchor === "start"){
+                
+                alignAdjust = rotateText -  - (width0 + letterSpacing * 1/2)/2;
+                console.log(alignAdjust+"1");
+                alignAdjust = rotateText -  - (letterSpacing * 1/2)/2;
+                console.log(alignAdjust+"2");
+              } else {
+                //(textAnchor === "end")
+                alignAdjust = rotateText - +  (textWidth + (i -1/2) * letterSpacing + width0 / 2 ) * degreePx;  
+                console.log(alignAdjust+"1");
+                alignAdjust = rotateText - +  (textWidth + (i -1/2) * letterSpacing ) * degreePx;
+                console.log(alignAdjust+"2");
+              };
+
+*/
+
+
 
         }else{
 
