@@ -30,7 +30,7 @@ const construct = el => {
 
   //Text settings
   const startAngle = el.getElementById('orientation').startAngle    // read value (if any) from SVG
-  let rotateText: number = startAngle? startAngle : 0      //angle to rotate whole text from its beginning
+  let rotateText: number = startAngle ? startAngle : 0      //angle to rotate whole text from its beginning
   let letterSpacing: number = 10
   //let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
   // modus deprecated: use _charAngle instead. If _charAngle is undefined, behave as per modus==="auto".
@@ -149,7 +149,7 @@ const construct = el => {
           (char[i].parent as GroupElement).groupTransform.rotate.angle =  i * _charAngle; // TODO 3 this could probably be simplified: don't need the i>0
                                                                                                      //hahaha. what did I think??? just shouldn´t look that easy ;)
           //TEXT-ANCHOR
-          (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
+          (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText 
 
               - (textAnchor == "middle" ? (numChars - 1)* _charAngle / 2
             :   textAnchor == "start" ?  - (_charAngle / 2)

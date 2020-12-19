@@ -38,7 +38,7 @@ let radius: number = 120;//if negative, text is bottom curve
 let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
-let rotateText: number = 0;//angle to rotate whole text from it´s beginning
+let rotateText: number = 90;//angle to rotate whole text from it´s beginning
 let letterSpacing: number = 5;
 let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
@@ -142,7 +142,7 @@ for (i = 0; i < numChars ; i++) {
       (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * charAngle : 0;
 
       //TEXT-ANCHOR
-      (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
+      (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText 
 
            - (textAnchor == "middle" ? (numChars - 1)* charAngle / 2
          :   textAnchor == "start" ?  - (charAngle / 2)
@@ -151,3 +151,14 @@ for (i = 0; i < numChars ; i++) {
     };
 
  };
+//ANIMATION----------------------------------------------------------------------------------------------
+// Rotate on time
+const initRotation = () => {
+const now = new Date();
+var angleSeconds = (now.getSeconds()* 6);
+var angleSmoothSeconds = (now.getSeconds() * 1000 + now.getMilliseconds()) * 6 / 1000;
+curvedTextWidget1.startAngle = angleSeconds;
+curvedTextWidget2.startAngle = angleSmoothSeconds; // great, you introduced the arc :)
+requestAnimationFrame(initRotation);
+}
+requestAnimationFrame(initRotation);
