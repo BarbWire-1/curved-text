@@ -1,4 +1,4 @@
-// TODO P 3 typescript doesn't like this file much; do we need to do something with tsconfig.json?
+// TODO G 3 typescript doesn't like this file much; do we need to do something with tsconfig.json?
 // done! tsypescript simply doesn´t allow another index.ts, so I changed it to index.js
 import { me as device } from "device"
 
@@ -16,7 +16,7 @@ const construct = el => {
   let radius = positionEl.r
   let textAnchor = textEl.textAnchor
 
-  // TODO P 3 implement setters for all settings
+  // TODO G 3 implement setters for all settings
 
   // Would be great to have a "line-up" in app/index similar to how fitfont does
   // like this:
