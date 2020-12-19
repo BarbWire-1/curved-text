@@ -159,7 +159,7 @@ const now = new Date();
   let angleSeconds = (now.getSeconds()* 6);
   let angleSmoothSeconds = (now.getSeconds() * 1000 + now.getMilliseconds()) * 6 / 1000;
 
-  curvedTextWidget1.startAngle = angleSeconds;
+  curvedTextWidget1.startAngle = angleSeconds; // much better in on tick, or if throttled. but just to keep it together
   curvedTextWidget2.startAngle = angleSmoothSeconds; // great, you introduced the arc :)
 
   requestAnimationFrame(initRotation);
