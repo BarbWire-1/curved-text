@@ -166,6 +166,7 @@ const now = new Date();
 }
 requestAnimationFrame(initRotation);
 
+
 clock.granularity = "seconds"
 let textChars = document.getElementById("textChars") as GroupElement;
 // Opacity

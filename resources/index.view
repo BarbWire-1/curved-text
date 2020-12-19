@@ -4,7 +4,7 @@
     <!--TEXT-->
     <svg id= "position" fill="white">  <!-- added fill here because it got taken out of CSS so widget could over-ride it -->
       <text id="myText" class="textID" x="50%" y="50%" opacity="0" text-length="30">0.0.0</text>
-      <g id="textChars" transform="translate(50%,50%) rotate(0)">
+      <g id="textChars" transform="translate(50%,50%) rotate(0)" opacity="1">
          <g>
             <g >
                <text class="text char"/>
@@ -72,7 +72,7 @@
       <!--TRY ON SECOND TEXT-->
       <svg id= "position">
       <text id="myText2" class="textID" x="50%" y="50%" fill="magenta" opacity="0.4" text-length="30" >0123456789</text>
-      <g id="textChars" transform="translate(50%,50%) rotate(0)">
+      <g id="textChars" transform="translate(50%,50%) rotate(0)" opacity="1">
          <g>
             <g >
                <text class="text char"/>
@@ -159,7 +159,7 @@
       <set href="#position" attributeName="r" to="80" />
    </use>
 
-   <use id="curvedText2" href="#curvedText" fill="green">
+   <use id="curvedText2" href="#curvedText" fill="green" opacity="1">
       <set href="#text" attributeName="text-buffer" to="another one" />
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="font-family" to="Colfax-Bold" />
