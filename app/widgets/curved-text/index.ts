@@ -1,4 +1,4 @@
-// TODO 3 typescript doesn't like this file much; do we need to do something with tsconfig.json?
+// TODO P 3 typescript doesn't like this file much; do we need to do something with tsconfig.json?
 import { me as device } from "device"
 
 const construct = el => {
@@ -15,7 +15,7 @@ const construct = el => {
   let radius = positionEl.r
   let textAnchor = textEl.textAnchor
 
-  // TODO 3 implement setters for all settings
+  // TODO P 3 implement setters for all settings
 
   // Would be great to have a "line-up" in app/index similar to how fitfont does
   // like this:
@@ -57,7 +57,7 @@ const construct = el => {
   Object.defineProperty(el, 'startAngle', {  // This isn't the ideal name, but it's consistent with the equivalent attribute in the <arc>
     set: function(newValue) {
       rotateText = newValue
-      el.redraw()   // TODO 4 This is inefficient, because it lays out every character again. It shouldn't be used for animation, but would be okay for config changes.
+      el.redraw()   // TODO P 4 This is inefficient, because it lays out every character again. It shouldn't be used for animation, but would be okay for config changes.
     }
   })
 
@@ -68,7 +68,7 @@ const construct = el => {
     }
   })
 
-  el.redraw = () => {   // TODO 3 does redraw() need to be public? NO! It shouldn´t at all in case you are asking me, haha. I remember your TODO´s were for you not meant to be answered?
+  el.redraw = () => {   // TODO P 3 does redraw() need to be public? NO! It shouldn´t at all in case you are asking me, haha. I remember your TODO´s were for you not meant to be answered?
     //VARIABLES
     /*CENTER OF ROTATION*/
     // isn´t cx,cy misleading? as in fact it is not, but the center of rotation
@@ -76,7 +76,7 @@ const construct = el => {
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
-    _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO 2 we need to discuss this. If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
+    _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO P 2 we need to discuss this. If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
 
     /*ASSIGN CHARS*/
     let chars = (textEl.text.split("")); // array of char set of text to curve
@@ -133,7 +133,7 @@ const construct = el => {
             let last = numChars -1;
             let lastChar = last - 1;
             let firstChar = cumWidths[0];
-            
+
 
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
 
@@ -146,10 +146,10 @@ const construct = el => {
         }else{  // _charAngle is defined, so use it to rotate each character (like modus==='fix')
 
           //ROTATION PER CHAR
-          (char[i].parent as GroupElement).groupTransform.rotate.angle =  i * _charAngle; // TODO 3 this could probably be simplified: don't need the i>0
+          (char[i].parent as GroupElement).groupTransform.rotate.angle =  i * _charAngle; // TODO P 3 this could probably be simplified: don't need the i>0
                                                                                                      //hahaha. what did I think??? just shouldn´t look that easy ;)
           //TEXT-ANCHOR
-          (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText 
+          (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
 
               - (textAnchor == "middle" ? (numChars - 1)* _charAngle / 2
             :   textAnchor == "start" ?  - (_charAngle / 2)
