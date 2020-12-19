@@ -1,4 +1,3 @@
-// TODO G 3 typescript doesn't like this file much; do we need to do something with tsconfig.json?
 import { me as device } from "device"
 
 const construct = el => {
@@ -146,8 +145,8 @@ const construct = el => {
         }else{  // _charAngle is defined, so use it to rotate each character (like modus==='fix')
 
           //ROTATION PER CHAR
-          (char[i].parent as GroupElement).groupTransform.rotate.angle =  i * _charAngle; // TODO G 3 this could probably be simplified: don't need the i>0
-                                                                                                     //hahaha. what did I think??? just shouldn´t look that easy ;)
+          (char[i].parent as GroupElement).groupTransform.rotate.angle =  i * _charAngle;
+
           //TEXT-ANCHOR
           (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
 
