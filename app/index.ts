@@ -180,3 +180,4 @@ let textChars = document.getElementById("textChars") as GroupElement;
   textChars.style.opacity = (seconds % 2) == 0 ?  1 : 0;
   //console.log(textChars.style.opacity);
   };
+// could also change colors, smooth or in ontick; font-size, I guess, position of the circle, radius.....
