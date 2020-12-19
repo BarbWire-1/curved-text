@@ -123,20 +123,18 @@ for (i = 0; i < numChars ; i++) {
           //prevWidth = nextWidth; // not used
         }
 
-        //TEXT-ANCHOR and ROTATION
-        //let last = numChars -1;
-        //let lastChar = last - 1;
-        //console.log("lastChar "+ last);
-        let firstChar = cumWidths[0];
-        console.log("first char "+ firstChar);
+         //TEXT-ANCHOR and ROTATION
+            let last = numChars -1;
+            let lastChar = last - 1;
+            let firstChar = cumWidths[0];
+            
 
-        (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
+            (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
 
             rotateText
-                -  (textAnchor == "middle" ? (textWidth - firstChar / 2 +  (i-1) * letterSpacing )  * degreePx / 2
-              :    textAnchor == "start" ? - (letterSpacing  / 2) ?? 0 * degreePx
-
-              : +  (textWidth + (i -1/2 )* letterSpacing ) * degreePx);
+                -  (textAnchor == "middle" ? (textWidth +  (i - 1) * letterSpacing )  * degreePx / 2
+              :    textAnchor == "start" ?  (letterSpacing - firstChar) / 2  * degreePx
+              : +  (textWidth + (i - 3/2 ) * letterSpacing + lastChar  / 2 ) * degreePx);
 
     }else{
 

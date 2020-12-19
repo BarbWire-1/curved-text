@@ -128,14 +128,12 @@ const construct = el => {
               //let prevWidth = nextWidth;  // not used
             }
 
-// fixed the nasty width0 thingy.... that was nearly killing me!  🙃
-// I had some scope issue, when I wrote the file I think, and then M whole logic didn´t work anymore so I badly improvised
+
              //TEXT-ANCHOR and ROTATION
             let last = numChars -1;
             let lastChar = last - 1;
-            console.log("lastChar "+ last);
             let firstChar = cumWidths[0];
-            console.log("first char "+ firstChar);
+            
 
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
 
