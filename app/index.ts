@@ -4,6 +4,7 @@ import { user } from "user-profile"
 import { me as device } from "device"
 import widgetFactory from './widgets/widget-factory'
 import curvedText from './widgets/curved-text'
+import clock from "clock"
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
 //Initialise widget system
@@ -155,10 +156,26 @@ for (i = 0; i < numChars ; i++) {
 // Rotate on time
 const initRotation = () => {
 const now = new Date();
-var angleSeconds = (now.getSeconds()* 6);
-var angleSmoothSeconds = (now.getSeconds() * 1000 + now.getMilliseconds()) * 6 / 1000;
-curvedTextWidget1.startAngle = angleSeconds;
-curvedTextWidget2.startAngle = angleSmoothSeconds; // great, you introduced the arc :)
-requestAnimationFrame(initRotation);
+  let angleSeconds = (now.getSeconds()* 6);
+  let angleSmoothSeconds = (now.getSeconds() * 1000 + now.getMilliseconds()) * 6 / 1000;
+
+  curvedTextWidget1.startAngle = angleSeconds;
+  curvedTextWidget2.startAngle = angleSmoothSeconds; // great, you introduced the arc :)
+
+  requestAnimationFrame(initRotation);
 }
 requestAnimationFrame(initRotation);
+
+clock.granularity = "seconds"
+let textChars = document.getElementById("textChars") as GroupElement;
+// Opacity
+  clock.ontick = (evt) => {
+  const now = new Date();
+  let seconds = now.getSeconds();
+  
+  //@ts-ignore
+  //curvedText2.opacity = (seconds % 2) = 0 ?  1 : 0; //cant reach curvedWidgetText2 from here
+  //@ts-ignore
+  textChars.style.opacity = (seconds % 2) == 0 ?  1 : 0;
+  //console.log(textChars.style.opacity);
+  };
