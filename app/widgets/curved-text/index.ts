@@ -146,8 +146,8 @@ const construct = el => {
         }else{  // _charAngle is defined, so use it to rotate each character (like modus==='fix')
 
           //ROTATION PER CHAR
-          (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * _charAngle : 0; // TODO 3 this could probably be simplified: don't need the i>0
-
+          (char[i].parent as GroupElement).groupTransform.rotate.angle =  i * _charAngle; // TODO 3 this could probably be simplified: don't need the i>0
+                                                                                                     //hahaha. what did I think??? just shouldn´t look that easy ;)
           //TEXT-ANCHOR
           (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
 
