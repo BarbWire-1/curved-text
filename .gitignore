@@ -112,3 +112,6 @@ build/
 backup.bat
 Backup_Excludes.txt
 backup/
+
+# BW Local
+history
