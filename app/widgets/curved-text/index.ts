@@ -32,7 +32,8 @@ const construct = el => {
   const startAngle = el.getElementById('orientation').startAngle    // read value (if any) from SVG
   let rotateText: number = startAngle? startAngle : 0      //angle to rotate whole text from its beginning
   let letterSpacing: number = 10
-  let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
+  //let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
+  // modus deprecated: use _charAngle instead. If _charAngle is undefined, behave as per modus==="auto".
 
                                                                               // OH!!!! you use MODUS for letter-alignment? it´s thought for alignment of the whole textElement
                                                                               // letters have to be fix "middle" to rotate them nicely
@@ -40,7 +41,7 @@ const construct = el => {
                                                                               // That must be, where your alignment fights back
 
   /*Rotate fix angle*/
-  let charAngle: number = 10;//angle each char  // TODO 3 What's this? Is 10 always going to be appropriate, or should it change with font size?
+  let _charAngle: number;  //angle each char. Name changed from charAngle because charAngle is now the name of the property (setter).
 
   //console.log(`text=${textEl.text} anchor=${textEl.textAnchor} r=${positionEl.r}`)
 
@@ -60,6 +61,13 @@ const construct = el => {
     }
   })
 
+  Object.defineProperty(el, 'charAngle', {  // This isn't the ideal name, but it's consistent with the equivalent attribute in the <arc>
+    set: function(newValue) {
+      _charAngle = newValue
+      el.redraw()
+    }
+  })
+
   el.redraw = () => {   // TODO 3 does redraw() need to be public? NO! It shouldn´t at all in case you are asking me, haha. I remember your TODO´s were for you not meant to be answered?
     //VARIABLES
     /*CENTER OF ROTATION*/
@@ -68,7 +76,7 @@ const construct = el => {
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
-    charAngle = charAngle * (radius < 0 ? -1 : 1);
+    _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO 2 we need to discuss this. If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
 
     /*ASSIGN CHARS*/
     let chars = (textEl.text.split("")); // array of char set of text to curve
@@ -91,7 +99,7 @@ const construct = el => {
         char[i].y = radius < 0 ? - radius : - radius + char[0].getBBox().height / 2;//move text it´s height downwards
 
         /*FOR AUTO MODUS*/
-        if (modus == "auto") {
+        if (! _charAngle) {   // _charAngle unspecified, so behave like modus==="auto"; ie, work out char angles automatically
 
           const circ = 2 * radius * Math.PI;
           let degreePx = 360 / circ;
@@ -137,17 +145,17 @@ const construct = el => {
               : +  (textWidth + (i - 3/2 ) * letterSpacing + lastChar  / 2 ) * degreePx);
 
 
-        }else{
+        }else{  // _charAngle is defined, so use it to rotate each character (like modus==='fix')
 
           //ROTATION PER CHAR
-          (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * charAngle : 0; // TODO 3 this could probably be simplified: don't need the i>0
+          (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * _charAngle : 0; // TODO 3 this could probably be simplified: don't need the i>0
 
           //TEXT-ANCHOR
           (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
 
-              - (textAnchor == "middle" ? (numChars - 1)* charAngle / 2
-            :   textAnchor == "start" ?  - (charAngle / 2)
-            : + (numChars - (numChars % 2 == 0 ? 0.5 : 1)) * charAngle);
+              - (textAnchor == "middle" ? (numChars - 1)* _charAngle / 2
+            :   textAnchor == "start" ?  - (_charAngle / 2)
+            : + (numChars - (numChars % 2 == 0 ? 0.5 : 1)) * _charAngle);
 
         };
 
