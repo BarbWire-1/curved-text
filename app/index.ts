@@ -22,8 +22,8 @@ setInterval(() => {
 }, 100)*/
 
 
-let myText = document.getElementById("myText");
-let myText2 = document.getElementById("myText2");
+let myText = document.getElementById("myText") as TextElement;
+let myText2 = document.getElementById("myText2") as TextElement;
 let position = document.getElementById("position") as ContainerElement;
 
 //perhaps we could have something similar to this per Label ?
@@ -39,7 +39,7 @@ let radius: number = 120;//if negative, text is bottom curve
 let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
-let rotateText: number = 90;//angle to rotate whole text from it´s beginning
+let rotateText: number = 0;//angle to rotate whole text from it´s beginning
 let letterSpacing: number = 5;
 let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
@@ -50,7 +50,7 @@ let charAngle: number = 10;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
 myText.text = "MiMiMiMiMiMi"  ; //"0.0.0.0.0.0.0.0.0"
-myText2.text = "YES WE CAN"// enter text ar data here "MiMiMiMiMiMi"
+myText2.text = "CHANGING"// enter text ar data here "MiMiMiMiMiMi"
 
 //-----------------------------------------------------------------------------------------------------------------------------
 /* after I read your widgets-factory a few times, I finally understood   // Please delete this, if useless BW
@@ -167,14 +167,16 @@ const initRotation = () => {
 const now = new Date();
 
   let angleSeconds = (now.getSeconds()* 6);
+  let as = angleSeconds;
   let angleSmoothSeconds = (now.getSeconds() * 1000 + now.getMilliseconds()) * 6 / 1000;
-
-   // much better in on tick, or if throttled. but just to keep it together
-  curvedTextWidget2.startAngle = 360 + angleSmoothSeconds; // great, you introduced the arc :) 
-  
-
-  textChars.style.opacity = cos(3*angleSmoothSeconds);  // rotation in "auto" modus is understandably rather laggy. best to keep this for "fix"?
-                                                 
+  let ass = angleSmoothSeconds;
+  //@ts-ignore
+  curvedTextWidget2.startAngle = ass; // great, you introduced the arc :) 
+  //@ts-ignore
+  textChars.style.opacity = Math.min(Math.max(cos(6*ass),0),1);// opacity inherited => chars
+  // rotation in "auto" modus is understandably rather laggy. best to keep this for "fix"?
+  //@ts-ignore
+   myText2.style.fill = 256*256*Math.floor(255 *(360 - as)/360) + 256*Math.floor(255*as/360);                                        
   requestAnimationFrame(initRotation);
 }
 requestAnimationFrame(initRotation);
@@ -191,10 +193,12 @@ clock.granularity = "seconds"
   //curvedText2.opacity = (seconds % 2) = 0 ?  1 : 0; //cant reach curvedWidgetText2 from here
 
   //@ts-ignore
-  //textChars.style.opacity = (seconds % 2) == 0 ?  1 : 0;
+  textChars.style.opacity = (seconds % 2) == 0 ?  1 : 0;
   //console.log(textChars.style.opacity);
   curvedTextWidget1.startAngle = seconds*6;
-  textChars.style.fill = "#18d6cd" ;
- 
+  textChars.style.fill = "#18d6cd" ;// inherited => chars[i]
+  
+  //@ts-ignore
+  //myText2.style.fill = 255*255*Math.floor((255 - 255)*seconds/60) + 255*Math.floor((0 + 255)*seconds/60) + Math.floor(255 - 255)*seconds/60;
 };
 // could also change colors, smooth or in ontick; font-size, I guess, position of the circle, radius.....

@@ -71,7 +71,7 @@
 
       <!--TRY ON SECOND TEXT-->
       <svg id= "position">
-      <text id="myText2" class="textID" x="50%" y="50%" fill="magenta" opacity="0.4" text-length="30" >0123456789</text>
+      <text id="myText2" class="textID" x="50%" y="50%" fill="magenta" opacity="1" text-length="30" >0123456789</text>
       <g id="textChars" transform="translate(50%,50%) rotate(0)" opacity="1">
          <g>
             <g >
