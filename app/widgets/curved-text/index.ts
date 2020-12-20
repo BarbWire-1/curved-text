@@ -77,7 +77,7 @@ const construct = el => {
 
     //PREVENT MIRRORING
     _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 1 If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
-    console.log(`_charAngle=${_charAngle}`)
+    console.log(`_charAngle=${_charAngle}`)   // TODO 1 _charAngle can be NaN; is that okay?
 
     /*ASSIGN CHARS*/
     let chars = (textEl.text.split("")); // array of char set of text to curve

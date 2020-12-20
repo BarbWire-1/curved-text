@@ -11,7 +11,7 @@ import clock from "clock"
 const widgets = widgetFactory([curvedText])
 widgets.registerContainer(document)
 const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
-curvedTextWidget1.startAngle = 180
+//curvedTextWidget1.startAngle = 180  // not implemented yet
 const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 curvedTextWidget2.text = '123456'
 curvedTextWidget2.charAngle = 45  // specify exactly how many degrees per character, instead of modus==="auto"
@@ -120,7 +120,7 @@ for (i = 0; i < numChars ; i++) {
          : + (numChars - (numChars % 2 == 0 ? 0.5 : 1)) * charAngle);
 
     };
-    
+
  };
 
 // TODO G 4.9 delete all unnecessary code (non-widget code, etc) from all files in this branch
