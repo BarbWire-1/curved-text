@@ -56,7 +56,8 @@ const construct = el => {
   Object.defineProperty(el, 'startAngle', {  // This isn't the ideal name, but it's consistent with the equivalent attribute in the <arc>
     set: function(newValue) {
       rotateText = newValue
-      el.redraw()   // TODO G 3.0 This is inefficient, because it lays out every character again. It shouldn't be used for animation, but would be okay for config changes.
+      //el.redraw()   // TODO G 3.0 This is inefficient, because it lays out every character again. It shouldn't be used for animation, but would be okay for config changes.
+      throw 'curved-test redraw() is not implemented'
     }
   })
 
@@ -67,15 +68,16 @@ const construct = el => {
     }
   })
 
-  el.redraw = () => {   // TODO G 4 does redraw() need to be public? 
+  el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     //VARIABLES
     /*CENTER OF ROTATION*/
     // isn´t cx,cy misleading? as in fact it is not, but the center of rotation
-    charGroupEl.x = positionEl.cx - device.screen.width / 2; 
+    charGroupEl.x = positionEl.cx - device.screen.width / 2;
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
     _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 1 If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
+    console.log(`_charAngle=${_charAngle}`)
 
     /*ASSIGN CHARS*/
     let chars = (textEl.text.split("")); // array of char set of text to curve
@@ -98,7 +100,7 @@ const construct = el => {
         char[i].y = radius < 0 ? - radius : - radius + char[0].getBBox().height / 2;//move text it´s height downwards
 
         /*FOR AUTO MODUS*/
-        if (! _charAngle) {   // _charAngle unspecified, so behave like modus==="auto"; ie, work out char angles automatically ?? 
+        if (! _charAngle) {   // _charAngle unspecified, so behave like modus==="auto"; ie, work out char angles automatically ??
                               // TODO G 10 this would require an empty setting. With 2 modi you could forget about the charAngle setting, as it would be ignored for "auto"
           const circ = 2 * radius * Math.PI;
           let degreePx = 360 / circ;
@@ -168,3 +170,4 @@ export default () => {
     construct: construct
   }
 }
+// TODO G 2 realign widget with base code, from Barb's commits 20-21Dec

@@ -82,8 +82,8 @@
             </g>
          <animateTransform attributeType="rotate" begin="load" end="click" from="0" to="-360" dur="60" repeatCount="2" final="restore" />
          </g>
-         
-      
+
+
 
       <!--TRY ON SECOND TEXT-->
       <svg id= "position">
@@ -153,11 +153,11 @@
          </g>
       </g>
       </svg>
-     
+
       <arc x="48" y="48" width="240" height="240" fill="orange"
          arc-width="1" start-angle="0" sweep-angle="360" opacity = "0" />
    </svg>
- 
+
    <defs>
     <symbol id="lines">
       <line id="vertical" x1="50%" x2="50%" y1="0" y2="100%" fill="inherit" />
@@ -169,11 +169,11 @@
    <!-- Widgets -->
    <!-- TODO G 4 see if opacity and fill animations can be applied here -->
    <!-- TODO G 5.x translate rotateUse to it´s cx,cy in widget-->
-   
-   
-  
-  
-   
+
+
+
+
+
    <use id="curvedText1" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
@@ -182,8 +182,8 @@
       <set href="#position" attributeName="cy" to="250" />
       <set href="#position" attributeName="r" to="80" />
    </use>
-   
-  
+
+
 
    <use id="curvedText2" href="#curvedText" fill="green" opacity="1">
       <set href="#text" attributeName="text-buffer" to="another one" />
@@ -192,7 +192,7 @@
       <set href="#text" attributeName="font-size" to="45" />
       <set href="#position" attributeName="cx" to="250" />
       <set href="#position" attributeName="cy" to="250" />
-      <set href="#position" attributeName="r" to="60" />
+      <set href="#position" attributeName="r" to="-60" />
       <set href="#orientation" attributeName="start-angle" to="90" />
    </use>
 
