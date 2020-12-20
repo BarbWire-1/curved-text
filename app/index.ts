@@ -19,8 +19,8 @@ curvedTextWidget2.charAngle = 45  // specify exactly how many degrees per charac
 
 let myText = document.getElementById("myText") as TextElement;
 let myText2 = document.getElementById("myText2") as TextElement;
-let position = document.getElementById("position") as ContainerElement;
-
+const position = document.getElementById("position") as ContainerElement; //x,y of SVG move center of circle
+const rotate =document.getElementById("rotate") as GroupElement; // angle used for alignment + rotateText
 
 //YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
 let letterSpacing: number = 5;
-let textAnchor: string = "middle"; //start, middle,  end at 0°
+let textAnchor: string = "start"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
 
@@ -39,7 +39,7 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 let charAngle: number = 10;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-myText.text = "MiMiMiMiMiMi"  ; //"0.0.0.0.0.0.0.0.0"
+myText.text = "MiMiMiMiMiMi"//"Hi Peter, sorry for the chaos I made with bad naming!"  ; //"0.0.0.0.0.0.0.0.0"
 myText2.text = "CHANGING"// enter text ar data here "MiMiMiMiMiMi"
 
 
@@ -103,7 +103,7 @@ for (i = 0; i < numChars ; i++) {
             let firstChar = cumWidths[0];
 
 
-            (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
+            (rotate as GroupElement).groupTransform.rotate.angle =
 
             rotateText
                 -  (textAnchor == "middle" ? (textWidth +  (i - 1) * letterSpacing )  * degreePx / 2
@@ -116,7 +116,7 @@ for (i = 0; i < numChars ; i++) {
       (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * charAngle : 0;
 
       //TEXT-ANCHOR
-      (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
+      (rotate as GroupElement).groupTransform.rotate.angle = rotateText
 
            - (textAnchor == "middle" ? (numChars - 1)* charAngle / 2
          :   textAnchor == "start" ?  - (charAngle / 2)

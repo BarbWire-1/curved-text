@@ -3,9 +3,9 @@
 
     <!--TEXT-->
     <svg id= "position" fill="#18d6cd">  <!-- added fill here because it got taken out of CSS so widget could over-ride it -->
-      <text id="myText" class="textID" x="50%" y="50%" opacity="0" text-length="30">0.0.0</text>
-      <g id="textChars" transform="translate(50%,50%) rotate(0)" opacity="1">
-         <g>
+      <text id="myText" class="textID" x="50%" y="50%" opacity="0" text-length="50">0.0.0</text>
+      <g transform="translate(50%,50%) rotate(0)" opacity="1"><!-- don´t change. translates textElements to centerpoint-->
+         <g id="rotate">
             <g >
                <text class="text char"/>
             </g>
@@ -67,14 +67,14 @@
                <text class="text char"/>
             </g>
          </g>
-         <animateTransform attributeType="rotate" begin="load" end="enable" from="0" to="360" dur="60" repeatCount="indefinite" final="restore" />
+         <animateTransform attributeType="rotate" begin="load" end="click" from="0" to="-360" dur="60" repeatCount="2" final="restore" />
       </g>
 
       <!--TRY ON SECOND TEXT-->
       <svg id= "position">
       <text id="myText2" class="textID" x="50%" y="50%" fill="magenta" opacity="1" text-length="30" >0123456789</text>
-      <g id="textChars" transform="translate(50%,50%) rotate(0)" opacity="1">
-         <g>
+      <g transform="translate(50%,50%) rotate(0)" opacity="1"> <!-- not to change. translates textElements to centerpoint-->
+         <g id="rotate">
             <g >
                <text class="text char"/>
             </g>
@@ -138,10 +138,11 @@
          </g>
       </g>
       </svg>
+     
       <arc x="48" y="48" width="240" height="240" fill="orange"
          arc-width="1" start-angle="0" sweep-angle="360" opacity = "0" />
    </svg>
-
+ 
    <defs>
     <symbol id="lines">
       <line id="vertical" x1="50%" x2="50%" y1="0" y2="100%" fill="inherit" />
