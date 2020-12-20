@@ -11,9 +11,10 @@
          <g>  <!-- TODO G 4 why is this level of <g> required?-->
                                                                   <!--TODO B 2 That´s odd. I commented it out, but then the rotation got messed up.
                                                                   Maybe there are too many commands on one level then, or maybe the are computed in the false sequence,
-                                                                  as this level is used for alignment, the next for rotating the whole aligned text-->
+                                                                  as this level is used for alignment, the next for rotating the whole aligned text
+                                                                  TODO G 1 we need to dicuss structure of the symbol related to my code, to not translate x-times and loosing overwiew-->
             <g >
-               <text class="text char"/>
+               <text class="text char"/>                           
             </g>
             <g >
                <text class="text char"/>
