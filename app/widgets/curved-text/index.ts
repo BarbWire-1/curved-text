@@ -67,11 +67,11 @@ const construct = el => {
     }
   })
 
-  el.redraw = () => {   // TODO G 4 does redraw() need to be public? NO! It shouldn´t at all in case you are asking me, haha. I remember your TODO´s were for you not meant to be answered?
+  el.redraw = () => {   // TODO G 4 does redraw() need to be public? 
     //VARIABLES
     /*CENTER OF ROTATION*/
     // isn´t cx,cy misleading? as in fact it is not, but the center of rotation
-    charGroupEl.x = positionEl.cx - device.screen.width / 2; // -half width. why is me.screen.width / 2 not working??? Permission?
+    charGroupEl.x = positionEl.cx - device.screen.width / 2; 
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
@@ -98,8 +98,8 @@ const construct = el => {
         char[i].y = radius < 0 ? - radius : - radius + char[0].getBBox().height / 2;//move text it´s height downwards
 
         /*FOR AUTO MODUS*/
-        if (! _charAngle) {   // _charAngle unspecified, so behave like modus==="auto"; ie, work out char angles automatically
-
+        if (! _charAngle) {   // _charAngle unspecified, so behave like modus==="auto"; ie, work out char angles automatically ?? 
+                              // TODO G 10 this would require an empty setting. With 2 modi you could forget about the charAngle setting, as it would be ignored for "auto"
           const circ = 2 * radius * Math.PI;
           let degreePx = 360 / circ;
           let charWidth = char[i].getBBox().width;

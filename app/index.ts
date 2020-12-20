@@ -15,25 +15,15 @@ curvedTextWidget1.startAngle = 180
 const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 curvedTextWidget2.text = '123456'
 curvedTextWidget2.charAngle = 45  // specify exactly how many degrees per character, instead of modus==="auto"
-/*let angle = 0
-setInterval(() => {
-  angle = (angle + 5) % 360
-  curvedTextWidget1.startAngle = angle  // this is unforgiveably inefficient
-}, 100)*/
 
 
 let myText = document.getElementById("myText") as TextElement;
 let myText2 = document.getElementById("myText2") as TextElement;
 let position = document.getElementById("position") as ContainerElement;
 
-//perhaps we could have something similar to this per Label ?
-
-//const timeLabel = new curvedText({ id:'timeLabel', modus:"auto",radius:100,centerX: 168,centery:168,rotateText:0,letterSpacing:10,textAnchor:"middle"}];
 
 //YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
-//control panel in index.ts
-let textID = document.getElementsByClassName("textID");
-//let ID = myText
+
 //Circle
 let radius: number = 120;//if negative, text is bottom curve
 let centerX: number = 168; //moves the centerpoint of the circle
@@ -52,24 +42,7 @@ let charAngle: number = 10;//angle each char
 myText.text = "MiMiMiMiMiMi"  ; //"0.0.0.0.0.0.0.0.0"
 myText2.text = "CHANGING"// enter text ar data here "MiMiMiMiMiMi"
 
-//-----------------------------------------------------------------------------------------------------------------------------
-/* after I read your widgets-factory a few times, I finally understood   // Please delete this, if useless BW
-  this is exactly what you are going to do.
-  I´ve got to understand your construction/syntax better....
-//FIRST STEP DONE
 
-let t: number;
-//textID[t].id;
-for (t = 0; t < textID.length; t++) {
-console.log("all texts ID "+textID[t].id);
-let content = textID ;
-console.log("all texts by ID " + content[t].text)
-
-//content[1].text = "LET ME SEE"// enter text ar data here MiW!MiW!MiW!M
-}
-*/
-
-//outcommented to concentrate on widgetFactory, as it might become inconsistent if both run parallel
 //---------------------------------------------------------------------------------------------------------------------------------
 //VARIABLES
 
