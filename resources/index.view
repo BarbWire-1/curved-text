@@ -67,7 +67,7 @@
                <text class="text char"/>
             </g>
          </g>
-         <animateTransform attributeType="rotate" begin="click" from="0" to="180" dur="5" final="restore" />
+         <animateTransform attributeType="rotate" begin="load" end="enable" from="0" to="360" dur="60" repeatCount="infinite" final="restore" />
       </g>
 
       <!--TRY ON SECOND TEXT-->
@@ -152,6 +152,8 @@
 
    <!-- Widgets -->
    <!-- TODO G 4 see if opacity and fill animations can be applied here -->
+   <g id="rotateUse">
+   <animateTransform attributeType="rotate" begin="load" end="enable" from="0" to="360" dur="60" repeatCount="indefinite" final="restore" />
    <use id="curvedText1" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
@@ -160,6 +162,8 @@
       <set href="#position" attributeName="cy" to="250" />
       <set href="#position" attributeName="r" to="80" />
    </use>
+   </g>
+  
 
    <use id="curvedText2" href="#curvedText" fill="green" opacity="1">
       <set href="#text" attributeName="text-buffer" to="another one" />

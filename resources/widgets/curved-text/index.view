@@ -6,7 +6,10 @@
     <svg id= "charGroup">                   <!--Why not position via svg? I had built one surrounding all to be able to move the circle-center, without translate the g dynamically-->
       <!--<text id="myText" x="50%" y="50%" opacity="0" />-->
       <g id="textChars" transform="translate(50%,50%) rotate(0)">
-         <g>  <!-- TODO G 4 why is this level of <g> required?    Oh, I think it isn´t at all -->
+         <g>  <!-- TODO G 4 why is this level of <g> required?-->
+                                                                  <!--TODO B 2 That´s odd. I commented it out, but then the rotation got messed up.
+                                                                  Maybe there are too many commands on one level then, or maybe the are computed in the false sequence,
+                                                                  as this level is used for alignment, the next for rotating the whole aligned text-->
             <g >
                <text class="text char"/>
             </g>
