@@ -3,8 +3,7 @@
 
     <!--TEXT-->
     <svg id= "position" fill="#18d6cd">  <!-- added fill here because it got taken out of CSS so widget could over-ride it -->
-      <text id="myText" class="textID" x="50%" y="50%" opacity="0" text-length="50">0.0.0</text>
-      <g transform="translate(50%,50%) rotate(0)" opacity="1"><!-- don´t change. translates textElements to centerpoint-->
+     <text id="myText" class="text" font-size="30" text-length="100" opacity="0">Text</text>
          <g id="rotate">
             <g >
                <text class="text char"/>
@@ -66,9 +65,25 @@
             <g>
                <text class="text char"/>
             </g>
-         </g>
+             <g>
+               <text class="text char"/>
+            </g>
+            <g>
+               <text class="text char"/>
+            </g>
+            <g>
+               <text class="text char"/>
+            </g>
+            <g>
+               <text class="text char"/>
+            </g>
+            <g>
+               <text class="text char"/>
+            </g>
          <animateTransform attributeType="rotate" begin="load" end="click" from="0" to="-360" dur="60" repeatCount="2" final="restore" />
-      </g>
+         </g>
+         
+      
 
       <!--TRY ON SECOND TEXT-->
       <svg id= "position">

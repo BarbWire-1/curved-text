@@ -30,7 +30,7 @@ let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-let letterSpacing: number = 5;
+let letterSpacing: number = 0;
 let textAnchor: string = "start"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
@@ -39,20 +39,17 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 let charAngle: number = 10;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-myText.text = "MiMiMiMiMiMi"//"Hi Peter, sorry for the chaos I made with bad naming!"  ; //"0.0.0.0.0.0.0.0.0"
+myText.text = "I feel so sorry, really!"//"Hi Peter, sorry for the chaos I made with bad naming!"  ; //"0.0.0.0.0.0.0.0.0"
 myText2.text = "CHANGING"// enter text ar data here "MiMiMiMiMiMi"
 
 
 //---------------------------------------------------------------------------------------------------------------------------------
 //VARIABLES
 
+
 //CENTER OF ROTATION
-
-position.x = centerX - device.screen.width / 2; // -half width. why is me.screen.width / 2 not working??? Permission?
-
-/*CENTER OF ROTATION*/
-position.x = centerX - device.screen.width / 2; // -half width
-position.y = centerY - device.screen.height / 2;
+position.x = centerX //- device.screen.width / 2; // -half width
+position.y = centerY //- device.screen.height / 2;
 
 //PREVENT MIRRORING
 charAngle = charAngle * (radius < 0 ? -1 : 1);
