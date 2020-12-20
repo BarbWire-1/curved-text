@@ -67,6 +67,7 @@
                <text class="text char"/>
             </g>
          </g>
+         <animateTransform attributeType="rotate" begin="click" from="0" to="180" dur="5" final="restore" />
       </g>
 
       <!--TRY ON SECOND TEXT-->
