@@ -12,9 +12,9 @@ const construct = el => {
   const positionEl = el.getElementById('position')
   const charGroupEl = el.getElementById('charGroup')
   let radius = positionEl.r
-  let textAnchor = textEl.textAnchor
+  let textAnchor = textEl.textAnchor    // TODO G 3.0 test that this works as expected
 
-  // TODO G 3 implement setters for all settings
+  // TODO G 3.5 implement setters for all settings: letterSpacing
 
   // Would be great to have a "line-up" in app/index similar to how fitfont does
   // like this:
@@ -56,7 +56,7 @@ const construct = el => {
   Object.defineProperty(el, 'startAngle', {  // This isn't the ideal name, but it's consistent with the equivalent attribute in the <arc>
     set: function(newValue) {
       rotateText = newValue
-      el.redraw()   // TODO G 4 This is inefficient, because it lays out every character again. It shouldn't be used for animation, but would be okay for config changes.
+      el.redraw()   // TODO G 3.0 This is inefficient, because it lays out every character again. It shouldn't be used for animation, but would be okay for config changes.
     }
   })
 
@@ -67,7 +67,7 @@ const construct = el => {
     }
   })
 
-  el.redraw = () => {   // TODO G 3 does redraw() need to be public? NO! It shouldn´t at all in case you are asking me, haha. I remember your TODO´s were for you not meant to be answered?
+  el.redraw = () => {   // TODO G 4 does redraw() need to be public? NO! It shouldn´t at all in case you are asking me, haha. I remember your TODO´s were for you not meant to be answered?
     //VARIABLES
     /*CENTER OF ROTATION*/
     // isn´t cx,cy misleading? as in fact it is not, but the center of rotation
@@ -75,7 +75,7 @@ const construct = el => {
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
-    _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 2 we need to discuss this. If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
+    _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 1 If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
 
     /*ASSIGN CHARS*/
     let chars = (textEl.text.split("")); // array of char set of text to curve

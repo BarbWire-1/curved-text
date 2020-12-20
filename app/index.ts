@@ -128,7 +128,7 @@ for (i = 0; i < numChars ; i++) {
             let last = numChars -1;
             let lastChar = last - 1;
             let firstChar = cumWidths[0];
-            
+
 
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
 
@@ -143,7 +143,7 @@ for (i = 0; i < numChars ; i++) {
       (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * charAngle : 0;
 
       //TEXT-ANCHOR
-      (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText 
+      (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
 
            - (textAnchor == "middle" ? (numChars - 1)* charAngle / 2
          :   textAnchor == "start" ?  - (charAngle / 2)
@@ -171,12 +171,12 @@ const now = new Date();
   let angleSmoothSeconds = (now.getSeconds() * 1000 + now.getMilliseconds()) * 6 / 1000;
   let ass = angleSmoothSeconds;
   //@ts-ignore
-  curvedTextWidget2.startAngle = ass; // great, you introduced the arc :) 
+  curvedTextWidget2.startAngle = ass; // great, you introduced the arc :)
   //@ts-ignore
   textChars.style.opacity = Math.min(Math.max(cos(6*ass),0),1);// opacity inherited => chars
   // rotation in "auto" modus is understandably rather laggy. best to keep this for "fix"?
   //@ts-ignore
-   myText2.style.fill = 256*256*Math.floor(255 *(360 - as)/360) + 256*Math.floor(255*as/360);                                        
+   myText2.style.fill = 256*256*Math.floor(255 *(360 - as)/360) + 256*Math.floor(255*as/360);
   requestAnimationFrame(initRotation);
 }
 requestAnimationFrame(initRotation);
@@ -197,8 +197,9 @@ clock.granularity = "seconds"
   //console.log(textChars.style.opacity);
   curvedTextWidget1.startAngle = seconds*6;
   textChars.style.fill = "#18d6cd" ;// inherited => chars[i]
-  
+
   //@ts-ignore
   //myText2.style.fill = 255*255*Math.floor((255 - 255)*seconds/60) + 255*Math.floor((0 + 255)*seconds/60) + Math.floor(255 - 255)*seconds/60;
 };
 // could also change colors, smooth or in ontick; font-size, I guess, position of the circle, radius.....
+// TODO G 4.9 delete all unnecessary code (non-widget code, etc) from all files in this branch

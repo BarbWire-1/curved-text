@@ -150,6 +150,7 @@
   <use href="#lines" fill="orange" />
 
    <!-- Widgets -->
+   <!-- TODO G 4 see if opacity and fill animations can be applied here -->
    <use id="curvedText1" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
