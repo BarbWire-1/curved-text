@@ -31,15 +31,15 @@ let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
 let letterSpacing: number = 0;
-let textAnchor: string = "start"; //start, middle,  end at 0°
+let textAnchor: string = "end"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
 
 //Rotate fix angle
-let charAngle: number = 10;//angle each char
+let charAngle: number = 0;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-myText.text = "I feel so sorry, really!"//"Hi Peter, sorry for the chaos I made with bad naming!"  ; //"0.0.0.0.0.0.0.0.0"
+myText.text = "0.0.0.0.0.0.0.0.0" //"0.0.0.0.0.0.0.0.0"
 myText2.text = "CHANGING"// enter text ar data here "MiMiMiMiMiMi"
 
 
