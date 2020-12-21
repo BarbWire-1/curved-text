@@ -26,21 +26,21 @@ const rotate =document.getElementById("rotate") as GroupElement; // angle used f
 //YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
 
 //Circle
-let radius: number = -120;//if negative, text is bottom curve
+let radius: number = 120;//if negative, text is bottom curve
 let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-let letterSpacing: number = 10;
+let letterSpacing: number = 20;
 let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "fix"; // auto: automatic, fix: rotate fix angle each
 
 
 //Rotate fix angle
-let charAngle: number = 20;//angle each char
+let charAngle: number = 10;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-myText.text = "0.0.0.0.0.0.0.0.0" //"0.0.0.0.0.0.0.0.0"
+myText.text = "ABCDEFGHIJKLM" //"0.0.0.0.0.0.0.0.0"
 myText2.text = "CHANGING"// enter text ar data here "MiMiMiMiMiMi"
 
 
@@ -58,6 +58,7 @@ console.log("charAngle "+charAngle)
 //ASSIGN CHARS
 let chars = (myText.text.split("")); // array of char set of text to curve
 let char  = document.getElementsByClassName("char") as TextElement[];// single char textElements
+let firstChar = document.getElementById("firstChar");
 
 
 
@@ -65,8 +66,8 @@ const circ = 2 * radius * Math.PI; // not ok. logs i times
 //console.log ("circ "+circ)
 const degreePx = 360 / circ;
 //console.log("degreePy "+degreePx)
-
-      
+let textWidth = myText.getBBox().width;  //Better take textWidth, as it´s only one process??
+      //console.log("textWidth "+textWidth);
 
 
 
@@ -74,19 +75,26 @@ const degreePx = 360 / circ;
 //CALCULATE PROPERTIES OF CHARS
 let i;
 let numChars: number = chars.length
-console.log("numChars "+numChars)
+//console.log("numChars "+numChars)
+//@ts-ignore
+
+
+
+
+
+
 //for (i = 0; i < numChars ; i++) {
 for (i = 0; i < chars.length ; i++) {
 
-    
+   
     char[i].text = chars[i];// assign chars to the single textElements//OK
     //console.log(char[i].text);
     char[i].y = radius < 0 ? - radius : - radius + char[0].getBBox().height / 2;//move text it´s height downwards//OK
     //console.log(char[i].y);
-
-
-    //FOR AUTO MODUS
-    if (modus == "auto") {
+    //@ts-ignore
+    firstChar = char[0].getBBox().width;
+    //console.log("firstChar "+firstChar);
+   
 
       let charWidth = char[i].getBBox().width;
       let widths = i < numChars ? char.map(c => c.getBBox().width) : "", sum: number; // only chars for one text, only not empty possible?
@@ -95,8 +103,7 @@ for (i = 0; i < chars.length ; i++) {
       //@ts-ignore
       let cumWidths =  widths.map((elem: number) => i >= numChars ? sum = 0 : sum = (sum || 0) + elem); // sums up widths, runs through all chars, empty (I added very much)
       //console.log("cumWidths "+cumWidths);
-      let textWidth = myText.getBBox().width;  //Better take textWidth, as it´s only one process??
-      //console.log("textWidth "+textWidth);
+      
       
 /*     
       let w: number;
@@ -147,7 +154,7 @@ let w: number;
             //let last = numChars -1; obsolete? firstChar is always the anchor. who cares for the last one?
             //let lastChar = last - 1;
             //let firstChar = cumWidths[0];
-
+/*
             //ABSOLUTELY HANDS OFF!!!!!!
             (rotate as GroupElement).groupTransform.rotate.angle =
             rotateText
@@ -155,21 +162,39 @@ let w: number;
               :    textAnchor == "start" ? - letterSpacing / 4
               : +  (textWidth + ((i - 1/2 ) * letterSpacing ) ) * degreePx);
               //console.log("rotateAngle per char"+(rotate as GroupElement).groupTransform.rotate.angle)
+
+
+*/
+ };
+//TEST //FOR AUTO MODUS
+    if (modus == "auto") {
+(rotate as GroupElement).groupTransform.rotate.angle =
+            rotateText
+                -  (textAnchor == "middle" ? (textWidth +  (numChars -2) * letterSpacing )  * degreePx / 2
+                  //@ts-ignore
+              :    textAnchor == "start" ? -  (firstChar -letterSpacing/2) / 2//HANDS OFF!!!
+                  //@ts-ignore
+              : +  (textWidth - firstChar/2+ ((numChars -3 / 2 ) * letterSpacing ) ) * degreePx); //HANDS OFF!!
+              console.log("rotateAngle per char"+(rotate as GroupElement).groupTransform.rotate.angle)
+
+
+//TEST
     }else{
 
       //ROTATION PER CHAR
       (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * charAngle : 0;
 
       //TEXT-ANCHOR
-      (rotate as GroupElement).groupTransform.rotate.angle = rotateText
-
-           - (textAnchor == "middle" ? (numChars - 1)* charAngle / 2
-         :   textAnchor == "start" ?  - (charAngle / 2)
-         : + (numChars - (numChars % 2 == 0 ? 0.5 : 1)) * charAngle);
+      (rotate as GroupElement).groupTransform.rotate.angle = 
+          rotateText
+           - (textAnchor == "middle" ? - (numChars -2) / 2 *  charAngle
+            //@ts-ignore
+         :   textAnchor == "start" ? 0
+         : + (numChars + 1) * charAngle);
          console.log((rotate as GroupElement).groupTransform.rotate.angle)
-
+          console.log("numChars "+numChars * charAngle);
     };
+console.log("firstChar "+firstChar);
 
- };
 
 // TODO G 4.9 delete all unnecessary code (non-widget code, etc) from all files in this branch
