@@ -7,6 +7,7 @@ import curvedText from './widgets/curved-text'
 import clock from "clock"
 
 
+
 /*---------------------------------------------------------------------------------------------------------------------------------*/
 //Initialise widget system
 const widgets = widgetFactory([curvedText])
