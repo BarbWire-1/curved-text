@@ -1,9 +1,10 @@
 <svg>
     <rect id="background" />
-
+      <text id="myText" class="text" font-size="30" text-length="100" opacity="1">Text</text>
+      <rect x="0" y="0" width="100%" height="100%" fill="black" />
     <!--TEXT-->
-    <svg id= "position" fill="#18d6cd">  <!-- added fill here because it got taken out of CSS so widget could over-ride it -->
-     <text id="myText" class="text" font-size="30" text-length="100" opacity="0">Text</text>
+      <svg id= "position" fill="#18d6cd">  <!-- added fill here because it got taken out of CSS so widget could over-ride it -->
+     
          <g id="rotate">
             <g >
                <text class="text char"/>
@@ -82,7 +83,7 @@
             </g>
          <!--animateTransform attributeType="rotate" begin="load" end="click" from="0" to="-360" dur="60" repeatCount="2" final="restore" /-->
          </g>
-
+      </svg>
 
 
       <!--TRY ON SECOND TEXT-->
@@ -156,7 +157,7 @@
 
       <arc x="48" y="48" width="240" height="240" fill="orange"
          arc-width="1" start-angle="0" sweep-angle="360" opacity = "0" />
-   </svg>
+   
 
    <defs>
     <symbol id="lines">

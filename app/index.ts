@@ -53,7 +53,7 @@ position.y = centerY //- device.screen.height / 2;
 
 //PREVENT MIRRORING
 charAngle = charAngle * (radius < 0 ? -1 : 1);
-
+console.log("charAngle "+charAngle)
 //ASSIGN CHARS
 let chars = (myText.text.split("")); // array of char set of text to curve
 let char  = document.getElementsByClassName("char") as TextElement[];// single char textElements
@@ -106,7 +106,7 @@ for (i = 0; i < numChars ; i++) {
                 -  (textAnchor == "middle" ? (textWidth +  (i - 1) * letterSpacing )  * degreePx / 2
               :    textAnchor == "start" ?  (letterSpacing - firstChar) / 2  * degreePx
               : +  (textWidth + (i - 3/2 ) * letterSpacing + lastChar  / 2 ) * degreePx);
-
+              console.log(myText.getBBox().width);
     }else{
 
       //ROTATION PER CHAR
