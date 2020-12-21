@@ -6,6 +6,7 @@ import widgetFactory from './widgets/widget-factory'
 import curvedText from './widgets/curved-text'
 import clock from "clock"
 
+
 /*---------------------------------------------------------------------------------------------------------------------------------*/
 //Initialise widget system
 const widgets = widgetFactory([curvedText])
@@ -30,16 +31,16 @@ let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-let letterSpacing: number = 3;
+let letterSpacing: number = 10;
 let textAnchor: string = "middle"; //start, middle,  end at 0°
-let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
+let modus: string = "fix"; // auto: automatic, fix: rotate fix angle each
 
 
 //Rotate fix angle
-let charAngle: number = 0;//angle each char
+let charAngle: number = 20;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-myText.text = "ABCDEFGHIJKLM" //"0.0.0.0.0.0.0.0.0"
+myText.text = "0.0.0.0.0.0.0.0.0" //"0.0.0.0.0.0.0.0.0"
 myText2.text = "CHANGING"// enter text ar data here "MiMiMiMiMiMi"
 
 
@@ -59,34 +60,52 @@ let chars = (myText.text.split("")); // array of char set of text to curve
 let char  = document.getElementsByClassName("char") as TextElement[];// single char textElements
 
 
+
+const circ = 2 * radius * Math.PI; // not ok. logs i times
+//console.log ("circ "+circ)
+const degreePx = 360 / circ;
+//console.log("degreePy "+degreePx)
+
+      
+
+
+
+
 //CALCULATE PROPERTIES OF CHARS
 let i;
-let numChars = chars.length
-for (i = 0; i < numChars ; i++) {
+let numChars: number = chars.length
+console.log("numChars "+numChars)
+//for (i = 0; i < numChars ; i++) {
+for (i = 0; i < chars.length ; i++) {
 
-    char[i].text = chars[i];// assign chars to the single textElements
-    char[i].y = radius < 0 ? - radius : - radius + char[0].getBBox().height / 2;//move text it´s height downwards
+    
+    char[i].text = chars[i];// assign chars to the single textElements//OK
+    //console.log(char[i].text);
+    char[i].y = radius < 0 ? - radius : - radius + char[0].getBBox().height / 2;//move text it´s height downwards//OK
+    //console.log(char[i].y);
+
 
     //FOR AUTO MODUS
     if (modus == "auto") {
 
-      const circ = 2 * radius * Math.PI;
-      let degreePx = 360 / circ;
       let charWidth = char[i].getBBox().width;
-      let widths = i < numChars ? char.map(c => c.getBBox().width) : "", sum: number;
-
+      let widths = i < numChars ? char.map(c => c.getBBox().width) : "", sum: number; // only chars for one text, only not empty possible?
+      //console.log("widths "+widths)
+      
       //@ts-ignore
-      let cumWidths =  widths.map((elem: number) => i >= numChars ? sum = 0 : sum = (sum || 0) + elem); // sums up widths
-      //console.log("cumulated width "+cumWidths);
-
-      let textWidth = (myText as TextElement).getBBox().width; // width original text
-      //console.log("text width" +textWidth);
+      let cumWidths =  widths.map((elem: number) => i >= numChars ? sum = 0 : sum = (sum || 0) + elem); // sums up widths, runs through all chars, empty (I added very much)
+      //console.log("cumWidths "+cumWidths);
+      let textWidth = myText.getBBox().width;  //Better take textWidth, as it´s only one process??
+      //console.log("textWidth "+textWidth);
+      
+/*     
       let w: number;
-        for (w = 1; w < numChars + 1; w++) {
+        for (w = 1; w < chars.length + 1; w++) {
           // width of the previous char
           let nextWidth = char[w].getBBox().width;
+          console.log("nextWidth "+nextWidth);
           let halfNext = nextWidth / 2;
-
+          console.log("halfNext "+halfNext);
 
           //calculates rotation angle for each char
           //to define distance : half width previous char + half width current char + half letterspacing
@@ -96,7 +115,35 @@ for (i = 0; i < numChars ; i++) {
           //prevWidth = nextWidth; // not used
         }
 
+//TEST
+let w: number;
+        for (w = 1; w < chars.length + 1; w++) {
+          // width of the previous char   // runs each time through the hole array,
+          //let nextWidth = char[w].getBBox().width;
+          //console.log("nextWidth "+nextWidth);
+          //let halfNext = nextWidth / 2;
+          //console.log("halfNext "+halfNext);
+
+          //calculates rotation angle for each char
+          //to define distance : half width previous char + half width current char + half letterspacing
+          (char[i].parent as GroupElement).groupTransform.rotate.angle =
+          (cumWidths[i]  - charWidth / 2 + (char[w].getBBox().width / 2) + (i-1/2) * letterSpacing)  * degreePx;
+          console.log("a"+(char[3].parent as GroupElement).groupTransform.rotate.angle);
+          
+
+        }
+
+//TEST    
+*/        //RELATIVE ANGLE TO PREVIOUS CHAR
+          //calculates rotation angle for each char
+          //to define distance : half width previous char + half width current char + half letterspacing
+          (char[i].parent as GroupElement).groupTransform.rotate.angle =
+          (cumWidths[i]  - charWidth / 2 + (char[i+1].getBBox().width / 2) + (i-1/2) * letterSpacing)  * degreePx;
+          //console.log("b"+(char[3].parent as GroupElement).groupTransform.rotate.angle);
+
+
          //TEXT-ANCHOR and ROTATION
+      
             //let last = numChars -1; obsolete? firstChar is always the anchor. who cares for the last one?
             //let lastChar = last - 1;
             //let firstChar = cumWidths[0];
@@ -107,7 +154,7 @@ for (i = 0; i < numChars ; i++) {
                 -  (textAnchor == "middle" ? (textWidth +  (i - 1) * letterSpacing )  * degreePx / 2
               :    textAnchor == "start" ? - letterSpacing / 4
               : +  (textWidth + ((i - 1/2 ) * letterSpacing ) ) * degreePx);
-              console.log(myText.getBBox().width);
+              //console.log("rotateAngle per char"+(rotate as GroupElement).groupTransform.rotate.angle)
     }else{
 
       //ROTATION PER CHAR
@@ -119,6 +166,7 @@ for (i = 0; i < numChars ; i++) {
            - (textAnchor == "middle" ? (numChars - 1)* charAngle / 2
          :   textAnchor == "start" ?  - (charAngle / 2)
          : + (numChars - (numChars % 2 == 0 ? 0.5 : 1)) * charAngle);
+         console.log((rotate as GroupElement).groupTransform.rotate.angle)
 
     };
 
