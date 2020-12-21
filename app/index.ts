@@ -23,7 +23,8 @@ let myText = document.getElementById("myText") as TextElement;
 let myText2 = document.getElementById("myText2") as TextElement;
 const position = document.getElementById("position") as ContainerElement; //x,y of SVG move center of circle
 const rotate =document.getElementById("rotate") as GroupElement; // angle used for alignment + rotateText
-
+let rotateText = document.getElementById("rotateText");
+let charAngle = document.getElementById("charAngle") as unknown as Number
 //YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
 
 //Circle
@@ -31,17 +32,18 @@ let radius: number = 120;//if negative, text is bottom curve
 let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
-let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-let letterSpacing: number = 20;
+//@ts-ignore
+rotateText = 0;//angle to rotate whole text from it´s beginning
+let letterSpacing: number =0;
 let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "fix"; // auto: automatic, fix: rotate fix angle each
 
 
 //Rotate fix angle
-let charAngle: number = 10;//angle each char
+(charAngle as Number)= 30;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-myText.text = "ABCDEFGHIJKLM" //"0.0.0.0.0.0.0.0.0"
+myText.text = "000000000000" //"0.0.0.0.0.0.0.0.0"
 myText2.text = "CHANGING"// enter text ar data here "MiMiMiMiMiMi"
 
 
@@ -54,6 +56,7 @@ position.x = centerX //- device.screen.width / 2; // -half width
 position.y = centerY //- device.screen.height / 2;
 
 //PREVENT MIRRORING
+//@ts-ignore
 charAngle = charAngle * (radius < 0 ? -1 : 1);
 console.log("charAngle "+charAngle)
 //ASSIGN CHARS
@@ -163,35 +166,38 @@ let w: number;
     //FOR AUTO MODUS
     if (modus == "auto") {
 
-        (rotate as GroupElement).groupTransform.rotate.angle =
-            rotateText
+          //@ts-ignore                                                      
+        (rotate as GroupElement).groupTransform.rotate.angle = rotateText
+           
                 -  (textAnchor == "middle" ? (textWidth +  (numChars -2) * letterSpacing )  * degreePx / 2
                   //@ts-ignore
-              :    textAnchor == "start" ? -  (firstChar -letterSpacing/2) / 2//HANDS OFF!!!
+              :    textAnchor == "start" ? -  letterSpacing / 4//HANDS OFF!!!
                   //@ts-ignore
-              : +  (textWidth - firstChar/2+ ((numChars -3 / 2 ) * letterSpacing ) ) * degreePx); //HANDS OFF!!
-              console.log("rotateAngle per char"+(rotate as GroupElement).groupTransform.rotate.angle)
+              : +  (textWidth + ((numChars - 3/2 ) * letterSpacing ) ) * degreePx); //HANDS OFF!!
+              console.log("auto rotate angle"+(rotate as GroupElement).groupTransform.rotate.angle)
 
 
-//TEST
+
     }else{
 
         //ROTATION PER CHAR
-        (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * charAngle : 0;
+        (rotate as GroupElement).groupTransform.rotate.angle = i > 0 ? i * Number(charAngle) : 0;
 
         //TEXT-ANCHOR
+            
         (rotate as GroupElement).groupTransform.rotate.angle = 
-            rotateText
-              - (textAnchor == "middle" ? - (numChars -2) / 2 *  charAngle
-                //@ts-ignore
-            :   textAnchor == "start" ? 0
-            : + (numChars + 1) * charAngle);
-        console.log((rotate as GroupElement).groupTransform.rotate.angle)
-        console.log("numChars "+numChars * charAngle);
+              //@ts-ignore
+              rotateText
+                - (textAnchor == "middle" ? (numChars - (numChars % 2 == 0 ? 0.5 : 1)) * Number(charAngle)
+              :   textAnchor == "start" ?  0
+              : + (numChars -1) * Number(charAngle)); // TODO B 1 this one doesn´t do nothing.
+
+        //console.log("rotation "+(rotate as GroupElement).groupTransform.rotate.angle)
+        //console.log("numChars "+numChars * charAngle);
     };
 
 
-    console.log("firstChar "+firstChar);
+        //console.log("firstChar "+firstChar);
 
 
 // TODO G 4.9 delete all unnecessary code (non-widget code, etc) from all files in this branch

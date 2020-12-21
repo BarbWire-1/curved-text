@@ -95,7 +95,7 @@
          </g>
       </svg>
 
-<g opacity="0">
+<g opacity="1">
       <!--TRY ON SECOND TEXT-->
       <svg id= "position">
       <text id="myText2" class="textID" x="50%" y="50%" fill="magenta" opacity="1" text-length="30" >0123456789</text>
@@ -177,7 +177,7 @@
 
 
    <!-- TODO G 3.61 can we animate rotation by wrapping this <use> in a <g>? Try with cx=cy=0 -->
-   <use id="curvedText1" href="#curvedText" >
+   <use id="curvedText1" href="#curvedText" fill="white" opacity="1">
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="font-size" to="20" />
