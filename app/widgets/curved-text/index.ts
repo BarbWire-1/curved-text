@@ -53,6 +53,7 @@ const construct = el => {
     }
   })
 
+  // TODO G 3.63 facilitate rotation animation by more efficient startAngle
   Object.defineProperty(el, 'startAngle', {  // This isn't the ideal name, but it's consistent with the equivalent attribute in the <arc>
     set: function(newValue) {
       rotateText = newValue
@@ -68,6 +69,8 @@ const construct = el => {
     }
   })
 
+  // TODO G 3.62 animate rotation by providing an API method to set attributes on textChars animateTransform. How to trigger events?
+
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     //VARIABLES
     /*CENTER OF ROTATION*/
@@ -76,8 +79,9 @@ const construct = el => {
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
+    // TODO 1 since _charAngle is only defined for modus==="fix", only do this in that situation(?)
     _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 1 If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
-    console.log(`_charAngle=${_charAngle}`)   // TODO 1 _charAngle can be NaN; is that okay?
+    console.log(`_charAngle=${_charAngle}`)   // TODO G 1 _charAngle can be NaN; is that okay?
 
     /*ASSIGN CHARS*/
     let chars = (textEl.text.split("")); // array of char set of text to curve
@@ -136,6 +140,7 @@ const construct = el => {
             let firstChar = cumWidths[0];
 
 
+            // TODO 1 does the below code need to be done for every i? Won't .parent.parent be the same for all i?
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
 
             rotateText
@@ -150,6 +155,7 @@ const construct = el => {
           (char[i].parent as GroupElement).groupTransform.rotate.angle =  i * _charAngle;
 
           //TEXT-ANCHOR
+          // TODO 1 does the below code need to be done for every i? Won't .parent.parent be the same for all i?
           (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
 
               - (textAnchor == "middle" ? (numChars - 1)* _charAngle / 2

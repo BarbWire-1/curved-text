@@ -173,7 +173,7 @@
 
 
 
-
+   <!-- TODO G 3.61 can we animate rotation by wrapping this <use> in a <g>? Try with cx=cy=0 -->
    <use id="curvedText1" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
@@ -181,6 +181,7 @@
       <set href="#position" attributeName="cx" to="100" />
       <set href="#position" attributeName="cy" to="250" />
       <set href="#position" attributeName="r" to="80" />
+      <!-- TODO G 3.60 can we animate rotation by accessing textChars via <set>? Need to href <animateTransform>. How to pass events?? -->
    </use>
 
 
