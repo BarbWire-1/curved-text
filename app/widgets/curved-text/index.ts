@@ -11,6 +11,7 @@ const construct = el => {
 
   const positionEl = el.getElementById('position')
   const charGroupEl = el.getElementById('charGroup')
+  const rotateEl = el.getElementById('rotate')
   let radius = positionEl.r
   let textAnchor = textEl.textAnchor    // TODO G 3.0 test that this works as expected
 
@@ -156,7 +157,7 @@ const construct = el => {
 
           //TEXT-ANCHOR
           // TODO G 1 does the below code need to be done for every i? Won't .parent.parent be the same for all i?
-          (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
+          (rotateEl as GroupElement).groupTransform.rotate.angle = rotateText
 
               - (textAnchor == "middle" ? (numChars - 1)* _charAngle / 2
             :   textAnchor == "start" ?  - (_charAngle / 2)
