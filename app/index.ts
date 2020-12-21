@@ -77,14 +77,8 @@ let textWidth = myText.getBBox().width;  //Better take textWidth, as it´s only 
 let i;
 let numChars: number = chars.length
 //console.log("numChars "+numChars)
-//@ts-ignore
 
 
-
-
-
-
-//for (i = 0; i < numChars ; i++) {
 for (i = 0; i < chars.length ; i++) {
 
    
@@ -97,13 +91,13 @@ for (i = 0; i < chars.length ; i++) {
     //console.log("firstChar "+firstChar);
    
 
-      let charWidth = char[i].getBBox().width;
-      let widths = i < numChars ? char.map(c => c.getBBox().width) : "", sum: number; // only chars for one text, only not empty possible?
-      //console.log("widths "+widths)
+    let charWidth = char[i].getBBox().width;
+    let widths = i < numChars ? char.map(c => c.getBBox().width) : "", sum: number; // only chars for one text, only not empty possible?
+    //console.log("widths "+widths)
       
-      //@ts-ignore
-      let cumWidths =  widths.map((elem: number) => i >= numChars ? sum = 0 : sum = (sum || 0) + elem); // sums up widths, runs through all chars, empty (I added very much)
-      //console.log("cumWidths "+cumWidths);
+    //@ts-ignore
+    let cumWidths =  widths.map((elem: number) => i >= numChars ? sum = 0 : sum = (sum || 0) + elem); // sums up widths, runs through all chars, empty (I added very much)
+    //console.log("cumWidths "+cumWidths);
       
       
 /*     
@@ -145,12 +139,12 @@ let w: number;
 */        //RELATIVE ANGLE TO PREVIOUS CHAR
           //calculates rotation angle for each char
           //to define distance : half width previous char + half width current char + half letterspacing
-          (char[i].parent as GroupElement).groupTransform.rotate.angle =
-          (cumWidths[i]  - charWidth / 2 + (char[i+1].getBBox().width / 2) + (i-1/2) * letterSpacing)  * degreePx;
+    (char[i].parent as GroupElement).groupTransform.rotate.angle =
+    (cumWidths[i]  - charWidth / 2 + (char[i+1].getBBox().width / 2) + (i-1/2) * letterSpacing)  * degreePx;
           //console.log("b"+(char[3].parent as GroupElement).groupTransform.rotate.angle);
 
 
-         //TEXT-ANCHOR and ROTATION
+          //TEXT-ANCHOR and ROTATION
       
             //let last = numChars -1; obsolete? firstChar is always the anchor. who cares for the last one?
             //let lastChar = last - 1;
@@ -163,13 +157,13 @@ let w: number;
               :    textAnchor == "start" ? - letterSpacing / 4
               : +  (textWidth + ((i - 1/2 ) * letterSpacing ) ) * degreePx);
               //console.log("rotateAngle per char"+(rotate as GroupElement).groupTransform.rotate.angle)
-
-
 */
  };
-//TEST //FOR AUTO MODUS
+//TEST 
+    //FOR AUTO MODUS
     if (modus == "auto") {
-(rotate as GroupElement).groupTransform.rotate.angle =
+
+        (rotate as GroupElement).groupTransform.rotate.angle =
             rotateText
                 -  (textAnchor == "middle" ? (textWidth +  (numChars -2) * letterSpacing )  * degreePx / 2
                   //@ts-ignore
@@ -182,20 +176,22 @@ let w: number;
 //TEST
     }else{
 
-      //ROTATION PER CHAR
-      (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * charAngle : 0;
+        //ROTATION PER CHAR
+        (char[i].parent as GroupElement).groupTransform.rotate.angle = i > 0 ? i * charAngle : 0;
 
-      //TEXT-ANCHOR
-      (rotate as GroupElement).groupTransform.rotate.angle = 
-          rotateText
-           - (textAnchor == "middle" ? - (numChars -2) / 2 *  charAngle
-            //@ts-ignore
-         :   textAnchor == "start" ? 0
-         : + (numChars + 1) * charAngle);
-         console.log((rotate as GroupElement).groupTransform.rotate.angle)
-          console.log("numChars "+numChars * charAngle);
+        //TEXT-ANCHOR
+        (rotate as GroupElement).groupTransform.rotate.angle = 
+            rotateText
+              - (textAnchor == "middle" ? - (numChars -2) / 2 *  charAngle
+                //@ts-ignore
+            :   textAnchor == "start" ? 0
+            : + (numChars + 1) * charAngle);
+        console.log((rotate as GroupElement).groupTransform.rotate.angle)
+        console.log("numChars "+numChars * charAngle);
     };
-console.log("firstChar "+firstChar);
+
+
+    console.log("firstChar "+firstChar);
 
 
 // TODO G 4.9 delete all unnecessary code (non-widget code, etc) from all files in this branch
