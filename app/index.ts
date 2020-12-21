@@ -30,8 +30,8 @@ let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-let letterSpacing: number = 0;
-let textAnchor: string = "end"; //start, middle,  end at 0°
+let letterSpacing: number = 30;
+let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
 
@@ -77,8 +77,10 @@ for (i = 0; i < numChars ; i++) {
 
       //@ts-ignore
       let cumWidths =  widths.map((elem: number) => i >= numChars ? sum = 0 : sum = (sum || 0) + elem); // sums up widths
-      let textWidth = (myText as TextElement).getBBox().width; // width original text
+      //console.log("cumulated width "+cumWidths);
 
+      let textWidth = (myText as TextElement).getBBox().width; // width original text
+      //console.log("text width" +textWidth);
       let w: number;
         for (w = 1; w < numChars + 1; w++) {
           // width of the previous char
@@ -99,13 +101,12 @@ for (i = 0; i < numChars ; i++) {
             let lastChar = last - 1;
             let firstChar = cumWidths[0];
 
-
+            //ABSOLUTELY HANDS OFF!!!!!!
             (rotate as GroupElement).groupTransform.rotate.angle =
-
             rotateText
                 -  (textAnchor == "middle" ? (textWidth +  (i - 1) * letterSpacing )  * degreePx / 2
-              :    textAnchor == "start" ?  (letterSpacing - firstChar) / 2  * degreePx
-              : +  (textWidth + (i - 3/2 ) * letterSpacing + lastChar  / 2 ) * degreePx);
+              :    textAnchor == "start" ? - letterSpacing / 4
+              : +  (textWidth + ((i - 1/2 ) * letterSpacing ) ) * degreePx);
               console.log(myText.getBBox().width);
     }else{
 
