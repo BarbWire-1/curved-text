@@ -79,7 +79,7 @@ const construct = el => {
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
-    // TODO 1 since _charAngle is only defined for modus==="fix", only do this in that situation(?)
+    // TODO G 1 since _charAngle is only defined for modus==="fix", only do this in that situation(?)
     _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 1 If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
     console.log(`_charAngle=${_charAngle}`)   // TODO G 1 _charAngle can be NaN; is that okay?
 
@@ -140,7 +140,7 @@ const construct = el => {
             let firstChar = cumWidths[0];
 
 
-            // TODO 1 does the below code need to be done for every i? Won't .parent.parent be the same for all i?
+            // TODO G 1 does the below code need to be done for every i? Won't .parent.parent be the same for all i?
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
 
             rotateText
@@ -155,7 +155,7 @@ const construct = el => {
           (char[i].parent as GroupElement).groupTransform.rotate.angle =  i * _charAngle;
 
           //TEXT-ANCHOR
-          // TODO 1 does the below code need to be done for every i? Won't .parent.parent be the same for all i?
+          // TODO G 1 does the below code need to be done for every i? Won't .parent.parent be the same for all i?
           (char[i].parent.parent as GroupElement).groupTransform.rotate.angle = rotateText
 
               - (textAnchor == "middle" ? (numChars - 1)* _charAngle / 2
