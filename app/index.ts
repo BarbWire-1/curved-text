@@ -25,12 +25,12 @@ const rotate =document.getElementById("rotate") as GroupElement; // angle used f
 //YOUR SETTINGS---------------------------------------------------------------------------------------------------------------
 
 //Circle
-let radius: number = 120;//if negative, text is bottom curve
+let radius: number = -120;//if negative, text is bottom curve
 let centerX: number = 168; //moves the centerpoint of the circle
 let centerY: number = 168;
 //text
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-let letterSpacing: number = 30;
+let letterSpacing: number = 3;
 let textAnchor: string = "middle"; //start, middle,  end at 0°
 let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 
@@ -39,7 +39,7 @@ let modus: string = "auto"; // auto: automatic, fix: rotate fix angle each
 let charAngle: number = 0;//angle each char
 //-----------------------------------------------------------------------------------------------------------------------------
 
-myText.text = "0.0.0.0.0.0.0.0.0" //"0.0.0.0.0.0.0.0.0"
+myText.text = "ABCDEFGHIJKLM" //"0.0.0.0.0.0.0.0.0"
 myText2.text = "CHANGING"// enter text ar data here "MiMiMiMiMiMi"
 
 
@@ -97,9 +97,9 @@ for (i = 0; i < numChars ; i++) {
         }
 
          //TEXT-ANCHOR and ROTATION
-            let last = numChars -1;
-            let lastChar = last - 1;
-            let firstChar = cumWidths[0];
+            //let last = numChars -1; obsolete? firstChar is always the anchor. who cares for the last one?
+            //let lastChar = last - 1;
+            //let firstChar = cumWidths[0];
 
             //ABSOLUTELY HANDS OFF!!!!!!
             (rotate as GroupElement).groupTransform.rotate.angle =

@@ -1,7 +1,17 @@
 <svg>
     <rect id="background" />
-      <text id="myText" class="text"  text-length="100" opacity="1" display="none">Text</text>
-     
+   <text id="myText" class="text"  text-length="100" opacity="1" display="none">Text</text>
+
+   <!--REFERENCE LINES-->
+    <arc x="48" y="48" width="240" height="240" fill="white" arc-width="1" start-angle="0" sweep-angle="360" opacity = "0.5" /> 
+     <defs>
+    <symbol id="lines">
+      <line id="vertical" x1="50%" x2="50%" y1="0" y2="100%" fill="inherit" stroke-width="1" opacity="0.5"/>
+      <line id="horizontal" x1="0" x2="100%" y1="50%" y2="50%" fill="inherit" stroke-width="1" opacity="0.5"/>
+    </symbol>
+  </defs>
+  <use href="#lines" fill="white" />
+ 
     <!--TEXT-->
       <svg id= "position" fill="#18d6cd">  <!-- added fill here because it got taken out of CSS so widget could over-ride it -->
      
@@ -85,7 +95,7 @@
          </g>
       </svg>
 
-
+<g opacity="0">
       <!--TRY ON SECOND TEXT-->
       <svg id= "position">
       <text id="myText2" class="textID" x="50%" y="50%" fill="magenta" opacity="1" text-length="30" >0123456789</text>
@@ -155,18 +165,10 @@
       </g>
       </svg>
 
-      <arc x="48" y="48" width="240" height="240" fill="orange"
-         arc-width="1" start-angle="0" sweep-angle="360" opacity = "0" />
+     
    
 
-   <defs>
-    <symbol id="lines">
-      <line id="vertical" x1="50%" x2="50%" y1="0" y2="100%" fill="inherit" />
-      <line id="horizontal" x1="0" x2="100%" y1="50%" y2="50%" fill="inherit" />
-    </symbol>
-  </defs>
-  <use href="#lines" fill="orange" />
-
+  
    <!-- Widgets -->
    <!-- TODO G 4 see if opacity and fill animations can be applied here -->
    <!-- TODO G 5.x translate rotateUse to it´s cx,cy in widget-->
@@ -197,5 +199,5 @@
       <set href="#position" attributeName="r" to="-60" />
       <set href="#orientation" attributeName="start-angle" to="90" />
    </use>
-
+</g>
 </svg>
