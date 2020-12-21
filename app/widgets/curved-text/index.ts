@@ -31,7 +31,7 @@ const construct = el => {
   //Text settings
   const startAngle = el.getElementById('orientation').startAngle    // read value (if any) from SVG
   let rotateText: number = startAngle ? startAngle : 0      //angle to rotate whole text from its beginning
-  let letterSpacing: number = 10
+  let letterSpacing: number = 0
   //let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
   // modus deprecated: use _charAngle instead. If _charAngle is undefined, behave as per modus==="auto".
 
@@ -82,7 +82,7 @@ const construct = el => {
     //PREVENT MIRRORING
     // TODO G 1 since _charAngle is only defined for modus==="fix", only do this in that situation(?)
     _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 1 If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
-    console.log(`_charAngle=${_charAngle}`)   // TODO G 1 _charAngle can be NaN; is that okay?
+    console.log(`_charAngle=${_charAngle}`)   // TODO G 1 _charAngle can be NaN; is that okay? eh...no. Not in my theory. If I understand it right. in which case?
 
     /*ASSIGN CHARS*/
     let chars = (textEl.text.split("")); // array of char set of text to curve
