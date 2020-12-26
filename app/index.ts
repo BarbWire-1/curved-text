@@ -25,7 +25,7 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-myText.text = "iWWWWWWW"// enter text ar data here MiW!MiW!MiW!M
+myText.text = "iWWWWW"// enter text ar data here MiW!MiW!MiW!M
 
 let mode: number = 1; // 0: automatic, 1: rotate fix angle each
 console.log("mode "+ (mode == 0 ? "auto" : "fix"));
@@ -93,7 +93,7 @@ if (mode === 0) {
   //TEXT-ANCHOR MODE AUTO
    switch(textAnchor) {
     case 0:
-      stringAngle -= (cumWidth + ((numChars - 1) * letterSpacing)) * degreePx / 2;//ok
+      stringAngle -= (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
       break;
     case 2:
       stringAngle = -(stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);//ok
@@ -118,7 +118,7 @@ if (mode === 0) {
     case 0:
       const firstChar = char[0].getBBox().width;
       const lastChar = char[numChars-1].getBBox().width;
-      stringAngle -= ((numChars-1)  * ((charAngle / 2) ?? 0 ));//ok
+      stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + (firstChar + lastChar) / 4 * degreePx;//ok
     case 1:
       //const firstChar = char[0].getBBox().width;
       stringAngle += firstChar / 2 * degreePx ;//ok
