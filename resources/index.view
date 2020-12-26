@@ -1,174 +1,94 @@
 <svg>
-    <rect id="background" />
-   <text id="myText" class="text"  text-length="100" opacity="1" display="none">Text</text>
+   <rect id="background" />
 
-   <!--REFERENCE LINES-->
-    <arc x="48" y="48" width="240" height="240" fill="white" arc-width="1" start-angle="0" sweep-angle="360" opacity = "0.5" /> 
-     <defs>
-    <symbol id="lines">
-      <line id="vertical" x1="50%" x2="50%" y1="0" y2="100%" fill="inherit" stroke-width="1" opacity="0.5"/>
-      <line id="horizontal" x1="0" x2="100%" y1="50%" y2="50%" fill="inherit" stroke-width="1" opacity="0.5"/>
-    </symbol>
-  </defs>
-  <use href="#lines" fill="white" />
- 
-    <!--TEXT-->
-      <svg id= "position" fill="#18d6cd">  <!-- added fill here because it got taken out of CSS so widget could over-ride it -->
-     
-         <g id="rotate">
-            <g >
-               <text class="text char"/>
-            </g>
-            <g >
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-               <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-             <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-         <!--animateTransform attributeType="rotate" begin="load" end="click" from="0" to="-360" dur="60" repeatCount="2" final="restore" /-->
-         </g>
-      </svg>
+   <!--HELPLINES-->
+   <g opacity="0.2">
+      <line id="vertical" x1="50%" x2="50%" y1="0" y2="100%" fill="white" stroke-width="1"/>
+      <line id="horizontal" x1="0" x2="100%" y1="50%" y2="50%" fill="white" stroke-width="1"/>
 
-<g opacity="1">
-      <!--TRY ON SECOND TEXT-->
-      <svg id= "position">
-      <text id="myText2" class="textID" x="50%" y="50%" fill="magenta" opacity="1" text-length="30" >0123456789</text>
-      <g transform="translate(50%,50%) rotate(0)" opacity="1"> <!-- not to change. translates textElements to centerpoint-->
-         <g id="rotate">
-            <g >
-               <text class="text char"/>
-            </g>
-            <g >
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-               <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-            <g>
-               <text class="text char"/>
-            </g>
-         </g>
+      <g transform="translate(50% - 122,50% - 122)"><!--adjust to your circle`s dimensions-->
+         <arc width="244" height="244" fill="white" arc-width="1" start-angle="0" sweep-angle="360" opacity = "1" />
       </g>
-      </svg>
+   </g>
 
-     
-   
+    <!--TEXT-->
 
-  
+   <g  id="position" fill="white">
+      <text id="myText" class="text" text-length="100" display="none">0123456789</text><!--TODO G font-settings here, or in css? Oh, for multiple text here I assume-->
+      <g id="alignRotate" transform="translate(50%,50%)">
+         <g>
+            <text class="text char"/>
+         </g>
+            <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+            <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="click" end="disable"  dur="30" final="freeze" />
+      </g>
+   </g>
+
+
+
+
    <!-- Widgets -->
    <!-- TODO G 4 see if opacity and fill animations can be applied here -->
    <!-- TODO G 5.x translate rotateUse to it´s cx,cy in widget-->
@@ -199,5 +119,4 @@
       <set href="#position" attributeName="r" to="-60" />
       <set href="#orientation" attributeName="start-angle" to="90" />
    </use>
-</g>
 </svg>
