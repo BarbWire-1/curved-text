@@ -35,10 +35,6 @@ const construct = el => {
   //let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
   // modus deprecated: use _charAngle instead. If _charAngle is undefined, behave as per modus==="auto".
 
-                                                                              // OH!!!! you use MODUS for letter-alignment? it´s thought for alignment of the whole textElement
-                                                                              // letters have to be fix "middle" to rotate them nicely
-                                                                              // It changes the angle of the outer rotating group, depending on length of the text
-                                                                              // That must be, where your alignment fights back
 
   /*Rotate fix angle*/
   let _charAngle: number;  //angle each char. Name changed from charAngle because charAngle is now the name of the property (setter).

@@ -25,12 +25,12 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-myText.text = "WWWWWWWW"// enter text ar data here MiW!MiW!MiW!M
+myText.text = "iWWWWWWW"// enter text ar data here MiW!MiW!MiW!M
 
-let mode: number = 0; // 0: automatic, 1: rotate fix angle each
-//console.log("mode "+ (mode == 0 ? "auto" : "fix"));
+let mode: number = 1; // 0: automatic, 1: rotate fix angle each
+console.log("mode "+ (mode == 0 ? "auto" : "fix"));
 //CIRCLE
-let radius: number = 130;//if negative, text is bottom curve
+let radius: number = 140;//if negative, text is bottom curve
 let centerX: number = 168;
 let centerY: number = 168; // center of the circle
 
@@ -38,7 +38,8 @@ let centerY: number = 168; // center of the circle
 let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0°
 let letterSpacing: number = 4.8;
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-//console.log("textAnchor "+ (textAnchor == 0 ? "middle(0)" : textAnchor == 1 ? "start(1)" : "end(2)"));
+console.log("rotate text "+ rotateText + "°");
+console.log("textAnchor "+ (textAnchor == 0 ? "0 (middle)" : textAnchor == 1 ? "1 (start)" : "2 (end)"));
 //ANGLE FOR FIX ROTATION
 let charAngle: number = 20;//angle each char, chars are stacked at 0° if no setting
 //-----------------------------------------------------------------------------------------------------------------------------
@@ -79,7 +80,7 @@ if (mode === 0) {
 
     //Variables for positioning chars
     let charWidth = char[i].getBBox().width;
-    cumWidth += charWidth;  //  (😍 thank you, Peter for this neat example of simplifying!)
+    cumWidth += charWidth;  //  (thank you, Peter for this neat example of simplifying and efficiency!)
 
 
     //ROTATION PER CHAR
@@ -115,16 +116,15 @@ if (mode === 0) {
     //TEXT-ANCHOR MODE FIX
   switch(textAnchor) {
     case 0:
-      stringAngle -= (numChars-1)  * ((charAngle / 2) ?? 0 );//ok
-      break;
-    case 1:
       const firstChar = char[0].getBBox().width;
+      const lastChar = char[numChars-1].getBBox().width;
+      stringAngle -= ((numChars-1)  * ((charAngle / 2) ?? 0 ));//ok
+    case 1:
+      //const firstChar = char[0].getBBox().width;
       stringAngle += firstChar / 2 * degreePx ;//ok
-      console.log(firstChar)
-      console.log("charAngle " + charAngle);
       break;
     case 2:
-      const lastChar = char[numChars-1].getBBox().width;
+      //const lastChar = char[numChars-1].getBBox().width;
       console.log("last width "+ lastChar);
       stringAngle += (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
       break;

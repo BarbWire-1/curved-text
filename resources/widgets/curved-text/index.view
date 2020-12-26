@@ -6,7 +6,7 @@
     <svg id= "charGroup">                   <!--Why not position via svg? I had built one surrounding all to be able to move the circle-center, without translate the g dynamically-->
       <!--<text id="myText" x="50%" y="50%" opacity="0" />-->
       <g id="rotate" transform="translate(50%,50%) rotate(0)">
-      <animateTransform attributeType="rotate" begin="click" end="enable" from="0" to="360" dur="20" repeatCount="2" final="restore" />
+      <!--animateTransform attributeType="rotate" begin="click" end="enable" from="0" to="360" dur="20" repeatCount="2" final="restore" /-->
       <!--TODO G is it possible to change the settings for each use?-->
          <g>  <!-- TODO G 4 why is this level of <g> required?-->
                                                                   <!--TODO B 2 That´s odd. I commented it out, but then the rotation got messed up.
