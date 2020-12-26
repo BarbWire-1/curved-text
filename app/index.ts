@@ -25,7 +25,7 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-myText.text = "WWWWW"// enter text ar data here MiW!MiW!MiW!M
+myText.text = "WWWWWWWW"// enter text ar data here MiW!MiW!MiW!M
 
 let mode: number = 0; // 0: automatic, 1: rotate fix angle each
 //console.log("mode "+ (mode == 0 ? "auto" : "fix"));
