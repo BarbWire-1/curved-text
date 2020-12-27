@@ -13,3 +13,4 @@ TODO M 800 User documentation (readme.md?).
 TODO M 850 Approach others to try it and provide feedback?
 TODO M 870 Go public.
 TODO M 900 Ask Fitbit to put it in OSS apps.
+TODO M 1 build a wf for testing. discuss whether one textElement or rather multiple.(evtl build <use>s of myText and test how to manipulate settings in the non-widget part)
