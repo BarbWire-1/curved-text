@@ -99,10 +99,11 @@
          <!--animate attributeName="fill" from="orange" to="magenta" easing="linear"   begin="load" end="activate"  dur="3" repeatDur="6" repeatCount="indefinite" final="freeze" /--><!-- working in sim-->
          <!--animate attributeName="fill" from="magenta" to="orange" easing="linear"   begin="load+3" end="activate"  dur="3" repeatDur="6" repeatCount="indefinite" final="freeze"/--><!-- working in sim-->
          <!--animateTransform attributeType="rotate" from="0" to="-360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60" final="freeze--> <!-- working in sim-->
-
+         
       </g>
-       <animateTransform attributeType="rotate" from="0" to="30" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="1" repeatDur="2" final="freeze"  /> <!-- working in sim-->
-       <animateTransform attributeType="rotate" from="30" to="0" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="1" repeatDur="2" final="freeze"  /> <!-- working in sim-->
+       <animateTransform attributeType="rotate" from="0" to="30" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="1" repeatDur="4" final="freeze"  /> <!-- working in sim-->
+       <animateTransform attributeType="rotate" from="90" to="-90" easing="linear"  begin="load+2" repeatCount="indefinite" end="disable"  dur="1" repeatDur="4" final="freeze"  /> <!-- working in sim-->
+      
    </g>
 
 

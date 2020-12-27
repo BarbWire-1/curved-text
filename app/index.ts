@@ -37,7 +37,7 @@ let centerY: number = 168; // center of the circle
 console.log("center: y " + centerY)
 
 //TEXT
-let textAnchor: number = 1; //0: middle, 1: start,  2: end at 0° // 
+let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0° // 
 let letterSpacing: number = 2;
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
 console.log("rotate text: "+ rotateText + "°");
