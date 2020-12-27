@@ -28,18 +28,20 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 myText.text = "iWWWWWi"// enter text ar data here MiW!MiW!MiW!M
 
 let mode: number = 0; // 0: automatic, 1: rotate fix angle each
-console.log("mode "+ (mode == 0 ? "auto" : "fix"));
+console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
 //CIRCLE
 let radius: number = 100;//if negative, text is bottom curve
 let centerX: number = 100;
+console.log("center: x "+centerX);
 let centerY: number = 100; // center of the circle
+console.log("center: y " + centerY)
 
 //TEXT
-let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0°
+let textAnchor: number = 1; //0: middle, 1: start,  2: end at 0°
 let letterSpacing: number = 4.8;
 let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-console.log("rotate text "+ rotateText + "°");
-console.log("textAnchor "+ (textAnchor == 0 ? "0 (middle)" : textAnchor == 1 ? "1 (start)" : "2 (end)"));
+console.log("rotate text: "+ rotateText + "°");
+console.log("textAnchor: "+ (textAnchor == 0 ? "0 (middle)" : textAnchor == 1 ? "1 (start)" : "2 (end)"));
 //ANGLE FOR FIX ROTATION
 let charAngle: number = 20;//angle each char, chars are stacked at 0° if no setting
 //-----------------------------------------------------------------------------------------------------------------------------
