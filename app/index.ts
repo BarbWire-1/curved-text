@@ -27,12 +27,12 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 myText.text = "iWWWWWi"// enter text ar data here MiW!MiW!MiW!M
 
-let mode: number = 1; // 0: automatic, 1: rotate fix angle each
+let mode: number = 0; // 0: automatic, 1: rotate fix angle each
 console.log("mode "+ (mode == 0 ? "auto" : "fix"));
 //CIRCLE
-let radius: number = 140;//if negative, text is bottom curve
-let centerX: number = 168;
-let centerY: number = 168; // center of the circle
+let radius: number = 100;//if negative, text is bottom curve
+let centerX: number = 100;
+let centerY: number = 100; // center of the circle
 
 //TEXT
 let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0°
