@@ -102,6 +102,7 @@
 
 
    <!-- TODO G 3.61 can we animate rotation by wrapping this <use> in a <g>? Try with cx=cy=0 -->
+   <!-- TODO G 3.615 Other simple approach for opacity and evtl fill might be to group the use and animate the group instead of the use itself. -->
 
    <use id="curvedText1" href="#curvedText" fill="white" opacity="1">
       <set href="#text" attributeName="text-buffer" to="a static label" />
