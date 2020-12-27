@@ -2,18 +2,19 @@
    <rect id="background" />
 
    <!--HELPLINES-->
+   <!--
    <g opacity="0.2">
       <line id="vertical" x1="50%" x2="50%" y1="0" y2="100%" fill="white" stroke-width="1"/>
       <line id="horizontal" x1="0" x2="100%" y1="50%" y2="50%" fill="white" stroke-width="1"/>
 
-      <g transform="translate(50% - 122,50% - 122)"><!--adjust to your circle`s dimensions-->
+      <g transform="translate(50% - 122,50% - 122)"><adjust to your circle`s dimensions>
          <arc width="244" height="244" fill="white" arc-width="1" start-angle="0" sweep-angle="360" opacity = "1" />
       </g>
    </g>
-
+   -->
     <!--TEXT-->
 
-   <g  id="position" fill="white">
+   <g  id="position" transform="translate(50%,50%)" fill="white">
       <text id="myText" class="text" text-length="100" display="none">0123456789</text><!--TODO G font-settings here, or in css? Oh, for multiple text here I assume-->
       <g id="alignRotate">
          <g>
@@ -82,11 +83,22 @@
          <g>
             <text class="text char"/>
          </g>
+          <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
+         <g>
+            <text class="text char"/>
+         </g>
          <!--animateTransform attributeType="translate" from="0,0" to="0,168" easing="linear" begin="click" end="activate"  dur="3" repeatDur="6" repeatCount="2" final="freeze" /--><!-- working in sim-->
          <!--animateTransform attributeType="translate" from="0,168" to="0,0" easing="linear" begin="click+3" end="activate"  dur="3" repeatDur="6" repeatCount="2" final="freeze" /--><!-- working in sim-->
-         <!--animate attributeName="opacity" from="1" to="0" easing="linear"   begin="click" end="activate"  dur="1" repeatDur="2" repeatCount="3" final="freeze" /--><!-- working in sim-->
-         <!--animate attributeName="opacity" from="0" to="1" easing="linear"   begin="click+1" end="activate"  dur="1" repeatDur="2" repeatCount="3" final="freeze" /--><!-- working in sim-->
-         <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="click" end="disable"  dur="30" final="freeze" /> <!-- working in sim-->
+         <animate attributeName="opacity" from="1" to="0" easing="linear"   begin="load+2" end="activate"  dur="2" repeatDur="6" repeatCount="indefinite" final="freeze" /><!-- working in sim-->
+         <animate attributeName="opacity" from="0" to="1" easing="linear"   begin="load+5" end="activate"  dur="2" repeatDur="6" repeatCount="indefinite" final="freeze" /><!-- working in sim-->
+         <animate attributeName="fill" from="orange" to="magenta" easing="linear"   begin="load" end="activate"  dur="3" repeatDur="6" repeatCount="indefinite" final="freeze" /><!-- working in sim-->
+         <animate attributeName="fill" from="magenta" to="orange" easing="linear"   begin="load+3" end="activate"  dur="3" repeatDur="6" repeatCount="indefinite" final="freeze" /><!-- working in sim-->
+         <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60" final="freeze"  /> <!-- working in sim-->
 
       </g>
    </g>
