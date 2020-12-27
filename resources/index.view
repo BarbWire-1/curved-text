@@ -15,7 +15,7 @@
 
    <g  id="position" fill="white">
       <text id="myText" class="text" text-length="100" display="none">0123456789</text><!--TODO G font-settings here, or in css? Oh, for multiple text here I assume-->
-      <g id="alignRotate" transform="translate(50%,50%)">   <!-- G do we need the translate? -->
+      <g id="alignRotate" transform="translate(50%,50%)">
          <g>
             <text class="text char"/>
          </g>
