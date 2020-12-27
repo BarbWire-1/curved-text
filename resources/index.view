@@ -101,8 +101,8 @@
          <!--animateTransform attributeType="rotate" from="0" to="-360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60" final="freeze--> <!-- working in sim-->
          
       </g>
-       <animateTransform attributeType="rotate" from="0" to="30" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="1" repeatDur="4" final="freeze"  /> <!-- working in sim-->
-       <animateTransform attributeType="rotate" from="90" to="-90" easing="linear"  begin="load+2" repeatCount="indefinite" end="disable"  dur="1" repeatDur="4" final="freeze"  /> <!-- working in sim-->
+       <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60"  final="freeze"  /> <!-- working in sim-->
+       <!--animateTransform attributeType="rotate" from="90" to="-90" easing="linear"  begin="load+2" repeatCount="indefinite" end="disable"  dur="1"  final="freeze"  /--> <!-- working in sim-->
       
    </g>
 

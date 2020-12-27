@@ -25,9 +25,9 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-myText.text = "rotating text I am"// enter text ar data here MiW!MiW!MiW!M
+myText.text = "I:I:I:I:I:I:I:I:I:I:I:I:"// enter text ar data here MiW!MiW!MiW!M
 
-let mode: number = 0; // 0: automatic, 1: rotate fix angle each
+let mode: number = 1; // 0: automatic, 1: rotate fix angle each
 console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
 //CIRCLE
 let radius: number = 120;//if negative, text is bottom curve
@@ -131,3 +131,4 @@ if (mode === 0) {
   }
 };
 alignRotate.groupTransform.rotate.angle = stringAngle;
+console.log("stringAngle "+stringAngle)
