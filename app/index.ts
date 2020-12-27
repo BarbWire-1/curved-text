@@ -118,7 +118,7 @@ if (mode === 0) {
     case 0:
       const firstChar = char[0].getBBox().width;
       const lastChar = char[numChars-1].getBBox().width;
-      stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + (firstChar ) / 2 * degreePx;//ok
+      stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
     case 1:
       //const firstChar = char[0].getBBox().width;
       stringAngle += firstChar / 2 * degreePx ;//ok
