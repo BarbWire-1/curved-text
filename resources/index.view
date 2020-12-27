@@ -98,9 +98,10 @@
          <!--animate attributeName="opacity" from="0" to="1" easing="linear"   begin="load+5" end="activate"  dur="2" repeatDur="6" repeatCount="indefinite" final="freeze" /--><!-- working in sim-->
          <!--animate attributeName="fill" from="orange" to="magenta" easing="linear"   begin="load" end="activate"  dur="3" repeatDur="6" repeatCount="indefinite" final="freeze" /--><!-- working in sim-->
          <!--animate attributeName="fill" from="magenta" to="orange" easing="linear"   begin="load+3" end="activate"  dur="3" repeatDur="6" repeatCount="indefinite" final="freeze"/--><!-- working in sim-->
-         <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60" final="freeze"  /> <!-- working in sim-->
+         <!--animateTransform attributeType="rotate" from="0" to="-360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60" final="freeze--> <!-- working in sim-->
 
       </g>
+       <animateTransform attributeType="rotate" from="0" to="-360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60" final="freeze"  /> <!-- working in sim-->
    </g>
 
 
