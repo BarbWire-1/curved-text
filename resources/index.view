@@ -87,7 +87,7 @@
          <animate attributeName="opacity" from="1" to="0" easing="linear"   begin="click" end="activate"  dur="1" repeatDur="2" repeatCount="3" final="freeze" /><!-- working in sim-->
          <animate attributeName="opacity" from="0" to="1" easing="linear"   begin="click+1" end="activate"  dur="1" repeatDur="2" repeatCount="3" final="freeze" /><!-- working in sim-->
          <!--animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="click" end="disable"  dur="30" final="freeze" /--> <!-- working in sim-->
-         
+
       </g>
    </g>
 
@@ -102,7 +102,7 @@
 
 
    <!-- TODO G 3.61 can we animate rotation by wrapping this <use> in a <g>? Try with cx=cy=0 -->
-  
+
    <use id="curvedText1" href="#curvedText" fill="white" opacity="1">
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
@@ -112,10 +112,10 @@
       <set href="#position" attributeName="r" to="80" />
       <!-- TODO G 3.60 can we animate rotation by accessing textChars via <set>? Need to href <animateTransform>. How to pass events?? -->
    </use>
-   
 
 
-   
+
+
 
 
    <use id="curvedText2" href="#curvedText" fill="white" opacity="0">
