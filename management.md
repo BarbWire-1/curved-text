@@ -8,6 +8,7 @@ TODO M 20.3 Discuss: how robust do we want this to be if users use bad settings 
 
 TODO M 20 Widget the current code.\
 TODO M 21 Discuss whether only allow integer to rotateText?
+TODO M 22 Discuss about renaming to fitbit-simple-curved-text
 
 Interface:
 -
