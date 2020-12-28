@@ -47,13 +47,3 @@ Options:
 | charAngle |
 | rotateText |
 
-Animations
--
-???
-
-|   ```Widget```    |      ```App ```|
-====
-
-I´ve got my problems with formatting this.\
-Don´t get the "foo, bar, baz, bim" stuff\
-(and can´t read/understand the html code).
