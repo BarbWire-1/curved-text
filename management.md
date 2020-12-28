@@ -7,6 +7,7 @@ TODO M 10.2 Discuss: how stable should the 'base' code be before attempting to w
 TODO M 20.3 Discuss: how robust do we want this to be if users use bad settings (eg, text too long)?\
 
 TODO M 20 Widget the current code.
+TODO M 21 Discuss whether only allow integer to rotateText?
 
 Interface:
 -
