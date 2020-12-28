@@ -15,7 +15,7 @@
     <!--TEXT-->
 
    <g  id="position" transform="translate(50%,50%)" fill="white">
-      <text id="myText" class="text" text-length="100" display="none">0123456789</text><!--TODO G font-settings here, or in css? Oh, for multiple text here I assume-->
+      <text id="myText" class="text" text-length="100" display="none">0123456789</text>
       <g id="alignRotate">
          <g>
             <text class="text char"/>
@@ -99,19 +99,18 @@
          <!--animate attributeName="fill" from="orange" to="magenta" easing="linear"   begin="load" end="activate"  dur="3" repeatDur="6" repeatCount="indefinite" final="freeze" /--><!-- working in sim-->
          <!--animate attributeName="fill" from="magenta" to="orange" easing="linear"   begin="load+3" end="activate"  dur="3" repeatDur="6" repeatCount="indefinite" final="freeze"/--><!-- working in sim-->
          <!--animateTransform attributeType="rotate" from="0" to="-360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60" final="freeze--> <!-- working in sim-->
-         
+
       </g>
        <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60"  final="freeze"  /> <!-- working in sim-->
        <!--animateTransform attributeType="rotate" from="90" to="-90" easing="linear"  begin="load+2" repeatCount="indefinite" end="disable"  dur="1"  final="freeze"  /--> <!-- working in sim-->
-      
+
    </g>
 
 
 
    <!--
    <!-- Widgets -->
-   <!-- TODO G 4 see if opacity and fill animations can be applied here -->
-   <!-- TODO G 5.x translate rotateUse to it´s cx,cy in widget-->
+   <!-- TODO G 3.617 see if opacity and fill animations can be applied here -->
 
 
 

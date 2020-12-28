@@ -37,7 +37,7 @@ let centerY: number = 168; // center of the circle
 console.log("center: y " + centerY)
 
 //TEXT
-let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0° // 
+let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0° //
 let letterSpacing: number = 1;
 let rotateText: number = -45;//angle to rotate whole text from it´s beginning
 console.log("rotate text: "+ rotateText + "°");
@@ -115,7 +115,7 @@ if (mode === 0) {
 
   } // end of char loop
 
-    //TEXT-ANCHOR MODE FIX //TODO G errors or error messages if rotate fix up to 360° as than value out of bounds, guess cause of first/halfchar. hardcode this case?
+    //TEXT-ANCHOR MODE FIX //TODO G 1 errors or error messages if rotate fix up to 360° as than value out of bounds, guess cause of first/halfchar. hardcode this case?
   switch(textAnchor) {
     case 0:
       const firstChar = char[0].getBBox().width;

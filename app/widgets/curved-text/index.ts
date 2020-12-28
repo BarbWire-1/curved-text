@@ -13,9 +13,7 @@ const construct = el => {
   const charGroupEl = el.getElementById('charGroup')
   const rotateEl = el.getElementById('rotate')
   let radius = positionEl.r
-  let textAnchor = textEl.textAnchor    // TODO G 3.0 test that this works as expected
-
-  // TODO G 3.5 implement setters for all settings: letterSpacing
+  let textAnchor = textEl.textAnchor
 
   // Would be great to have a "line-up" in app/index similar to how fitfont does
   // like this:
@@ -54,7 +52,7 @@ const construct = el => {
   Object.defineProperty(el, 'startAngle', {  // This isn't the ideal name, but it's consistent with the equivalent attribute in the <arc>
     set: function(newValue) {
       rotateText = newValue
-      //el.redraw()   // TODO G 3.0 This is inefficient, because it lays out every character again. It shouldn't be used for animation, but would be okay for config changes.
+      //el.redraw()   // This is inefficient, because it lays out every character again. It shouldn't be used for animation, but would be okay for config changes.
       throw 'curved-test redraw() is not implemented'
     }
   })
@@ -76,9 +74,8 @@ const construct = el => {
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
-    // TODO G 1 since _charAngle is only defined for modus==="fix", only do this in that situation(?)
-    _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 1 If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
-    //console.log(`_charAngle=${_charAngle}`)   // TODO G 1 _charAngle can be NaN; is that okay? eh...no. Not in my theory. If I understand it right. in which case?
+    _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 1.5 If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
+    //console.log(`_charAngle=${_charAngle}`)
 
     /*ASSIGN CHARS*/
     let chars = (textEl.text.split("")); // array of char set of text to curve
@@ -102,7 +99,6 @@ const construct = el => {
 
         /*FOR AUTO MODUS*/
         if (! _charAngle) {   // _charAngle unspecified, so behave like modus==="auto"; ie, work out char angles automatically ??
-                              // TODO G 10 this would require an empty setting. With 2 modi you could forget about the charAngle setting, as it would be ignored for "auto"
           const circ = 2 * radius * Math.PI;
           let degreePx = 360 / circ;
           let charWidth = char[i].getBBox().width;
@@ -137,7 +133,6 @@ const construct = el => {
             let firstChar = cumWidths[0];
 
 
-            // TODO G 1 does the below code need to be done for every i? Won't .parent.parent be the same for all i?
             (char[i].parent.parent as GroupElement).groupTransform.rotate.angle =
 
             rotateText
@@ -152,7 +147,6 @@ const construct = el => {
           (char[i].parent as GroupElement).groupTransform.rotate.angle =  i * _charAngle;
 
           //TEXT-ANCHOR
-          // TODO G 1 does the below code need to be done for every i? Won't .parent.parent be the same for all i?
           (rotateEl as GroupElement).groupTransform.rotate.angle = rotateText
 
               - (textAnchor == "middle" ? (numChars - 1)* _charAngle / 2
@@ -173,4 +167,3 @@ export default () => {
     construct: construct
   }
 }
-// TODO G 2 realign widget with base code, from Barb's commits 20-21Dec
