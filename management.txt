@@ -1,16 +1,24 @@
-TODO M 10 For management, decide whether to use git project, this file, or something else.
-TODO M 20 Discuss whether to convert interface.odt to .md, so git can track changes. Do so if 'yes'.
-TODO M 30 Flesh out interface spec.
-TODO M 10 Discuss how stable the 'base' code should be before attempting to widget it. Discuss whether current code is there yet.
-TODO M 20 Discuss Barb's "not sure about font.properties settings via css, js or svg".
-TODO M 20 Add column(s) for CSS in interface spec.
-TODO M 20 Having decided what animations to attempt to support, discuss whether to try to get them going in non-widget before re-implementing widget, or whether to do both tasks in parallel.
-TODO M 20 Discuss Barb's "playing with different animations and transformations, I think implementing them needs a very strict plan for their accessability".
+Resolve questions:
+TODO M 5 Discuss Barb's "not sure about font.properties settings via css, js or svg".
+TODO M 5 Discuss Barb's "playing with different animations and transformations, I think implementing them needs a very strict plan for their accessability".
+TODO M 10 Discuss: for management, use git project, this file, or something else.
+TODO M 10 Discuss: how stable should the 'base' code be before attempting to widget it (especially re animations). Discuss whether current code is there yet.
+
 TODO M 20 Widget the current code.
-TODO M 10 Discuss and update other TODOs.
+
+Interface:
+TODO M 20 Discuss: convert interface.odt to .md, so git can track changes. Do so if 'yes'.
+TODO M 25 Add column(s) for CSS in interface spec.
+TODO M 25 Decide how to indicate priorities in interface spec (eg, essential, desirable, luxury, dream).
+TODO M 30 Flesh out interface spec (non-animations).
+TODO M 35 Flesh out interface spec (animations).
+TODO M 40 Implement all essential interface capabilities.
+
+Publishing:
 TODO M 800 Purge non-widget code and files to avoid confusing users when it goes public.
 TODO M 800 User documentation (readme.md?).
 TODO M 850 Approach others to try it and provide feedback?
 TODO M 870 Go public.
 TODO M 900 Ask Fitbit to put it in OSS apps.
+
 TODO M 1 build a wf for testing. discuss whether one textElement or rather multiple.(evtl build <use>s of myText and test how to manipulate settings in the non-widget part)
