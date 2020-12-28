@@ -4,7 +4,7 @@ curved-text is a widget for Fitbit OS that displays text in a curve using inbuil
 The text gets arranged and rotated around an imaginary circle.
 
 **Circle**\
-The dimensions of the circle get set by 3 different possible settings:\
+The dimensions of the circle get set by 3 different possible settings:
 * centerX: cx
 * centerY: cy
 * radius: r\
@@ -23,7 +23,7 @@ There are 2 different modes available:
 
 \
 **Alignment**\
- Each mode features the 3 text-anchor positions, which get applied at 0° (center top):\
+ Each mode features the 3 text-anchor positions, which get applied at 0° (center top):
  * textAnchor: 0 (middle)
  * textAnchor: 1 (start)
  * textAnchor: 2 (end)
