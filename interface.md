@@ -38,18 +38,18 @@ Options:
  
 
 
-| Setting | SVG | CSS | Object property | ts/js |
-| --- | --- | --- | --- | --- |
-| text.text | E | — | N | E |
-| font-family |  | D |  |  |
-| font-size |  | D |  |  |
-| fill |  | D |  |  |
-| cx |  |  |  | D |
-| cy |  |  |  | D |
-| r |  |  |  | D |
-| mode |  |  |  | D |
-| textAnchor |  |  |  | D |
-| letterSpacing |  |  |  | D |
-| charAngle |  |  |  | D |
-| rotateText |  |  |  | D |
+| Setting | SVG | CSS | Object property | ts/js | settings |
+| --- | --- | --- | --- | --- | --- |
+| text.text | E | — | N | E |   |
+| font-family |  | D |  |  |   |
+| font-size |  | D |  |  |  |
+| fill |  | D |  |  |  |
+| cx |  |  |  | D | |
+| cy |  |  |  | D | |
+| r |  |  |  | D |  |
+| mode |  |  |  | D |  |
+| textAnchor |  |  |  | D | |
+| letterSpacing |  |  |  | D |  |
+| charAngle |  |  |  | D |  |
+| rotateText |  |  |  | D | |
 
