@@ -10,24 +10,24 @@ TODO M 20 Widget the current code.
 
 Interface:
 -
-TODO M 20.4 Discuss: convert interface.odt to .md, so git can track changes. Do so if 'yes'.\
-TODO M 25.1 Add column(s) for CSS in interface spec.\
+~~TODO M 20.4 Discuss: convert interface.odt to .md, so git can track changes. Do so if 'yes'.~~\
+~~TODO M 25.1 Add column(s) for CSS in interface spec.~~\
 TODO M 25.2 Decide how to indicate priorities in interface spec (eg, essential, desirable, luxury, dream).\
 TODO M 25.3 Discuss: having another interface spec (desirable at A but transformable at B)\
 TODO M 30 Flesh out interface spec (non-animations).\
 TODO M 35 Flesh out interface spec (animations).\
-TODO M 40 Implement all essential interface capabilities.\
+TODO M 40 Implement all essential interface capabilities.
 
 Publishing:
 -
 TODO M 800.1 Purge non-widget code and files to avoid confusing users when it goes public.\
 TODO M 800.2 User documentation (readme.md?).\
-TODO M 850 Approach others to try it and provide feedback?\
+TODO M 850 Approach others to try it and provide feedback?
 
  Go public:
  -
-TODO M 900 Ask Fitbit to put it in OSS apps.
-TODO M 1 build a wf for testing. discuss whether one textElement or rather multiple.(evtl build <use>s of myText and test how to manipulate settings in the non-widget part)
+TODO M 900 Ask Fitbit to put it in OSS apps.\
+~~TODO M 1 build a wf for testing. discuss whether one textElement or rather multiple.(evtl build <use>s of myText and test how to manipulate settings in the non-widget part)~~
 
 comments/opinions on TODO´s
 -
@@ -45,4 +45,5 @@ Barb
 * 25.2  I would suuggest essential => doable => desirable (exclude luxury => dream for now, thinking the construction might be consistant enough to do so later "if board")
 * 1     skipped
 
-PS: is there a way to cross out text here? I would rather like to keep all TODO´s here, til it´s close to "done".
+PS: I would rather keep all TODO´s here and crossout the obsolete ones, til the project is close to nearly "done".
+ok, maybe not really AL but the code relevants.
