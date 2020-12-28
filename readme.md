@@ -2,7 +2,7 @@ curved-text
 =
 (under construction!)\
 \
-curved-text is a widget for Fitbit OS that displays text in a curve using inbuilt fonts.\
+curved-text is a widget for Fitbit OS using inbuilt fonts for curved text.\
 The text gets arranged and rotated around an imaginary circle.
 
 **Circle**\
