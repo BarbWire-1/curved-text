@@ -7,7 +7,7 @@ The text gets arranged and rotated around an imaginary circle.
 The dimensions of the circle get set by 3 different possible settings:
 * centerX: cx
 * centerY: cy
-* radius: r\
+* radius: r
 
 Setting `r < 0` can be used for bottom-curved text.
 
@@ -15,7 +15,7 @@ Setting `r < 0` can be used for bottom-curved text.
 **Mode**\
 There are 2 different modes available:
 * mode: 0 (auto)\
- calculates the relative position of the characters, depending on their individual witdh (using getBBox()).\
+ calculates the relative position of the characters, depending on their individual witdh (using getBBox() ).\
  In this mode you can additionally add a value for letter-spacing (decimal)
  
 * mode: 1 (fix)\
@@ -30,7 +30,7 @@ There are 2 different modes available:
 
 \
  **Rotation**\
- This feature provides an additional rotation on the whole textElement, after it´s Alignment.
+ This feature provides an additional rotation on the whole textElement, after it´s alignment.
 
  \
  **Multiuse**\
