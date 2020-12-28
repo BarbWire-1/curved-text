@@ -2,11 +2,11 @@ Resolve questions:
 -
 TODO M 5.1 Discuss Barb's "not sure about font.properties settings via css, js or svg".\
 TODO M 5.2 Discuss Barb's "playing with different animations and transformations, I think implementing them needs a very strict plan for their accessability".\
-TODO M 10.1 Discuss: for management, use git project, this file, or something else.\
-TODO M 10.2 Discuss: how stable should the 'base' code be before attempting to widget it (especially re animations). Discuss whether current code is there yet.\
+~~TODO M 10.1 Discuss: for management, use git project, this file, or something else.~~\
+~~TODO M 10.2 Discuss: how stable should the 'base' code be before attempting to widget it (especially re animations). Discuss whether current code is there yet.~~\
 TODO M 20.3 Discuss: how robust do we want this to be if users use bad settings (eg, text too long)?\
 
-TODO M 20 Widget the current code.
+TODO M 20 Widget the current code.\
 TODO M 21 Discuss whether only allow integer to rotateText?
 
 Interface:
