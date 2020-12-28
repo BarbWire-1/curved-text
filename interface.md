@@ -35,15 +35,21 @@ Options:
 
 * ts/js: property setter or function; eg, `myWidget.fill='0xff0000'` or `myWidget.setCenter(100,200)`. This allows values to be changed via ts/js while the app is running. In general, use a setter if only one argument; otherwise use a function.
 
+ 
+
+
 | Setting | SVG | CSS | Object property | ts/js |
 | --- | --- | --- | --- | --- |
-| text | E | — | N | E |
-| cx |  |  |  |  |
-| cy |  |  |  |  |
-| r |
-| mode |
-| textAnchor |
-| letterSpacing |
-| charAngle |
-| rotateText |
+| text.text | E | — | N | E |
+| font-family |  | D |  |  |
+| font-size |  | D |  |  |
+| fill |  | D |  |  |
+| cx |  |  |  | D |
+| cy |  |  |  | D |
+| r |  |  |  | D |
+| mode |  |  |  | D |
+| textAnchor |  |  |  | D |
+| letterSpacing |  |  |  | D |
+| charAngle |  |  |  | D |
+| rotateText |  |  |  | D |
 
