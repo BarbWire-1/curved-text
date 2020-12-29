@@ -16,7 +16,7 @@ const construct = el => {
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-    textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
+    //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
 
     let mode: number = 0; // 0: automatic, 1: rotate fix angle each
     console.log("mode: "+ (mode == 0 ? "auto" : "fix"));

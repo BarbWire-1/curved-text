@@ -123,8 +123,8 @@
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="font-size" to="20" />
       <set href="#position" attributeName="cx" to="100" />
-      <set href="#position" attributeName="cy" to="250" />
-      <set href="#position" attributeName="r" to="40" />
+      <set href="#position" attributeName="cy" to="100" />
+      <set href="#position" attributeName="r" to="50" />
       <!-- TODO G 3.60 can we animate rotation by accessing textChars via <set>? Need to href <animateTransform>. How to pass events?? -->
    </use>
 
