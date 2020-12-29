@@ -14,10 +14,11 @@ const widgets = widgetFactory([curvedText])
 widgets.registerContainer(document)
 const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 //curvedTextWidget1.startAngle = 180  // not implemented yet
-//const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
-//curvedTextWidget2.text = '123456'
-//curvedTextWidget2.charAngle = 45  // specify exactly how many degrees per character, instead of modus==="auto"
-
+const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
+curvedTextWidget2.text = '123456'
+curvedTextWidget2.charAngle = 45  // specify exactly how many degrees per character, instead of modus==="auto"
+//curvedTextWidget2.position.cx = 168; // when I tried this, it didn´t miove, but "myText" disappeared.
+//curvedTextWidget2.position.cy = 168;
 
 let myText = document.getElementById("myText") as TextElement;
 let position = document.getElementById("position") as GroupElement;
@@ -25,15 +26,15 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-myText.text = "ABCDEFGHIJKLMNOPQRSTUVWX"// enter text ar data here MiW!MiW!MiW!M
+myText.text = "ABCDEFGHIJKLMN"// enter text ar data here MiW!MiW!MiW!M
 
 let mode: number = 1; // 0: automatic, 1: rotate fix angle each
 console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
 //CIRCLE
-let radius: number = 170;//if negative, text is bottom curve
-let centerX: number = 168;
+let radius: number = 100;//if negative, text is bottom curve
+let centerX: number = 0;
 console.log("center: x "+centerX);
-let centerY: number = 168; // center of the circle
+let centerY: number = 0; // center of the circle
 console.log("center: y " + centerY)
 
 //TEXT
@@ -54,9 +55,7 @@ let char  = document.getElementsByClassName("char") as TextElement[];// single c
 //CENTER CIRCLE
 position.groupTransform.translate.x = centerX ;
 position.groupTransform.translate.y = centerY ;
-// TODO B 1 what difference do the two lines below make?
-alignRotate.groupTransform.translate.x =  0;
-alignRotate.groupTransform.translate.y =  0 ;
+
 
 //CIRCUMFERENCE FOR AUTO
 const circ = 2 * radius * Math.PI;

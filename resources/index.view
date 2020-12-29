@@ -14,7 +14,7 @@
 
     <!--TEXT-->
 
-   <g  id="position" transform="translate(50%,50%)" fill="white">
+   <g  id="position" transform="translate(0,0)" fill="white">
       <text id="myText" class="text" text-length="100" display="none">0123456789</text>
       <g id="alignRotate">
          <g>
@@ -132,16 +132,18 @@
 
 
 
-
-   <use id="curvedText2" href="#curvedText" fill="white" opacity="1" display="inline">
+<g>
+   <use id="curvedText2" href="#curvedText"  opacity="1" fill="orange" display="inline">
       <set href="#text" attributeName="text-buffer" to="another one" />
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="font-family" to="Colfax-Bold" />
       <set href="#text" attributeName="font-size" to="45" />
-      <set href="#position" attributeName="cx" to="250" />
-      <set href="#position" attributeName="cy" to="250" />
+      <set href="#position" attributeName="cx" to="168" />
+      <set href="#position" attributeName="cy" to="168" />
       <set href="#position" attributeName="r" to="-60" />
       <set href="#orientation" attributeName="start-angle" to="90" />
    </use>
+   <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="20"  final="freeze"  />
+</g>
 
 </svg>
