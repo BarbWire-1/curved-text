@@ -4,8 +4,8 @@
     <circle id="position" opacity="0" />    <!-- It's inefficient to have this element, but it allows position to be specified in .view -->
     <arc id="orientation" opacity="0" />    <!-- It's inefficient to have this element, but it allows start-angle to be specified in .view -->
 
-    <svg id="container" x="50%" y="50%">
-   <circle cx="0" cy="0" r="3" fill="red" /> <!--TODO G 1 marks cx,cy of use. But I had to change svg x,y to 168,168 for that. somewhere with -168,-168 overwritten?-->
+    <svg id="container">
+    <circle cx="0" cy="0" r="3" fill="red" /> 
     <!--<g id="container" transform="translate(50%,50%)" fill="white"-->
       <!--<text id="myText" class="text" text-length="100" display="none">0123456789</text>-->
       <g id="alignRotate" transform="translate(0%,0%)" fill="white" >
