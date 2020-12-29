@@ -20,7 +20,7 @@ const construct = el => {
 
     //TEXT
     let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0° //
-    let letterSpacing: number = 1;
+    let letterSpacing: number = 5;
     let rotateText: number = 0;//angle to rotate whole text from it´s beginning
     console.log("rotate text: "+ rotateText + "°");
     console.log("textAnchor: "+ (textAnchor == 0 ? "0 (middle)" : textAnchor == 1 ? "1 (start)" : "2 (end)"));
@@ -34,8 +34,10 @@ const construct = el => {
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
 
     //CENTER CIRCLE
-    containerEl.groupTransform.translate.x = centerX ;
-    containerEl.groupTransform.translate.y = centerY ;
+    //containerEl.groupTransform.translate.x = centerX ;
+    //containerEl.groupTransform.translate.y = centerY ;
+    containerEl.x = centerX;
+    containerEl.y = centerY;
     alignRotate.groupTransform.translate.x =  0;
     alignRotate.groupTransform.translate.y =  0 ;
 
