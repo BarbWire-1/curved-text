@@ -14,7 +14,7 @@
 
     <!--TEXT-->
 
-   <g  id="position" transform="translate(0,0)" fill="white">
+   <g  id="position" transform="translate(0,0)" fill="white" display="none">
       <text id="myText" class="text" text-length="100" display="none">0123456789</text>
       <g id="alignRotate">
          <g>
@@ -118,7 +118,7 @@
    <!-- TODO G 3.61 can we animate rotation by wrapping this <use> in a <g>? Try with cx=cy=0 -->
    <!-- TODO G 3.615 Other simple approach for opacity and evtl fill might be to group the use and animate the group instead of the use itself. -->
 
-   <use id="curvedText1" href="#curvedText" fill="white" opacity="1" display="inline">
+   <use id="curvedText1" href="#curvedText" fill="red" opacity="1" display="inline"> <!-- a static label -->
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="font-size" to="20" />
@@ -132,18 +132,19 @@
 
 
 
-<g>
-   <use id="curvedText2" href="#curvedText"  opacity="1" fill="orange" display="inline">
+<g >
+   <use id="curvedText2" href="#curvedText"  opacity="1" fill="orange" display="inline"> <!-- another one-->
       <set href="#text" attributeName="text-buffer" to="another one" />
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="font-family" to="Colfax-Bold" />
       <set href="#text" attributeName="font-size" to="45" />
       <set href="#position" attributeName="cx" to="168" />
       <set href="#position" attributeName="cy" to="168" />
-      <set href="#position" attributeName="r" to="-60" />
+      <set href="#position" attributeName="r" to="-90" />
       <set href="#orientation" attributeName="start-angle" to="90" />
+        
    </use>
-   <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="20"  final="freeze"  />
+   <!--animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="20"  final="freeze"  /--> <!--rotates around 0,0 -->
 </g>
 
 </svg>
