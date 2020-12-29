@@ -13,6 +13,8 @@ Principles
 
 Priorities
 -
+![Minimum Viable Product](MVP.png)
+
 * E: essential (MVP). Must be done for initial release.
 
 * D: desirable. Do for initial release if easy; otherwise later.
@@ -35,7 +37,7 @@ Options:
 
 * ts/js: property setter or function; eg, `myWidget.fill='0xff0000'` or `myWidget.setCenter(100,200)`. This allows values to be changed via ts/js while the app is running. In general, use a setter if only one argument; otherwise use a function.
 
- 
+
 
 
 | Setting | SVG | CSS | Object property | ts/js | settings |
