@@ -41,6 +41,15 @@ const construct = el => {
     //ASSIGN CHARS
     let chars = (textEl.text.split("")); // array of char set of text to curve
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
+    const numChars = chars.length
+
+    //APPLY FONT FAMILY AND SIZE
+    // TODO G 3 does this need to be in redraw()?
+    const fontSize = textEl.style.fontSize
+    if (fontSize > 0)
+      for (let i = 0; i < numChars; i++) char[i].style.fontSize = fontSize
+    const fontFamily = textEl.style.fontFamily
+      for (let i = 0; i < numChars; i++) char[i].style.fontFamily = fontFamily
 
     //CIRCUMFERENCE FOR AUTO
     const circ = 2 * radius * Math.PI;
@@ -48,10 +57,6 @@ const construct = el => {
 
     //PREVENT MIRRORING
     charAngle = charAngle * (radius < 0 ? -1 : 1);
-
-    //CALCULATE POSITION
-    let numChars = chars.length
-
 
     char[0].text = chars[0];
     let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius

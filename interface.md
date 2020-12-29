@@ -43,8 +43,8 @@ Options:
 | Setting | SVG | CSS | Object property | ts/js | settings |
 | --- | --- | --- | --- | --- | --- |
 | text.text | E ✔ | — | N | E |   |
-| font-family |  | D |  |  |   |
-| font-size |  | D |  |  |  |
+| font-family | E ✔ | D |  |  |   |
+| font-size | E ✔ | D |  |  |  |
 | fill |  | D |  |  |  |
 | cx | ✔ |  |  | D | |
 | cy | ✔ |  |  | D | |

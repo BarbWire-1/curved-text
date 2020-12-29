@@ -136,13 +136,13 @@
    <use id="curvedText2" href="#curvedText"  opacity="1" fill="orange" display="inline"> <!-- another one-->
       <set href="#text" attributeName="text-buffer" to="another one" />
       <set href="#text" attributeName="text-anchor" to="middle" />
-      <set href="#text" attributeName="font-family" to="Colfax-Bold" />
+      <set href="#text" attributeName="font-family" to="Tungsten-Medium" />
       <set href="#text" attributeName="font-size" to="45" />
       <set href="#position" attributeName="cx" to="168" />
       <set href="#position" attributeName="cy" to="168" />
       <set href="#position" attributeName="r" to="-90" />
       <set href="#orientation" attributeName="start-angle" to="90" />
-        
+
    </use>
    <!--animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="20"  final="freeze"  /--> <!--rotates around 0,0 -->
 </g>
