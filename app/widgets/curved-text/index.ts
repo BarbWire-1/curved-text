@@ -1,0 +1,128 @@
+const construct = el => {
+  const textEl = el.getElementById('text')
+  const positionEl = el.getElementById('position')
+
+  el.redraw = () => {   // TODO G 4 does redraw() need to be public?
+    let alignRotate = el.getElementById("alignRotate") as GroupElement;
+    let containerEl = el.getElementById('container');
+
+    /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
+    textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
+
+    let mode: number = 0; // 0: automatic, 1: rotate fix angle each
+    console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
+    //CIRCLE
+    let radius: number = 50;//if negative, text is bottom curve
+    let centerX: number = 250;
+    console.log("center: x "+centerX);
+    let centerY: number = 250; // center of the circle
+    console.log("center: y " + centerY)
+
+    //TEXT
+    let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0° //
+    let letterSpacing: number = 1;
+    let rotateText: number = 0;//angle to rotate whole text from it´s beginning
+    console.log("rotate text: "+ rotateText + "°");
+    console.log("textAnchor: "+ (textAnchor == 0 ? "0 (middle)" : textAnchor == 1 ? "1 (start)" : "2 (end)"));
+    //ANGLE FOR FIX ROTATION
+    let charAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
+    //-----------------------------------------------------------------------------------------------------------------------------
+
+    //VARIABLES
+    //ASSIGN CHARS
+    let chars = (textEl.text.split("")); // array of char set of text to curve
+    let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
+
+    //CENTER CIRCLE
+    containerEl.groupTransform.translate.x = centerX ;
+    containerEl.groupTransform.translate.y = centerY ;
+    alignRotate.groupTransform.translate.x =  0;
+    alignRotate.groupTransform.translate.y =  0 ;
+
+    //CIRCUMFERENCE FOR AUTO
+    const circ = 2 * radius * Math.PI;
+    const degreePx = 360 / circ;
+
+    //PREVENT MIRRORING
+    charAngle = charAngle * (radius < 0 ? -1 : 1);
+
+    //CALCULATE POSITION
+    let numChars = chars.length
+
+
+    char[0].text = chars[0];
+    let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
+    let stringAngle = rotateText;
+
+    //AUTO MODE
+    if (mode === 0) {
+      let cumWidth: number = 0;
+      for (let i: number = 0; i < numChars ; i++) {
+        //apply text and y
+        char[i].text = chars[i];// assign chars to the single textElements
+        char[i].y = y
+
+        //Variables for positioning chars
+        let charWidth = char[i].getBBox().width;
+        cumWidth += charWidth;  //  (thank you, Peter for this neat example of simplifying and efficiency!)
+
+
+        //ROTATION PER CHAR
+        (char[i].parent as GroupElement).groupTransform.rotate.angle =
+        (cumWidth  - charWidth / 2 +  (i) * letterSpacing )  * degreePx;
+
+
+      } // end of char loop
+
+      //TEXT-ANCHOR MODE AUTO
+      switch(textAnchor) {
+        case 0:
+          stringAngle -= (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
+          break;
+        case 2:
+          stringAngle = -(stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);//ok
+          break;
+      }
+    } else if (mode === 1) {
+
+      for (let i: number = 0; i < numChars ; i++) {
+        //apply text and y
+        char[i].text = chars[i];  // assign chars to the single textElements
+        char[i].y = y;  //define y of text, based on radius
+
+        //ROTATION PER CHAR
+        (char[i].parent as GroupElement).groupTransform.rotate.angle = i * charAngle  ;
+
+
+
+      } // end of char loop
+
+        //TEXT-ANCHOR MODE FIX //TODO G 1 errors or error messages if rotate fix up to 360° as than value out of bounds, guess cause of first/halfchar. hardcode this case?
+      switch(textAnchor) {
+        case 0:
+          const firstChar = char[0].getBBox().width;
+          stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
+        case 1:
+          //const firstChar = char[0].getBBox().width;
+          stringAngle += firstChar / 2 * degreePx ;//ok
+          break;
+        case 2:
+          const lastChar = char[numChars-1].getBBox().width;
+          stringAngle += (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
+          break;
+      }
+    };
+    alignRotate.groupTransform.rotate.angle = stringAngle;
+}
+
+  el.redraw()   // TODO G 2 may not be nec
+
+  return el
+}
+
+export default () => {
+  return {
+    name: 'curvedText',
+    construct: construct
+  }
+}

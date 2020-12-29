@@ -14,9 +14,9 @@ const widgets = widgetFactory([curvedText])
 widgets.registerContainer(document)
 const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 //curvedTextWidget1.startAngle = 180  // not implemented yet
-const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
-curvedTextWidget2.text = '123456'
-curvedTextWidget2.charAngle = 45  // specify exactly how many degrees per character, instead of modus==="auto"
+//const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
+//curvedTextWidget2.text = '123456'
+//curvedTextWidget2.charAngle = 45  // specify exactly how many degrees per character, instead of modus==="auto"
 
 
 let myText = document.getElementById("myText") as TextElement;

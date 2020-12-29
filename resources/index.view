@@ -2,16 +2,16 @@
    <rect id="background" />
 
    <!--HELPLINES-->
-   
+
    <g opacity="0.2">
       <line id="vertical" x1="50%" x2="50%" y1="0" y2="100%" fill="white" stroke-width="1"/>
       <line id="horizontal" x1="0" x2="100%" y1="50%" y2="50%" fill="white" stroke-width="1"/>
 
-      <g transform="translate(50% - 122,50% - 122)"><adjust to your circle`s dimensions>
+      <g transform="translate(50% - 122,50% - 122)"><!--adjust to your circle`s dimensions-->
          <arc width="244" height="244" fill="white" arc-width="1" start-angle="0" sweep-angle="360" opacity = "1" />
       </g>
    </g>
-   
+
     <!--TEXT-->
 
    <g  id="position" transform="translate(50%,50%)" fill="white">
@@ -108,7 +108,7 @@
 
 
 
-  
+
    <!-- Widgets -->
    <!-- TODO G 3.617 see if opacity and fill animations can be applied here -->
 
@@ -118,7 +118,7 @@
    <!-- TODO G 3.61 can we animate rotation by wrapping this <use> in a <g>? Try with cx=cy=0 -->
    <!-- TODO G 3.615 Other simple approach for opacity and evtl fill might be to group the use and animate the group instead of the use itself. -->
 
-   <use id="curvedText1" href="#curvedText" fill="white" opacity="1" display="none">
+   <use id="curvedText1" href="#curvedText" fill="white" opacity="1" display="inline">
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="font-size" to="20" />
@@ -133,7 +133,7 @@
 
 
 
-   <use id="curvedText2" href="#curvedText" fill="white" opacity="1" display="none">
+   <use id="curvedText2" href="#curvedText" fill="white" opacity="1" display="inline">
       <set href="#text" attributeName="text-buffer" to="another one" />
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="font-family" to="Colfax-Bold" />
@@ -143,5 +143,5 @@
       <set href="#position" attributeName="r" to="-60" />
       <set href="#orientation" attributeName="start-angle" to="90" />
    </use>
-   
+
 </svg>
