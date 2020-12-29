@@ -84,7 +84,7 @@
          <g>
             <text class="text char"/>
          </g>
-         <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="20"  final="freeze"  />
+         
       </g>
    </svg>
   </symbol>
