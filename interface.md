@@ -42,13 +42,13 @@ Options:
 
 | Setting | SVG | CSS | Object property | ts/js | settings |
 | --- | --- | --- | --- | --- | --- |
-| text.text | E | — | N | E |   |
+| text.text | E ✔ | — | N | E |   |
 | font-family |  | D |  |  |   |
 | font-size |  | D |  |  |  |
 | fill |  | D |  |  |  |
-| cx |  |  |  | D | |
-| cy |  |  |  | D | |
-| r |  |  |  | D |  |
+| cx | ✔ |  |  | D | |
+| cy | ✔ |  |  | D | |
+| r | ✔ |  |  | D |  |
 | mode |  |  |  | D |  |
 | textAnchor |  |  |  | D | |
 | letterSpacing |  |  |  | D |  |
