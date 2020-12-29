@@ -115,7 +115,7 @@ if (mode === 0) {
 
   } // end of char loop
 
-    //TEXT-ANCHOR MODE FIX //TODO G 1 errors or error messages if rotate fix up to 360° as than value out of bounds, guess cause of first/halfchar. hardcode this case?
+    //TEXT-ANCHOR MODE FIX
   switch(textAnchor) {
     case 0:
       const firstChar = char[0].getBBox().width;
