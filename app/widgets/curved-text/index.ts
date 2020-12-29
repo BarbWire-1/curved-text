@@ -1,10 +1,19 @@
 const construct = el => {
   const textEl = el.getElementById('text')
   const positionEl = el.getElementById('position')
+  const containerEl = el.getElementById('container')
+
+  //CIRCLE ATTRIBUTES
+  //containerEl.groupTransform.translate.x = centerX ;
+  //containerEl.groupTransform.translate.y = centerY ;
+  containerEl.x = positionEl.cx;
+  containerEl.y = positionEl.cy;
+  //alignRotate.groupTransform.translate.x =  0;
+  //alignRotate.groupTransform.translate.y =  0 ;
+  let radius = positionEl.r   //if negative, text is bottom curve
 
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
-    let containerEl = el.getElementById('container');
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
     textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
@@ -12,11 +21,11 @@ const construct = el => {
     let mode: number = 0; // 0: automatic, 1: rotate fix angle each
     console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
     //CIRCLE
-    let radius: number = 50;//if negative, text is bottom curve
-    let centerX: number = 250;
-    console.log("center: x "+centerX);
-    let centerY: number = 250; // center of the circle
-    console.log("center: y " + centerY)
+    //let radius: number = 50;//if negative, text is bottom curve
+    //let centerX: number = 250;
+    //console.log("center: x "+centerX);
+    //let centerY: number = 250; // center of the circle
+    //console.log("center: y " + centerY)
 
     //TEXT
     let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0° //
@@ -32,14 +41,6 @@ const construct = el => {
     //ASSIGN CHARS
     let chars = (textEl.text.split("")); // array of char set of text to curve
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
-
-    //CENTER CIRCLE
-    //containerEl.groupTransform.translate.x = centerX ;
-    //containerEl.groupTransform.translate.y = centerY ;
-    containerEl.x = centerX;
-    containerEl.y = centerY;
-    alignRotate.groupTransform.translate.x =  0;
-    alignRotate.groupTransform.translate.y =  0 ;
 
     //CIRCUMFERENCE FOR AUTO
     const circ = 2 * radius * Math.PI;

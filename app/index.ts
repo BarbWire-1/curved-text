@@ -54,6 +54,7 @@ let char  = document.getElementsByClassName("char") as TextElement[];// single c
 //CENTER CIRCLE
 position.groupTransform.translate.x = centerX ;
 position.groupTransform.translate.y = centerY ;
+// TODO B 1 what difference do the two lines below make?
 alignRotate.groupTransform.translate.x =  0;
 alignRotate.groupTransform.translate.y =  0 ;
 
