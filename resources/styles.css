@@ -14,8 +14,8 @@
     text-anchor: middle;
     text-length: 1; /*changed to 1, looking good, hoping it´s ok / Barb*/
 }
-#test {  /* try to sett attributes of <use> via outer <g>*/
+#test {  /* attributes of <use> via outer <g>*/
     fill: greenyellow;
-    transform: translate(50%-68,50%); /*equivalent to cx,cy*/
-   
+    transform: translate(50%-68,50%); /*equivalent to cx,cy*/  /*TODO B check, how "transform-origin" works. evtl acces to start-angle also?*/
+    /* translating the outer group to cx,cy seems indespensible to animate rotate all text around cx,cy*/ 
 }
