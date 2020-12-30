@@ -89,7 +89,8 @@ const construct = el => {
           stringAngle -= (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
           break;
         case 'end':
-          stringAngle = -(stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);//ok
+          //stringAngle = -(stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);// NOT ok
+          stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx
           break;
       }
     } else if (mode === 1) {

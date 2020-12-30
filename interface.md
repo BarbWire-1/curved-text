@@ -51,7 +51,7 @@ Options:
 | cy | ✔ |  |  | D | |
 | r | ✔ |  |  | D |  |
 | mode |  |  |  | D |  |
-| textAnchor |  |  |  | D | |
+| textAnchor | ✔ |  |  | D | |
 | letterSpacing |  |  |  | D |  |
 | charAngle |  |  |  | D |  |
 | rotateText |  |  |  | D | |

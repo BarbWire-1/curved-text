@@ -40,7 +40,7 @@ console.log("center: y " + centerY)
 //TEXT
 let textAnchor: number = 2; //0: middle, 1: start,  2: end at 0° //
 let letterSpacing: number = 10;
-let rotateText: number = 0;//angle to rotate whole text from it´s beginning
+let rotateText: number = 90;//angle to rotate whole text from it´s beginning
 console.log("rotate text: "+ rotateText + "°");
 console.log("textAnchor: "+ (textAnchor == 0 ? "0 (middle)" : textAnchor == 1 ? "1 (start)" : "2 (end)"));
 //ANGLE FOR FIX ROTATION
@@ -98,7 +98,8 @@ if (mode === 0) {
       stringAngle -= (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
       break;
     case 2:
-      stringAngle -= stringAngle += (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx;//ok
+      //stringAngle -= stringAngle += (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx;//ok
+      stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx
       break;
   }
 } else if (mode === 1) {
