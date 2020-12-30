@@ -16,4 +16,6 @@
 }
 #test {  /* try to sett attributes of <use> via outer <g>*/
     fill: greenyellow;
+    transform: translate(50%-68,50%); /*equivalent to cx,cy*/
+   
 }
