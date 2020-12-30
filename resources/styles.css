@@ -17,12 +17,18 @@
 #test {  /* attributes of <use> via outer <g>*/
     
     fill: greenyellow;
-    opacity: 1;
+    opacity: 0.5;
     transform: translate(50%-68,50%); /*equivalent to cx,cy*/  /*TODO B check, how "transform-origin" works. evtl acces to start-angle also?*/
     /* translating the outer group to cx,cy seems indespensible to animate rotate all text around cx,cy*/ 
 }
 /*no idea, how to target text properties
 #curvedText2 .curvedText .text {  
+    font-family:Tungsten-Medium;
+    font-size: 40;
+
+}
+
+#curvedText2 > .text{   /* next try with child combinator (>)
     font-family:Tungsten-Medium;
     font-size: 40;
 
