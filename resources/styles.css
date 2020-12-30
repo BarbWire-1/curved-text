@@ -3,8 +3,8 @@
     height: 100%;
     fill: black;
 }
-.curvedText {
-    fill: white;    /* default fill can't be specified in .text; doing so stops it from being over-ridden easily */
+.curvedText1 #position {
+    r: 50;    /* the factory doesn´t like that! NaN if only set here. Tried different variations. maybe widget doesn´t recognize app ID of use recursively?*/
 }
 .text {
     x: 0;
