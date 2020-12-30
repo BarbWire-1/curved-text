@@ -25,7 +25,8 @@ There are 2 different modes available:
 
 \
 **Alignment**\
- Each mode features the 3 text-anchor positions, which get applied at 0° (center top):
+ Each mode features the 3 text-anchor positions\
+ (which get applied at 0° (center top) for r > 0 and at 180° (center bottom) for r < 0):
  * textAnchor: 0 (middle)
  * textAnchor: 1 (start)
  * textAnchor: 2 (end)

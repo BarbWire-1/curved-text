@@ -122,8 +122,8 @@
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="end" />
       <set href="#text" attributeName="font-size" to="20" />
-      <set href="#position" attributeName="cx" to="100" />
-      <set href="#position" attributeName="cy" to="100" />
+      <set href="#position" attributeName="cx" to="168" />
+      <set href="#position" attributeName="cy" to="168" />
       <set href="#position" attributeName="r" to="50" />
       <!-- TODO G 3.60 can we animate rotation by accessing textChars via <set>? Need to href <animateTransform>. How to pass events?? -->
    </use>
@@ -135,7 +135,7 @@
 <g >
    <use id="curvedText2" href="#curvedText"  opacity="1" fill="orange" display="inline"> <!-- another one-->
       <set href="#text" attributeName="text-buffer" to="another one" />
-      <set href="#text" attributeName="text-anchor" to="middle" />
+      <set href="#text" attributeName="text-anchor" to="end" />
       <set href="#text" attributeName="font-family" to="Tungsten-Medium" />
       <set href="#text" attributeName="font-size" to="45" />
       <set href="#position" attributeName="cx" to="168" />
