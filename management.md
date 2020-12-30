@@ -7,9 +7,10 @@ TODO M 5.2 Discuss Barb's "playing with different animations and transformations
 TODO M 20.3 Discuss: how robust do we want this to be if users use bad settings (eg, text too long)?\
 
 TODO M 20 Widget the current code.\
-TODO M 21 Discuss whether only allow integer to rotateText?
-TODO M 22 Discuss about renaming to fitbit-simple-curved-text
-TODO M 23 Discuss: ts and js version? eventually sdk?
+TODO M 21 Discuss whether only allow integer to rotateText?\
+TODO M 22 Discuss about renaming to fitbit-simple-curved-text\
+TODO M 23 Discuss: ts and js version? eventually sdk?\
+TODO M 24 Discuss: add outer group to use to set not text-related attributes in css. If so in symbol, or in use?
 
 Interface:
 -
