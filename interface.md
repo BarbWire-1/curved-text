@@ -46,6 +46,7 @@ Options:
 | font-family | E ✔ | D |  |  |   |
 | font-size | E ✔ | D |  |  |  |
 | fill | ✔ (1) | D |  |  |  |
+| opacity | ✔ (1) | D |  |  |  |
 | cx | ✔ |  |  | D | |
 | cy | ✔ |  |  | D | |
 | r | ✔ |  |  | D |  |
