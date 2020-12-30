@@ -11,6 +11,8 @@ const construct = el => {
   //alignRotate.groupTransform.translate.x =  0;
   //alignRotate.groupTransform.translate.y =  0 ;
   let radius = positionEl.r   //if negative, text is bottom curve
+  let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
+  console.log(`xxx ${textEl.textAnchor}`)
 
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
@@ -28,11 +30,10 @@ const construct = el => {
     //console.log("center: y " + centerY)
 
     //TEXT
-    let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0° //
     let letterSpacing: number = 5;
     let rotateText: number = 0;//angle to rotate whole text from it´s beginning
     console.log("rotate text: "+ rotateText + "°");
-    console.log("textAnchor: "+ (textAnchor == 0 ? "0 (middle)" : textAnchor == 1 ? "1 (start)" : "2 (end)"));
+    console.log("textAnchor: "+ textAnchor);
     //ANGLE FOR FIX ROTATION
     let charAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
     //-----------------------------------------------------------------------------------------------------------------------------
@@ -84,10 +85,10 @@ const construct = el => {
 
       //TEXT-ANCHOR MODE AUTO
       switch(textAnchor) {
-        case 0:
+        case 'middle':
           stringAngle -= (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
           break;
-        case 2:
+        case 'end':
           stringAngle = -(stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);//ok
           break;
       }
@@ -107,14 +108,14 @@ const construct = el => {
 
         //TEXT-ANCHOR MODE FIX
       switch(textAnchor) {
-        case 0:
+        case 'middle':
           const firstChar = char[0].getBBox().width;
           stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
-        case 1:
+        case 'start':
           //const firstChar = char[0].getBBox().width;
           stringAngle += firstChar / 2 * degreePx ;//ok
           break;
-        case 2:
+        case 'end':
           const lastChar = char[numChars-1].getBBox().width;
           stringAngle += (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
           break;

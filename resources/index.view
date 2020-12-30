@@ -14,7 +14,7 @@
 
     <!--TEXT-->
 
-   <g  id="position" transform="translate(0,0)" fill="white" display="none">
+   <g  id="position" transform="translate(0,0)" fill="white" display="inline">
       <text id="myText" class="text" text-length="100" display="none">0123456789</text>
       <g id="alignRotate">
          <g>
@@ -101,7 +101,7 @@
          <!--animateTransform attributeType="rotate" from="0" to="-360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60" final="freeze--> <!-- working in sim-->
 
       </g>
-       <animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60"  final="freeze"  /> <!-- working in sim-->
+       <!--<animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="60"  final="freeze"  />--> <!-- working in sim-->
        <!--animateTransform attributeType="rotate" from="90" to="-90" easing="linear"  begin="load+2" repeatCount="indefinite" end="disable"  dur="1"  final="freeze"  /--> <!-- working in sim-->
 
    </g>
@@ -120,7 +120,7 @@
 
    <use id="curvedText1" href="#curvedText" fill="red" opacity="1" display="inline"> <!-- a static label -->
       <set href="#text" attributeName="text-buffer" to="a static label" />
-      <set href="#text" attributeName="text-anchor" to="middle" />
+      <set href="#text" attributeName="text-anchor" to="end" />
       <set href="#text" attributeName="font-size" to="20" />
       <set href="#position" attributeName="cx" to="100" />
       <set href="#position" attributeName="cy" to="100" />
