@@ -5,10 +5,10 @@
     <arc id="orientation" opacity="0" />    <!-- It's inefficient to have this element, but it allows start-angle to be specified in .view -->
 
     <svg id="container">
-    
+
     <!--<g id="container" transform="translate(50%,50%)" fill="white"-->
       <!--<text id="myText" class="text" text-length="100" display="none">0123456789</text>-->
-      <g id="alignRotate" fill="white" >
+      <g id="alignRotate" >
          <g>
             <text class="text char"/>
          </g>
@@ -84,7 +84,7 @@
          <g>
             <text class="text char"/>
          </g>
-         
+
       </g>
    </svg>
   </symbol>

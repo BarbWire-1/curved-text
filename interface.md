@@ -45,7 +45,7 @@ Options:
 | text.text | E ✔ | — | N | E |   |
 | font-family | E ✔ | D |  |  |   |
 | font-size | E ✔ | D |  |  |  |
-| fill |  | D |  |  |  |
+| fill | ✔ (1) | D |  |  |  |
 | cx | ✔ |  |  | D | |
 | cy | ✔ |  |  | D | |
 | r | ✔ |  |  | D |  |
@@ -55,3 +55,4 @@ Options:
 | charAngle |  |  |  | D |  |
 | rotateText |  |  |  | D | |
 
+(1) Doesn't seem to require any code in widget.
