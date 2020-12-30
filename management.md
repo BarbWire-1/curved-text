@@ -10,7 +10,8 @@ TODO M 20 Widget the current code.\
 TODO M 21 Discuss whether only allow integer to rotateText?\
 TODO M 22 Discuss about renaming to fitbit-simple-curved-text\
 TODO M 23 Discuss: ts and js version? eventually sdk?\
-TODO M 24 Discuss: add outer group to use to set not text-related attributes in css. If so in symbol, or in use?
+TODO M 24 Discuss: add outer group to use to set not text-related attributes in css. If so in symbol, or in use?\
+TODO M 24.1 position symbol´s "rotate" INSIDE svg instead of translating outer g?
 
 Interface:
 -
