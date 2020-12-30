@@ -133,11 +133,11 @@
 
 
 <g id="test"> <!-- determines cx,cy if animate rotate on the hole use / this <g> -->
-   <use id="curvedText2" href="#curvedText"  opacity="1"  display="inline"> <!-- another one-->
+   <use id="curvedText2"  href="#curvedText"  opacity="1"  display="inline"> <!-- another one-->
       <set href="#text" attributeName="text-buffer" to="another one" />
       <set href="#text" attributeName="text-anchor" to="end" />
-      <set href="#text" attributeName="font-family" to="Tungsten-Medium" />
-      <set href="#text" attributeName="font-size" to="45" />
+      <!--set href="#text" attributeName="font-family" to="Tungsten-Medium" /-->
+      <!--set href="#text" attributeName="font-size" to="45" /-->
       <!--set href="#position" attributeName="cx" to=" 0" /--> <!--set to "0" for animate rotate on outer <g>-->
       <!--set href="#position" attributeName="cy" to=" 0" /--> <!--set to "0" for animate rotate on outer <g>-->
       <set href="#position" attributeName="r" to="-90" />
