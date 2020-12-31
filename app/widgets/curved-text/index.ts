@@ -12,7 +12,8 @@ const construct = el => {
   //alignRotate.groupTransform.translate.y =  0 ;
   let radius = positionEl.r   //if negative, text is bottom curve
   let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
-  console.log(`xxx ${textEl.textAnchor}`)
+  console.log(`letterSpacing=${textEl.letterSpacing}`)
+  let letterSpacing: number = textEl.letterSpacing!==undefined? textEl.letterSpacing : 0;
 
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
@@ -32,7 +33,6 @@ const construct = el => {
     //console.log("center: y " + centerY)
 
     //TEXT
-    let letterSpacing: number = 5;
     let rotateText: number = 0;//angle to rotate whole text from it´s beginning
     console.log("rotate text: "+ rotateText + "°");
     console.log("textAnchor: "+ textAnchor);

@@ -59,7 +59,7 @@ To avoid bloat:
 | r | ✔ |  |  | D |  |
 | mode |  |  |  | D |  |
 | textAnchor | ✔ |  |  | D | |
-| letterSpacing |  |  |  | D |  |
+| letterSpacing | ✔ |  |  | D |  |
 | charAngle |  |  |  | D |  |
 | rotateText |  |  |  | D | |
 

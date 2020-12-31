@@ -122,6 +122,7 @@
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="end" />
       <set href="#text" attributeName="font-size" to="20" />
+      <set href="#text" attributeName="letter-spacing" to="0" />
       <set href="#position" attributeName="cx" to="168" />
       <set href="#position" attributeName="cy" to="168" />
       <set href="#position" attributeName="r" to="50" />
