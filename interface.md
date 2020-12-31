@@ -25,7 +25,7 @@ Priorities
 
 * —: not worth doing.
 
-Static and Infrequently-Changing Settings
+Non-Animation Settings
 -
 Options:
 
@@ -37,8 +37,15 @@ Options:
 
 * ts/js: property setter or function; eg, `myWidget.fill='0xff0000'` or `myWidget.setCenter(100,200)`. This allows values to be changed via ts/js while the app is running. In general, use a setter if only one argument; otherwise use a function.
 
+To avoid bloat:
 
+* If a setting is *never* changed at run-time, it should only be settable via SVG (and CSS if possible). A js/ts interface should not be provided. The only exception is if the setting can't be set in SVG.
 
+* If a setting *always* needs to be changed at run-time, a js/ts interface is essential. SVG and CSS control need not be provided.
+
+* If a setting may or may not need changing at run-time (depending on use-case), all types of interface should be provided.
+
+* If initialisation in js/ts requires specifying a large number of settings, initialisation should be possible using an object that containsa all of the settings, rather than requiring a separate statement for each setting.
 
 | Setting | SVG | CSS | Object property | ts/js | settings |
 | --- | --- | --- | --- | --- | --- |
