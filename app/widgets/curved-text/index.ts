@@ -1,6 +1,7 @@
 const construct = el => {
   const textEl = el.getElementById('text')
   const positionEl = el.getElementById('position')
+  const orientationEl = el.getElementById('orientation')
   const containerEl = el.getElementById('container')
 
   //CIRCLE ATTRIBUTES
@@ -12,8 +13,9 @@ const construct = el => {
   //alignRotate.groupTransform.translate.y =  0 ;
   let radius = positionEl.r   //if negative, text is bottom curve
   let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
-  console.log(`letterSpacing=${textEl.letterSpacing}`)
+  console.log(`sweepAngle=${orientationEl.sweepAngle}`)
   let letterSpacing: number = textEl.letterSpacing!==undefined? textEl.letterSpacing : 0;
+  let charAngle: number = orientationEl.sweepAngle? orientationEl.sweepAngle : 0; //angle each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
 
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
@@ -23,7 +25,7 @@ const construct = el => {
     // centerX is now taken from positionEl.cx
     // centerY is now taken from positionEl.cy
 
-    let mode: number = 0; // 0: automatic, 1: rotate fix angle each
+    let mode: number = 1; // 0: automatic, 1: rotate fix angle each
     console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
     //CIRCLE
     //let radius: number = 50;//if negative, text is bottom curve
@@ -37,7 +39,7 @@ const construct = el => {
     console.log("rotate text: "+ rotateText + "°");
     console.log("textAnchor: "+ textAnchor);
     //ANGLE FOR FIX ROTATION
-    let charAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
+    //let charAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
     //-----------------------------------------------------------------------------------------------------------------------------
 
     //VARIABLES

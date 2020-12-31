@@ -60,7 +60,7 @@ To avoid bloat:
 | mode |  |  |  | D |  |
 | textAnchor | ✔ |  |  | D | |
 | letterSpacing | ✔ |  |  | D |  |
-| charAngle |  |  |  | D |  |
+| charAngle | ✔ |  |  | D |  |
 | rotateText |  |  |  | D | |
 
 (1) Doesn't seem to require any code in widget.
