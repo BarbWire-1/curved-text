@@ -16,6 +16,7 @@ const construct = el => {
   console.log(`sweepAngle=${orientationEl.sweepAngle}`)
   let letterSpacing: number = textEl.letterSpacing!==undefined? textEl.letterSpacing : 0;
   let charAngle: number = orientationEl.sweepAngle? orientationEl.sweepAngle : 0; //angle each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
+  if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
 
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
@@ -61,7 +62,7 @@ const construct = el => {
     const degreePx = 360 / circ;
 
     //PREVENT MIRRORING
-    charAngle = charAngle * (radius < 0 ? -1 : 1);
+    //charAngle = charAngle * (radius < 0 ? -1 : 1);  // moved out of redraw() so charAngle doesn't get negated repeatedly
 
     char[0].text = chars[0];
     let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
