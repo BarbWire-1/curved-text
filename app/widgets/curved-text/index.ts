@@ -13,10 +13,10 @@ const construct = el => {
   //alignRotate.groupTransform.translate.y =  0 ;
   let radius = positionEl.r   //if negative, text is bottom curve
   let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
-  console.log(`sweepAngle=${orientationEl.sweepAngle}`)
   let letterSpacing: number = textEl.letterSpacing!==undefined? textEl.letterSpacing : 0;
-  let charAngle: number = orientationEl.sweepAngle? orientationEl.sweepAngle : 0; //angle each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
+  let charAngle: number = orientationEl.sweepAngle? orientationEl.sweepAngle : 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
   if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
+  console.log(`charAngle=${charAngle}`)
 
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
@@ -26,8 +26,8 @@ const construct = el => {
     // centerX is now taken from positionEl.cx
     // centerY is now taken from positionEl.cy
 
-    let mode: number = 1; // 0: automatic, 1: rotate fix angle each
-    console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
+    //let mode: number = 1; // 0: automatic, 1: rotate fix angle each // no longer used; mode is determined from charAngle (since mode can't be set in SVG)
+    //console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
     //CIRCLE
     //let radius: number = 50;//if negative, text is bottom curve
     //let centerX: number = 250;
@@ -69,7 +69,7 @@ const construct = el => {
     let stringAngle = rotateText;
 
     //AUTO MODE
-    if (mode === 0) {
+    if (!charAngle) {
       let cumWidth: number = 0;
       for (let i: number = 0; i < numChars ; i++) {
         //apply text and y
@@ -98,7 +98,7 @@ const construct = el => {
           stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx
           break;
       }
-    } else if (mode === 1) {
+    } else {    // charAngle is non-zero, so do mode=1 (fix)
 
       for (let i: number = 0; i < numChars ; i++) {
         //apply text and y

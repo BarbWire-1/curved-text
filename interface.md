@@ -57,10 +57,11 @@ To avoid bloat:
 | cx | ✔ |  |  | D | |
 | cy | ✔ |  |  | D | |
 | r | ✔ |  |  | D |  |
-| mode |  |  |  | D |  |
+| mode | (2) |  |  | D |  |
 | textAnchor | ✔ |  |  | D | |
 | letterSpacing | ✔ |  |  | D |  |
-| charAngle | ✔ |  |  | D |  |
+| charAngle | ✔ (2) |  |  | D |  |
 | rotateText |  |  |  | D | |
 
 (1) Doesn't seem to require any code in widget.
+(2) mode is set based on charAngle (sweep-angle). If charAngle is set, assume mode=fix, otherwise mode=auto.
