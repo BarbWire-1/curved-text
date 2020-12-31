@@ -19,6 +19,8 @@ const construct = el => {
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
     //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
+    // centerX is now taken from positionEl.cx
+    // centerY is now taken from positionEl.cy
 
     let mode: number = 0; // 0: automatic, 1: rotate fix angle each
     console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
