@@ -48,7 +48,7 @@ const construct = el => {
     }
   })
 
-  // TODO G 3.63 facilitate rotation animation by more efficient startAngle
+  // facilitate rotation animation by more efficient startAngle
   Object.defineProperty(el, 'startAngle', {  // This isn't the ideal name, but it's consistent with the equivalent attribute in the <arc>
     set: function(newValue) {
       rotateText = newValue
@@ -64,9 +64,9 @@ const construct = el => {
     }
   })
 
-  // TODO G 3.62 animate rotation by providing an API method to set attributes on textChars animateTransform. How to trigger events?
+  // animate rotation by providing an API method to set attributes on textChars animateTransform. How to trigger events?
 
-  el.redraw = () => {   // TODO G 4 does redraw() need to be public?
+  el.redraw = () => {   // does redraw() need to be public?
     //VARIABLES
     /*CENTER OF ROTATION*/
     // isn´t cx,cy misleading? as in fact it is not, but the center of rotation
@@ -74,7 +74,7 @@ const construct = el => {
     charGroupEl.y = positionEl.cy - device.screen.height / 2;
 
     //PREVENT MIRRORING
-    _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // TODO G 1.5 If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
+    _charAngle = _charAngle * (radius < 0 ? -1 : 1);  // If radius<0, widget will swap the sign of _charAngle every time it's called. Is it ever legitimate for angle to be <0?
     //console.log(`_charAngle=${_charAngle}`)
 
     /*ASSIGN CHARS*/
