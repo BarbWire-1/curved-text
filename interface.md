@@ -61,7 +61,12 @@ To avoid bloat:
 | textAnchor | ✔ |  |  | D | |
 | letterSpacing | ✔ |  |  | D |  |
 | charAngle | ✔ (2) |  |  | D |  |
-| rotateText |  |  |  | D | |
+| rotateText | ✔ (3) |  |  | D | |
+
+Notes:
 
 (1) Doesn't seem to require any code in widget.
-(2) mode is set based on charAngle (sweep-angle). If charAngle is set, assume mode=fix, otherwise mode=auto.
+
+(2) mode is set based on charAngle (using SVG property `sweep-angle`). If charAngle is set, assume mode=fix, otherwise mode=auto.
+
+(3) via SVG property `start-text`

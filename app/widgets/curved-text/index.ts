@@ -4,7 +4,7 @@ const construct = el => {
   const orientationEl = el.getElementById('orientation')
   const containerEl = el.getElementById('container')
 
-  //CIRCLE ATTRIBUTES
+  // INITIALISE SETTINGS FROM SVG or CSS
   //containerEl.groupTransform.translate.x = centerX ;
   //containerEl.groupTransform.translate.y = centerY ;
   containerEl.x = positionEl.cx;
@@ -16,7 +16,7 @@ const construct = el => {
   let letterSpacing: number = textEl.letterSpacing!==undefined? textEl.letterSpacing : 0;
   let charAngle: number = orientationEl.sweepAngle? orientationEl.sweepAngle : 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
   if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
-  console.log(`charAngle=${charAngle}`)
+  let rotateText: number = orientationEl.startAngle? orientationEl.startAngle : 0;  //angle to rotate anchor point for whole text
 
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
@@ -36,7 +36,7 @@ const construct = el => {
     //console.log("center: y " + centerY)
 
     //TEXT
-    let rotateText: number = 0;//angle to rotate whole text from it´s beginning
+    //let rotateText: number = 0;//angle to rotate whole text from it´s beginning
     console.log("rotate text: "+ rotateText + "°");
     console.log("textAnchor: "+ textAnchor);
     //ANGLE FOR FIX ROTATION
