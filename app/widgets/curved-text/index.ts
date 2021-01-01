@@ -62,6 +62,9 @@ const construct = el => {
     for (let i=numChars; i<char.length; i++)
       char[i].text = '';    // TODO G 2 better: use display="none"
 
+    //IF NO TEXT, RETURN
+    if (!numChars) return;
+
     //APPLY FONT FAMILY AND SIZE
     // TODO G 3 does this need to be in redraw()? NO!
     const fontSize = textEl.style.fontSize
