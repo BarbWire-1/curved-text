@@ -7,7 +7,7 @@ const construct = el => {
   // INITIALISE SETTINGS FROM SVG or CSS
   //containerEl.groupTransform.translate.x = centerX ;
   //containerEl.groupTransform.translate.y = centerY ;
-  containerEl.x = positionEl.cx;
+  containerEl.x = positionEl.cx; 
   containerEl.y = positionEl.cy;
   //alignRotate.groupTransform.translate.x =  0;
   //alignRotate.groupTransform.translate.y =  0 ;
