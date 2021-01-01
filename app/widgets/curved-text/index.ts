@@ -12,7 +12,9 @@ const construct = el => {
   //alignRotate.groupTransform.translate.x =  0;
   //alignRotate.groupTransform.translate.y =  0 ;
   let radius = positionEl.r   //if negative, text is bottom curve
+  // TODO G 3 how to behave if radius isn't set?
   let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
+  // TODO G 1 what if textEl.textAnchor isn't set by user in SVG or CSS? Do we get a sensible default?
   let letterSpacing: number = textEl.letterSpacing ?? 0;
   let charAngle: number = orientationEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
   if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING

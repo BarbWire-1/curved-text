@@ -3,6 +3,7 @@
     <text id="text" opacity="0" text-length="24" text-anchor="middle" />          <!-- It's inefficient to have this element, but it allows text to be specified in .view -->
     <circle id="position" opacity="0" />    <!-- It's inefficient to have this element, but it allows position to be specified in .view -->
     <arc id="orientation" opacity="0" />    <!-- It's inefficient to have this element, but it allows start-angle to be specified in .view -->
+    <!-- TODO G 3 consider using <g> instead of <arc> for orientation; could access transform="rotate" to get rotateText (anchorAngle) -->
 
     <svg id="container">
 
@@ -10,7 +11,7 @@
       <!--<text id="myText" class="text" text-length="100" display="none">0123456789</text>-->
       <g id="alignRotate" >
          <g>
-            <text class="text char"/>
+            <text class="text char"/>     <!-- TODO G 3 are both classes (text and char) required? may depend on CSS -->
          </g>
             <g>
             <text class="text char"/>
