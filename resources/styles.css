@@ -14,14 +14,7 @@
     text-anchor: middle;
     text-length: 1; /*changed to 1, looking good, hoping it´s ok / Barb*/
 }
-#test {  /* attributes of <use> via outer <g>*/
-/*
-    fill: greenyellow;
-    opacity: 0.5;
-    */
-    transform: translate(0,0); /*equivalent to cx,cy*/  /*TODO B check, how "transform-origin" works. evtl acces to start-angle also?*/
-    /* translating the outer group to cx,cy seems indespensible to animate rotate all text around cx,cy*/
-}
+
 /*no idea, how to target text properties
 #curvedText2 .curvedText .text {
     font-family:Tungsten-Medium;
@@ -35,13 +28,21 @@
 
 }
 */
+#test {  /* attributes of <use> via outer <g>*/
+/*
+    fill: greenyellow;
+    opacity: 0.5;
+    */
+    transform: translate(100,200); /*equivalent to cx,cy*/  /*TODO B check, how "transform-origin" works. evtl acces to start-angle also?*/
+    /* translating the outer group to cx,cy seems indespensible to animate rotate all text around cx,cy*/
+}
 #curvedText2  {
     font-family:Tungsten-Medium;
     font-size: 15;
     fill:greenyellow;
     opacity: 1;
    
-    x: 100; /* moves, but equivalent to cx,cy or sth different?*/
-    y: 200;
+    x: 0; /* moves, but equivalent to cx,cy or sth different?*/
+    y: 0;
    
 }
