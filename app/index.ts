@@ -14,8 +14,8 @@ const widgets = widgetFactory([curvedText])
 widgets.registerContainer(document)
 const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 curvedTextWidget1.text = 'Dynamic text';
-curvedTextWidget1.style.fill = 'blue';
-curvedTextWidget1.style.opacity = 0.8;
+curvedTextWidget1.style.fill = 'lightblue';
+curvedTextWidget1.style.opacity = 1;
 curvedTextWidget1.style.display = 'inline';
 //curvedTextWidget1.startAngle = 180  // not implemented yet
 const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
