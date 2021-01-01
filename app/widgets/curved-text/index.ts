@@ -22,7 +22,7 @@ const construct = el => {
   Object.defineProperty(el, 'text', {
     set: function(newValue) {
       textEl.text = newValue
-      el.redraw()
+      el.redraw() // TODO G 2 make sure redraw isn't doing more than is necessary
     }
   })
 
@@ -60,7 +60,7 @@ const construct = el => {
     //REMOVE ANY CHARS THAT ARE NO LONGER NEEDED
     // There's no need to do this initially. It could be done only when text is changed, but that would complicate the code there.
     for (let i=numChars; i<char.length; i++)
-      char[i].text = '';
+      char[i].text = '';    // TODO G 2 better: use display="none"
 
     //APPLY FONT FAMILY AND SIZE
     // TODO G 3 does this need to be in redraw()? NO!
