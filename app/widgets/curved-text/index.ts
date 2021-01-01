@@ -7,7 +7,7 @@ const construct = el => {
   // INITIALISE SETTINGS FROM SVG or CSS
   //containerEl.groupTransform.translate.x = centerX ;
   //containerEl.groupTransform.translate.y = centerY ;
-  containerEl.x = positionEl.cx; 
+  containerEl.x = positionEl.cx;
   containerEl.y = positionEl.cy;
   //alignRotate.groupTransform.translate.x =  0;
   //alignRotate.groupTransform.translate.y =  0 ;
@@ -121,10 +121,11 @@ const construct = el => {
       } // end of char loop
 
       //TEXT-ANCHOR MODE FIX
+      const firstChar = char[0].getBBox().width;
       switch(textAnchor) {
         case 'middle':
-          const firstChar = char[0].getBBox().width;
           stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
+          break;
         case 'start':
           //const firstChar = char[0].getBBox().width;
           stringAngle += firstChar / 2 * degreePx ;//ok
