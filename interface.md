@@ -52,16 +52,16 @@ To avoid bloat:
 | text | E ✔ | — | N | E ✔ |   |
 | font-family | E ✔ | D |  |  |   |
 | font-size | E ✔ | D |  |  |  |
-| fill | ✔ (1) | D |  |  |  |
-| opacity | ✔ (1) | D |  |  |  |
+| fill | ✔ (1) | D |  | E |  |
+| opacity | ✔ (1) | D |  | E |  |
 | cx | ✔ |  |  | D | |
 | cy | ✔ |  |  | D | |
-| r | ✔ |  |  | D |  |
+| r | ✔ |  |  | N |  |
 | mode | (2) |  |  | (2) |  |
-| textAnchor | ✔ |  |  | D | |
-| letterSpacing | ✔ |  |  | D |  |
-| charAngle | ✔ (2) |  |  | D (2) |  |
-| rotateText | ✔ (3) |  |  | D | |
+| textAnchor | ✔ |  |  | N | |
+| letterSpacing | ✔ |  |  | N |  |
+| charAngle | ✔ (2) |  |  | N (2) |  |
+| rotateText | ✔ (3) |  |  | N | |
 
 Notes:
 
