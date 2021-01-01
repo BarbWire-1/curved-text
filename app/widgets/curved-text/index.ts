@@ -18,6 +18,14 @@ const construct = el => {
   if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
   let rotateText: number = orientationEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
 
+  // ADD PROPERTIES TO SVG ELEMENT OBJECT:
+  Object.defineProperty(el, 'text', {
+    set: function(newValue) {
+      textEl.text = newValue
+      el.redraw()
+    }
+  })
+
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
 
@@ -49,8 +57,13 @@ const construct = el => {
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
     const numChars = chars.length
 
+    //REMOVE ANY CHARS THAT ARE NO LONGER NEEDED
+    // There's no need to do this initially. It could be done only when text is changed, but that would complicate the code there.
+    for (let i=numChars; i<char.length; i++)
+      char[i].text = '';
+
     //APPLY FONT FAMILY AND SIZE
-    // TODO G 3 does this need to be in redraw()?
+    // TODO G 3 does this need to be in redraw()? NO!
     const fontSize = textEl.style.fontSize
     if (fontSize > 0)
       for (let i = 0; i < numChars; i++) char[i].style.fontSize = fontSize
@@ -84,8 +97,6 @@ const construct = el => {
         //ROTATION PER CHAR
         (char[i].parent as GroupElement).groupTransform.rotate.angle =
         (cumWidth  - charWidth / 2 +  (i) * letterSpacing )  * degreePx;
-
-
       } // end of char loop
 
       //TEXT-ANCHOR MODE AUTO
@@ -107,12 +118,9 @@ const construct = el => {
 
         //ROTATION PER CHAR
         (char[i].parent as GroupElement).groupTransform.rotate.angle = i * charAngle  ;
-
-
-
       } // end of char loop
 
-        //TEXT-ANCHOR MODE FIX
+      //TEXT-ANCHOR MODE FIX
       switch(textAnchor) {
         case 'middle':
           const firstChar = char[0].getBBox().width;
@@ -128,7 +136,7 @@ const construct = el => {
       }
     };
     alignRotate.groupTransform.rotate.angle = stringAngle;
-}
+  }
 
   el.redraw()   // TODO G 2 may not be nec
 

@@ -13,6 +13,7 @@ import clock from "clock"
 const widgets = widgetFactory([curvedText])
 widgets.registerContainer(document)
 const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
+curvedTextWidget1.text = 'Dynamic text';
 //curvedTextWidget1.startAngle = 180  // not implemented yet
 const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 curvedTextWidget2.text = '123456'

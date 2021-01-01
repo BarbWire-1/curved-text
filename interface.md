@@ -49,7 +49,7 @@ To avoid bloat:
 
 | Setting | SVG | CSS | Object property | ts/js | settings |
 | --- | --- | --- | --- | --- | --- |
-| text.text | E ✔ | — | N | E |   |
+| text | E ✔ | — | N | E ✔ |   |
 | font-family | E ✔ | D |  |  |   |
 | font-size | E ✔ | D |  |  |  |
 | fill | ✔ (1) | D |  |  |  |
@@ -57,10 +57,10 @@ To avoid bloat:
 | cx | ✔ |  |  | D | |
 | cy | ✔ |  |  | D | |
 | r | ✔ |  |  | D |  |
-| mode | (2) |  |  | D |  |
+| mode | (2) |  |  | (2) |  |
 | textAnchor | ✔ |  |  | D | |
 | letterSpacing | ✔ |  |  | D |  |
-| charAngle | ✔ (2) |  |  | D |  |
+| charAngle | ✔ (2) |  |  | D (2) |  |
 | rotateText | ✔ (3) |  |  | D | |
 
 Notes:
