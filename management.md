@@ -28,6 +28,7 @@ Publishing:
 -
 TODO M 800.1 Purge non-widget code and files to avoid confusing users when it goes public.\
 TODO M 800.2 User documentation (readme.md?).\
+TODO M 800.3 Comment all code
 TODO M 850 Approach others to try it and provide feedback?
 
  Go public:
