@@ -136,7 +136,7 @@
 
 
 <!--g id="test"--> <!-- determines cx,cy if animate rotate on the hole use / this <g> -->
-   <use id="curvedText2"  href="#curvedText" text="SVG testText" x="168" y="168" font-family="Barlow-Regular" font-size="40" fill="red" opacity="0.5"> <!-- another one / font-size not applied-->
+   <use id="curvedText2"  href="#curvedText" x="168" y="168" font-family="Barlow-Regular" font-size="40" fill="red" opacity="0.5"> <!-- another one / font-size not applied-->
       <!--set href="#text" attributeName="text-buffer" to="another one" /-->
       <!--set href="#text" attributeName="text-anchor" to="end" /-->
       <!--set href="#text" attributeName="font-family" to="Tungsten-Medium" /-->
