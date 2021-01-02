@@ -52,8 +52,9 @@ To avoid bloat:
 | text | E ✔ | — | N | E ✔ |   |
 | font-family | E ✔ | D |  |  |   |
 | font-size | E ✔ | D |  |  |  |
-| fill | ✔ (1) | D |  | E |  |
-| opacity | ✔ (1) | D |  | E |  |
+| fill | ✔ (1) | D |  | ✔ |  |
+| opacity | ✔ (1) | D |  | ✔ |  |
+| display | ✔ (1) | | |✔ |
 | cx | ✔ |  |  | D | |
 | cy | ✔ |  |  | D | |
 | r | ✔ |  |  | N |  |
