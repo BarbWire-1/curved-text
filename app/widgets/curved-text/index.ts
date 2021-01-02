@@ -27,6 +27,8 @@ const construct = el => {
     }
   })
 
+  // TODO G 1.3 API for rotateText = startAngle = anchorAngle
+
   el.redraw = (initFont:boolean) => {   // TODO G 4 does redraw() need to be public?
     // initFont: whether to apply fontSize and fontFamily to all char[].
 

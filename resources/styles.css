@@ -32,7 +32,7 @@
 /*
     fill: greenyellow;
     opacity: 0.5;
-    
+
     transform: translate(0,0); /*equivalent to cx,cy*/  /*TODO B check, how "transform-origin" works. evtl acces to start-angle also?
     /* translating the outer group to cx,cy seems indespensible to animate rotate all text around cx,cy
 }
@@ -57,3 +57,4 @@
     y: 200;
     font-size: 43;
 }
+/* TODO G 1.1 put widget-specific CSS in widget-specific .css file */
