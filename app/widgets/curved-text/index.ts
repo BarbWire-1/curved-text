@@ -93,8 +93,10 @@ const construct = el => {
       char[i].y = y
     }
 
-    //AUTO MODE
-    if (!charAngle) {
+    if (!charAngle) {   // charAngle wasn't specified, so do mode=0 (auto)
+
+      //AUTO MODE
+
       let cumWidth: number = 0;
       for (let i: number = 0; i < numChars ; i++) {
         //Variables for positioning chars
@@ -117,6 +119,9 @@ const construct = el => {
           break;
       }
     } else {    // charAngle is non-zero, so do mode=1 (fix)
+
+      //FIX MODE
+
       for (let i: number = 0; i < numChars ; i++) {
         //ROTATION PER CHAR
         (char[i].parent as GroupElement).groupTransform.rotate.angle = i * charAngle;
@@ -137,6 +142,7 @@ const construct = el => {
           break;
       }
     };
+
     alignRotate.groupTransform.rotate.angle = stringAngle;
   }
 
