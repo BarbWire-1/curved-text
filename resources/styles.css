@@ -27,30 +27,31 @@
     font-size: 40;
 
 }
-*/
-#test {  /* attributes of <use> via outer <g>*/
+
+#test {  /* attributes of <use> via outer <g>
 /*
     fill: greenyellow;
     opacity: 0.5;
-    */
-    transform: translate(50%,50%); /*equivalent to cx,cy*/  /*TODO B check, how "transform-origin" works. evtl acces to start-angle also?*/
-    /* translating the outer group to cx,cy seems indespensible to animate rotate all text around cx,cy*/
+    
+    transform: translate(0,0); /*equivalent to cx,cy*/  /*TODO B check, how "transform-origin" works. evtl acces to start-angle also?
+    /* translating the outer group to cx,cy seems indespensible to animate rotate all text around cx,cy
 }
+*/
 #curvedText2  {
-    font-family:Tungsten-Medium;
-    font-size: 13;      /* works */
+    font-family:Tungsten-Medium; /* works */
+    font-size: 30;      /* works */
     fill:greenyellow; /* works */
-    opacity: 0.5;       /* works */
+    opacity: 1;       /* works */
     display: inline;    /* works */
-    text-anchor: end;   /* no influence - is "middle" hardcoded? */
-    rotate: 90; /* no influence */
+    text-anchor: end;   /* no influence */
+    rotate: 0; /* no influence */
 
-    x: 0; /* moves, but equivalent to cx,cy or sth different? moves currently away from the transform-origin of outer <g>*/
-    y: 0;
+    x: 100; /* moves, but equivalent to cx,cy or sth different? moves currently away from the transform-origin of outer <g>*/
+    y: 100;
 
 }
 #curvedText2#xtext {
-    font-size: 3;
+    font-size: 10;
 }
 #curvedText2.char{ /* not working, as hardcoded in widget? would be equivalent to r*/
     y: 200;

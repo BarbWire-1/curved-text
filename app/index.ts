@@ -134,6 +134,27 @@ if (mode === 0) {
       stringAngle += (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
       break;
   }
-};
+
 alignRotate.groupTransform.rotate.angle = stringAngle;
 //console.log("stringAngle "+stringAngle)
+
+//animate start-angle
+const initRotation = () => {
+const now = new Date();
+
+  let angleSeconds = (now.getSeconds()* 6);
+  let as = angleSeconds;
+  let angleSmoothSeconds = (now.getSeconds() * 1000 + now.getMilliseconds()) * 6 / 1000;
+  let ass = angleSmoothSeconds;
+  //@ts-ignore
+  curvedText2.start - angle == ass;
+  console.log(ass) // great, you introduced the arc :)
+  //@ts-ignore
+  //textChars.style.opacity = Math.min(Math.max(cos(6*ass),0),1);// opacity inherited => chars
+  // rotation in "auto" modus is understandably rather laggy. best to keep this for "fix"?
+  //@ts-ignore
+   //myText2.style.fill = 256*256*Math.floor(255 *(360 - as)/360) + 256*Math.floor(255*as/360);
+  requestAnimationFrame(initRotation);
+}
+requestAnimationFrame(initRotation);
+};
