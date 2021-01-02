@@ -62,7 +62,8 @@ const construct = el => {
 
     //APPLY FONT FAMILY AND SIZE
     if (initFont) {   // might want to break this into initFontSize and initFontFamily if those can be changed separately at run-time
-      const fontSize = textEl.style.fontSize
+      const fontSize = el.style.fontSize
+      console.log(`font-size: el.style.fontSize=${el.style.fontSize} textEl.style.fontSize=${textEl.style.fontSize}`)
       if (fontSize > 0)
         for (let i = 0; i < char.length; i++) char[i].style.fontSize = fontSize
       const fontFamily = textEl.style.fontFamily

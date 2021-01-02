@@ -50,8 +50,8 @@ To avoid bloat:
 | Setting | SVG | CSS | Object property | ts/js | settings |
 | --- | --- | --- | --- | --- | --- |
 | text | E ✔ | — | N | E ✔ |   |
-| font-family | E ✔ | D |  |  |   |
-| font-size | E ✔ | D |  |  |  |
+| font-family | E ✔ | D ✔ |  |  |   |
+| font-size | E ✔ | D ✔ |  |  |  |
 | fill | ✔ (1) | D ✔ |  | ✔ |  |
 | opacity | ✔ (1) | D ✔ |  | ✔ |  |
 | display | ✔ (1) | ✔ | |✔ |
