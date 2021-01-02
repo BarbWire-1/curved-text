@@ -20,8 +20,8 @@ curvedTextWidget1.style.display = 'inline';
 //curvedTextWidget1.startAngle = 180  // not implemented yet
 const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 curvedTextWidget2.text = '123456789ABCDEFG'
-curvedTextWidget2.charAngle = 45  // specify exactly how many degrees per character, instead of modus==="auto"
-//curvedTextWidget2.x = 168; 
+//curvedTextWidget2.charAngle = 45  // NOT IMPLEMENTED; specify exactly how many degrees per character, instead of modus==="auto"
+//curvedTextWidget2.x = 168;
 //curvedTextWidget2.y = 168;
 //curvedTextWidget2.letterSpacing = 3;
 let myText = document.getElementById("myText") as TextElement;

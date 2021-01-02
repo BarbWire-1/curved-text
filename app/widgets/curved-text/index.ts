@@ -92,7 +92,7 @@ const construct = el => {
     for (let i: number = 0; i < numChars ; i++) {
       //apply text and y
       char[i].text = chars[i];// assign chars to the single textElements
-      char[i].style.display = 'inline';
+      char[i].style.display = 'inherit';
       char[i].y = y
     }
 
