@@ -46,14 +46,14 @@
     text-anchor: end;   /* no influence */
     rotate: 0; /* no influence */
 
-    x: 100; /* moves, but equivalent to cx,cy or sth different? moves currently away from the transform-origin of outer <g>*/
-    y: 100;
+    x: 100; /* works */
+    y: 100; /* works */
 
 }
 #curvedText2#xtext {
     font-size: 10;
 }
-#curvedText2.char{ /* not working, as hardcoded in widget? would be equivalent to r*/
+#curvedText2 > .char{ /* not working, as hardcoded in widget? would be equivalent to r*/
     y: 200;
     font-size: 43;
 }
