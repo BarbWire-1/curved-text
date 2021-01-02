@@ -61,7 +61,7 @@ const construct = el => {
     //REMOVE ANY CHARS THAT ARE NO LONGER NEEDED
     // There's no need to do this initially. It could be done only when text is changed, but that would complicate the code there.
     for (let i=numChars; i<char.length; i++)
-      char[i].text = '';    // TODO G 2 better: use display="none"
+      char[i].style.display = 'none';
 
     //IF NO TEXT, RETURN
     if (!numChars) return;
@@ -91,12 +91,12 @@ const construct = el => {
       for (let i: number = 0; i < numChars ; i++) {
         //apply text and y
         char[i].text = chars[i];// assign chars to the single textElements
+        char[i].style.display = 'inline';
         char[i].y = y
 
         //Variables for positioning chars
         let charWidth = char[i].getBBox().width;
         cumWidth += charWidth;  //  (thank you, Peter for this neat example of simplifying and efficiency!)
-
 
         //ROTATION PER CHAR
         (char[i].parent as GroupElement).groupTransform.rotate.angle =
@@ -118,6 +118,7 @@ const construct = el => {
       for (let i: number = 0; i < numChars ; i++) {
         //apply text and y
         char[i].text = chars[i];  // assign chars to the single textElements
+        char[i].style.display = 'inline';
         char[i].y = y;  //define y of text, based on radius
 
         //ROTATION PER CHAR
