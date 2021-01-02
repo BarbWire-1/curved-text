@@ -23,11 +23,13 @@ const construct = el => {
   Object.defineProperty(el, 'text', {
     set: function(newValue) {
       textEl.text = newValue
-      el.redraw() // TODO G 2 make sure redraw isn't doing more than is necessary
+      el.redraw()
     }
   })
 
-  el.redraw = () => {   // TODO G 4 does redraw() need to be public?
+  el.redraw = (initFont:boolean) => {   // TODO G 4 does redraw() need to be public?
+    // initFont: whether to apply fontSize and fontFamily to all char[].
+
     let alignRotate = el.getElementById("alignRotate") as GroupElement;
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
@@ -58,6 +60,15 @@ const construct = el => {
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
     const numChars = chars.length
 
+    //APPLY FONT FAMILY AND SIZE
+    if (initFont) {   // might want to break this into initFontSize and initFontFamily if those can be changed separately at run-time
+      const fontSize = textEl.style.fontSize
+      if (fontSize > 0)
+        for (let i = 0; i < char.length; i++) char[i].style.fontSize = fontSize
+      const fontFamily = textEl.style.fontFamily
+      for (let i = 0; i < char.length; i++) char[i].style.fontFamily = fontFamily
+    }
+
     //REMOVE ANY CHARS THAT ARE NO LONGER NEEDED
     // There's no need to do this initially. It could be done only when text is changed, but that would complicate the code there.
     for (let i=numChars; i<char.length; i++)
@@ -65,14 +76,6 @@ const construct = el => {
 
     //IF NO TEXT, RETURN
     if (!numChars) return;
-
-    //APPLY FONT FAMILY AND SIZE
-    // TODO G 3 does this need to be in redraw()? NO!
-    const fontSize = textEl.style.fontSize
-    if (fontSize > 0)
-      for (let i = 0; i < numChars; i++) char[i].style.fontSize = fontSize
-    const fontFamily = textEl.style.fontFamily
-      for (let i = 0; i < numChars; i++) char[i].style.fontFamily = fontFamily
 
     //CIRCUMFERENCE FOR AUTO
     const circ = 2 * radius * Math.PI;
@@ -146,7 +149,7 @@ const construct = el => {
     alignRotate.groupTransform.rotate.angle = stringAngle;
   }
 
-  el.redraw()   // TODO G 2 may not be nec
+  el.redraw(true)
 
   return el
 }
