@@ -85,15 +85,18 @@ const construct = el => {
     let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
     let stringAngle = rotateText;
 
+    //INITIALISE char[]
+    for (let i: number = 0; i < numChars ; i++) {
+      //apply text and y
+      char[i].text = chars[i];// assign chars to the single textElements
+      char[i].style.display = 'inline';
+      char[i].y = y
+    }
+
     //AUTO MODE
     if (!charAngle) {
       let cumWidth: number = 0;
       for (let i: number = 0; i < numChars ; i++) {
-        //apply text and y
-        char[i].text = chars[i];// assign chars to the single textElements
-        char[i].style.display = 'inline';
-        char[i].y = y
-
         //Variables for positioning chars
         let charWidth = char[i].getBBox().width;
         cumWidth += charWidth;  //  (thank you, Peter for this neat example of simplifying and efficiency!)
@@ -114,15 +117,9 @@ const construct = el => {
           break;
       }
     } else {    // charAngle is non-zero, so do mode=1 (fix)
-
       for (let i: number = 0; i < numChars ; i++) {
-        //apply text and y
-        char[i].text = chars[i];  // assign chars to the single textElements
-        char[i].style.display = 'inline';
-        char[i].y = y;  //define y of text, based on radius
-
         //ROTATION PER CHAR
-        (char[i].parent as GroupElement).groupTransform.rotate.angle = i * charAngle  ;
+        (char[i].parent as GroupElement).groupTransform.rotate.angle = i * charAngle;
       } // end of char loop
 
       //TEXT-ANCHOR MODE FIX
@@ -132,7 +129,6 @@ const construct = el => {
           stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
           break;
         case 'start':
-          //const firstChar = char[0].getBBox().width;
           stringAngle += firstChar / 2 * degreePx ;//ok
           break;
         case 'end':
