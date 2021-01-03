@@ -62,7 +62,7 @@ To avoid bloat:
 | textAnchor | ✔ |  |  | N | |
 | letterSpacing | ✔ |  |  | N |  |
 | charAngle | ✔ (2) |  |  | N (2) |  |
-| rotateText | ✔ (3) |  |  | N | |
+| rotateText | ✔ (3) |  |  | N ✔ | |
 
 Notes:
 
