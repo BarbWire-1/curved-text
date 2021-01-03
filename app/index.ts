@@ -23,6 +23,8 @@ setInterval(()=>{
   // Barb: Instead of, or in addition to, .startAngle, I'm happy to implement .rotateText and/or .anchorAngle.
   // My preference is to have .startAngle (for consistency with SVG and CSS) and .anchorAngle (because it's the most natural term).
   // Having two functions that do identical things is a bit weird, but might be optimal given constraints. :)
+  // I totally agree! Yes, it´s weird, and yes, it would make using it mor "intuitive"
+  // and yes, this little bug was a beutiful idea :)))) my face hurts!
   angle = (angle + 2) % 360
 },50)
 //curvedTextWidget1.startAngle = 180  // not implemented yet
@@ -146,23 +148,4 @@ if (mode === 0) {
 alignRotate.groupTransform.rotate.angle = stringAngle;
 //console.log("stringAngle "+stringAngle)
 
-//animate start-angle
-const initRotation = () => {
-const now = new Date();
-
-  let angleSeconds = (now.getSeconds()* 6);
-  let as = angleSeconds;
-  let angleSmoothSeconds = (now.getSeconds() * 1000 + now.getMilliseconds()) * 6 / 1000;
-  let ass = angleSmoothSeconds;
-  //@ts-ignore
-  curvedText2.start - angle == ass;
-  console.log(ass) // great, you introduced the arc :)
-  //@ts-ignore
-  //textChars.style.opacity = Math.min(Math.max(cos(6*ass),0),1);// opacity inherited => chars
-  // rotation in "auto" modus is understandably rather laggy. best to keep this for "fix"?
-  //@ts-ignore
-   //myText2.style.fill = 256*256*Math.floor(255 *(360 - as)/360) + 256*Math.floor(255*as/360);
-  requestAnimationFrame(initRotation);
-}
-requestAnimationFrame(initRotation);
 };
