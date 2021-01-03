@@ -6,7 +6,7 @@
 .curvedText1 #position {
     r: 50;    /* the factory doesn´t like that! NaN if only set here. Tried different variations/combinations. maybe widget doesn´t recognize ID of use recursively?*/
 }
-.text {
+.xxxxtext {
     x: 0;
     y: 0;
     font-family: Barlow-Regular;
@@ -58,3 +58,7 @@
     font-size: 43;
 }
 /* TODO G 1.1 put widget-specific CSS in widget-specific .css file */
+.char {
+    text-anchor: middle;
+    text-length: 1;
+}

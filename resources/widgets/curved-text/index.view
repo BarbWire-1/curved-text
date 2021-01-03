@@ -9,81 +9,81 @@
 
     <!--<g id="container" transform="translate(50%,50%)" fill="white"-->
       <!--<text id="myText" class="text" text-length="100" display="none">0123456789</text>-->
-      <g id="alignRotate" >
+      <g id="alignRotate" >   <!-- TODO G 1.1 can child <text> attributes be inherited from here? -->
          <g>
-            <text class="text char"/>     <!-- TODO G 1.0 is 'text' required? may depend on CSS -->
+            <text class="char"/>
          </g>
             <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
             <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
           <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
          <g>
-            <text class="text char"/>
+            <text class="char"/>
          </g>
 
       </g>
