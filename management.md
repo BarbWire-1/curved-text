@@ -26,6 +26,7 @@ TODO M 40 Implement all essential interface capabilities.
 
 Publishing:
 -
+TODO M 700 Ensure all default settings are sensible and consistent with Fitbit defaults
 TODO M 800.1 Purge non-widget code and files to avoid confusing users when it goes public.\
 TODO M 800.2 User documentation (readme.md?).\
 TODO M 800.3 use simpler names in installation examples; eg, 'myElementId'
