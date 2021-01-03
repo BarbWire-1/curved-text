@@ -47,7 +47,9 @@ Copy the `/app/widgets` folder (and its contents) into your project's `/app` fol
 
 Copy the `/resources/widgets` folder (and its contents) into your project's `/resources` folder (so that you then have a `/resources/widgets` folder in your project).
 
-In your `/resources/widget.defs` file, within the `<defs>` section, add the following line:
+In your `/resources/widget.defs` file, within the `<defs>` section, add the following lines:
+
+>`<link rel="stylesheet" href="widgets/curved-text/styles.css" />`
 
 >`<link rel="import" href="widgets/curved-text/index.view" />`
 

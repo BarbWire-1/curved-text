@@ -6,14 +6,14 @@
 .curvedText1 #position {
     r: 50;    /* the factory doesn´t like that! NaN if only set here. Tried different variations/combinations. maybe widget doesn´t recognize ID of use recursively?*/
 }
-.xxxxtext {
+/*.text {
     x: 0;
     y: 0;
     font-family: Barlow-Regular;
     font-size: 30;
     text-anchor: middle;
-    text-length: 1; /*changed to 1, looking good, hoping it´s ok / Barb*/
-}
+    text-length: 1;
+}*/
 
 /*no idea, how to target text properties
 #curvedText2 .curvedText .text {
@@ -56,9 +56,4 @@
 #curvedText2 > .char{ /* not working, as hardcoded in widget? would be equivalent to r*/
     y: 200;
     font-size: 43;
-}
-/* TODO G 1.1 put widget-specific CSS in widget-specific .css file */
-.char {
-    text-anchor: middle;
-    text-length: 1;
 }
