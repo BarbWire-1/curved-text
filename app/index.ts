@@ -17,6 +17,14 @@ curvedTextWidget1.text = 'Dynamic text';
 curvedTextWidget1.style.fill = 'lightblue';
 curvedTextWidget1.style.opacity = 1;
 curvedTextWidget1.style.display = 'inline';
+let angle = 0
+setInterval(()=>{
+  curvedTextWidget1.startAngle = angle
+  // Barb: Instead of, or in addition to, .startAngle, I'm happy to implement .rotateText and/or .anchorAngle.
+  // My preference is to have .startAngle (for consistency with SVG and CSS) and .anchorAngle (because it's the most natural term).
+  // Having two functions that do identical things is a bit weird, but might be optimal given constraints. :)
+  angle = (angle + 2) % 360
+},50)
 //curvedTextWidget1.startAngle = 180  // not implemented yet
 const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
 curvedTextWidget2.text = '123456789ABCDEFG'

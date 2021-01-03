@@ -118,16 +118,15 @@
    <!-- TODO G 3.61 can we animate rotation by wrapping this <use> in a <g>? Try with cx=cy=0 -->
    <!-- TODO G 3.615 Other simple approach for opacity and evtl fill might be to group the use and animate the group instead of the use itself. -->
 
-   <use id="curvedText1" href="#curvedText" fill="red" opacity="1" display="inline"> <!-- a static label -->
+   <use id="curvedText1" href="#curvedText" fill="red" opacity="1" display="inline" font-size="20" > <!-- a static label -->
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="start" />
-      <set href="#text" attributeName="font-size" to="20" />
-      <set href="#text" attributeName="letter-spacing" to="0" />
+      <set href="#text" attributeName="letter-spacing" to="5" />
       <set href="#position" attributeName="cx" to="168" />
       <set href="#position" attributeName="cy" to="168" />
       <set href="#position" attributeName="r" to="50" />
       <set href="#orientation" attributeName="start-angle" to="0" />
-      <set href="#orientation" attributeName="sweep-angle" to="15" />
+      <set href="#orientation" attributeName="sweep-angle" to="0" />
       <!-- TODO G 3.60 can we animate rotation by accessing textChars via <set>? Need to href <animateTransform>. How to pass events?? -->
    </use>
 
@@ -135,7 +134,7 @@
 
 
 
-<!-- TODO G 1.5 try all attributes in <use>; remove unnecessary 'box' els from widget. 'text' doesn't work. -->
+<!-- TODO G 1.5 try all attributes in <use>; remove unnecessary 'box' els from widget. 'text', 'sweep-angle' don't work. -->
 <!--g id="test"--> <!-- determines cx,cy if animate rotate on the hole use / this <g> -->
    <use id="curvedText2"  href="#curvedText" x="168" y="168" font-family="Barlow-Regular" font-size="40" fill="red" opacity="0.5" > <!-- another one / font-size not applied-->
       <!--set href="#text" attributeName="text-buffer" to="another one" /-->

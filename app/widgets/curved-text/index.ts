@@ -3,6 +3,7 @@ const construct = el => {
   const positionEl = el.getElementById('position')
   const orientationEl = el.getElementById('orientation')
   const containerEl = el.getElementById('container')
+  const alignRotate = el.getElementById('alignRotate') as GroupElement;
 
   // INITIALISE SETTINGS FROM SVG or CSS
   //containerEl.groupTransform.translate.x = centerX ;
@@ -18,6 +19,7 @@ const construct = el => {
   let charAngle: number = orientationEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
   if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
   let rotateText: number = orientationEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
+  let stringAngle: number = 0;  // angle by which whole string should be rotated to comply with anchor, excluding rotateText adjustment of anchor
 
   // ADD PROPERTIES TO SVG ELEMENT OBJECT:
   Object.defineProperty(el, 'text', {
@@ -27,12 +29,16 @@ const construct = el => {
     }
   })
 
-  // TODO G 1.3 API for rotateText = startAngle = anchorAngle
+  // TODO G 3 API for rotateText and/or anchorAngle, calling same code as startAngle??
+  Object.defineProperty(el, 'startAngle', {
+    set: function(newValue) {
+      rotateText = newValue
+      alignRotate.groupTransform.rotate.angle = rotateText + stringAngle
+    }
+  })
 
   el.redraw = (initFont:boolean) => {   // TODO G 4 does redraw() need to be public?
     // initFont: whether to apply fontSize and fontFamily to all char[].
-
-    let alignRotate = el.getElementById("alignRotate") as GroupElement;
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
     //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
@@ -89,7 +95,7 @@ const construct = el => {
 
     char[0].text = chars[0];
     let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
-    let stringAngle = rotateText;
+    stringAngle = 0;
 
     //INITIALISE char[]
     for (let i: number = 0; i < numChars ; i++) {
@@ -117,11 +123,11 @@ const construct = el => {
       //TEXT-ANCHOR MODE AUTO
       switch(textAnchor) {
         case 'middle':
-          stringAngle -= (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
+          stringAngle = - (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
           break;
         case 'end':
           //stringAngle = -(stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);// NOT ok
-          stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx
+          stringAngle = - (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx
           break;
       }
     } else {    // charAngle is non-zero, so do mode=1 (fix)
@@ -137,19 +143,19 @@ const construct = el => {
       const firstChar = char[0].getBBox().width;
       switch(textAnchor) {
         case 'middle':
-          stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
+          stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
           break;
         case 'start':
-          stringAngle += firstChar / 2 * degreePx ;//ok
+          stringAngle = firstChar / 2 * degreePx ;//ok
           break;
         case 'end':
           const lastChar = char[numChars-1].getBBox().width;
-          stringAngle += (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
+          stringAngle = (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
           break;
       }
     };
 
-    alignRotate.groupTransform.rotate.angle = stringAngle;
+    alignRotate.groupTransform.rotate.angle = rotateText + stringAngle;
   }
 
   el.redraw(true)
