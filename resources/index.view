@@ -135,19 +135,19 @@
 
 
 <!-- TODO G 1.5 try all attributes in <use>; remove unnecessary 'box' els from widget. 'text', 'sweep-angle' don't work. -->
-<!--g id="test"--> <!-- determines cx,cy if animate rotate on the hole use / this <g> -->
-   <use id="curvedText2"  href="#curvedText" x="168" y="168" font-family="Barlow-Regular" font-size="40" fill="red" opacity="0.5" > <!-- another one / font-size not applied-->
+<g id="test" transform="translate(50%,50%)"> <!-- determines cx,cy if animate rotate on the hole use / this <g> -->
+   <use id="curvedText2"  href="#curvedText" x="0" y="0" font-family="Fabrikat-Regular" font-size="25" fill="#dd9c0e" opacity="1" > <!-- another one / font-size not applied-->
       <!--set href="#text" attributeName="text-buffer" to="another one" /-->
       <!--set href="#text" attributeName="text-anchor" to="end" /-->
       <!--set href="#text" attributeName="font-family" to="Tungsten-Medium" /-->
       <!--set href="#text" attributeName="font-size" to="45" /-->
       <!--set href="#position" attributeName="cx" to=" 0" /--> <!--set to "0" for animate rotate on outer <g>-->
       <!--set href="#position" attributeName="cy" to=" 0" /--> <!--set to "0" for animate rotate on outer <g>-->
-      <set href="#position" attributeName="r" to="-90" />
+      <set href="#position" attributeName="r" to="75" />
       <set href="#orientation" attributeName="start-angle" to="90" />
 
    </use>
-   <!--animateTransform attributeType="rotate" from="0" to="360" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="20"  final="freeze"  /--> <!--rotates around 0,0 -->
-<!--/g-->
+   <animateTransform attributeType="rotate" from="360" to="0" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="20"  final="freeze"  /> <!--rotates around 0,0 -->
+</g>
 
 </svg>
