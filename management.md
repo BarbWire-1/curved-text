@@ -32,6 +32,7 @@ TODO M 800.2 User documentation (readme.md?).\
 TODO M 800.3 use simpler names in installation examples; eg, 'myElementId'
 TODO M 800.9 Comment all code
 TODO M 850 Approach others to try it and provide feedback?
+TODO M 860 Discuss wheter to write a template file incl. all imports, eample widgetTex and <use>
 
  Go public:
  -
