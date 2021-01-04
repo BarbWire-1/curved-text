@@ -151,7 +151,7 @@ alignRotate.groupTransform.rotate.angle = stringAngle;
 
 };
 
-// SETTINGS TEST WIDGETS----------------------------------------------------------------------------------------------------------------------------------------------------
+// SETTINGS TEST WIDGETS ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 let settingsInSet = (document as any).getWidgetById("settingsInSet");
 settingsInSet.text = "try all in <set>";
@@ -165,11 +165,13 @@ settingsInCSS.text = "try all in CSS";
 let settingsInline = (document as any).getWidgetById("settingsInline");
 settingsInline.text = "try all inline";
 
+// SETTINGS INLINE ----------------------------------------------------------------------------------------------------------------------------------------------------
+
 settingsInline.style.display = "inline"
 settingsInline.x = 168;
 settingsInline.y = 268;
 
-settingsInline.textBuffer = "try all inline"; // not sure, if it gets applied
+settingsInline.textBuffer = "try all inline"; // not sure, if it gets applied or even syntax is correct
 settingsInline.text = "try all inline";
 settingsInline.style.font = "Colfax-Regular";
 settingsInline.style.fontSize = 35;
@@ -184,3 +186,22 @@ settingsInline.startAngle = 0;
 //settingsInline.r = 10; 
 //settingsInline.textAnchor = "end";
 //settingsInline.sweepAngle = 100;
+
+
+
+clock.granularity = "seconds";
+
+clock.addEventListener("tick", (evt) => {
+  
+});
+function switchSetting() {
+  let now = new Date();
+  let secs = now.getSeconds();
+
+  settingsInSet.style.opacity = secs % 2 == 0 ? 1 : 0.5;
+  settingsInUse.style.opacity = secs % 2 == 0 ? 1 : 0.5;
+  settingsInCSS.style.opacity = secs % 2 == 0 ? 1 : 0.5;
+  settingsInline.style.opacity = secs % 2 == 0 ? 1 : 0.5;
+  
+}
+clock.addEventListener("tick", switchSetting);
