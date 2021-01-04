@@ -187,7 +187,7 @@ settingsInline.startAngle = 0;
 //settingsInline.textAnchor = "end";
 //settingsInline.sweepAngle = 100;
 
-
+// TEST CHANGE SETTINGS  ON RUNTIME (didn´t test all, probabely should)---------------------------------------------------------------------------------------------------------------
 
 clock.granularity = "seconds";
 
