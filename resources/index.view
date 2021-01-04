@@ -110,7 +110,7 @@
 
 
    <!-- Widgets -->
-   
+
    <!-- TODO G 3.617 see if opacity and fill animations can be applied here -->
 
 
@@ -135,8 +135,9 @@
 
 
 
-<!-- TODO G 1.5 try all attributes in <use>; remove unnecessary 'box' els from widget. 'text', 'sweep-angle' don't work. -->
+<!-- TODO G 1.5 try all attributes in <use>; remove unnecessary 'box' els from widget. 'text', 'r', 'start-angle', 'sweep-angle', 'transform' don't work. -->
 <g id="test" transform="translate(50%,50%)" display="none"> <!-- determines cx,cy if animate rotate on the hole use / this <g> -->
+<!-- TODO G 3 think about alternative to getWidgetsByClassName(). Can <use> accept 'value'? -->
    <use id="curvedText2"  href="#curvedText" x="0" y="0" font-family="Fabrikat-Regular" font-size="25" fill="#dd9c0e" opacity="1" > <!-- another one / font-size not applied-->
       <!--set href="#text" attributeName="text-buffer" to="another one" /-->
       <!--set href="#text" attributeName="text-anchor" to="end" /-->
@@ -185,7 +186,7 @@
 <!--TRY ALL IN USE_LINE___________________________________________________________________________________________________________________________________________-->
 <!-- essential & possible settings here-->
  <use id="settingsInUse" href="#curvedText" x="168" y="198" fill="orange" opacity="1" display="inline" font-size="30" font-family="Fabrikat-Regular" >
-       <!--essential here, if needed-->                        
+       <!--essential here, if needed-->
       <set href="#text" attributeName="text-buffer" to="try all in <use>-line"/>
       <set href="#text" attributeName="text-anchor" to="middle" />   <!--text-anchor essential in <set>-->
       <set href="#text" attributeName="letter-spacing" to="0" />     <!--letter-spacing essential in <set>-->
@@ -194,14 +195,14 @@
       <set href="#orientation" attributeName="sweep-angle" to="0" />
  </use>
 <!--unknown attributes in <use>: text-buffer, text-anchor, letter-spacing, r, start-angle, sweep-angle -->
- 
+
 <!--TRY ALL IN CSS___________________________________________________________________________________________________________________________________________-->
 <!-- essential & possible settings here-->
  <use id="settingsInCSS" href="#curvedText" >
-       <!--essential here, if needed-->                        
-      
-      <set href="#text" attributeName="text-anchor" to="middle" />   
-      <set href="#text" attributeName="letter-spacing" to="2" />     
+       <!--essential here, if needed-->
+
+      <set href="#text" attributeName="text-anchor" to="middle" />
+      <set href="#text" attributeName="letter-spacing" to="2" />
       <set href="#position" attributeName="r" to="140" />
       <set href="#orientation" attributeName="start-angle" to="0" />
       <set href="#orientation" attributeName="sweep-angle" to="0" />
@@ -209,30 +210,30 @@
 
  <!--TRY ALL INLINE___________________________________________________________________________________________________________________________________________-->
  <use id="settingsInline" href="#curvedText" >
-       <!--essential here, if needed-->                        
-      
-      <set href="#text" attributeName="text-anchor" to="middle" />   
-      <set href="#text" attributeName="letter-spacing" to="2" />     
+       <!--essential here, if needed-->
+
+      <set href="#text" attributeName="text-anchor" to="middle" />
+      <set href="#text" attributeName="letter-spacing" to="2" />
       <set href="#position" attributeName="r" to="140" />
       <set href="#orientation" attributeName="start-angle" to="0" />
       <set href="#orientation" attributeName="sweep-angle" to="0" />
  </use>
 
 <!--TRY ALL ONGROUP/CLASS/CSS___________________________________________________________________________________________________________________________________________-->
- <g class= "settingsClassCSS" display="inline" font-family="Comic-Neue-Regular" fill="#5f92df">
+ <g class= "settingsClassCSS" display="inline" font-family="Tungsten-Medium" fill="#5f92df">
    <use id="settingsClass" href="#curvedText" display="inline">
-         <!--essential here, if needed-->                        
-         
-         <set href="#text" attributeName="text-anchor" to="middle" />   
-         <set href="#text" attributeName="letter-spacing" to="2" />     
+         <!--essential here, if needed-->
+
+         <set href="#text" attributeName="text-anchor" to="middle" />
+         <set href="#text" attributeName="letter-spacing" to="2" />
          <set href="#position" attributeName="r" to="140" />
          <set href="#orientation" attributeName="start-angle" to="0" />
          <set href="#orientation" attributeName="sweep-angle" to="0" />
    </use>
  </g>
 
- 
 
 
-  
+
+
 </svg>
