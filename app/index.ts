@@ -150,3 +150,8 @@ alignRotate.groupTransform.rotate.angle = stringAngle;
 //console.log("stringAngle "+stringAngle)
 
 };
+
+// SETTINGS TEST WIDGETS----------------------------------------------------------------------------------------------------------------------------------------------------
+
+let settingsInSet = (document as any).getWidgetById("settingsInSet");
+settingsInSet.text = "try all in <use>"

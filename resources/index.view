@@ -163,5 +163,27 @@
       <set href="#orientation" attributeName="start-angle" to="90" />
    </use>
 
+
+<!-- SETTINGS TEST WIDGETS_____________________________________________________________________________________________________________________________________-->
+<!-- ALL IN SET -->
+ <use id="settingsInSet" href="#curvedText"  fill="white" opacity="1" display="inline"><!-- settings here dominate settings per <set> - these settings are essential in the use-line-->
+      <!--set href="#text" attributeName="display" to="none"/--> <!--display here gets applied to static "mother-text" only-->
+      <set href="#text" attributeName="font-family" to="Fabrikat-Regular" />
+      <set href="#text" attributeName="font-size" to="25" />
+      <!--set href="#text" attributeName="opacity" to="0.5"/--> <!-- opacity here gets applied to static "mother-text" only-->
+      <!--set href="#text" attributeName="fill" to="white"/-->  <!-- fill here gets applied to static "mother-text" only-->
+      <set href="#text" attributeName="text-buffer" to="try all in <use>" />
+      <set href="#text" attributeName="text-anchor" to="middle" />
+      <set href="#text" attributeName="letter-spacing" to="0" />
+      <set href="#position" attributeName="cx" to="168" />
+      <set href="#position" attributeName="cy" to="168" />
+      <set href="#position" attributeName="r" to="140" />
+      <set href="#orientation" attributeName="start-angle" to="0" />
+      <set href="#orientation" attributeName="sweep-angle" to="0" />
+ </use>
+
+ 
+
+
   
 </svg>
