@@ -169,7 +169,7 @@ settingsInline.style.display = "inline"
 settingsInline.x = 168;
 settingsInline.y = 268;
 
-settingsInline.textBuffer = "try all inline";
+settingsInline.textBuffer = "try all inline"; // not sure, if it gets applied
 settingsInline.text = "try all inline";
 settingsInline.style.font = "Colfax-Regular";
 settingsInline.style.fontSize = 35;
@@ -177,6 +177,7 @@ settingsInline.style.fontSize = 35;
 settingsInline.style.fill = "magenta";
 settingsInline.style.opacity = 1;
 settingsInline.startAngle = 40;
+settingsInline.textAnchor = "start";
 
 //not working, but no error
 //settingsInline.style.letterSpacing = 0;
