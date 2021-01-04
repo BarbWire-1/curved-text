@@ -165,6 +165,11 @@ settingsInCSS.text = "try all in CSS";
 let settingsInline = (document as any).getWidgetById("settingsInline");
 settingsInline.text = "try all inline";
 
+let settingsClass = (document as any).getWidgetById("settingsClass");
+settingsClass.text = "try g/class in CSS";
+
+
+
 // SETTINGS INLINE ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 settingsInline.style.display = "inline"

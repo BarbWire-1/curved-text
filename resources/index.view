@@ -208,7 +208,6 @@
  </use>
 
  <!--TRY ALL INLINE___________________________________________________________________________________________________________________________________________-->
-<!-- essential & possible settings here-->
  <use id="settingsInline" href="#curvedText" >
        <!--essential here, if needed-->                        
       
@@ -219,7 +218,18 @@
       <set href="#orientation" attributeName="sweep-angle" to="0" />
  </use>
 
-
+<!--TRY ALL ONGROUP/CLASS/CSS___________________________________________________________________________________________________________________________________________-->
+ <g class= "settingsClassCSS" display="inline" font-family="Comic-Neue-Regular" fill="#5f92df">
+   <use id="settingsClass" href="#curvedText" display="inline">
+         <!--essential here, if needed-->                        
+         
+         <set href="#text" attributeName="text-anchor" to="middle" />   
+         <set href="#text" attributeName="letter-spacing" to="2" />     
+         <set href="#position" attributeName="r" to="140" />
+         <set href="#orientation" attributeName="start-angle" to="0" />
+         <set href="#orientation" attributeName="sweep-angle" to="0" />
+   </use>
+ </g>
 
  
 
