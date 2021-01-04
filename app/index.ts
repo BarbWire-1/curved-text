@@ -161,3 +161,24 @@ settingsInUse.text = "try all in <use>-line";
 
 let settingsInCSS = (document as any).getWidgetById("settingsInCSS");
 settingsInCSS.text = "try all in CSS";
+
+let settingsInline = (document as any).getWidgetById("settingsInline");
+settingsInline.text = "try all inline";
+
+settingsInline.style.display = "inline"
+settingsInline.x = 168;
+settingsInline.y = 268;
+
+settingsInline.textBuffer = "try all inline";
+settingsInline.text = "try all inline";
+settingsInline.style.font = "Colfax-Regular";
+settingsInline.style.fontSize = 35;
+
+settingsInline.style.fill = "magenta";
+settingsInline.style.opacity = 1;
+settingsInline.startAngle = 40;
+
+//not working, but no error
+//settingsInline.style.letterSpacing = 0;
+//settingsInline.r = 10; 
+//settingsInline.sweepAngle = 100;

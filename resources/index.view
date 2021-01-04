@@ -195,13 +195,25 @@
  </use>
 <!--unknown attributes in <use>: text-buffer, text-anchor, letter-spacing, r, start-angle, sweep-angle -->
  
- <!--TRY ALL IN CSS___________________________________________________________________________________________________________________________________________-->
+<!--TRY ALL IN CSS___________________________________________________________________________________________________________________________________________-->
 <!-- essential & possible settings here-->
  <use id="settingsInCSS" href="#curvedText" >
        <!--essential here, if needed-->                        
       
-      <set href="#text" attributeName="text-anchor" to="middle" />   <!--text-anchor essential in <set>-->
-      <set href="#text" attributeName="letter-spacing" to="2" />     <!--letter-spacing essential in <set>-->
+      <set href="#text" attributeName="text-anchor" to="middle" />   
+      <set href="#text" attributeName="letter-spacing" to="2" />     
+      <set href="#position" attributeName="r" to="140" />
+      <set href="#orientation" attributeName="start-angle" to="0" />
+      <set href="#orientation" attributeName="sweep-angle" to="0" />
+ </use>
+
+ <!--TRY ALL INLINE___________________________________________________________________________________________________________________________________________-->
+<!-- essential & possible settings here-->
+ <use id="settingsInline" href="#curvedText" >
+       <!--essential here, if needed-->                        
+      
+      <set href="#text" attributeName="text-anchor" to="middle" />   
+      <set href="#text" attributeName="letter-spacing" to="2" />     
       <set href="#position" attributeName="r" to="140" />
       <set href="#orientation" attributeName="start-angle" to="0" />
       <set href="#orientation" attributeName="sweep-angle" to="0" />
