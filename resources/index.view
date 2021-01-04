@@ -14,7 +14,7 @@
 
     <!--TEXT-->
 
-   <g  id="position" transform="translate(0,0)" fill="white" display="inline">
+   <g  id="position" transform="translate(0,0)" fill="white" display="none">
       <text id="myText" class="text" text-length="100" display="none">0123456789</text>
       <g id="alignRotate">
          <g>
@@ -110,6 +110,7 @@
 
 
    <!-- Widgets -->
+   
    <!-- TODO G 3.617 see if opacity and fill animations can be applied here -->
 
 
@@ -118,7 +119,7 @@
    <!-- TODO G 3.61 can we animate rotation by wrapping this <use> in a <g>? Try with cx=cy=0 -->
    <!-- TODO G 3.615 Other simple approach for opacity and evtl fill might be to group the use and animate the group instead of the use itself. -->
 
-   <use id="curvedText1" href="#curvedText" fill="red" opacity="1" display="inline" font-size="20" > <!-- a static label -->
+   <use id="curvedText1" href="#curvedText" fill="red" opacity="1" display="none" font-size="20" > <!-- a static label -->
       <set href="#text" attributeName="text-buffer" to="a static label" />
       <set href="#text" attributeName="text-anchor" to="start" />
       <set href="#text" attributeName="letter-spacing" to="5" />
@@ -135,7 +136,7 @@
 
 
 <!-- TODO G 1.5 try all attributes in <use>; remove unnecessary 'box' els from widget. 'text', 'sweep-angle' don't work. -->
-<g id="test" transform="translate(50%,50%)"> <!-- determines cx,cy if animate rotate on the hole use / this <g> -->
+<g id="test" transform="translate(50%,50%)" display="none"> <!-- determines cx,cy if animate rotate on the hole use / this <g> -->
    <use id="curvedText2"  href="#curvedText" x="0" y="0" font-family="Fabrikat-Regular" font-size="25" fill="#dd9c0e" opacity="1" > <!-- another one / font-size not applied-->
       <!--set href="#text" attributeName="text-buffer" to="another one" /-->
       <!--set href="#text" attributeName="text-anchor" to="end" /-->
@@ -150,4 +151,17 @@
    <animateTransform attributeType="rotate" from="360" to="0" easing="linear"  begin="load" repeatCount="indefinite" end="disable"  dur="20"  final="freeze"  /> <!--rotates around 0,0 -->
 </g>
 
+
+ <use id="myOtherWidget"  href="#curvedText" x="0" y="0" font-family="Fabrikat-Regular" font-size="25" fill="#dd9c0e" opacity="1" display="none"> <!-- another one / font-size not applied-->
+      <!--set href="#text" attributeName="text-buffer" to="another one" /-->
+      <!--set href="#text" attributeName="text-anchor" to="end" /-->
+      <!--set href="#text" attributeName="font-family" to="Tungsten-Medium" /-->
+      <!--set href="#text" attributeName="font-size" to="45" /-->
+      <!--set href="#position" attributeName="cx" to=" 0" /--> <!--set to "0" for animate rotate on outer <g>-->
+      <!--set href="#position" attributeName="cy" to=" 0" /--> <!--set to "0" for animate rotate on outer <g>-->
+      <set href="#position" attributeName="r" to="75" />
+      <set href="#orientation" attributeName="start-angle" to="90" />
+   </use>
+
+  
 </svg>

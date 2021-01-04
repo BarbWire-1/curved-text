@@ -16,7 +16,7 @@ const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as
 curvedTextWidget1.text = 'Dynamic text';
 curvedTextWidget1.style.fill = 'lightblue';
 curvedTextWidget1.style.opacity = 1;
-curvedTextWidget1.style.display = 'inline';
+curvedTextWidget1.style.display = 'none';
 let angle = 0
 setInterval(()=>{
   curvedTextWidget1.startAngle = angle
@@ -37,7 +37,8 @@ curvedTextWidget2.text = '123456789ABCDEFG'
 let myText = document.getElementById("myText") as TextElement;
 let position = document.getElementById("position") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
-
+let myOtherWidget = (document as any).getWidgetById("myOtherWidget");
+myOtherWidget.text = "kidding me?"
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 myText.text = "WWWWW"// enter text ar data here MiW!MiW!MiW!M
