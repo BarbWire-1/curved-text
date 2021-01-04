@@ -39,6 +39,8 @@ let position = document.getElementById("position") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
 let myOtherWidget = (document as any).getWidgetById("myOtherWidget");
 myOtherWidget.text = "kidding me?"
+const classy = (document as any).getWidgetById('classyId')
+
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 myText.text = "WWWWW"// enter text ar data here MiW!MiW!MiW!M
@@ -188,7 +190,7 @@ settingsInline.startAngle = 0;
 
 //not working, but no error
 //settingsInline.style.letterSpacing = 0;
-//settingsInline.r = 10; 
+//settingsInline.r = 10;
 //settingsInline.textAnchor = "end";
 //settingsInline.sweepAngle = 100;
 
@@ -197,7 +199,7 @@ settingsInline.startAngle = 0;
 clock.granularity = "seconds";
 
 clock.addEventListener("tick", (evt) => {
-  
+
 });
 function switchSetting() {
   let now = new Date();
@@ -207,7 +209,7 @@ function switchSetting() {
   settingsInUse.style.opacity = secs % 2 == 0 ? 1 : 0.5;
   settingsInCSS.style.opacity = secs % 2 == 0 ? 1 : 0.5;
   settingsInline.style.opacity = secs % 2 == 0 ? 1 : 0.5;
-  
+
   settingsInline.style.font = secs % 2 == 0 ? "Colfax-Regular" : "Thungsten-Medium"; // not working :( lol
 }
 clock.addEventListener("tick", switchSetting);

@@ -8,6 +8,13 @@ const construct = el => {
   // INITIALISE SETTINGS FROM SVG or CSS
   //containerEl.groupTransform.translate.x = centerX ;
   //containerEl.groupTransform.translate.y = centerY ;
+  if (textEl.class) console.log(`textEl.class='${textEl.class}'`)
+  console.log(`class before=${el.class}`)
+  //el.class = 'curvedText classy'
+  //console.log(`class after=${el.class}`)
+  if (textEl.class) el.class = el.class + ' ' + textEl.class
+  console.log(`class after=${el.class}`)
+
   containerEl.x = positionEl.cx;
   containerEl.y = positionEl.cy;
   //alignRotate.groupTransform.translate.x =  0;

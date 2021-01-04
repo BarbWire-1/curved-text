@@ -61,26 +61,30 @@
 
 /* TEST SETTINGS IN CSS (ONLY) ON ID------------------------------------------------------------------------------------------------------------------*/
 #settingsInCSS {
-    x: 168; 
-    y: 228; 
-    font-family:Tungsten-Medium; 
-    font-size: 30;      
-    fill:greenyellow; 
-    opacity: 1;      
-    display: inline;  
-    text-buffer: "try all in CSS"; 
+    x: 168;
+    y: 228;
+    font-family:Tungsten-Medium;
+    font-size: 30;
+    fill:greenyellow;
+    opacity: 1;
+    display: inline;
+    text-buffer: "try all in CSS";
     text-anchor: start;
 }
 
 .settingsClassCSS {
-    x: 168; 
-    y: 258; 
-    font-family:Tungsten-Medium; 
-    font-size: 30;      
-    fill:greenyellow; 
-    opacity: 1;      
-    display: inline;  
-    text-buffer: "try g/class in CSS"; 
+    x: 168;
+    y: 258;
+    font-family:Tungsten-Medium;
+    font-size: 30;
+    fill:greenyellow;
+    opacity: 1;
+    display: inline;
+    text-buffer: "try g/class in CSS";
     text-anchor: start;
 
+}
+
+.classy {
+    fill: red;
 }
