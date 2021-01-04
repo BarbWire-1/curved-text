@@ -203,5 +203,6 @@ function switchSetting() {
   settingsInCSS.style.opacity = secs % 2 == 0 ? 1 : 0.5;
   settingsInline.style.opacity = secs % 2 == 0 ? 1 : 0.5;
   
+  settingsInline.style.font = secs % 2 == 0 ? "Colfax-Regular" : "Thungsten-Medium"; // not working :( lol
 }
 clock.addEventListener("tick", switchSetting);
