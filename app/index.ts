@@ -176,10 +176,11 @@ settingsInline.style.fontSize = 35;
 
 settingsInline.style.fill = "magenta";
 settingsInline.style.opacity = 1;
-settingsInline.startAngle = 40;
-settingsInline.textAnchor = "start";
+settingsInline.startAngle = 0;
+
 
 //not working, but no error
 //settingsInline.style.letterSpacing = 0;
 //settingsInline.r = 10; 
+//settingsInline.textAnchor = "end";
 //settingsInline.sweepAngle = 100;
