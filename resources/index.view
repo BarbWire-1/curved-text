@@ -165,14 +165,14 @@
 
 
 <!-- SETTINGS TEST WIDGETS_____________________________________________________________________________________________________________________________________-->
-<!-- ALL IN SET -->
- <use id="settingsInSet" href="#curvedText"  fill="white" opacity="1" display="inline"><!-- settings here dominate settings per <set> - these settings are essential in the use-line-->
+<!-- TRY ALL IN SET -->
+ <use id="settingsInSet" href="#curvedText"  fill="white" opacity="1" display="inline" font-size="20"><!--these settings are essential in the use-line-->
       <!--set href="#text" attributeName="display" to="none"/--> <!--display here gets applied to static "mother-text" only-->
-      <set href="#text" attributeName="font-family" to="Fabrikat-Regular" />
-      <set href="#text" attributeName="font-size" to="25" />
-      <!--set href="#text" attributeName="opacity" to="0.5"/--> <!-- opacity here gets applied to static "mother-text" only-->
-      <!--set href="#text" attributeName="fill" to="white"/-->  <!-- fill here gets applied to static "mother-text" only-->
-      <set href="#text" attributeName="text-buffer" to="try all in <use>" />
+      <set href="#text" attributeName="font-family" to="System-Regular" />
+      <!--set href="#text" attributeName="font-size" to="5" /-->       <!-- font-size here gets applied to static "mother-text" only-->
+      <!--set href="#text" attributeName="opacity" to="0.5"/-->   <!-- opacity here gets applied to static "mother-text" only-->
+      <!--set href="#text" attributeName="fill" to="white"/-->    <!-- fill here gets applied to static "mother-text" only-->
+      <set href="#text" attributeName="text-buffer" to="try all in <set>" />
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="letter-spacing" to="0" />
       <set href="#position" attributeName="cx" to="168" />
@@ -181,6 +181,21 @@
       <set href="#orientation" attributeName="start-angle" to="0" />
       <set href="#orientation" attributeName="sweep-angle" to="0" />
  </use>
+ 
+<!--TRY ALL IN USE_LINE-->
+<!-- essential & possible settings here-->
+ <use id="settingsInUse" href="#curvedText" x="168" y="198" fill="white" opacity="1" display="inline" font-size="30" font-family="Fabrikat-Regular" >
+       <!--essential here, if needed-->                        
+      <set href="#text" attributeName="text-buffer" to="try all in <use>-line"/>
+      <set href="#text" attributeName="text-anchor" to="middle" />   <!--text-anchor essential in <set>-->
+      <set href="#text" attributeName="letter-spacing" to="0" />     <!--letter-spacing essential in <set>-->
+      <set href="#position" attributeName="r" to="140" />
+      <set href="#orientation" attributeName="start-angle" to="0" />
+      <set href="#orientation" attributeName="sweep-angle" to="0" />
+ </use>
+<!--unknown attributes in <use>: text-buffer, text-anchor, letter-spacing, r, start-angle, sweep-angle -->
+ 
+
 
  
 

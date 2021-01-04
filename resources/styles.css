@@ -55,5 +55,5 @@
 }
 #curvedText2 > .char{ /* not working, as hardcoded in widget? would be equivalent to r*/
     y: 200;
-    font-size: 43;
+    font-size: 20;
 }

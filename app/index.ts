@@ -154,4 +154,7 @@ alignRotate.groupTransform.rotate.angle = stringAngle;
 // SETTINGS TEST WIDGETS----------------------------------------------------------------------------------------------------------------------------------------------------
 
 let settingsInSet = (document as any).getWidgetById("settingsInSet");
-settingsInSet.text = "try all in <use>"
+settingsInSet.text = "try all in <set>";
+
+let settingsInUse = (document as any).getWidgetById("settingsInUse");
+settingsInUse.text = "try all in <use>-line";
