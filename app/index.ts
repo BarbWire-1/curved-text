@@ -158,3 +158,6 @@ settingsInSet.text = "try all in <set>";
 
 let settingsInUse = (document as any).getWidgetById("settingsInUse");
 settingsInUse.text = "try all in <use>-line";
+
+let settingsInCSS = (document as any).getWidgetById("settingsInCSS");
+settingsInCSS.text = "try all in CSS";

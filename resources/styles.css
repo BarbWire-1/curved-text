@@ -57,3 +57,17 @@
     y: 200;
     font-size: 20;
 }
+
+
+/* TEST SETTINGS IN CSS (ONLY)------------------------------------------------------------------------------------------------------------------*/
+#settingsInCSS {
+    x: 168; 
+    y: 228; 
+    font-family:Tungsten-Medium; 
+    font-size: 30;      
+    fill:greenyellow; 
+    opacity: 1;      
+    display: inline;  
+    text-buffer: "try all in CSS"; 
+    text-anchor: start;
+}
