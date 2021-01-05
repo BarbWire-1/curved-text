@@ -8,7 +8,10 @@ const construct = el => {
   // INITIALISE SETTINGS FROM SVG or CSS
   //containerEl.groupTransform.translate.x = centerX ;
   //containerEl.groupTransform.translate.y = centerY ;
-  if (textEl.class) el.class = el.class + ' ' + textEl.class
+  if (textEl.class) {
+    el.class = el.class + ' ' + textEl.class
+    textEl.class = ''   // prevent textEl from being picked up by document.getElementsByClassName()
+  }
 
   containerEl.x = positionEl.cx;
   containerEl.y = positionEl.cy;

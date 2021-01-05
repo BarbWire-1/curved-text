@@ -37,6 +37,8 @@ myOtherWidget.text = "kidding me?"
 const classx = (document as any).getWidgetById('classxId')
 const classy = (document as any).getWidgetById('classyId')
 classy.anchorAngle = -90
+const classyWidgets = document.getElementsByClassName('classy') // TODO 3 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
+classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
