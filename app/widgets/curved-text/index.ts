@@ -41,7 +41,6 @@ const construct = el => {
     }
   })
 
-  // TODO G 2 API for rotateText and/or anchorAngle, calling same code as startAngle??
   Object.defineProperty(el, 'startAngle', {
     set: function(newValue) {setRotateText(newValue)}
   })
