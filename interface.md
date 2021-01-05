@@ -62,7 +62,7 @@ To avoid bloat:
 | textAnchor | ✔ |  |  | N | |
 | letterSpacing | ✔ |  |  | N |  |
 | charAngle | ✔ (2) |  |  | N (2) |  |
-| rotateText | ✔ (3) |  |  | N ✔ | |
+| rotateText | ✔ (3) |  |  | N ✔ (4) | |
 
 Notes:
 
@@ -70,4 +70,6 @@ Notes:
 
 (2) mode is set based on charAngle (using SVG property `sweep-angle`). If charAngle is set, assume mode=fix, otherwise mode=auto.
 
-(3) via SVG property `start-text`
+(3) via SVG property `start-angle`
+
+(4) via properties .startAngle or .anchorAngle

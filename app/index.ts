@@ -20,11 +20,6 @@ curvedTextWidget1.style.display = 'none';
 let angle = 0
 setInterval(()=>{
   curvedTextWidget1.startAngle = angle
-  // Barb: Instead of, or in addition to, .startAngle, I'm happy to implement .rotateText and/or .anchorAngle.
-  // My preference is to have .startAngle (for consistency with SVG and CSS) and .anchorAngle (because it's the most natural term).
-  // Having two functions that do identical things is a bit weird, but might be optimal given constraints. :)
-  // I totally agree! Yes, it´s weird, and yes, it would make using it mor "intuitive"
-  // and yes, this little bug was a beutiful idea :)))) my face hurts!
   angle = (angle + 2) % 360
 },50)
 //curvedTextWidget1.startAngle = 180  // not implemented yet
@@ -40,6 +35,7 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 let myOtherWidget = (document as any).getWidgetById("myOtherWidget");
 myOtherWidget.text = "kidding me?"
 const classy = (document as any).getWidgetById('classyId')
+classy.anchorAngle = -90
 
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/

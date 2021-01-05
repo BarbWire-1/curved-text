@@ -28,6 +28,11 @@ const construct = el => {
   let rotateText: number = orientationEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
   let stringAngle: number = 0;  // angle by which whole string should be rotated to comply with anchor, excluding rotateText adjustment of anchor
 
+  const setRotateText = newValue => {
+    rotateText = newValue
+    alignRotate.groupTransform.rotate.angle = rotateText + stringAngle
+  }
+
   // ADD PROPERTIES TO SVG ELEMENT OBJECT:
   Object.defineProperty(el, 'text', {
     set: function(newValue) {
@@ -36,12 +41,13 @@ const construct = el => {
     }
   })
 
-  // TODO G 3 API for rotateText and/or anchorAngle, calling same code as startAngle??
+  // TODO G 2 API for rotateText and/or anchorAngle, calling same code as startAngle??
   Object.defineProperty(el, 'startAngle', {
-    set: function(newValue) {
-      rotateText = newValue
-      alignRotate.groupTransform.rotate.angle = rotateText + stringAngle
-    }
+    set: function(newValue) {setRotateText(newValue)}
+  })
+
+  Object.defineProperty(el, 'anchorAngle', {
+    set: function(newValue) {setRotateText(newValue)}
   })
 
   el.redraw = (initFont:boolean) => {   // TODO G 4 does redraw() need to be public?
