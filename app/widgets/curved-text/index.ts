@@ -176,4 +176,3 @@ export default () => {
   }
 }
 // TODO G 3.0 does widget .style need to be implemented? Or can we use #container.style?
-// TODO G 3.0 does listing IDs in CSS selectors work? eg: id1, id2, id3 {...}
