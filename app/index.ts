@@ -37,9 +37,10 @@ myOtherWidget.text = "kidding me?"
 const classx = (document as any).getWidgetById('classxId')
 const classy = (document as any).getWidgetById('classyId')
 classy.anchorAngle = -90
-const classyWidgets = document.getElementsByClassName('classy') // TODO 3 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
-classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
-
+const classxWidgets = document.getElementsByClassName('classx');
+const classyWidgets = document.getElementsByClassName('classy'); // TODO 3 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
+classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
+classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 myText.text = "WWWWW"// enter text ar data here MiW!MiW!MiW!M
@@ -182,7 +183,7 @@ settingsInline.text = "try all inline";
 settingsInline.style.font = "Colfax-Regular";
 settingsInline.style.fontSize = 35;
 
-settingsInline.style.fill = "magenta";
+//settingsInline.style.fill = "magenta"; //added <set> class in svg. takes fill
 settingsInline.style.opacity = 1;
 settingsInline.startAngle = 0;
 
@@ -194,7 +195,7 @@ settingsInline.startAngle = 0;
 //settingsInline.sweepAngle = 100;
 
 // TEST CHANGE SETTINGS  ON RUNTIME (didn´t test all, probabely should)---------------------------------------------------------------------------------------------------------------
-
+/*
 clock.granularity = "seconds";
 
 clock.addEventListener("tick", (evt) => {
@@ -212,3 +213,4 @@ function switchSetting() {
   settingsInline.style.font = secs % 2 == 0 ? "Colfax-Regular" : "Thungsten-Medium"; // not working :( lol
 }
 clock.addEventListener("tick", switchSetting);
+*/

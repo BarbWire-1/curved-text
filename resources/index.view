@@ -167,7 +167,8 @@
 
 <!-- SETTINGS TEST WIDGETS_____________________________________________________________________________________________________________________________________-->
 <!-- TRY ALL IN SET -->
- <use id="settingsInSet" href="#curvedText"  fill="white" opacity="1" display="inline" font-size="20"><!--these settings are essential in the use-line-->
+ <use id="settingsInSet" href="#curvedText"  opacity="1" display="inline" font-size="20"><!--these settings are essential in the use-line-->
+      <set href="#text" attributeName="class" to="classx" /> <!--removed fill in <use>-line, then got applied-->
       <!--set href="#text" attributeName="display" to="none"/-->        <!--display here gets applied to static "mother-text" only-->
       <set href="#text" attributeName="font-family" to="System-Regular" />
       <!--set href="#text" attributeName="font-size" to="5" /-->        <!-- font-size here gets applied to static "mother-text" only-->
@@ -185,7 +186,8 @@
 
 <!--TRY ALL IN USE_LINE___________________________________________________________________________________________________________________________________________-->
 <!-- essential & possible settings here-->
- <use id="settingsInUse" href="#curvedText" x="168" y="198" fill="orange" opacity="1" display="inline" font-size="30" font-family="Fabrikat-Regular" >
+ <use id="settingsInUse" href="#curvedText" x="168" y="198"  opacity="1" display="inline" font-size="30" font-family="Fabrikat-Regular" >
+      <set href="#text" attributeName="class" to="classx" /> <!--removed fill in <use>-line, then got applied-->
        <!--essential here, if needed-->
       <set href="#text" attributeName="text-buffer" to="try all in <use>-line"/>
       <set href="#text" attributeName="text-anchor" to="middle" />   <!--text-anchor essential in <set>-->
@@ -200,7 +202,7 @@
 <!-- essential & possible settings here-->
  <use id="settingsInCSS" href="#curvedText" >
        <!--essential here, if needed-->
-
+      <set href="#text" attributeName="class" to="classy" /> <!--removed fill in css!!! takes class fill. HIERARCHY???-->
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="letter-spacing" to="2" />
       <set href="#position" attributeName="r" to="140" />
@@ -211,7 +213,7 @@
  <!--TRY ALL INLINE___________________________________________________________________________________________________________________________________________-->
  <use id="settingsInline" href="#curvedText" >
        <!--essential here, if needed-->
-
+      <set href="#text" attributeName="class" to="classy" /> <!--removed fill in ts. takes class fill-->
       <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#text" attributeName="letter-spacing" to="2" />
       <set href="#position" attributeName="r" to="140" />

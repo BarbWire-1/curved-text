@@ -65,7 +65,7 @@
     y: 228;
     font-family:Tungsten-Medium;
     font-size: 30;
-    fill:greenyellow;
+    /*fill:greenyellow;*/ /*interresting: doesn´t get overwritten by svg. but takes <set> class fill if not set here!*/
     opacity: 1;
     display: inline;
     text-buffer: "try all in CSS";

@@ -24,7 +24,7 @@ const construct = el => {
   let charAngle: number = orientationEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
   if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
   let rotateText: number = orientationEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
-  let stringAngle: number = 0;  // angle by which whole string should be rotated to comply with anchor, excluding rotateText adjustment of anchor
+  let stringAngle: number = 0;  // angle by which hole string should be rotated to comply with anchor, excluding rotateText adjustment of anchor
 
   const setRotateText = newValue => {
     rotateText = newValue
