@@ -137,7 +137,7 @@
 
 <!-- TODO G 1.5 try all attributes in <use>; remove unnecessary 'box' els from widget. 'text', 'r', 'start-angle', 'sweep-angle', 'transform' don't work. -->
 <g id="test" transform="translate(50%,50%)" display="none"> <!-- determines cx,cy if animate rotate on the hole use / this <g> -->
-<!-- TODO G 3 think about alternative to getWidgetsByClassName(). Can <use> accept 'value'? -->
+<!-- TODO G 3.0 think about alternative to getWidgetsByClassName(). Can <use> accept 'value'? -->
    <use id="curvedText2"  href="#curvedText" x="0" y="0" font-family="Fabrikat-Regular" font-size="25" fill="#dd9c0e" opacity="1" > <!-- another one / font-size not applied-->
       <!--set href="#text" attributeName="text-buffer" to="another one" /-->
       <!--set href="#text" attributeName="text-anchor" to="end" /-->
