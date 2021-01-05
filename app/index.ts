@@ -219,5 +219,7 @@ function switchSetting() {
 clock.addEventListener("tick", switchSetting);
 */
 classyWidgets.forEach(el => (el as any).style.fill = "yellow");// only gets applied to the one element ??? don´t see the logic right now
-classyWidgets.forEach(el => (el as any).style.opacity = 0.5);// only gets applied to the one element ??? don´t see the logic right now
-//CSS stronder than inline! ???
+classyWidgets.forEach(el => (el as any).style.opacity = 0.5);  // only gets applied to the one element ??? don´t see the logic right now
+//CSS stronger than inline! ??? that scares me!
+classxWidgets.forEach(el => (el as any).style.fill = "orange");
+classxWidgets.forEach(el => (el as any).fontFamily = "Fabrikat-Regular");
