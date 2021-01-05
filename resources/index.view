@@ -233,6 +233,14 @@
  </g>
 
 <!-- TRICK WIDGET INTO HAVING SOME CLASS ___________________________________________________________________________________________________________________________________________-->
+<use id="classxId" href="#curvedText" >
+      <set href="#text" attributeName="text-buffer" to="classx" />
+      <set href="#container" attributeName="class" to="classx" />
+      <set href="#position" attributeName="cx" to="50" />
+      <set href="#position" attributeName="cy" to="250" />
+      <set href="#position" attributeName="r" to="50" />
+</use>
+
 <use id="classyId" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="classy" />
       <set href="#text" attributeName="class" to="classy" />

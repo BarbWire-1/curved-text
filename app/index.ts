@@ -34,6 +34,7 @@ let position = document.getElementById("position") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
 let myOtherWidget = (document as any).getWidgetById("myOtherWidget");
 myOtherWidget.text = "kidding me?"
+const classx = (document as any).getWidgetById('classxId')
 const classy = (document as any).getWidgetById('classyId')
 classy.anchorAngle = -90
 

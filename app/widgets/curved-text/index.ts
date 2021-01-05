@@ -8,12 +8,7 @@ const construct = el => {
   // INITIALISE SETTINGS FROM SVG or CSS
   //containerEl.groupTransform.translate.x = centerX ;
   //containerEl.groupTransform.translate.y = centerY ;
-  if (textEl.class) console.log(`textEl.class='${textEl.class}'`)
-  console.log(`class before=${el.class}`)
-  //el.class = 'curvedText classy'
-  //console.log(`class after=${el.class}`)
   if (textEl.class) el.class = el.class + ' ' + textEl.class
-  console.log(`class after=${el.class}`)
 
   containerEl.x = positionEl.cx;
   containerEl.y = positionEl.cy;
@@ -83,7 +78,6 @@ const construct = el => {
     //APPLY FONT FAMILY AND SIZE
     if (initFont) {   // might want to break this into initFontSize and initFontFamily if those can be changed separately at run-time
       const fontSize = el.style.fontSize
-      console.log(`font-size: el.style.fontSize=${el.style.fontSize} textEl.style.fontSize=${textEl.style.fontSize}`)
       if (fontSize > 0)
         for (let i = 0; i < char.length; i++) char[i].style.fontSize = fontSize
       const fontFamily = textEl.style.fontFamily
@@ -181,3 +175,5 @@ export default () => {
     construct: construct
   }
 }
+// TODO G 3.0 does widget .style need to be implemented? Or can we use #container.style?
+// TODO G 3.0 does listing IDs in CSS selectors work? eg: id1, id2, id3 {...}
