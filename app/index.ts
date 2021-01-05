@@ -34,11 +34,15 @@ let position = document.getElementById("position") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
 let myOtherWidget = (document as any).getWidgetById("myOtherWidget");
 myOtherWidget.text = "kidding me?"
+
+
 const classx = (document as any).getWidgetById('classxId')
 const classy = (document as any).getWidgetById('classyId')
-classy.anchorAngle = -90
+//classy.anchorAngle = 0
 const classxWidgets = document.getElementsByClassName('classx');
 const classyWidgets = document.getElementsByClassName('classy'); // TODO 3 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
+
+
 classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
 classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
@@ -214,3 +218,5 @@ function switchSetting() {
 }
 clock.addEventListener("tick", switchSetting);
 */
+classyWidgets.forEach(el => (el as any).style.fill = "yellow");// only gets applied to the one element ??? don´t see the logic right now
+classyWidgets.forEach(el => (el as any).style.opacity = 0.5);// only gets applied to the one element ??? don´t see the logic right now
