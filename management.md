@@ -1,3 +1,10 @@
+Project Management:
+-
+TODO M 01 Back up; .zip; copy to Barb\
+TODO M 02 Work out identity scheme to link spreadsheet cells with code snippets.\
+TODO M 03 Create snippet file.\
+TODO M 04 Clean up current project examples: only two widgets.
+
 Resolve questions:
 -
 TODO M 5.1 Discuss Barb's "not sure about font.properties settings via css, js or svg".\
@@ -6,7 +13,6 @@ TODO M 5.2 Discuss Barb's "playing with different animations and transformations
 ~~TODO M 10.2 Discuss: how stable should the 'base' code be before attempting to widget it (especially re animations). Discuss whether current code is there yet.~~\
 TODO M 20.3 Discuss: how robust do we want this to be if users use bad settings (eg, text too long)?\
 
-TODO M 20 Widget the current code.\
 TODO M 21 Discuss whether only allow integer to rotateText?\
 TODO M 22 Discuss about renaming to fitbit-simple-curved-text\
 TODO M 23 Discuss: ts and js version? eventually sdk?\
@@ -15,6 +21,22 @@ TODO M 24.1 position symbol´s "rotate" INSIDE svg instead of translating outer 
 
 Interface:
 -
+TODO M 05 Verify that the following attributes can't be specified in \<use\>:
+  * r
+  * start-angle
+  * sweep-angle
+  * text-anchor
+  * letter-spacing
+  * text
+
+TODO M 06 \<use\> x,y rather than #position cx,cy for centre.
+
+TODO M 07 In all cases, ensure widget handles attributes taken from \<use\> el or child 'box' el IAW spreadsheet.
+
+TODO M 08 Purge redundant 'box' elements (ie, those with no \<set\>).
+
+TODO M 09 Verify that attributes changed via ts over-ride attributes initialised via class: https://github.com/BarbWire-1/curved-text/commit/28d0ce5a1f6815f9c90c38709dcc86872f3ff97b
+
 ~~TODO M 20.4 Discuss: convert interface.odt to .md, so git can track changes. Do so if 'yes'.~~\
 ~~TODO M 25.1 Add column(s) for CSS in interface spec.~~\
 TODO M 25.2 Decide how to indicate priorities in interface spec (eg, essential, desirable, luxury, dream).\
