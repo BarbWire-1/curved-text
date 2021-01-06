@@ -40,7 +40,7 @@ const classx = (document as any).getWidgetById('classxId')
 const classy = (document as any).getWidgetById('classyId')
 //classy.anchorAngle = 0
 const classxWidgets = document.getElementsByClassName('classx');
-const classyWidgets = document.getElementsByClassName('classy'); // TODO 3 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
+const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
 
 
 classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?

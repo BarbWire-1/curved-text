@@ -178,4 +178,3 @@ export default () => {
     construct: construct
   }
 }
-// TODO G 2.0 Discuss whether solved: does widget .style need to be implemented? Or can we use #container.style? see https://github.com/BarbWire-1/curved-text-demo/commit/795605b383320e7cbc3356c7f3c3691c2fee7c46
