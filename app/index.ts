@@ -27,10 +27,8 @@ const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 Thi
 //classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
 //classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 
-classyWidgets.forEach(el => (el as any).style.fill = "yellow");// only gets applied to the one element ??? don´t see the logic right now. // TODO B 1 There's only ONE widget with class='classy'.
-classyWidgets.forEach(el => (el as any).style.opacity = 0.2);  // only gets applied to the one element ??? don´t see the logic right now. // TODO B 1 There's only ONE widget with class='classy'.
-//CSS stronger than inline! ??? that scares me!
-// TODO B 1 Seems to work fine for Peter. Can you confirm there's a problem?
+classyWidgets.forEach(el => (el as any).style.fill = "yellow");
+classyWidgets.forEach(el => (el as any).style.opacity = 0.2);
 classxWidgets.forEach(el => (el as any).style.fill = "orange");
 classxWidgets.forEach(el => (el as any).fontFamily = "Fabrikat-Regular");
 

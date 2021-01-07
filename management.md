@@ -1,6 +1,5 @@
 Project Management:
 -
-TODO M 01 copy of "Before purge of test widgets.zip" to Barb\
 ~~TODO M 02 Work out identity scheme to link spreadsheet cells with code snippets.~~\
 ~~TODO M 03 Create snippet file.~~\
 ~~TODO M 04 Clean up current project examples: only two widgets.~~
