@@ -12,29 +12,10 @@ import clock from "clock"
 //Initialise widget system
 const widgets = widgetFactory([curvedText])
 widgets.registerContainer(document)
-const curvedTextWidget1 = (document as any).getWidgetById('curvedText1')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
-curvedTextWidget1.text = 'Dynamic text';
-curvedTextWidget1.style.fill = 'lightblue';
-curvedTextWidget1.style.opacity = 1;
-curvedTextWidget1.style.display = 'none';
-let angle = 0
-setInterval(()=>{
-  curvedTextWidget1.startAngle = angle
-  angle = (angle + 2) % 360
-},50)
-//curvedTextWidget1.startAngle = 180  // not implemented yet
-const curvedTextWidget2 = (document as any).getWidgetById('curvedText2')  // 'as any' is a horrible kludge; we should define an interface 'WidgetSearch'
-curvedTextWidget2.text = '123456789ABCDEFG'
-//curvedTextWidget2.charAngle = 45  // NOT IMPLEMENTED; specify exactly how many degrees per character, instead of modus==="auto"
-//curvedTextWidget2.x = 168;
-//curvedTextWidget2.y = 168;
-//curvedTextWidget2.letterSpacing = 3;
+
 let myText = document.getElementById("myText") as TextElement;
 let position = document.getElementById("position") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
-let myOtherWidget = (document as any).getWidgetById("myOtherWidget");
-myOtherWidget.text = "kidding me?"
-
 
 const classx = (document as any).getWidgetById('classxId')
 const classy = (document as any).getWidgetById('classyId')
@@ -43,11 +24,21 @@ const classxWidgets = document.getElementsByClassName('classx');
 const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
 
 
-classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
-classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
+//classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
+//classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
+
+classyWidgets.forEach(el => (el as any).style.fill = "yellow");// only gets applied to the one element ??? don´t see the logic right now. // TODO B 1 There's only ONE widget with class='classy'.
+classyWidgets.forEach(el => (el as any).style.opacity = 0.2);  // only gets applied to the one element ??? don´t see the logic right now. // TODO B 1 There's only ONE widget with class='classy'.
+//CSS stronger than inline! ??? that scares me!
+// TODO B 1 Seems to work fine for Peter. Can you confirm there's a problem?
+classxWidgets.forEach(el => (el as any).style.fill = "orange");
+classxWidgets.forEach(el => (el as any).fontFamily = "Fabrikat-Regular");
+
+
+
 // Everything below if from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-myText.text = "WWWWW"// enter text ar data here MiW!MiW!MiW!M
+myText.text = "I am not a widget"// enter text ar data here MiW!MiW!MiW!M
 
 let mode: number = 0; // 0: automatic, 1: rotate fix angle each
 //console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
@@ -59,13 +50,13 @@ let centerY: number = 168; // center of the circle
 //console.log("center: y " + centerY)
 
 //TEXT
-let textAnchor: number = 2; //0: middle, 1: start,  2: end at 0° //
+let textAnchor: number = 0; //0: middle, 1: start,  2: end at 0° //
 let letterSpacing: number = 10;
-let rotateText: number = 90;//angle to rotate whole text from it´s beginning
+let rotateText: number = 0;//angle to rotate whole text from it´s beginning
 //console.log("rotate text: "+ rotateText + "°");
 //console.log("textAnchor: "+ (textAnchor == 0 ? "0 (middle)" : textAnchor == 1 ? "1 (start)" : "2 (end)"));
 //ANGLE FOR FIX ROTATION
-let charAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
+let charAngle: number = 10;//angle each char, chars are stacked at 0° if no setting
 //-----------------------------------------------------------------------------------------------------------------------------
 
 //VARIABLES
@@ -114,7 +105,8 @@ if (mode === 0) {
   } // end of char loop
 
   //TEXT-ANCHOR MODE AUTO
-   switch(textAnchor) {
+  //console.log(`textAnchor=${textAnchor} cumWidth=${cumWidth} num=${numChars} spacing=${letterSpacing} degPx=${degreePx}`)
+  switch(textAnchor) {
     case 0:
       stringAngle -= (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
       break;
@@ -137,11 +129,12 @@ if (mode === 0) {
 
   } // end of char loop
 
-    //TEXT-ANCHOR MODE FIX
+  //TEXT-ANCHOR MODE FIX
+  const firstChar = char[0].getBBox().width;
   switch(textAnchor) {
     case 0:
-      const firstChar = char[0].getBBox().width;
       stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
+      break
     case 1:
       //const firstChar = char[0].getBBox().width;
       stringAngle += firstChar / 2 * degreePx ;//ok
@@ -151,75 +144,7 @@ if (mode === 0) {
       stringAngle += (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
       break;
   }
+};
 
 alignRotate.groupTransform.rotate.angle = stringAngle;
 //console.log("stringAngle "+stringAngle)
-
-};
-
-// SETTINGS TEST WIDGETS ----------------------------------------------------------------------------------------------------------------------------------------------------
-
-let settingsInSet = (document as any).getWidgetById("settingsInSet");
-settingsInSet.text = "try all in <set>";
-
-let settingsInUse = (document as any).getWidgetById("settingsInUse");
-settingsInUse.text = "try all in <use>-line";
-
-let settingsInCSS = (document as any).getWidgetById("settingsInCSS");
-settingsInCSS.text = "try all in CSS";
-
-let settingsInline = (document as any).getWidgetById("settingsInline");
-settingsInline.text = "try all inline";
-
-let settingsClass = (document as any).getWidgetById("settingsClass");
-settingsClass.text = "try g/class in CSS";
-
-
-
-// SETTINGS INLINE ----------------------------------------------------------------------------------------------------------------------------------------------------
-
-settingsInline.style.display = "inline"
-settingsInline.x = 168;
-settingsInline.y = 268;
-
-settingsInline.textBuffer = "try all inline"; // not sure, if it gets applied or even syntax is correct
-settingsInline.text = "try all inline";
-settingsInline.style.font = "Colfax-Regular";
-settingsInline.style.fontSize = 35;
-
-//settingsInline.style.fill = "magenta"; //added <set> class in svg. takes fill
-settingsInline.style.opacity = 1;
-settingsInline.startAngle = 0;
-
-
-//not working, but no error
-//settingsInline.style.letterSpacing = 0;
-//settingsInline.r = 10;
-//settingsInline.textAnchor = "end";
-//settingsInline.sweepAngle = 100;
-
-// TEST CHANGE SETTINGS  ON RUNTIME (didn´t test all, probabely should)---------------------------------------------------------------------------------------------------------------
-/*
-clock.granularity = "seconds";
-
-clock.addEventListener("tick", (evt) => {
-
-});
-function switchSetting() {
-  let now = new Date();
-  let secs = now.getSeconds();
-
-  settingsInSet.style.opacity = secs % 2 == 0 ? 1 : 0.5;
-  settingsInUse.style.opacity = secs % 2 == 0 ? 1 : 0.5;
-  settingsInCSS.style.opacity = secs % 2 == 0 ? 1 : 0.5;
-  settingsInline.style.opacity = secs % 2 == 0 ? 1 : 0.5;
-
-  settingsInline.style.font = secs % 2 == 0 ? "Colfax-Regular" : "Thungsten-Medium"; // not working :( lol
-}
-clock.addEventListener("tick", switchSetting);
-*/
-classyWidgets.forEach(el => (el as any).style.fill = "yellow");// only gets applied to the one element ??? don´t see the logic right now
-classyWidgets.forEach(el => (el as any).style.opacity = 0.5);  // only gets applied to the one element ??? don´t see the logic right now
-//CSS stronger than inline! ??? that scares me!
-classxWidgets.forEach(el => (el as any).style.fill = "orange");
-classxWidgets.forEach(el => (el as any).fontFamily = "Fabrikat-Regular");

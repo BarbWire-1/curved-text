@@ -1,9 +1,9 @@
 Project Management:
 -
-TODO M 01 Back up; .zip; copy to Barb\
-TODO M 02 Work out identity scheme to link spreadsheet cells with code snippets.\
-TODO M 03 Create snippet file.\
-TODO M 04 Clean up current project examples: only two widgets.
+TODO M 01 copy of "Before purge of test widgets.zip" to Barb\
+~~TODO M 02 Work out identity scheme to link spreadsheet cells with code snippets.~~\
+~~TODO M 03 Create snippet file.~~\
+~~TODO M 04 Clean up current project examples: only two widgets.~~
 
 Resolve questions:
 -
@@ -27,15 +27,15 @@ TODO M 05 Verify that the following attributes can't be specified in \<use\>:
   * sweep-angle
   * text-anchor
   * letter-spacing
-  * text
+  * text, text-buffer
+
+TODO M 05.1 Update interface.xlsx with preferred SVG usage.
 
 TODO M 06 \<use\> x,y rather than #position cx,cy for centre.
 
 TODO M 07 In all cases, ensure widget handles attributes taken from \<use\> el or child 'box' el IAW spreadsheet.
 
 TODO M 08 Purge redundant 'box' elements (ie, those with no \<set\>).
-
-TODO M 09 Verify that attributes changed via ts over-ride attributes initialised via class: https://github.com/BarbWire-1/curved-text/commit/28d0ce5a1f6815f9c90c38709dcc86872f3ff97b
 
 ~~TODO M 20.4 Discuss: convert interface.odt to .md, so git can track changes. Do so if 'yes'.~~\
 ~~TODO M 25.1 Add column(s) for CSS in interface spec.~~\
