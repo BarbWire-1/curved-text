@@ -20,14 +20,6 @@ TODO M 24.1 position symbol´s "rotate" INSIDE svg instead of translating outer 
 
 Interface:
 -
-TODO M 05 Verify that the following attributes can't be specified in \<use\>:
-  * r
-  * start-angle
-  * sweep-angle
-  * text-anchor
-  * letter-spacing
-  * text, text-buffer
-
 TODO M 05.1 Update interface.xlsx with preferred SVG usage.
 
 TODO M 06 \<use\> x,y rather than #position cx,cy for centre.

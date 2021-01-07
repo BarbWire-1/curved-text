@@ -6,7 +6,10 @@ const construct = el => {
   const alignRotate = el.getElementById('alignRotate') as GroupElement;
 
   // INITIALISE SETTINGS FROM SVG or CSS
-  //containerEl.groupTransform.translate.x = centerX ;
+  /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer.
+     Therefore, we pick these up from hidden elements within the widget. */
+
+     //containerEl.groupTransform.translate.x = centerX ;
   //containerEl.groupTransform.translate.y = centerY ;
   if (textEl.class) {
     el.class = el.class + ' ' + textEl.class
