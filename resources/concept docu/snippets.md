@@ -97,5 +97,8 @@ start-angle via CSS
 >#id:  `not applicable here`\
 >.class: `not applicable here`
 
-.ts/.js
+.ts/.js 
 =
+text via .ts/.js
+>#id: `ID.text = "myText"`\
+>.class: `className.forEach(el => (el as TextElement).text="myClassText")`
