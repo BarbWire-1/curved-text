@@ -101,7 +101,13 @@ start-angle via CSS
 =
 text via .ts/.js
 >#id: `ID.text = "myText"`\
->.class: `className.forEach(el => (el as TextElement).text="myClassText")`\
-class dominates id if processed later
+>.class: `className.forEach(el => (el as TextElement).text="myClassText");`\
+*class dominates id if processed later*
 
 font-family via .ts/.js
+>#id: `ID.style.fontFamily = "Tungsten-Medium";`\
+>.class: `className.forEach(el => (el as TextElement).style.fontFamily="Tungsten-Medium");`\
+*(SVG > CSS > TS/JS)*
+
+sry. stopped here, as I guess, this is not the behaviour, we want
+
