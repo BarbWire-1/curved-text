@@ -4,6 +4,9 @@ Rules:
 * Each example should have a heading that indicates *attribute* and *interface type* (taken from interface.xlsx); *eg*, "text via SVG".
 * Where multiple files are required, indicate the type of file in each case.
 
+
+SVG
+=
 text via SVG:
    >`<use id="classxId" href="#curvedText" >`
       >>`<set href="#text" attributeName="text-buffer" to="Widget One" />`
@@ -47,6 +50,8 @@ class via SVG:
 >`<use id="classxId" href="#curvedText" >`
 >>`<set href="#text" attributeName="class" to="classx" />`
 
+CSS
+=
 text via CSS
 >#id:  `not appliable here`\
 >.class: `not appliable here`
@@ -68,32 +73,32 @@ display via CSS
 >.class: `.className {display: none;}`
 
 cx,cy via CSS
->#id:  `not appliable here`\
->.class: `not appliable here`
+>#id:  `not applicable here`\
+>.class: `not applicable here`
 
 r via CSS
->#id:  `not appliable here`\
->.class: `not appliable here`
+>#id:  `not applicable here`\
+>.class: `not applicable here`
 
 text-anchor via CSS
->#id:  `not appliable here`\
->.class: `not appliable here`
+>#id:  `not applicable here`\
+>.class: `not applicable here`
 
 letter-spacing via CSS
->#id:  `not appliable here`\
->.class: `not appliable here`
+>#id:  `not applicable here`\
+>.class: `not applicable here`
 
 sweep-angle via CSS
->#id:  `not appliable here`\
->.class: `not appliable here`
+>#id:  `not applicable here`\
+>.class: `not applicable here`
 
-sweep-angle via CSS
->#id:  `not appliable here`\
->.class: `not appliable here`
 
 start-angle via CSS
->#id:  `not appliable here`\
->.class: `not appliable here`
+>#id:  `not applicable here`\
+>.class: `not applicable here`
+
+.ts/.js
+=
 
 
 

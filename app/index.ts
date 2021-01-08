@@ -19,7 +19,7 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 const classx = (document as any).getWidgetById('classxId')
 const classy = (document as any).getWidgetById('classyId')
-classx.style.display = 'none'
+classx.style.display = 'inline'
 //classy.anchorAngle = 0
 const classxWidgets = document.getElementsByClassName('classx');
 const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
@@ -31,7 +31,7 @@ const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 Thi
 
 
 
-// Everything below if from curved-one-of-the-final-cuts/Rotation-II
+// Everything below is from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 myText.text = "I am not a widget"// enter text ar data here MiW!MiW!MiW!M
 
