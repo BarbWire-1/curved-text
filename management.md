@@ -20,14 +20,8 @@ TODO M 24.1 position symbol´s "rotate" INSIDE svg instead of translating outer 
 
 Interface:
 -
-TODO M 05.1 Update interface.xlsx with preferred SVG usage.
-
-TODO M 06 \<use\> x,y rather than #position cx,cy for centre.
-
-TODO M 07 In all cases, ensure widget handles attributes taken from \<use\> el or child 'box' el IAW spreadsheet.
-
-TODO M 08 Purge redundant 'box' elements (ie, those with no \<set\>).
-
+TODO M 06 Test and document *relevant* attributes in CSS by id\
+TODO M 07 Test and document *relevant* attributes in CSS by class\
 ~~TODO M 20.4 Discuss: convert interface.odt to .md, so git can track changes. Do so if 'yes'.~~\
 ~~TODO M 25.1 Add column(s) for CSS in interface spec.~~\
 TODO M 25.2 Decide how to indicate priorities in interface spec (eg, essential, desirable, luxury, dream).\

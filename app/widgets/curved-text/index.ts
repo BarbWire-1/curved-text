@@ -8,18 +8,15 @@ const construct = el => {
   // INITIALISE SETTINGS FROM SVG or CSS
   /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer.
      Therefore, we pick these up from hidden elements within the widget. */
-
-     //containerEl.groupTransform.translate.x = centerX ;
+  //containerEl.groupTransform.translate.x = centerX ;
   //containerEl.groupTransform.translate.y = centerY ;
   if (textEl.class) {
     el.class = el.class + ' ' + textEl.class
     textEl.class = ''   // prevent textEl from being picked up by document.getElementsByClassName()
   }
 
-  containerEl.x = positionEl.cx;
+  containerEl.x = positionEl.cx;  // TODO G 2 don't use cx,cy
   containerEl.y = positionEl.cy;
-  //alignRotate.groupTransform.translate.x =  0;
-  //alignRotate.groupTransform.translate.y =  0 ;
   let radius = positionEl.r   //if negative, text is bottom curve
   // TODO G 3 how to behave if radius isn't set?
   let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
@@ -27,8 +24,13 @@ const construct = el => {
   let charAngle: number = orientationEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
   if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
   let rotateText: number = orientationEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
-  let stringAngle: number = 0;  // angle by which hole string should be rotated to comply with anchor, excluding rotateText adjustment of anchor
 
+
+  // INITIALISE LOCAL VARIABLES
+  let stringAngle: number = 0;  // angle by which whole string should be rotated to comply with anchor, excluding rotateText adjustment of anchor
+
+
+  // PRIVATE FUNCTIONS:
   const setRotateText = newValue => {
     rotateText = newValue
     alignRotate.groupTransform.rotate.angle = rotateText + stringAngle
@@ -86,7 +88,7 @@ const construct = el => {
       const fontSize = el.style.fontSize
       if (fontSize > 0)
         for (let i = 0; i < char.length; i++) char[i].style.fontSize = fontSize
-      const fontFamily = textEl.style.fontFamily
+      const fontFamily = el.style.fontFamily
       for (let i = 0; i < char.length; i++) char[i].style.fontFamily = fontFamily
     }
 

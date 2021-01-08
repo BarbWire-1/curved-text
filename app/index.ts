@@ -19,6 +19,7 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 const classx = (document as any).getWidgetById('classxId')
 const classy = (document as any).getWidgetById('classyId')
+classx.style.display = 'none'
 //classy.anchorAngle = 0
 const classxWidgets = document.getElementsByClassName('classx');
 const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
@@ -27,10 +28,6 @@ const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 Thi
 //classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
 //classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 
-classyWidgets.forEach(el => (el as any).style.fill = "yellow");
-classyWidgets.forEach(el => (el as any).style.opacity = 0.2);
-classxWidgets.forEach(el => (el as any).style.fill = "orange");
-classxWidgets.forEach(el => (el as any).fontFamily = "Fabrikat-Regular");
 
 
 
