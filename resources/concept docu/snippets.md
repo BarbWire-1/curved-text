@@ -101,4 +101,7 @@ start-angle via CSS
 =
 text via .ts/.js
 >#id: `ID.text = "myText"`\
->.class: `className.forEach(el => (el as TextElement).text="myClassText")`
+>.class: `className.forEach(el => (el as TextElement).text="myClassText")`\
+class dominates id if processed later
+
+font-family via .ts/.js
