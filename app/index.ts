@@ -31,7 +31,7 @@ classxWidgets.forEach(el => (el as TextElement).text="class.text")
 classx.text = "id.text"; //TODO G 1 only gets applied if processed AFTER the class, else gets over-riden by class.text
 classxWidgets.forEach(el => (el as TextElement).style.fontFamily="Tungsten-Medium")
 classx.style.fontFamily = "Tungsten-Medium"; //TODO G 1 only gets applied if processed AF
-
+classy.startAngle = 135
 // Everything below is from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 myText.text = "I am not a widget"// enter text ar data here MiW!MiW!MiW!M
