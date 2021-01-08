@@ -47,3 +47,88 @@ class via SVG:
 >`<use id="classxId" href="#curvedText" >`
 >>`<set href="#text" attributeName="class" to="classx" />`
 
+text via CSS
+>#id:  `not appliable here`\
+>.class: `not appliable here`
+
+font-family via CSS
+>#id: `#ID {font-family: Fabrikat-Regular;}`\
+>.class: `.className {font-family: Fabrikat-Regular;}`
+
+font-size via CSS
+>#id: `#ID {font-size: 30;}`\
+>.class: `.className {font-size: 30;}`
+
+opacity via CSS
+>#id: `#ID {opacity: 0.5};`\
+>.class: `.className {opacity: 0.5;}`
+
+display via CSS
+>#id: `#ID {display: none};`\
+>.class: `.className {display: none;}`
+
+cx,cy via CSS
+>#id:  `not appliable here`\
+>.class: `not appliable here`
+
+r via CSS
+>#id:  `not appliable here`\
+>.class: `not appliable here`
+
+text-anchor via CSS
+>#id:  `not appliable here`\
+>.class: `not appliable here`
+
+letter-spacing via CSS
+>#id:  `not appliable here`\
+>.class: `not appliable here`
+
+sweep-angle via CSS
+>#id:  `not appliable here`\
+>.class: `not appliable here`
+
+sweep-angle via CSS
+>#id:  `not appliable here`\
+>.class: `not appliable here`
+
+start-angle via CSS
+>#id:  `not appliable here`\
+>.class: `not appliable here`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

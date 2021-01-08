@@ -127,7 +127,7 @@
       <set href="#position" attributeName="cx" to="250" />
       <set href="#position" attributeName="cy" to="250" />
       <set href="#position" attributeName="r" to="50" />
-      <set href="#orientation" attributeName="start-angle" to="90" />
+      <set href="#orientation" attributeName="start-angle" to="45" />
    </use>
 
 </svg>

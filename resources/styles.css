@@ -6,8 +6,22 @@
 
 .classx {
     fill:green;
+   
 }
-
+/*
 .classy {
     fill:#14d9e7;
 }
+*/
+
+#classyId {
+    fill: red;
+  r:90;
+}
+
+.classy {
+    fill: #fc9105;
+   r: 45;
+    
+}
+
