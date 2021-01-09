@@ -116,16 +116,16 @@
    <use id="classxId" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="Widget One" />
       <set href="#text" attributeName="class" to="classx" />
-      <set href="#position" attributeName="cx" to="80" />
-      <set href="#position" attributeName="cy" to="250" />
+      <!--<set href="#position" attributeName="cx" to="80" />-->
+      <!--<set href="#position" attributeName="cy" to="250" />-->
       <set href="#position" attributeName="r" to="50" />
    </use>
 
-   <use id="classyId" href="#curvedText" >
+   <use id="classyId" href="#curvedText" x="250" y="250" >
       <set href="#text" attributeName="text-buffer" to="Widget Two" />
       <set href="#text" attributeName="class" to="classx" /> <!--changed to classx here to compare css on id/class on both-->
-      <set href="#position" attributeName="cx" to="250" />
-      <set href="#position" attributeName="cy" to="250" />
+      <!--<set href="#position" attributeName="cx" to="250" />-->
+      <!--<set href="#position" attributeName="cy" to="250" />-->
       <set href="#position" attributeName="r" to="50" />
       <set href="#orientation" attributeName="start-angle" to="45" />
    </use>

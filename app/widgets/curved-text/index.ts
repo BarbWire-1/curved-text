@@ -15,8 +15,8 @@ const construct = el => {
     textEl.class = ''   // prevent textEl from being picked up by document.getElementsByClassName()
   }
 
-  containerEl.x = positionEl.cx;  // TODO G 2 don't use cx,cy
-  containerEl.y = positionEl.cy;
+  //containerEl.x = positionEl.cx;  // don't use cx,cy
+  //containerEl.y = positionEl.cy;
   let radius = positionEl.r   //if negative, text is bottom curve
   // TODO G 3 how to behave if radius isn't set?
   let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°

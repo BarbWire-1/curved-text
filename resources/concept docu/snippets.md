@@ -26,6 +26,12 @@ opacity via SVG:
 display via SVG:
 >`<use id="classxId" href="#curvedText" display="none" fill="white" >`
 
+x via SVG:
+>`<use id="classxId" href="#curvedText" x="50" >`
+
+y via SVG:
+>`<use id="classxId" href="#curvedText" y="50" >`
+
 r via SVG:
 >`<use id="classxId" href="#curvedText" fill="white" >`
 >>`<set href="#position" attributeName="r" to="25" />`
@@ -72,9 +78,9 @@ display via CSS
 >#id: `#ID {display: none};`\
 >.class: `.className {display: none;}`
 
-cx,cy via CSS
->#id:  `not applicable here`\
->.class: `not applicable here`
+x,y via CSS
+>#id:  `#ID {x: 50;}`\
+>.class: `.className {x: 50;}`
 
 r via CSS
 >#id:  `not applicable here`\
@@ -97,7 +103,7 @@ start-angle via CSS
 >#id:  `not applicable here`\
 >.class: `not applicable here`
 
-.ts/.js 
+.ts/.js
 =
 text via .ts/.js
 >#id: `ID.text = "myText"`\
@@ -111,3 +117,7 @@ font-family via .ts/.js
 
 sry. stopped here, as I guess, this is not the behaviour, we want
 
+TODO B 1 ^ we need to discuss this
+
+x,y via .ts/.js
+>myLabel.x = 50;
