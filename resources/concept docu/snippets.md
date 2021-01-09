@@ -34,7 +34,7 @@ y via SVG:
 
 r via SVG:
 >`<use id="classxId" href="#curvedText" fill="white" >`
->>`<set href="#position" attributeName="r" to="25" />`
+>>`<set href="#radius" attributeName="r" to="25" />`
 
 text-anchor via SVG:
 >`<use id="classxId" href="#curvedText" fill="white" >`
@@ -46,11 +46,11 @@ letter-spacing via SVG:
 
 start-angle via SVG:
 >`<use id="classxId" href="#curvedText" fill="white" >`
->>`<set href="#orientation" attributeName="start-angle" to="90" />`
+>>`<set href="#layout" attributeName="start-angle" to="90" />`
 
 sweep-angle via SVG:
 >`<use id="classxId" href="#curvedText" fill="white" >`
->>`<set href="#orientation" attributeName="sweep-angle" to="20" />`
+>>`<set href="#layout" attributeName="sweep-angle" to="20" />`
 
 class via SVG:
 >`<use id="classxId" href="#curvedText" >`
@@ -63,51 +63,52 @@ text via CSS
 >.class: `not appliable here`
 
 font-family via CSS
->#id: `#ID {font-family: Fabrikat-Regular;}`\
->.class: `.className {font-family: Fabrikat-Regular;}`
+>#id: `#myLabel {font-family: Fabrikat-Regular;}`\
+>.class: `.myClass {font-family: Fabrikat-Regular;}`
 
 font-size via CSS
->#id: `#ID {font-size: 30;}`\
->.class: `.className {font-size: 30;}`
+>#id: `#myLabel {font-size: 30;}`\
+>.class: `.myClass {font-size: 30;}`
 
 opacity via CSS
->#id: `#ID {opacity: 0.5};`\
->.class: `.className {opacity: 0.5;}`
+>#id: `#myLabel {opacity: 0.5};`\
+>.class: `.myClass {opacity: 0.5;}`
 
 display via CSS
->#id: `#ID {display: none};`\
->.class: `.className {display: none;}`
+>#id: `#myLabel {display: none};`\
+>.class: `.myClass {display: none;}`
 
 x,y via CSS
->#id:  `#ID {x: 50;}`\
->.class: `.className {x: 50;}`
+>#id:  `#myLabel {x: 50;}`\
+>.class: `.myClass {x: 50;}`
 
 r via CSS
->#id:  `#ID #position {r: 50;}`\
->.class: `.className #position {r: 50;}`
+>#id:  `#myLabel #radius {r: 50;}`\
+>.class: `.myClass #radius {r: 50;}`
 
 text-anchor via CSS
->#id:  `not applicable here`\
->.class: `not applicable here`
+>#id:  `not applicable here?`\
+>.class: `not applicable here?`
 
 letter-spacing via CSS
->#id:  `not applicable here`\
->.class: `not applicable here`
-
-sweep-angle via CSS
->#id:  `not applicable here`\
->.class: `not applicable here`
-
+>#id:  `#myLabel #text {letter-spacing: 5;}`\
+>.class: `.myClass #text {letter-spacing: 5;}`
 
 start-angle via CSS
->#id:  `not applicable here`\
->.class: `not applicable here`
+>#id:  `#myLabel #layout {start-angle: 90;}`\
+>.class: `.myClass #layout {start-angle: 90;}`
+
+sweep-angle via CSS
+>#id:  `#myLabel #layout {sweep-angle: 45;}`\
+>.class: `.myClass #layout {sweep-angle: 45;}`
+
+
 
 .ts/.js
 =
 text via .ts/.js
->#id: `ID.text = "myText"`\
->.class: `className.forEach(el => (el as TextElement).text="myClassText");`\
+>#id: `myLabel.text = "myText"`\
+>.class: `myClass.forEach(el => (el as TextElement).text="myClassText");`\
 
 x,y via .ts/.js
 >myLabel.x = 50;

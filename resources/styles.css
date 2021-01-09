@@ -7,15 +7,25 @@
 .classx {
    x:168;
    y:168;
-   fill:green;
-   font-family: Tunsten-Medium;
-   font-size: 20;
+   fill:#adf505;
+   font-family: Fabrikat-Bold;
+   font-size: 30;
+  
 }
 
-.classx #layout {
-    sweep-angle: 0;
-    
+.classx #text {
+/*text-anchor: "end";*//* ? wrong here?*/
+letter-spacing: 5;
 }
+
+.classx #layout  {
+    start-angle:0;
+     
+}
+
+
+
+
 
 /*
 .classy {

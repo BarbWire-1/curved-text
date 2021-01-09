@@ -29,11 +29,11 @@ const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 Thi
 //classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 classxWidgets.forEach(el => (el as TextElement).text="class.text")
 classx.text = "id.text";
-classx.y = 250
-classxWidgets.forEach(el => (el as TextElement).style.fontFamily="Tungsten-Medium")
-classx.style.fontFamily = "Tungsten-Medium";
+//classx.y = 250
+//classxWidgets.forEach(el => (el as TextElement).style.fontFamily="Tungsten-Medium")
+//classx.style.fontFamily = "Tungsten-Medium";
 
-classy.startAngle = 135
+//classy.startAngle = 135
 // Everything below is from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 myText.text = "I am not a widget"// enter text ar data here MiW!MiW!MiW!M
