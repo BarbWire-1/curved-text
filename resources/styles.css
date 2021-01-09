@@ -10,18 +10,22 @@
    fill:#adf505;
    font-family: Fabrikat-Bold;
    font-size: 30;
-  
+
+}
+
+#classxId #text {
+    text-anchor: end;/* ? wrong here?*/ /* TODO G 1 doesn't work */
+    letter-spacing: 30;
 }
 
 .classx #text {
-/*text-anchor: "end";*//* ? wrong here?*/
-letter-spacing: 30;
+    text-anchor: end;/* ? wrong here?*//* TODO G 1 doesn't work */
 }
 
 .classx #layout  {
     start-angle:0;
     sweep-angle: 20;
-     
+
 }
 #classyId #text {
     text-anchor: end;/*only not working att here*/
