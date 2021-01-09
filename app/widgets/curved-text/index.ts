@@ -183,5 +183,5 @@ export default () => {
     construct: construct
   }
 }
-//TODO G 2 rename #position to #radius
-//TODO G 2 rename #orientation to #layout
+//TODO G 2 rename #position to #radius // do we have to rename our intern variable "radius" to avoid conflicts?
+//TODO G 2 rename #orientation to #layout // done. B
