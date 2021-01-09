@@ -84,6 +84,7 @@ const construct = el => {
     const numChars = chars.length
 
     //APPLY FONT FAMILY AND SIZE
+    // TODO G 1 is this necessary? can fontSize and fontFamily be inherited?
     if (initFont) {   // might want to break this into initFontSize and initFontFamily if those can be changed separately at run-time
       const fontSize = el.style.fontSize
       if (fontSize > 0)
