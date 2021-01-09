@@ -84,7 +84,7 @@ x,y via CSS
 
 r via CSS
 >#id:  `#ID #position {r: 50;}`\
->.class: `not applicable here`
+>.class: `.className #position {r: 50;}`
 
 text-anchor via CSS
 >#id:  `not applicable here`\

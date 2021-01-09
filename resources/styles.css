@@ -12,9 +12,10 @@
    font-size: 20;
 }
 
-#classxId #position {
-    r:20;
+.classx #position {
+    r:50;
 }
+
 /*
 .classy {
     fill:#14d9e7;
