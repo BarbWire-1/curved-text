@@ -1,7 +1,7 @@
 const construct = el => {
   const textEl = el.getElementById('text')
   const positionEl = el.getElementById('position')
-  const orientationEl = el.getElementById('orientation')
+  const layoutEl = el.getElementById('layout')
   const containerEl = el.getElementById('container')
   const alignRotate = el.getElementById('alignRotate') as GroupElement;
 
@@ -21,9 +21,9 @@ const construct = el => {
   // TODO G 3 how to behave if radius isn't set?
   let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
   let letterSpacing: number = textEl.letterSpacing ?? 0;
-  let charAngle: number = orientationEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
+  let charAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
   if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
-  let rotateText: number = orientationEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
+  let rotateText: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
 
 
   // INITIALISE LOCAL VARIABLES

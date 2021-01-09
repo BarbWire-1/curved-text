@@ -27,7 +27,7 @@ const construct = el => {
 
 
   //Text settings
-  const startAngle = el.getElementById('orientation').startAngle    // read value (if any) from SVG
+  const startAngle = el.getElementById('layout').startAngle    // read value (if any) from SVG
   let rotateText: number = startAngle ? startAngle : 0      //angle to rotate whole text from its beginning
   let letterSpacing: number = 0
   //let modus: string = "auto";     // auto: automatic, fix: rotate fix angle each
