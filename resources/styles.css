@@ -5,8 +5,9 @@
 }
 
 .classx {
-    fill:green;
-   font-family: Fabrikat-Bold;
+   fill:green;
+   font-family: Tunsten-Medium;
+   font-size: 20;
 }
 /*
 .classy {
@@ -16,12 +17,12 @@
 
 #classyId {
     fill: red;
-  
+
 }
 
 .classy {
     fill: #fc9105;
-  
-    
+
+
 }
 

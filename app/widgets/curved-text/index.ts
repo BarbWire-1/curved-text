@@ -52,8 +52,7 @@ const construct = el => {
     set: function(newValue) {setRotateText(newValue)}
   })
 
-  el.redraw = (initFont:boolean) => {   // TODO G 4 does redraw() need to be public?
-    // initFont: whether to apply fontSize and fontFamily to all char[].
+  el.redraw = () => {   // TODO G 4 does redraw() need to be public?
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
     //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
@@ -84,14 +83,14 @@ const construct = el => {
     const numChars = chars.length
 
     //APPLY FONT FAMILY AND SIZE
-    // TODO G 1 is this necessary? can fontSize and fontFamily be inherited?
+    /* // Not necessary: fontSize and fontFamily can be inherited.
     if (initFont) {   // might want to break this into initFontSize and initFontFamily if those can be changed separately at run-time
       const fontSize = el.style.fontSize
       if (fontSize > 0)
         for (let i = 0; i < char.length; i++) char[i].style.fontSize = fontSize
       const fontFamily = el.style.fontFamily
       for (let i = 0; i < char.length; i++) char[i].style.fontFamily = fontFamily
-    }
+    }*/
 
     //REMOVE ANY CHARS THAT ARE NO LONGER NEEDED
     // There's no need to do this initially. It could be done only when text is changed, but that would complicate the code there.
@@ -173,7 +172,7 @@ const construct = el => {
     alignRotate.groupTransform.rotate.angle = rotateText + stringAngle;
   }
 
-  el.redraw(true)
+  el.redraw()
 
   return el
 }
