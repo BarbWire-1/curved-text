@@ -123,6 +123,7 @@
       <set href="#text" attributeName="text-buffer" to="Widget Two" />
       <set href="#text" attributeName="class" to="classx" /> <!--changed to classx here to compare css on id/class on both-->
       <set href="#radius" attributeName="r" to="50" />
+      <set href="#text" attributeName="text-anchor" to="middle" />
       <!--set href="#layout" attributeName="start-angle" to="45" /-->
    </use>
 

@@ -168,7 +168,7 @@ const construct = el => {
           break;
       }
     };
-
+    
     alignRotate.groupTransform.rotate.angle = rotateText + stringAngle;
   }
 

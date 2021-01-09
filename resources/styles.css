@@ -15,14 +15,17 @@
 
 .classx #text {
 /*text-anchor: "end";*//* ? wrong here?*/
-letter-spacing: 5;
+letter-spacing: 30;
 }
 
 .classx #layout  {
     start-angle:0;
+    sweep-angle: 20;
      
 }
-
+#classyId #text {
+    text-anchor: end;/*only not working att here*/
+}
 
 
 
