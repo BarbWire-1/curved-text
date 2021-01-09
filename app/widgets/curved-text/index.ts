@@ -17,8 +17,8 @@ const construct = el => {
 
   //containerEl.x = positionEl.cx;  // don't use cx,cy
   //containerEl.y = positionEl.cy;
-  let radius = positionEl.r   //if negative, text is bottom curve
-  // TODO G 3 how to behave if radius isn't set?
+  let radius = positionEl.r ?? 100  //if negative, text is bottom curve
+  // TODO G 3 how to behave if radius isn't set? /set to 100 if NaN, less shocking than "0" or NaN
   let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
   let letterSpacing: number = textEl.letterSpacing ?? 0;
   let charAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.

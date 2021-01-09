@@ -12,8 +12,9 @@
    font-size: 20;
 }
 
-.classx #position {
-    r:50;
+.classx #layout {
+    sweep-angle: 0;
+    
 }
 
 /*
@@ -22,8 +23,9 @@
 }
 */
 
-#classyId {
+#classyId #position{
     fill: red;
+    r: 100;
 
 }
 
