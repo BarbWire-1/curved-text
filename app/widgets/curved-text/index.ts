@@ -157,7 +157,7 @@ const construct = el => {
       const firstChar = char[0].getBBox().width;
       switch(textAnchor) {
         case 'middle':
-          stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
+          stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;// TODO G 1.1 still not sure about this mode. should simply be fix angle, regardless width
           break;
         case 'start':
           stringAngle = firstChar / 2 * degreePx ;//ok
