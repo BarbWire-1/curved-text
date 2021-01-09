@@ -11,6 +11,10 @@
    font-family: Tunsten-Medium;
    font-size: 20;
 }
+
+#classxId #position {
+    r:20;
+}
 /*
 .classy {
     fill:#14d9e7;
