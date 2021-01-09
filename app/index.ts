@@ -28,12 +28,11 @@ const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 Thi
 //classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
 //classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 classxWidgets.forEach(el => (el as TextElement).text="class.text")
-classx.text = "id.text"; //TODO G 1 only gets applied if processed AFTER the class, else gets over-riden by class.text
-// TODO B 1 ^ Expected behaviour. You're not applying a CSS .id rule here. You're using ts to over-ride anything previously set via CSS. ts trumps CSS.
+classx.text = "id.text";
 classx.y = 250
 classxWidgets.forEach(el => (el as TextElement).style.fontFamily="Tungsten-Medium")
-//classx.style.fontFamily = "Tungsten-Medium"; //TODO G 1 only gets applied if processed AF
-// TODO B 1 ^ not implemented, because it would be rarely used and would require redoing the widget layout. Okay?
+classx.style.fontFamily = "Tungsten-Medium";
+
 classy.startAngle = 135
 // Everything below is from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
