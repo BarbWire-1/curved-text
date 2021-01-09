@@ -14,7 +14,7 @@
 
     <!--TEXT-->
 
-   <g  id="position" transform="translate(0,0)" fill="white" display="inline">
+   <g  id="radius" transform="translate(0,0)" fill="white" display="inline">
       <text id="myText" class="text" text-length="100" display="none">0123456789</text>
       <g id="alignRotate">
          <g>
@@ -116,13 +116,13 @@
    <use id="classxId" href="#curvedText" >
       <set href="#text" attributeName="text-buffer" to="Widget One" />
       <set href="#text" attributeName="class" to="classx" />
-      <set href="#position" attributeName="r" to="50" />
+      <set href="#radius" attributeName="r" to="50" />
    </use>
 
    <use id="classyId" href="#curvedText" x="250" y="250" >
       <set href="#text" attributeName="text-buffer" to="Widget Two" />
       <set href="#text" attributeName="class" to="classx" /> <!--changed to classx here to compare css on id/class on both-->
-      <set href="#position" attributeName="r" to="50" />
+      <set href="#radius" attributeName="r" to="50" />
       <!--set href="#layout" attributeName="start-angle" to="45" /-->
    </use>
 

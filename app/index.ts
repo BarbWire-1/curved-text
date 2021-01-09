@@ -14,7 +14,7 @@ const widgets = widgetFactory([curvedText])
 widgets.registerContainer(document)
 
 let myText = document.getElementById("myText") as TextElement;
-let position = document.getElementById("position") as GroupElement;
+let radius = document.getElementById("radius") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 const classx = (document as any).getWidgetById('classxId')
@@ -41,7 +41,7 @@ myText.text = "I am not a widget"// enter text ar data here MiW!MiW!MiW!M
 let mode: number = 0; // 0: automatic, 1: rotate fix angle each
 //console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
 //CIRCLE
-let radius: number = 100;//if negative, text is bottom curve
+let myR: number = 100;//if negative, text is bottom curve
 let centerX: number = 168;
 //console.log("center: x "+centerX);
 let centerY: number = 168; // center of the circle
@@ -63,23 +63,23 @@ let chars = (myText.text.split("")); // array of char set of text to curve
 let char  = document.getElementsByClassName("char") as TextElement[];// single char textElements
 
 //CENTER CIRCLE
-position.groupTransform.translate.x = centerX ;
-position.groupTransform.translate.y = centerY ;
+radius.groupTransform.translate.x = centerX ;
+radius.groupTransform.translate.y = centerY ;
 
 
 //CIRCUMFERENCE FOR AUTO
-const circ = 2 * radius * Math.PI;
+const circ = 2 * myR * Math.PI;
 const degreePx = 360 / circ;
 
 //PREVENT MIRRORING
-charAngle = charAngle * (radius < 0 ? -1 : 1);
+charAngle = charAngle * (myR < 0 ? -1 : 1);
 
 //CALCULATE POSITION
 let numChars = chars.length
 
 
 char[0].text = chars[0];
-let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
+let y = myR < 0 ? -myR : -myR + char[0].getBBox().height / 2;  //define y of text, based on radius
 let stringAngle = rotateText;
 
 //AUTO MODE
