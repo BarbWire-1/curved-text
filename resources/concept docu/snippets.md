@@ -88,8 +88,8 @@ r via CSS
 >.class: `.myClass #radius {r: 50;}`
 
 text-anchor via CSS
->#id:  `not applicable here?`\
->.class: `not applicable here?`
+>#id:  `#myLabel #text {text-anchor: middle}`\
+>.class: `#myClass #text {text-anchor: middle}`
 
 letter-spacing via CSS
 >#id:  `#myLabel #text {letter-spacing: 5;}`\

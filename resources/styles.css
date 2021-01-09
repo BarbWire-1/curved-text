@@ -14,12 +14,12 @@
 }
 
 #classxId #text {
-    text-anchor: end;/* ? wrong here?*/ /* TODO G 1 doesn't work */
+    text-anchor: start;/* ? wrong here?*/ /* TODO G 1 doesn't work */
     letter-spacing: 30;
 }
 
 .classx #text {
-    text-anchor: end;/* ? wrong here?*//* TODO G 1 doesn't work */
+    text-anchor: start;/* ? wrong here?*//* TODO G 1 doesn't work */
 }
 
 .classx #layout  {
@@ -28,7 +28,7 @@
 
 }
 #classyId #text {
-    text-anchor: end;/*only not working att here*/
+    text-anchor: start;/*only not working att here*/
 }
 
 
