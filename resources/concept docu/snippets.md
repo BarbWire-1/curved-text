@@ -1,9 +1,5 @@
 Interface Usage Examples
 -
-Rules:\
- :)
-* Each example should have a heading that indicates *attribute* and *interface type* (taken from interface.xlsx); *eg*, "text via SVG".
-* Where multiple files are required, indicate the type of file in each case.
 
 
 SVG
@@ -135,8 +131,11 @@ text-anchor via .ts/.js
 letter-spacing via .ts/.js
 > `not appliable here`
 
-start-angle via .ts/.js
-> `myLabel.startAngle = 90`
+letter-spacing via .ts/.js
+> `not appliable here`
+
+letter-spacing via .ts/.js
+> `not appliable here`
 
 
 

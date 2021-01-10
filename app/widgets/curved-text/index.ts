@@ -164,7 +164,7 @@ const construct = el => {
       } // end of char loop
 
       //TEXT-ANCHOR MODE FIX
-      const firstChar = char[0].getBBox().width;
+      //const firstChar = char[0].getBBox().width;
       switch(textAnchor) {
         case 'middle':
           //stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 )) - firstChar / 2 * degreePx; //this is wrong in any case
@@ -175,7 +175,7 @@ const construct = el => {
           stringAngle = 0;
           break;
         case 'end':
-          const lastChar = char[numChars-1].getBBox().width;
+          //const lastChar = char[numChars-1].getBBox().width;
           //stringAngle = (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx; //aligns at 0/180 but moves lastChar.width /2
           stringAngle = - (numChars - 1 ) * charAngle; //positions lastChar centered at 0/180
           break;
