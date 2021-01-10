@@ -10,7 +10,7 @@ SVG
 =
 text via SVG:
    >`<use id="myLabel" href="#curvedText" >`
-      >>`<set href="#text" attributeName="text-buffer" to="Widget One" />`
+      >>`<set href="#text" attributeName="text-buffer" to="myText" />`
 
 font-family via SVG:
    >`<use id="myLabel" href="#curvedText" font-family="Tungsten-Medium" >`
@@ -60,8 +60,8 @@ class via SVG:
 CSS
 =
 text via CSS
->#id:  `#myLabel #text {text-buffer: "My text";}`\
->.class: `.myClass #text {text-buffer: "My text";}`
+>#id:  `#myLabel #text {text-buffer: "myText";}`\
+>.class: `.myClass #text {text-buffer: "myText";}`
 
 font-family via CSS
 >#id: `#myLabel {font-family: Fabrikat-Regular;}`\

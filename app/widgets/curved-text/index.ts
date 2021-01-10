@@ -167,14 +167,17 @@ const construct = el => {
       const firstChar = char[0].getBBox().width;
       switch(textAnchor) {
         case 'middle':
-          stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 )) - firstChar / 2 * degreePx;
+          //stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 )) - firstChar / 2 * degreePx; //this is wrong in any case
+          stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 ) * degreePx) // centers exactly by angle only! the "?? 0" is to avoid division of 0 (NaN) in case charAngle isn´t defined
           break;
         case 'start':
-          stringAngle = firstChar / 2 * degreePx ;//ok
+          //stringAngle = firstChar / 2 * degreePx ;//ok aligns at 0/180 but moves half firstChar.width / 2
+          stringAngle = 0;
           break;
         case 'end':
           const lastChar = char[numChars-1].getBBox().width;
-          stringAngle = (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
+          //stringAngle = (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx; //aligns at 0/180 but moves lastChar.width /2
+          stringAngle = (numChars - 1 ) * - charAngle  / 2 * degreePx; //positions lastChar centered at 0/180
           break;
       }
     };
@@ -193,5 +196,3 @@ export default () => {
     construct: construct
   }
 }
-// rename #position to #radius // do we have to rename our intern variable "radius" to avoid conflicts?
-// TODO B 2 ^ It wasn't necessary, but I see you did it anyway :)

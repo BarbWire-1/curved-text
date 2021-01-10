@@ -14,12 +14,16 @@
 
 .classx #layout  {
     start-angle:0;
-    sweep-angle: 20;
+    sweep-angle: 15;
+
+}
+#classxId {
+    font-size:40;
 
 }
 
 #classxId #text {
-    text-buffer: "Default text";
+    text-buffer: "0123456789";
 }
 
 .classx #text {
@@ -34,7 +38,7 @@
 
 #classyId #radius{
     fill: red;
-    r: 100;
+    r: 80;
 
 }
 
