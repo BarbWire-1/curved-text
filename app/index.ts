@@ -28,7 +28,6 @@ const classyWidgets = document.getElementsByClassName('classy'); // TODO G 3 Thi
 //classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
 //classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 classxWidgets.forEach(el => (el as TextElement).text="class.text")
-classx.text = "id.text";
 //classx.y = 250
 //classxWidgets.forEach(el => (el as TextElement).style.fontFamily="Tungsten-Medium")
 //classx.style.fontFamily = "Tungsten-Medium";
@@ -38,7 +37,7 @@ classx.text = "id.text";
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 myText.text = "I am not a widget"// enter text ar data here MiW!MiW!MiW!M
 
-let mode: number = 0; // 0: automatic, 1: rotate fix angle each
+let mode: number = 1; // 0: automatic, 1: rotate fix angle each
 //console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
 //CIRCLE
 let myR: number = 100;//if negative, text is bottom curve
