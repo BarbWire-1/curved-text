@@ -19,8 +19,17 @@ const construct = el => {
   //containerEl.y = positionEl.cy;
   let myR = radiusEl.r ?? 100  //if negative, text is bottom curve
   // TODO G 3 how to behave if radius isn't set? /set to 100 if NaN, less shocking than "0" or NaN
-  let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
-  console.log(`textEl.textAnchor=${textEl.textAnchor}`) // TODO G 0 ensure that textAnchor defaults to something sensible if not specified anywhere
+
+
+  let textAnchor: string
+  try {     // textEl.textAnchor throws an error if textAnchor not defined
+    textAnchor = textEl.textAnchor   //0: middle, 1: start,  2: end at 0°
+  } catch(e) {
+    textAnchor = 'middle'
+  }
+  //console.log(`textAnchor=${textAnchor}`)
+
+  //let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
   let letterSpacing: number = textEl.letterSpacing ?? 0;
   let charAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
   if (myR < 0) charAngle = -charAngle;   //PREVENT MIRRORING
