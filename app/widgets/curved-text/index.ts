@@ -80,25 +80,26 @@ const construct = el => {
   } {
   let newText = { r: 100, textAnchor: "middle", letterSpacing: 0, class: '', sweepAngle: 0 };
   if (config.r) {
-    newText.r = config.r;
+    newText.r = config.r = radiusEl.r;
   }
   if (config.textAnchor) {
-    newText.textAnchor = config.textAnchor;
+    newText.textAnchor = config.textAnchor = textEl.r;
   }
   if (config.letterSpacing) {
-  newText.letterSpacing = config.letterSpacing;
+  newText.letterSpacing = config.letterSpacing = textEl.letterSpacing;
     }
   if (config.class) {
-  newText.class = config.class;
+  newText.class = config.class = textEl.class;
     }
   if (config.sweepAngle) {
-  newText.sweepAngle = config.sweepAngle;
+  newText.sweepAngle = config.sweepAngle = layoutEl.sweepAngle;
   }
   return newText;
 }
 
   let myNewText = createText({ });
-  console.log("myNewText.textAnchor: " + myNewText.textAnchor, "myNewText.r: "+ myNewText.r)
+  console.log("myNewText.textAnchor: " + myNewText.textAnchor, "myNewText.r: " + myNewText.r)
+  console.log("layoutEl.sweepAngle "+ layoutEl.sweepAngle)
   //pretty sure. this is total nonsens, as I might have to go on #radius, #text, #layout
   // with nested interfaces
   // END TEST INTERFACE----------------------------------------------------------
