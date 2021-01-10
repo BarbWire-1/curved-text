@@ -26,8 +26,6 @@ TODO M 25.2 Decide how to indicate priorities in interface spec (eg, essential, 
 TODO M 25.3 Discuss: having another interface spec (desirable at A but transformable at B)\
 TODO M 27 Discuss: run-time changes to CSS won't have any effect if attribute values are copied from dummy elements at startup. Might need redraw().
 TODO M 30 Flesh out interface spec (non-animations).\
-TODO M 35 Flesh out interface spec (animations).\
-TODO M 40 Implement all essential interface capabilities.
 TODO M 999 enhancements: better support for animation, getWidgetsByClassName(), initialise all widget settings via a ts object (like fitfont)
 
 
@@ -59,10 +57,7 @@ Barb
 * 10.2  ready to take off (forget about implementing animations in the widget)
 
 * 20.3  it seems to be stable. we probabely could implement a log for bad settings
-* 20.4  done
-* 25.1  done
 * 25.2  I would suuggest essential => doable => desirable (exclude luxury => dream for now, thinking the construction might be consistant enough to do so later "if board")
-* 1     skipped
 
 PS: I would rather keep all TODO´s here and crossout the obsolete ones, til the project is close to nearly "done".
 ok, maybe not really AL but the code relevants.
