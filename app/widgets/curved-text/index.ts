@@ -62,6 +62,47 @@ const construct = el => {
     set: function(newValue) {setRotateText(newValue)}
   })
 
+  // INTERFACE FIRST APPROACH/TEST---------------------------------------------------------
+  interface myCurvedText {
+    r?: number;
+    textAnchor?: string;
+    letterSpacing?: number;
+    class?: string;
+    sweepAngle?: number;
+}
+
+  function createText(config: myCurvedText): {
+    r: number;
+    textAnchor: string;
+    letterSpacing: number;
+    class: string;
+    sweepAngle: number;
+  } {
+  let newText = { r: 100, textAnchor: "middle", letterSpacing: 0, class: '', sweepAngle: 0 };
+  if (config.r) {
+    newText.r = config.r;
+  }
+  if (config.textAnchor) {
+    newText.textAnchor = config.textAnchor;
+  }
+  if (config.letterSpacing) {
+  newText.letterSpacing = config.letterSpacing;
+    }
+  if (config.class) {
+  newText.class = config.class;
+    }
+  if (config.sweepAngle) {
+  newText.sweepAngle = config.sweepAngle;
+  }
+  return newText;
+}
+
+  let myNewText = createText({ textAnchor: "middle" });
+  console.log("myNewText " + myNewText)
+  
+
+  // END TEST INTERFACE----------------------------------------------------------
+
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
