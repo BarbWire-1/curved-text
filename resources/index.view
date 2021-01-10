@@ -113,11 +113,11 @@
    <!-- TODO G 3.61 can we animate rotation by wrapping this <use> in a <g>? Try with cx=cy=0 -->
    <!-- TODO G 3.615 Other simple approach for opacity and evtl fill might be to group the use and animate the group instead of the use itself. -->
 
-   <use id="classxId" href="#curvedText" >
+   <use id="classxId" href="#curvedText" x="200" y="200" fill="white">
       <set href="#text" attributeName="text-buffer" to="Widget One" />
-      <set href="#text" attributeName="class" to="classx" />
+      <!--<set href="#text" attributeName="class" to="classx" />-->
       <!--<set href="#text" attributeName="text-anchor" to="end" />-->
-      <set href="#radius" attributeName="r" to="50" />
+      <!--<set href="#radius" attributeName="r" to="50" />-->
    </use>
 
    <use id="classyId" href="#curvedText" x="250" y="250" >

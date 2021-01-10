@@ -168,6 +168,7 @@ const construct = el => {
       switch(textAnchor) {
         case 'middle':
           stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;// TODO G 1.1 still not sure about this mode. should simply be fix angle, regardless width
+          // TODO B 1 ^ I can't help you with this. I don't know where this maths came from. I would not write (charAngle / 2) ?? 0
           break;
         case 'start':
           stringAngle = firstChar / 2 * degreePx ;//ok
@@ -195,4 +196,3 @@ export default () => {
 }
 // rename #position to #radius // do we have to rename our intern variable "radius" to avoid conflicts?
 // TODO B 2 ^ It wasn't necessary, but I see you did it anyway :)
-// TODO G 0 ensure sensible behaviour if NO attributes defined

@@ -13,15 +13,6 @@
 
 }
 
-/*#classxId #text {
-    text-anchor: start;
-    letter-spacing: 30;
-}
-
-.classx #text {
-    text-anchor: start;
-}*/
-
 .classx #layout  {
     start-angle:0;
     sweep-angle: 20;
@@ -30,9 +21,6 @@
 #classyId #text {
     text-anchor: start;/*only not working att here*/
 }
-
-
-
 
 /*
 .classy {
@@ -48,7 +36,4 @@
 
 .classy {
     fill: #fc9105;
-
-
 }
-
