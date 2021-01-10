@@ -30,10 +30,14 @@ TODO M 27 Discuss: run-time changes to CSS won't have any effect if attribute va
 TODO M 30 Flesh out interface spec (non-animations).\
 TODO M 35 Flesh out interface spec (animations).\
 TODO M 40 Implement all essential interface capabilities.
+TODO M 999 enhancements: better support for animation, getWidgetsByClassName(), initialise all widget settings via a ts object (like fitfont)
+
 
 Publishing:
 -
 TODO M 700 Ensure all default settings are sensible and consistent with Fitbit defaults
+TODO M 710 Decide on ts or js for app/index
+TODO M 750 define ts interface for widget elements (may only be essential if app/index is ts); remove 'as any'
 TODO M 800.1 Purge non-widget code and files to avoid confusing users when it goes public.\
 TODO M 800.2 User documentation (readme.md?).\
 TODO M 800.3 use simpler names in installation examples; eg, 'myElementId'

@@ -195,3 +195,4 @@ export default () => {
 }
 // rename #position to #radius // do we have to rename our intern variable "radius" to avoid conflicts?
 // TODO B 2 ^ It wasn't necessary, but I see you did it anyway :)
+// TODO G 0 ensure sensible behaviour if NO attributes defined
