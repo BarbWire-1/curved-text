@@ -19,7 +19,7 @@ const construct = el => {
 
   //containerEl.x = positionEl.cx;  // don't use cx,cy
   //containerEl.y = positionEl.cy;
-  let myR = radiusEl.r ?? 100  //if negative, text is bottom curve
+  let radius = radiusEl.r ?? 100  //if negative, text is bottom curve
 
   let textAnchor: string
   try {     // textEl.textAnchor throws an error if textAnchor not defined
@@ -32,7 +32,7 @@ const construct = el => {
   //let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
   let letterSpacing: number = textEl.letterSpacing ?? 0;
   let charAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
-  if (myR < 0) charAngle = -charAngle;   //PREVENT MIRRORING
+  if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
   let rotateText: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
 
 
@@ -111,14 +111,14 @@ const construct = el => {
     if (!numChars) return;
 
     //CIRCUMFERENCE FOR AUTO
-    const circ = 2 * myR * Math.PI;
+    const circ = 2 * radius * Math.PI;
     const degreePx = 360 / circ;
 
     //PREVENT MIRRORING
     //charAngle = charAngle * (radius < 0 ? -1 : 1);  // moved out of redraw() so charAngle doesn't get negated repeatedly
 
     char[0].text = chars[0];
-    let y = myR < 0 ? -myR : -myR + char[0].getBBox().height / 2;  //define y of text, based on radius
+    let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
     stringAngle = 0;
 
     //INITIALISE char[]
