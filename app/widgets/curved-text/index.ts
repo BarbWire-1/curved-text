@@ -99,7 +99,7 @@ const construct = el => {
 
   let myNewText = createText({ textAnchor: "middle" });
   console.log("myNewText " + myNewText)
-  
+  //pretty sure. this is total nonsens, as I might have to go on #radius, #text, #layout
 
   // END TEST INTERFACE----------------------------------------------------------
 
