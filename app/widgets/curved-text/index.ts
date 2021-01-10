@@ -168,7 +168,7 @@ const construct = el => {
       switch(textAnchor) {
         case 'middle':
           //stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 )) - firstChar / 2 * degreePx; //this is wrong in any case
-          stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 ) ) // centers exactly by angle only! the "?? 0" is to avoid division of 0 (NaN) in case charAngle isn´t defined
+          stringAngle = - ((numChars -1)  * ((charAngle / 2) ?? 0 ) ) // centers exactly by angle only! the "?? 0" is to avoid (NaN) in case charAngle isn´t defined or set to 0
           break;
         case 'start':
           //stringAngle = firstChar / 2 * degreePx ;//ok aligns at 0/180 but moves half firstChar.width / 2
@@ -177,7 +177,7 @@ const construct = el => {
         case 'end':
           const lastChar = char[numChars-1].getBBox().width;
           //stringAngle = (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx; //aligns at 0/180 but moves lastChar.width /2
-          stringAngle = - (numChars - 1 ) * charAngle ; //positions lastChar centered at 0/180
+          stringAngle = - (numChars - 1 ) * charAngle; //positions lastChar centered at 0/180
           break;
       }
     };

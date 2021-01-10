@@ -30,14 +30,14 @@ const classyWidgets = document.getElementsByClassName('classy'); // TODO G 8 Thi
 //classxWidgets.forEach(el => (el as TextElement).text="class.text")
 //classx.y = 250
 //classxWidgets.forEach(el => (el as TextElement).style.fontFamily="Tungsten-Medium")
-//classx.style.fontFamily = "Tungsten-Medium";
+//classx.startAngle = 90;
 
 //classy.startAngle = 135
 // Everything below is from curved-one-of-the-final-cuts/Rotation-II
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
 myText.text = "I am not a widget"// enter text ar data here MiW!MiW!MiW!M
 
-let mode: number = 1; // 0: automatic, 1: rotate fix angle each
+let mode: number = 0; // 0: automatic, 1: rotate fix angle each
 //console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
 //CIRCLE
 let myR: number = 100;//if negative, text is bottom curve

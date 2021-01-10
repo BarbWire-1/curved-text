@@ -110,7 +110,36 @@ sweep-angle via CSS
 text via .ts/.js
 > `myLabel.text = "myText"`
 
+font-family via .ts/.js
+> `myLabel.style.fontFamily = "Sytem-Regular";`
+
+font-size via .ts/.js
+> `myLabel.style.fontSize = 20;`
+
+opacity via .ts/.js
+> `myLabel.style.opacity = 0.2;`
+
+display via .ts/.js
+> `myLabel.style.display = "none";`
+
 x,y via .ts/.js
 >`myLabel.x = 50;`\
 >`myLabel.y = 50;`
+
+r via .ts/.js
+> `not appliable here`
+
+text-anchor via .ts/.js
+> `not appliable here`
+
+letter-spacing via .ts/.js
+> `not appliable here`
+
+start-angle via .ts/.js
+> `myLabel.startAngle = 90`
+
+
+
+
+
 
