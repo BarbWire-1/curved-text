@@ -177,7 +177,7 @@ const construct = el => {
         case 'end':
           const lastChar = char[numChars-1].getBBox().width;
           //stringAngle = (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx; //aligns at 0/180 but moves lastChar.width /2
-          stringAngle = (numChars - 1 ) * - charAngle  / 2 * degreePx; //positions lastChar centered at 0/180
+          stringAngle = - (numChars - 1 ) * charAngle ; //positions lastChar centered at 0/180
           break;
       }
     };
