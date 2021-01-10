@@ -17,7 +17,7 @@ let myText = document.getElementById("myText") as TextElement;
 let radius = document.getElementById("radius") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
-const classx = (document as any).getWidgetById('classxId')
+const classx = (document as any) .getWidgetById('classxId')
 const classy = (document as any).getWidgetById('classyId')
 //classx.style.display = 'inline'
 //classy.anchorAngle = 0
