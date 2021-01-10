@@ -100,7 +100,7 @@ const construct = el => {
   let myNewText = createText({ textAnchor: "middle" });
   console.log("myNewText " + myNewText)
   //pretty sure. this is total nonsens, as I might have to go on #radius, #text, #layout
-
+  // with nested interfaces
   // END TEST INTERFACE----------------------------------------------------------
 
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
