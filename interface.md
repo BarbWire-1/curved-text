@@ -29,7 +29,7 @@ Non-Animation Settings
 -
 Options:
 
-* SVG; eg, `fill="red"` or `<set href="#position" attributeName="cx" to="100" />`. This is convenient for specifying a setting at build-time (only).
+* SVG; eg, `fill="red"` or `<set href="#radius" attributeName="r" to="100" />`. This is convenient for specifying a setting at build-time (only).
 
 * CSS: eg, `.fill:red;`. This is convenient for specifying a setting at build-time (only).
 

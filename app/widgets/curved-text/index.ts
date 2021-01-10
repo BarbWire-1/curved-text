@@ -57,8 +57,8 @@ const construct = el => {
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
     //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
-    // centerX is now taken from positionEl.cx
-    // centerY is now taken from positionEl.cy
+    // centerX is now taken from el.x
+    // centerY is now taken from el.y
 
     //let mode: number = 1; // 0: automatic, 1: rotate fix angle each // no longer used; mode is determined from charAngle (since mode can't be set in SVG)
     //console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
@@ -184,5 +184,5 @@ export default () => {
     construct: construct
   }
 }
-//TODO G 2 rename #position to #radius // do we have to rename our intern variable "radius" to avoid conflicts?
-//TODO G 2 rename #orientation to #layout // done. B
+// rename #position to #radius // do we have to rename our intern variable "radius" to avoid conflicts?
+// TODO B 2 ^ It wasn't necessary, but I see you did it anyway :)
