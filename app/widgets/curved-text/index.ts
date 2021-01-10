@@ -98,7 +98,7 @@ const construct = el => {
 }
 
   let myNewText = createText({ textAnchor: "middle" });
-  console.log("myNewText " + myNewText)
+  console.log("myNewText.textAnchor: " + myNewText.textAnchor)
   //pretty sure. this is total nonsens, as I might have to go on #radius, #text, #layout
   // with nested interfaces
   // END TEST INTERFACE----------------------------------------------------------
