@@ -5,6 +5,8 @@ const construct = el => {
   const containerEl = el.getElementById('container')
   const alignRotate = el.getElementById('alignRotate') as GroupElement;
 
+  console.log(`text=${textEl.text}`)
+
   // INITIALISE SETTINGS FROM SVG or CSS
   /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer.
      Therefore, we pick these up from hidden elements within the widget. */
@@ -18,8 +20,6 @@ const construct = el => {
   //containerEl.x = positionEl.cx;  // don't use cx,cy
   //containerEl.y = positionEl.cy;
   let myR = radiusEl.r ?? 100  //if negative, text is bottom curve
-  // TODO G 3 how to behave if radius isn't set? /set to 100 if NaN, less shocking than "0" or NaN
-
 
   let textAnchor: string
   try {     // textEl.textAnchor throws an error if textAnchor not defined

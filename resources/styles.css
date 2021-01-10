@@ -10,7 +10,6 @@
    fill:#adf505;
    font-family: Fabrikat-Bold;
    font-size: 30;
-
 }
 
 .classx #layout  {
@@ -18,8 +17,13 @@
     sweep-angle: 20;
 
 }
-#classyId #text {
-    text-anchor: start;/*only not working att here*/
+
+#classxId #text {
+    text-buffer: "Default text";
+}
+
+.classx #text {
+    text-anchor: start;
 }
 
 /*

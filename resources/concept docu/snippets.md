@@ -60,8 +60,8 @@ class via SVG:
 CSS
 =
 text via CSS
->#id:  `not appliable here`\
->.class: `not appliable here`
+>#id:  `#myLabel #text {text-buffer: "My text";}`\
+>.class: `.myClass #text {text-buffer: "My text";}`
 
 font-family via CSS
 >#id: `#myLabel {font-family: Fabrikat-Regular;}`\
@@ -88,8 +88,8 @@ r via CSS
 >.class: `.myClass #radius {r: 50;}`
 
 text-anchor via CSS
->#id:  `#myLabel #text {text-anchor: middle}`\
->.class: `#myClass #text {text-anchor: middle}`
+>#id:  `#myLabel #text {text-anchor: middle;}`\
+>.class: `.myClass #text {text-anchor: middle;}`
 
 letter-spacing via CSS
 >#id:  `#myLabel #text {letter-spacing: 5;}`\

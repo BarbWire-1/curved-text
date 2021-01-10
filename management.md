@@ -20,8 +20,6 @@ TODO M 24 Discuss: add outer group to use to set not text-related attributes in 
 
 Interface:
 -
-TODO M 06 Test and document *relevant* attributes in CSS by id\
-TODO M 07 Test and document *relevant* attributes in CSS by class\
 ~~TODO M 20.4 Discuss: convert interface.odt to .md, so git can track changes. Do so if 'yes'.~~\
 ~~TODO M 25.1 Add column(s) for CSS in interface spec.~~\
 TODO M 25.2 Decide how to indicate priorities in interface spec (eg, essential, desirable, luxury, dream).\
