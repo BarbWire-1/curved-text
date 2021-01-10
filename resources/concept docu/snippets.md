@@ -9,52 +9,52 @@ Rules:\
 SVG
 =
 text via SVG:
-   >`<use id="classxId" href="#curvedText" >`
+   >`<use id="myLabel" href="#curvedText" >`
       >>`<set href="#text" attributeName="text-buffer" to="Widget One" />`
 
 font-family via SVG:
-   >`<use id="classxId" href="#curvedText" font-family="Tungsten-Medium" >`
+   >`<use id="myLabel" href="#curvedText" font-family="Tungsten-Medium" >`
 
 font-size via SVG:
-   >`<use id="classxId" href="#curvedText" font-size="10" >`
+   >`<use id="myLabel" href="#curvedText" font-size="10" >`
 
 fill via SVG:
-  >`<use id="classxId" href="#curvedText" fill="red" >`
+  >`<use id="myLabel" href="#curvedText" fill="red" >`
 
 opacity via SVG:
-  >`<use id="classxId" href="#curvedText" opacity="0.1" fill="white" >`
+  >`<use id="myLabel" href="#curvedText" opacity="0.1" fill="white" >`
 
 display via SVG:
->`<use id="classxId" href="#curvedText" display="none" fill="white" >`
+>`<use id="myLabel" href="#curvedText" display="none" fill="white" >`
 
 x via SVG:
->`<use id="classxId" href="#curvedText" x="50" >`
+>`<use id="myLabel" href="#curvedText" x="50" >`
 
 y via SVG:
->`<use id="classxId" href="#curvedText" y="50" >`
+>`<use id="myLabel" href="#curvedText" y="50" >`
 
 r via SVG:
->`<use id="classxId" href="#curvedText" fill="white" >`
+>`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#radius" attributeName="r" to="25" />`
 
 text-anchor via SVG:
->`<use id="classxId" href="#curvedText" fill="white" >`
+>`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#text" attributeName="text-anchor" to="start" />`
 
 letter-spacing via SVG:
->`<use id="classxId" href="#curvedText" fill="white" >`
+>`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#text" attributeName="letter-spacing" to="10" />`
 
 start-angle via SVG:
->`<use id="classxId" href="#curvedText" fill="white" >`
+>`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#layout" attributeName="start-angle" to="90" />`
 
 sweep-angle via SVG:
->`<use id="classxId" href="#curvedText" fill="white" >`
+>`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#layout" attributeName="sweep-angle" to="20" />`
 
 class via SVG:
->`<use id="classxId" href="#curvedText" >`
+>`<use id="myLabel" href="#curvedText" >`
 >>`<set href="#text" attributeName="class" to="classx" />`
 
 CSS
@@ -108,8 +108,9 @@ sweep-angle via CSS
 .ts/.js
 =
 text via .ts/.js
->#id: `myLabel.text = "myText"`\
->.class: `myClass.forEach(el => (el as TextElement).text="myClassText");`\
+> `myLabel.text = "myText"`
 
 x,y via .ts/.js
->myLabel.x = 50;
+>`myLabel.x = 50;`\
+>`myLabel.y = 50;`
+
