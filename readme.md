@@ -7,7 +7,9 @@ curved-text
 Supported by the `widget-factory`, it enables you to create multiple curved texts, which properties and attributes can be set individually per `id` or for multiple elements via `class`.
 
 
-<div align="center">![demo](curved_text_demo2.gif)</div>\
+!<div align="center">![demo](curved_text_demo2.gif#center)</div>\
+
+
 Set up the curve your text gets aligned at:
  -
  * x 
