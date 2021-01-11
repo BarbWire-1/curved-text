@@ -5,8 +5,6 @@ const construct = el => {
   const containerEl = el.getElementById('container')
   const alignRotate = el.getElementById('alignRotate') as GroupElement;
 
-  console.log(`text=${textEl.text}`)
-
   // INITIALISE SETTINGS FROM SVG or CSS
   /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer.
      Therefore, we pick these up from hidden elements within the widget. */
@@ -62,7 +60,7 @@ const construct = el => {
     set: function(newValue) {setRotateText(newValue)}
   })
 
-  
+
 
   el.redraw = () => {   // TODO G 4 does redraw() need to be public?
 

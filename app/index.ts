@@ -17,8 +17,18 @@ let myText = document.getElementById("myText") as TextElement;
 let radius = document.getElementById("radius") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
+interface CurvedTextWidget extends GraphicsElement {
+  readonly startAngle: Number;
+  anchorAngle: Number;
+  redraw(): void;
+}
+
 const classx = (document as any) .getWidgetById('classxId')
-const classy = (document as any).getWidgetById('classyId')
+const classy: CurvedTextWidget = (document as any).getWidgetById('classyId')
+classy.text = 'classyEl'  // interestingly, this is
+classy.anchorAngle = 180
+classy.redraw()
+classy.style.fill = 'red' // shows that members inherited via 'extends GraphicsElement' work
 //classx.style.display = 'inline'
 //classy.anchorAngle = 0
 const classxWidgets = document.getElementsByClassName('classx');
