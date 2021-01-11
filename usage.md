@@ -2,7 +2,7 @@ Installation
 =
 /app
 -
-* Copy the complete `/app/widgets` folder  into your project's `/app` folder\
+Copy the complete `/app/widgets` folder  into your project's `/app` folder\
  (so that you then have an `/app/widgets` folder in your project).
 
 
@@ -42,7 +42,7 @@ In your `/app/index.js` (or `.ts`) start-up code:
 >> `widgets.registerContainer(document);`
 
 Your code
--
+=
 
 Now, elsewhere in your `/app/index.js` (or `.ts`) file, you can get objects that correspond to the curved-text `<use>` elements in your `index.view` file, like this:
 >`const myLabel = document.getWidgetById('myLabel');`
@@ -50,13 +50,11 @@ Now, elsewhere in your `/app/index.js` (or `.ts`) file, you can get objects that
 In your code, use your widget object(s) to interact with the corresponding curved-text element; *eg*:
 
 > `stepsLabel.text = today.adjusted.steps;`
-
+________________
 Interface Usage Examples
--
-
-
-SVG
 =
+SVG
+-
 text via SVG:
    >`<use id="myLabel" href="#curvedText" >`
       >>`<set href="#text" attributeName="text-buffer" to="myText" />`
@@ -107,7 +105,7 @@ class via SVG:
 >>`<set href="#text" attributeName="class" to="classx" />`
 
 CSS
-=
+-
 text via CSS
 >#id:  `#myLabel #text {text-buffer: "myText";}`\
 >.class: `.myClass #text {text-buffer: "myText";}`
@@ -155,7 +153,7 @@ sweep-angle via CSS
 
 
 .ts/.js
-=
+-
 text via .ts/.js
 > `myLabel.text = "myText"`
 
