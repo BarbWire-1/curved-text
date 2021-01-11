@@ -3,7 +3,6 @@
     <text id="text" opacity="0" text-length="24" />          <!-- It's inefficient to have this element, but it allows text to be specified in .view -->
     <circle id="radius" opacity="0" />    <!-- It's inefficient to have this element, but it allows radius to be specified in .view -->
     <arc id="layout" opacity="0" />    <!-- It's inefficient to have this element, but it allows start-angle to be specified in .view -->
-    <!-- TODO G 3 Discuss using <g> instead of <arc> for layout; could access transform="rotate" to get rotateText (anchorAngle). Would need another <g> for charAngle. -->
     <svg id="container">
 
     <!--<g id="container" transform="translate(50%,50%)" fill="white"-->

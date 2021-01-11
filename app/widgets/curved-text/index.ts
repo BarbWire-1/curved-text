@@ -71,7 +71,7 @@ const construct = el => {
 
 
 
-  el.redraw = () => {   // TODO G 4 does redraw() need to be public?
+  el.redraw = () => {   // redraw() doesn't really need to be public, except to cover unforeseen cases
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
     //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
@@ -177,8 +177,8 @@ const construct = el => {
       const lastChar = char[numChars-1].getBBox().width;
       switch(textAnchor) {
         case 'middle':
-          stringAngle -= (((numChars-1) * charAngle) + (lastChar - firstChar) / 2 * degreePx) / 2; 
-          //stringAngle = (1 - numChars)  * charAngle / 2 // start at middle 0/180 - exactly by angle only! // TODO G 1 could you live with these remaining here, but commented out? Compromise?
+          stringAngle -= (((numChars-1) * charAngle) + (lastChar - firstChar) / 2 * degreePx) / 2;
+          //stringAngle = (1 - numChars)  * charAngle / 2 // start at middle 0/180 - exactly by angle only!
           break;
         case 'start':
           stringAngle = firstChar / 2 * degreePx ;

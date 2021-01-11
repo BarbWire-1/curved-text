@@ -3,7 +3,7 @@ import {me} from "appbit"
 import { user } from "user-profile"
 import { me as device } from "device"
 import widgetFactory from './widgets/widget-factory'
-import { CurvedTextWidget, curvedText } from './widgets/curved-text'  // TODO G 3 update documentation
+import { CurvedTextWidget, curvedText } from './widgets/curved-text'  // TODO G 3 update documentation re how to use ts interface
 import clock from "clock"
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
@@ -23,7 +23,6 @@ const classx = (document as any).getWidgetById('classxId')
 const classy: CurvedTextWidget = (document as any).getWidgetById('classyId')
 classy.text = 'W.W.W.W.W.W.i'  // interestingly, this is declared in the interface for Element
 classy.anchorAngle = 0
-classy.redraw()
 classy.style.fill = 'red' // shows that members inherited via 'extends GraphicsElement' work
 //classx.style.display = 'inline'
 //classy.anchorAngle = 0
@@ -137,7 +136,7 @@ if (mode === 0) {
   const lastChar = char[numChars-1].getBBox().width;
   switch(textAnchor) {
     case 0:
-      stringAngle -= (((numChars - 1) * charAngle) + (lastChar - firstChar) / 2 * degreePx) / 2; 
+      stringAngle -= (((numChars - 1) * charAngle) + (lastChar - firstChar) / 2 * degreePx) / 2;
       //stringAngle = (1 - numChars)  * charAngle / 2 // start at middle 0/180 - positions exactly by angle only!
       break
     case 1:
