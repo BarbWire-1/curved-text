@@ -1,3 +1,9 @@
+export interface CurvedTextWidget extends GraphicsElement {
+  readonly startAngle: Number;
+  anchorAngle: Number;
+  redraw(): void;
+}
+
 const construct = el => {
   const textEl = el.getElementById('text')
   const radiusEl = el.getElementById('radius')
