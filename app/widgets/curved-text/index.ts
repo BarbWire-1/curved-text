@@ -178,18 +178,15 @@ const construct = el => {
       switch(textAnchor) {
         case 'middle':
           stringAngle -= (((numChars-1) * charAngle) + (lastChar - firstChar) / 2 * degreePx) / 2; 
-          //stringAngle = (1 - numChars)  * charAngle / 2 // centers exactly by angle only! the "?? 0" is to avoid (NaN) in case charAngle isn´t defined or set to 0
+          //stringAngle = (1 - numChars)  * charAngle / 2 // start at middle 0/180 - exactly by angle only! // TODO G 1 could you live with these remaining here, but commented out? Compromise?
           break;
         case 'start':
-          stringAngle = firstChar / 2 * degreePx ;//ok aligns at 0/180 but moves half firstChar.width / 2
-          //stringAngle = 0; centers exactly by angle only!
-          //stringAngle = charAngle / 2; // TODO B 1 approximate positioning using consistent definition of anchor but without relying on actual char widths
+          stringAngle = firstChar / 2 * degreePx ;
+          //stringAngle = 0; //centers at o/180 exactly by angle only!
           break;
         case 'end':
-          
-          stringAngle = (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx; //aligns at 0/180 but moves lastChar.width /2
-          //stringAngle = - (numChars - 1 ) * charAngle; //positions lastChar centered at 0/180
-          //stringAngle = (0.5 - numChars) * charAngle; // TODO B 1 approximate positioning using consistent definition of anchor but without relying on actual char widths
+          stringAngle = (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
+          //stringAngle = - (numChars - 1 ) * charAngle; // end at middle 0/180 - exactly by angle only!
           break;
       }
     };

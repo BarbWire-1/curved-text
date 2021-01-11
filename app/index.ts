@@ -137,15 +137,16 @@ if (mode === 0) {
   const lastChar = char[numChars-1].getBBox().width;
   switch(textAnchor) {
     case 0:
-      stringAngle -= (((numChars-1) * charAngle) + (lastChar - firstChar) / 2 * degreePx) / 2; 
+      stringAngle -= (((numChars - 1) * charAngle) + (lastChar - firstChar) / 2 * degreePx) / 2; 
+      //stringAngle = (1 - numChars)  * charAngle / 2 // start at middle 0/180 - positions exactly by angle only!
       break
     case 1:
-      //const firstChar = char[0].getBBox().width;
-      stringAngle += firstChar / 2 * degreePx ;//ok
+      stringAngle += firstChar / 2 * degreePx;//ok
+      //stringAngle = 0; //centers at 0/180 - positions exactly by angle only!
       break;
     case 2:
-      
-      stringAngle += (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
+      stringAngle += (numChars - 1) * - charAngle - lastChar / 2 * degreePx;
+      //stringAngle = - (numChars - 1 ) * charAngle; // end at middle 0/180 - positions exactly by angle only!
       break;
   }
 };
