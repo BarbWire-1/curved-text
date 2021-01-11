@@ -190,3 +190,6 @@ start-angle via .ts/.js
 
 sweep-angle via .ts/.js
 > `not appliable here`
+
+... and now: have fun! :slightly_smiling_face: :vulcan_salute:
+by Gondwana and BarbWire
