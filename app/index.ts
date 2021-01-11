@@ -3,8 +3,7 @@ import {me} from "appbit"
 import { user } from "user-profile"
 import { me as device } from "device"
 import widgetFactory from './widgets/widget-factory'
-import { CurvedTextWidget } from './widgets/curved-text'
-import curvedText from './widgets/curved-text'
+import { CurvedTextWidget, curvedText } from './widgets/curved-text'
 import clock from "clock"
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/

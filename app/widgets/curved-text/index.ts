@@ -1,3 +1,5 @@
+//import curvedTextOld from "../curved-text-old"
+
 export interface CurvedTextWidget extends GraphicsElement {
   readonly startAngle: Number;
   anchorAngle: Number;
@@ -198,7 +200,14 @@ const construct = el => {
   return el
 }
 
-export default () => {
+/*export default () => {
+  return {
+    name: 'curvedText',
+    construct: construct
+  }
+}*/
+
+export const curvedText = () => {
   return {
     name: 'curvedText',
     construct: construct
