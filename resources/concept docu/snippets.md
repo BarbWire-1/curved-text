@@ -131,10 +131,10 @@ text-anchor via .ts/.js
 letter-spacing via .ts/.js
 > `not appliable here`
 
-letter-spacing via .ts/.js
-> `not appliable here`
+start-angle via .ts/.js
+> `myLabel.startAngle`
 
-letter-spacing via .ts/.js
+sweep-angle via .ts/.js
 > `not appliable here`
 
 
