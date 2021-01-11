@@ -46,6 +46,7 @@ If
  The `<use>` elements 'containing your curved text can be animated like other SVGElements.
 
 For information on `installation` and `usage`, please follow this link:
+[installation and usage](usage.md)
 
 
 
