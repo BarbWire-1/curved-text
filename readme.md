@@ -6,6 +6,7 @@ curved-text
 
 Supported by the `widget-factory`, it enables you to create multiple curved texts, which properties and attributes can be set independantly per `id` or gathered per `class`.
 
+![demo](curved_text_demo2.gif)\
 Attributes to define the circle your text gets curved at:
  -
  * x 
