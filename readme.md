@@ -6,12 +6,14 @@ curved-text
 
 Supported by the `widget-factory`, it enables you to create multiple curved texts, which properties and attributes can be set independantly per `id` or gathered per `class`.
 
-Attributes to define the "imaginary" circle your text gets curved at:
+Attributes to define the circle your text gets curved at:
+ -
  * x 
  * y
  * r
 
  Attributes to set text and style
+ -
  * text
  * text-buffer
  * font-family
@@ -24,6 +26,7 @@ Attributes to define the "imaginary" circle your text gets curved at:
  * display
 
  To rotate the whole text
+ -
  * start-angle
 
  In the default `auto-mode`, the position of each char gets calculated by it´s width (using getBBox()), plus additional letter-spacing if set.
@@ -40,7 +43,7 @@ If
 
  The `<use>` elements can be animated like other SVGElements.
 
-For information on `installation` and `how-to-use`, follow this link:
+For information on `installation` and `how-to-use`, please follow this link:
 
 
 
