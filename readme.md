@@ -7,8 +7,8 @@ curved-text
 Supported by the `widget-factory`, it enables you to create multiple curved texts, which properties and attributes can be set individually per `id` or for multiple elements via `class`.
 
 
-!<div align="center">![demo](curved_text_demo2.gif#center)</div>\
-Attributes to define the curve your text gets aligned at:
+<div align="center">![demo](curved_text_demo2.gif#center)</div>\
+Set up the curve your text gets aligned at:
  -
  * x 
  * y
@@ -27,7 +27,7 @@ Attributes to define the curve your text gets aligned at:
  * opacity
  * display
 
- To rotate the whole text
+Rotate whole text
  -
  * start-angle
 
