@@ -8,7 +8,7 @@ Supported by the `widget-factory`, it enables you to create multiple curved text
 
 
 ![demo](curved_text_demo2.gif)\
-Attributes to define the curve your text gets rotated at:
+Attributes to define the curve your text gets aligned at:
  -
  * x 
  * y
