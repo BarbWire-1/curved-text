@@ -7,7 +7,7 @@ curved-text
 Supported by the `widget-factory`, it enables you to create multiple curved texts, which properties and attributes can be set individually per `id` or for multiple elements via `class`.
 
 
-![demo](curved_text_demo2.gif)\
+![demo](curved_text_demo2.gif#center)\
 Attributes to define the curve your text gets aligned at:
  -
  * x 
@@ -46,7 +46,9 @@ If
  The `<use>` elements representing your curved text can be animated like other SVGElements.
 
 For information on `installation` and `usage`, please follow this link:
-[installation and usage](usage.md#center)
+[installation and usage](usage.md)
+
+... and now: have fun! :slightly_smiling_face: :vulcan_salute:
 
 
 
