@@ -19,7 +19,10 @@ In your `/resources/widget.defs` file, within the `<defs>` section, add the foll
 
 /resources/index.gui (or .view)
 -
-In your `/resources/index.view` file, include `<use>` elements for every instance of curved-text that you want. Your `<use>` elements must include `href="#curvedText"`, and you'll need to give each element an id; *eg*, `id="stepsCurvedText"`. See detailed documentation below, and examples in this repository.
+In your `/resources/index.view` file, include `<use>` elements for every instance of curved-text that you want. Your `<use>` elements must include `href="#curvedText"`, and you'll need to give each element an id; *eg*, `id="stepsCurvedText"`like:
+  >`<use id="myLabel" href="#curvedText" >`
+
+See detailed documentation below, and examples in this repository.
 
 >**Note:** Unlike most Fitbit elements and components, widgets won't be visible just because you've included them in your `.view` file. Widgets need some internal code to be executed to lay them out, and this doesn't happen until you get a reference to them using `document.getWidgetById()` in your code (see below).
 
@@ -36,10 +39,10 @@ If you haven't already got an `import` statement for `document`, add that too.
 In your `/app/index.js` (or `.ts`) start-up code:
 
 * Create a variable for a `widgetFactory` object, and tell it about curved-text widgets, like this:
->> `const widgets = widgetFactory([curvedText]);`
+> `const widgets = widgetFactory([curvedText]);`
 
 * Use the ```widgetFactory``` object to add a `getWidgetById()` function to your `document` variable, like this:
->> `widgets.registerContainer(document);`
+> `widgets.registerContainer(document);`
 
 Your code
 =
