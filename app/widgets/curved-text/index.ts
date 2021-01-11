@@ -7,6 +7,7 @@ export interface CurvedTextWidget extends GraphicsElement {
 }
 
 const construct = el => {
+  // TODO G 2 can we indicate that this function returns a CurvedTextWidget?
   const textEl = el.getElementById('text')
   const radiusEl = el.getElementById('radius')
   const layoutEl = el.getElementById('layout')

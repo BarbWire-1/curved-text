@@ -3,7 +3,7 @@ import {me} from "appbit"
 import { user } from "user-profile"
 import { me as device } from "device"
 import widgetFactory from './widgets/widget-factory'
-import { CurvedTextWidget, curvedText } from './widgets/curved-text'
+import { CurvedTextWidget, curvedText } from './widgets/curved-text'  // TODO G 3 update documentation
 import clock from "clock"
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
@@ -15,7 +15,11 @@ let myText = document.getElementById("myText") as TextElement;
 let radius = document.getElementById("radius") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
-const classx = (document as any) .getWidgetById('classxId')
+/*interface WidgetDocument extends DocumentModule, ElementSearch {    // TODO G 1 cannot find name 'DocumentModule'
+  getWidgetById(id:string): void;
+}*/
+
+const classx = (document as any).getWidgetById('classxId')
 const classy: CurvedTextWidget = (document as any).getWidgetById('classyId')
 classy.text = 'classyEl'  // interestingly, this is declared in the interface for Element
 classy.anchorAngle = 180
