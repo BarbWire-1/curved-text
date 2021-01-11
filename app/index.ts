@@ -21,8 +21,8 @@ let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 const classx = (document as any).getWidgetById('classxId')
 const classy: CurvedTextWidget = (document as any).getWidgetById('classyId')
-classy.text = 'classyEl'  // interestingly, this is declared in the interface for Element
-classy.anchorAngle = 180
+classy.text = 'W.W.W.W.W.W.i'  // interestingly, this is declared in the interface for Element
+classy.anchorAngle = 0
 classy.redraw()
 classy.style.fill = 'red' // shows that members inherited via 'extends GraphicsElement' work
 //classx.style.display = 'inline'
@@ -134,16 +134,17 @@ if (mode === 0) {
 
   //TEXT-ANCHOR MODE FIX
   const firstChar = char[0].getBBox().width;
+  const lastChar = char[numChars-1].getBBox().width;
   switch(textAnchor) {
     case 0:
-      stringAngle -= ((numChars -1)  * ((charAngle / 2) ?? 0 )) + firstChar / 2 * degreePx;//ok
+      stringAngle -= (((numChars-1) * charAngle) + (lastChar - firstChar) / 2 * degreePx) / 2; 
       break
     case 1:
       //const firstChar = char[0].getBBox().width;
       stringAngle += firstChar / 2 * degreePx ;//ok
       break;
     case 2:
-      const lastChar = char[numChars-1].getBBox().width;
+      
       stringAngle += (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
       break;
   }

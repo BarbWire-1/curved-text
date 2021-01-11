@@ -122,7 +122,7 @@
       <set href="#text" attributeName="text-buffer" to="WWWWW" />
       <set href="#text" attributeName="class" to="classx" /> <!--changed to classx here to compare css on id/class on both-->
       <set href="#radius" attributeName="r" to="80" />
-      <set href="#text" attributeName="text-anchor" to="end" />
+      <set href="#text" attributeName="text-anchor" to="middle" />
       <set href="#layout" attributeName="sweep-angle" to="15" />
    </use>
 
