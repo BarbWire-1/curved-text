@@ -15,12 +15,35 @@ let myText = document.getElementById("myText") as TextElement;
 let radius = document.getElementById("radius") as GroupElement;
 let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
-/*interface WidgetDocument extends DocumentModule, ElementSearch {    // TODO G 1 cannot find name 'DocumentModule'
+/*export interface Location {
+  readonly pathname: string;
+  assign(path: string): Promise<void>;
+  replace(path: string): Promise<void>;
+}
+interface History {
+  readonly length: number;
+  back(): void;
+  forward(): void;
+  go(delta?: number): void;
+}
+type EventHandler = (event: Event) => boolean;
+interface DocumentModule extends GlobalEvents {
+  readonly location: Location;
+  readonly history: History;
+  getEventHandler(elementType: string): EventHandler | null;
+  setEventHandler(elementType: string, handler: EventHandler): void;
+  replaceSync(path: string): void;
+}
+interface WidgetDocument extends DocumentModule, ElementSearch {    // cannot find name 'DocumentModule'
   getWidgetById(id:string): void;
 }*/
+type DocumentType = typeof document
+interface WidgetDocument extends DocumentType {
+  getWidgetById(id:string): CurvedTextWidget; // TODO G 2 virtual base class for CurvedTextWidget?
+}
 
-const classx = (document as any).getWidgetById('classxId')
-const classy: CurvedTextWidget = (document as any).getWidgetById('classyId')
+const classx = (document as WidgetDocument).getWidgetById('classxId')
+const classy: CurvedTextWidget = (document as WidgetDocument).getWidgetById('classyId')
 classy.text = 'W.W.W.W.W.W.i'  // interestingly, this is declared in the interface for Element
 classy.anchorAngle = 0
 classy.style.fill = 'red' // shows that members inherited via 'extends GraphicsElement' work
@@ -29,7 +52,7 @@ classy.style.fill = 'red' // shows that members inherited via 'extends GraphicsE
 const classxWidgets = document.getElementsByClassName('classx');
 const classyWidgets = document.getElementsByClassName('classy'); // TODO G 8 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
 
-//const classxId = (document as any).getWidgetById('classxId');
+//const classxId = (document as WidgetDocument).getWidgetById('classxId');
 //classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
 //classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 //classxWidgets.forEach(el => (el as TextElement).text="class.text")
