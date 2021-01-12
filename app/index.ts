@@ -61,7 +61,7 @@ classy.style.fill = 'red'; // shows that members inherited via 'extends Graphics
 //classx.style.display = 'inline'
 //classy.anchorAngle = 0
 const classxWidgets = document.getElementsByClassName('classx');
-const classyWidgets = document.getElementsByClassName('classy'); // TODO G 8 This will only pick up widgets that have already been constructed via getWidgetById. Could rework factory for more flexibility.
+const classyWidgets = document.getElementsByClassName('classy');
 
 //const classxId = (document as WidgetDocument).getWidgetById('classxId');
 //classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
