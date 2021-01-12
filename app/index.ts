@@ -3,7 +3,7 @@ import {me} from "appbit"
 import { user } from "user-profile"
 import { me as device } from "device"
 import widgetFactory from './widgets/widget-factory'
-import { CurvedTextWidget, curvedText } from './widgets/curved-text'  // TODO G 3 update documentation re how to use ts interface
+import { CurvedTextWidget, curvedText } from './widgets/curved-text'  // TODO G 3.0 update documentation re how to use ts interface
 import clock from "clock"
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
@@ -15,11 +15,12 @@ widgets.registerContainer(document)   // adds getWidgetById() to document
 
 // TODO G 2.0 move WidgetDocument definition into widget-factory.ts
 type DocumentType = typeof document
+// TODO G 2.0 rename WidgetDocument to WidgetDocumentModule
 interface WidgetDocument extends DocumentType {
   getWidgetById(id:string): CurvedTextWidget; // TODO G 2.2 virtual base class for CurvedTextWidget?
 }
 
-// TODO B 2 we can avoid saying '(document as WidgetDocument).getWidgetById' in ts as below. Do we want to?
+// TODO G 3.1 we can avoid saying '(document as WidgetDocument).getWidgetById' in ts as below. Put in ts doco.
 const widgetDocument = document as WidgetDocument;
 const widgy = widgetDocument.getWidgetById('classxId');
 const normal = widgetDocument.getElementsByClassName('classyId');  // widgetDocument can be used wherever document can be used (maybe)
