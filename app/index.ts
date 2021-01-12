@@ -9,7 +9,19 @@ import clock from "clock"
 /*---------------------------------------------------------------------------------------------------------------------------------*/
 //Initialise widget system
 const widgets = widgetFactory([curvedText])
-widgets.registerContainer(document)
+widgets.registerContainer(document)   // adds getWidgetById() to document
+
+
+
+
+// TODO B 2 we can avoid saying '(document as WidgetDocument).getWidgetById' in ts as below. Do we want to?
+const widgetDocument = document as WidgetDocument
+const widgy = widgetDocument.getWidgetById('classxId')
+const normal = widgetDocument.getElementsByClassName('classyId')  // widgetDocument can be used wherever document can be used (maybe)
+
+
+
+
 
 let myText = document.getElementById("myText") as TextElement;
 let radius = document.getElementById("radius") as GroupElement;
