@@ -6,13 +6,13 @@ curved-text
 
 Supported by the **widget-factory**, it enables you to create multiple curved texts, which properties and attributes can be set individually per `id` or for multiple elements via `class`.
 
+You can idividually define the dimensons of `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `attributes`.
+
 
 !<div align="center">![demo](curved_text_demo2.gif#center)</div>
 
 About
 =
-You can idividually define the dimensons of `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `attributes`.
-
 Modes
 -
 There are two different `modes` of curving text.\
@@ -43,7 +43,9 @@ After you defined the dimensons of the curve (x,y,r), `text-anchor` and `start-a
 
 Animation
 -
-The `<use>` elements representing your curved text can be animated like other   `SVGElements`.
+The `<use>` elements showing your curved text can be animated like other   `SVGElements`.
+
+_
 
 ...and now - CURVE IT!\
 by Gondwana and BarbWire 
