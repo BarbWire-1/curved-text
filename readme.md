@@ -15,9 +15,8 @@ You can idividually define the dimensons of `circles`, the texts gets curved at,
 
 Modes
 -
-
 There are two different `modes` of curving text.\
-In default mode `auto` the characters´ widths get calculated by getBBox() and determine the position of each in relation.
+In default mode `auto` the characters´ widths get calculated by getBBox() and determine the position of each in relation.\
 In mode `fix` you can rotate the characters by `sweep-angle` which then rotates the characters per += sweep-angle, wich is less consuming, as no getBBox() is needed.
 
 (Setting `sweep-angle` automatically switches to mode `fix`.)
@@ -40,17 +39,16 @@ Due to the structure of the `<symbol><use>` which represents the textElement, th
 
 Positioning
 -
-After you defined the dimensons of the curve (x,y,r), `Alignment` and `rotation` let you position your textElement where and how you need it to be.
+After you defined the dimensons of the curve (x,y,r), `text-anchor` and `start-angle` let you position your textElement where and how you need it to be.
 
 Animation
 -
 The `<use>` elements representing your curved text can be animated like other   `SVGElements`.
 
-...and now - CURVE IT!
-
+...and now - CURVE IT!\
 by Gondwana and BarbWire 
 
-(and RTFM! :grinning: :vulcan_salute:)
+(and RTFM! :slightly_smiling_face::vulcan_salute:)
 
 _
 
