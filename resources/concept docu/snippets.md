@@ -1,9 +1,8 @@
+________________
 Interface Usage Examples
--
-
-
-SVG
 =
+SVG
+-
 text via SVG:
    >`<use id="myLabel" href="#curvedText" >`
       >>`<set href="#text" attributeName="text-buffer" to="myText" />`
@@ -54,7 +53,7 @@ class via SVG:
 >>`<set href="#text" attributeName="class" to="classx" />`
 
 CSS
-=
+-
 text via CSS
 >#id:  `#myLabel #text {text-buffer: "myText";}`\
 >.class: `.myClass #text {text-buffer: "myText";}`
@@ -102,7 +101,7 @@ sweep-angle via CSS
 
 
 .ts/.js
-=
+-
 text via .ts/.js
 > `myLabel.text = "myText"`
 
@@ -136,9 +135,3 @@ start-angle via .ts/.js
 
 sweep-angle via .ts/.js
 > `not appliable here`
-
-
-
-
-
-

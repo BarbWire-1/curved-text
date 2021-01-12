@@ -9,43 +9,50 @@ Supported by the **widget-factory**, it enables you to create multiple curved te
 
 !<div align="center">![demo](curved_text_demo2.gif#center)</div>
 
+About
+=
+You can idividually define the dimensons of `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `attributes`.
 
-Set up the curve your text gets aligned at:
- -
- * x 
- * y
- * r (use r < 0 for bottom curved text)
+Modes
+-
 
- Attributes to set text and style
- -
- * text
- * text-buffer
- * font-family
- * font-size
- * fill
- * letter-spacing
- * text-anchor
+There are two different `modes` of curving text.\
+In default mode `auto` the characters´ widths get calculated by getBBox() and determine the position of each in relation.
+In mode `fix` you can rotate the characters by `sweep-angle` which then rotates the characters per += sweep-angle, wich is less consuming, as no getBBox() is needed.
 
- * opacity
- * display
+(Setting `sweep-angle` automatically switches to mode `fix`.)
 
-Rotate whole text
- -
- * start-angle
+Settings
+-
+Almost all set-up and manipulation on runtime of your `textElements` do work as you are used to from the **fitbit OS**.
 
- In the default `auto-mode`, the position of each char gets calculated by its width (using getBBox()), plus additional letter-spacing if set.
 
-If 
- * sweep-angle\
- is set, it switches to `fix-mode` where each character gets rotated by the chosen fix += angle.
-
- To ensure high flexibility, most attributes/properties can be set in
+To ensure high flexibility, most attributes/properties can be set in
  * SVG
  * CSS
  * .ts/.js
+
  and can be changed on runtime.
 
- The `<use>` elements representing your curved text can be animated like other SVGElements.
+
+Due to the structure of the `<symbol><use>` which represents the textElement, there are only a few expectations which are mentioned briefly in [installation and usage](usage.md), where you also find detailed instructions for installing and getting started.\
+(For extended examples of usage and syntax, please have a look at the [syntax attachment](snippets.md).)
+
+Positioning
+-
+After you defined the dimensons of the curve (x,y,r), `Alignment` and `rotation` let you position your textElement where and how you need it to be.
+
+Animation
+-
+The `<use>` elements representing your curved text can be animated like other   `SVGElements`.
+
+...and now - CURVE IT!
+
+by Gondwana and BarbWire 
+
+(and RTFM! :grinning: :vulcan_salute:)
+
+_
 
 For information on `installation` and `usage`, please follow this link:
 [installation and usage](usage.md)
