@@ -1,17 +1,18 @@
 //import curvedTextOld from "../curved-text-old"
 
 export interface CurvedTextWidget extends GraphicsElement {
-  readonly startAngle: Number;
+  text: string;
+  startAngle: Number;
   anchorAngle: Number;
   redraw(): void;
 }
 
-const construct = el => {
-  // TODO G 2 can we indicate that this function returns a CurvedTextWidget?
-  const textEl = el.getElementById('text')
-  const radiusEl = el.getElementById('radius')
-  const layoutEl = el.getElementById('layout')
-  const containerEl = el.getElementById('container')
+// @ts-ignore
+const construct: CurvedTextWidget = (el:GraphicsElement) => {
+  const textEl = el.getElementById('text') as TextElement;
+  const radiusEl = el.getElementById('radius') as CircleElement;
+  const layoutEl = el.getElementById('layout') as ArcElement;
+  const containerEl = el.getElementById('container');
   const alignRotate = el.getElementById('alignRotate') as GroupElement;
 
   // INITIALISE SETTINGS FROM SVG or CSS
@@ -20,19 +21,19 @@ const construct = el => {
   //containerEl.groupTransform.translate.x = centerX ;
   //containerEl.groupTransform.translate.y = centerY ;
   if (textEl.class) {
-    el.class = el.class + ' ' + textEl.class
-    textEl.class = ''   // prevent textEl from being picked up by document.getElementsByClassName()
+    el.class = el.class + ' ' + textEl.class;
+    textEl.class = '';   // prevent textEl from being picked up by document.getElementsByClassName()
   }
 
   //containerEl.x = positionEl.cx;  // don't use cx,cy
   //containerEl.y = positionEl.cy;
-  let radius = radiusEl.r ?? 100  //if negative, text is bottom curve
+  let radius = radiusEl.r ?? 100;  //if negative, text is bottom curve
 
-  let textAnchor: string
+  let textAnchor: string;
   try {     // textEl.textAnchor throws an error if textAnchor not defined
-    textAnchor = textEl.textAnchor   //0: middle, 1: start,  2: end at 0°
+    textAnchor = textEl.textAnchor;   //0: middle, 1: start,  2: end at 0°
   } catch(e) {
-    textAnchor = 'middle'
+    textAnchor = 'middle';
   }
   //console.log(`textAnchor=${textAnchor}`)
 
@@ -49,29 +50,27 @@ const construct = el => {
 
   // PRIVATE FUNCTIONS:
   const setRotateText = newValue => {
-    rotateText = newValue
-    alignRotate.groupTransform.rotate.angle = rotateText + stringAngle
+    rotateText = newValue;
+    alignRotate.groupTransform.rotate.angle = rotateText + stringAngle;
   }
 
   // ADD PROPERTIES TO SVG ELEMENT OBJECT:
   Object.defineProperty(el, 'text', {
     set: function(newValue) {
-      textEl.text = newValue
-      el.redraw()
+      textEl.text = newValue;
+      (el as CurvedTextWidget).redraw();
     }
-  })
+  });
 
   Object.defineProperty(el, 'startAngle', {
-    set: function(newValue) {setRotateText(newValue)}
-  })
+    set: function(newValue) {setRotateText(newValue);}
+  });
 
   Object.defineProperty(el, 'anchorAngle', {
-    set: function(newValue) {setRotateText(newValue)}
-  })
+    set: function(newValue) {setRotateText(newValue);}
+  });
 
-
-
-  el.redraw = () => {   // redraw() doesn't really need to be public, except to cover unforeseen cases
+  (el as CurvedTextWidget).redraw = () => {   // redraw() doesn't really need to be public, except to cover unforeseen cases
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
     //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
@@ -99,7 +98,7 @@ const construct = el => {
     //ASSIGN CHARS
     let chars = (textEl.text.split("")); // array of char set of text to curve
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
-    const numChars = chars.length
+    const numChars = chars.length;
 
     //APPLY FONT FAMILY AND SIZE
     /* // Not necessary: fontSize and fontFamily can be inherited.
@@ -194,9 +193,9 @@ const construct = el => {
     alignRotate.groupTransform.rotate.angle = rotateText + stringAngle;
   }
 
-  el.redraw()
+  (el as CurvedTextWidget).redraw()
 
-  return el
+  return el as CurvedTextWidget
 }
 
 /*export default () => {

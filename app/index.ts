@@ -13,19 +13,21 @@ widgets.registerContainer(document)   // adds getWidgetById() to document
 
 
 
+// TODO G 2.0 move WidgetDocument definition into widget-factory.ts
+type DocumentType = typeof document
+interface WidgetDocument extends DocumentType {
+  getWidgetById(id:string): CurvedTextWidget; // TODO G 2.2 virtual base class for CurvedTextWidget?
+}
 
 // TODO B 2 we can avoid saying '(document as WidgetDocument).getWidgetById' in ts as below. Do we want to?
-const widgetDocument = document as WidgetDocument
-const widgy = widgetDocument.getWidgetById('classxId')
-const normal = widgetDocument.getElementsByClassName('classyId')  // widgetDocument can be used wherever document can be used (maybe)
+const widgetDocument = document as WidgetDocument;
+const widgy = widgetDocument.getWidgetById('classxId');
+const normal = widgetDocument.getElementsByClassName('classyId');  // widgetDocument can be used wherever document can be used (maybe)
 
 
 
 
 
-let myText = document.getElementById("myText") as TextElement;
-let radius = document.getElementById("radius") as GroupElement;
-let alignRotate = document.getElementById("alignRotate") as GroupElement;
 
 /*export interface Location {
   readonly pathname: string;
@@ -49,16 +51,12 @@ interface DocumentModule extends GlobalEvents {
 interface WidgetDocument extends DocumentModule, ElementSearch {    // cannot find name 'DocumentModule'
   getWidgetById(id:string): void;
 }*/
-type DocumentType = typeof document
-interface WidgetDocument extends DocumentType {
-  getWidgetById(id:string): CurvedTextWidget; // TODO G 2 virtual base class for CurvedTextWidget?
-}
 
 const classx = (document as WidgetDocument).getWidgetById('classxId')
-const classy: CurvedTextWidget = (document as WidgetDocument).getWidgetById('classyId')
-classy.text = 'W.W.W.W.W.W.i'  // interestingly, this is declared in the interface for Element
-classy.anchorAngle = 0
-classy.style.fill = 'red' // shows that members inherited via 'extends GraphicsElement' work
+const classy = (document as WidgetDocument).getWidgetById('classyId')
+classy.anchorAngle = 0;
+classy.text = 'W.W.W.W.W.W.i';  // interestingly, this is declared in the interface for Element
+classy.style.fill = 'red'; // shows that members inherited via 'extends GraphicsElement' work
 //classx.style.display = 'inline'
 //classy.anchorAngle = 0
 const classxWidgets = document.getElementsByClassName('classx');
@@ -73,8 +71,25 @@ const classyWidgets = document.getElementsByClassName('classy'); // TODO G 8 Thi
 //classx.startAngle = 90;
 
 //classy.startAngle = 135
+
+
+
+
+
+
+
+
+
+
+
 // Everything below is from curved-one-of-the-final-cuts/Rotation-II
+
+let myText = document.getElementById("myText") as TextElement;
+let radius = document.getElementById("radius") as GroupElement;
+let alignRotate = document.getElementById("alignRotate") as GroupElement;
+
 /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
+
 myText.text = "I am not a widget"// enter text ar data here MiW!MiW!MiW!M
 
 let mode: number = 0; // 0: automatic, 1: rotate fix angle each
