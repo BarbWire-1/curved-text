@@ -13,48 +13,22 @@ widgets.registerContainer(document)   // adds getWidgetById() to document
 
 
 
-// TODO G 2.0 move WidgetDocument definition into widget-factory.ts
+// TODO G 2.0 move WidgetDocumentModule definition into widget-factory.ts
 type DocumentType = typeof document
-// TODO G 2.0 rename WidgetDocument to WidgetDocumentModule
-interface WidgetDocument extends DocumentType {
+interface WidgetDocumentModule extends DocumentType {
   getWidgetById(id:string): CurvedTextWidget; // TODO G 2.2 virtual base class for CurvedTextWidget?
 }
 
-// TODO G 3.1 we can avoid saying '(document as WidgetDocument).getWidgetById' in ts as below. Put in ts doco.
-const widgetDocument = document as WidgetDocument;
+// TODO G 3.1 we can avoid saying '(document as WidgetDocumentModule).getWidgetById' in ts as below. Put in ts doco.
+const widgetDocument = document as WidgetDocumentModule;
 const widgy = widgetDocument.getWidgetById('classxId');
 const normal = widgetDocument.getElementsByClassName('classyId');  // widgetDocument can be used wherever document can be used (maybe)
 
 
 
 
-
-
-/*export interface Location {
-  readonly pathname: string;
-  assign(path: string): Promise<void>;
-  replace(path: string): Promise<void>;
-}
-interface History {
-  readonly length: number;
-  back(): void;
-  forward(): void;
-  go(delta?: number): void;
-}
-type EventHandler = (event: Event) => boolean;
-interface DocumentModule extends GlobalEvents {
-  readonly location: Location;
-  readonly history: History;
-  getEventHandler(elementType: string): EventHandler | null;
-  setEventHandler(elementType: string, handler: EventHandler): void;
-  replaceSync(path: string): void;
-}
-interface WidgetDocument extends DocumentModule, ElementSearch {    // cannot find name 'DocumentModule'
-  getWidgetById(id:string): void;
-}*/
-
-const classx = (document as WidgetDocument).getWidgetById('classxId')
-const classy = (document as WidgetDocument).getWidgetById('classyId')
+const classx = (document as WidgetDocumentModule).getWidgetById('classxId')
+const classy = (document as WidgetDocumentModule).getWidgetById('classyId')
 classy.anchorAngle = 0;
 classy.text = 'W.W.W.W.W.W.i';  // interestingly, this is declared in the interface for Element
 classy.style.fill = 'red'; // shows that members inherited via 'extends GraphicsElement' work
@@ -63,7 +37,7 @@ classy.style.fill = 'red'; // shows that members inherited via 'extends Graphics
 const classxWidgets = document.getElementsByClassName('classx');
 const classyWidgets = document.getElementsByClassName('classy');
 
-//const classxId = (document as WidgetDocument).getWidgetById('classxId');
+//const classxId = (document as WidgetDocumentModule).getWidgetById('classxId');
 //classyWidgets.forEach(el => console.log(`found el with class='${el.class}'`)) // if you could call by class only, could fix texts just be written in css/svg ?
 //classxWidgets.forEach(el => console.log(`found el with class='${el.class}'`))
 //classxWidgets.forEach(el => (el as TextElement).text="class.text")
