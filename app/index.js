@@ -1,10 +1,7 @@
 //@ts-nocheck
 import document from "document"
-import {me} from "appbit"
-import { user } from "user-profile"
-import { me as device } from "device"
-import { WidgetSearch, WidgetDocumentModule, WidgetElementSearch, widgetFactory } from './widgets/widget-factory'
-import { CurvedTextWidget, curvedText } from './widgets/curved-text'
+import {widgetFactory} from './widgets/widget-factory'
+import {curvedText} from './widgets/curved-text'
 import clock from "clock"
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
