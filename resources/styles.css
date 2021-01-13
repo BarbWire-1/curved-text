@@ -13,8 +13,8 @@
 }
 
 .classx #layout  {
-    start-angle:50;
-    sweep-angle:50;
+    start-angle:180;
+    sweep-angle:0;
 
 }
 #classxId {

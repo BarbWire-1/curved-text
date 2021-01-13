@@ -36,19 +36,19 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
   //let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
   let letterSpacing: number = textEl.letterSpacing ?? 0;
-  let sweepAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
+  let sweepAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode. // former charAngle
   if (radius < 0) sweepAngle = -sweepAngle;   //PREVENT MIRRORING
-  let rotateText: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
+  let startAngle: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text // former startAngle
 
 
   // INITIALISE LOCAL VARIABLES
-  let stringAngle: number = 0;  // angle by which whole string should be rotated to comply with anchor, excluding rotateText adjustment of anchor
+  let stringAngle: number = 0;  // angle by which whole string should be rotated to comply with anchor, excluding startAngle adjustment of anchor
 
 
   // PRIVATE FUNCTIONS:
-  const setRotateText = newValue => {
-    rotateText = newValue;
-    alignRotate.groupTransform.rotate.angle = rotateText + stringAngle;
+  const setStartAngle = newValue => {
+    startAngle = newValue;
+    alignRotate.groupTransform.rotate.angle = startAngle + stringAngle;
   }
 
   // ADD PROPERTIES TO SVG ELEMENT OBJECT:
@@ -60,11 +60,11 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   });
 
   Object.defineProperty(el, 'startAngle', {
-    set: function(newValue) {setRotateText(newValue);}
+    set: function(newValue) {setStartAngle(newValue);}
   });
 
   Object.defineProperty(el, 'anchorAngle', {
-    set: function(newValue) {setRotateText(newValue);}
+    set: function(newValue) {setStartAngle(newValue);}
   });
 
   (el as CurvedTextWidget).redraw = () => {   // redraw() doesn't really need to be public, except to cover unforeseen cases
@@ -84,8 +84,8 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
     //console.log("center: y " + centerY)
 
     //TEXT
-    //let rotateText: number = 0;//angle to rotate whole text from it´s beginning
-    //console.log("rotate text: "+ rotateText + "°");
+    //let startAngle: number = 0;//angle to rotate whole text from it´s beginning
+    //console.log("rotate text: "+ startAngle + "°");
     //console.log("textAnchor: "+ textAnchor);
     //ANGLE FOR FIX ROTATION
     //let sweepAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
@@ -187,7 +187,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       }
     };
 
-    alignRotate.groupTransform.rotate.angle = rotateText + stringAngle;
+    alignRotate.groupTransform.rotate.angle = startAngle + stringAngle;
   }
 
   (el as CurvedTextWidget).redraw();
