@@ -15,7 +15,7 @@
 	"fitbit": {
 		"appUUID": "f6a8d8d6-b958-4f42-8ba7-a1364ba89d7a",
 		"appType": "app",
-		"appDisplayName": "circularText",
+		"appDisplayName": "curved-text",
 		"iconFile": "resources/icon.png",
 		"wipeColor": "#8bc34a",
 		"requestedPermissions": [],
@@ -25,7 +25,7 @@
 		],
 		"i18n": {
 			"en-US": {
-				"name": "circularText"
+				"name": "curved-text"
 			}
 		},
 		"defaultLanguage": "en-US"
