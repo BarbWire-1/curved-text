@@ -21,6 +21,8 @@ classy.text = 'W.W.W.W.W.W.i';  // interestingly, this is declared in the interf
 const classxWidgets = document.getElementsByClassName('classx');
 const classyWidgets = document.getElementsByClassName('classy');
 
+//TODO G I think the latest .md versions are in /resources currently. Could you clean the file structure?
+
 
 
 
