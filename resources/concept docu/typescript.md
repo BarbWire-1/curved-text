@@ -28,3 +28,5 @@ Using `getWidgetById()` on a non-document element:
 `const sectionEl = document.getElementById('sectionId') as WidgetElementSearch;`\
 `widgets.registerContainer(sectionEl);   // adds getWidgetById() to sectionEl`\
 `classx = sectionEl.getWidgetById('classxId');`
+
+The `WidgetSearch` interface is where `getWidgetById()` is actually declared. `WidgetDocumentModule` and `WidgetElementSearch` simply add that interface to the standard interfaces for the `document` object and `Element` objects. If you need more control than this, you can add the `WidgetSearch` interface to other container types.
