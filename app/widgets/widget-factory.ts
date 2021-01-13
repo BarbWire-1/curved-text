@@ -2,6 +2,10 @@
 
 import document from "document";
 
+export interface WidgetFactory {
+  registerContainer(...elements: ElementSearch[]): void;
+}
+
 export interface WidgetSearch {    // similar to ElementSearch
   getWidgetById(id:string): GraphicsElement;  // it might be safer to use a virtual base class for all widget types
 }
@@ -54,5 +58,5 @@ export const widgetFactory = (widgetArray) => {
     }
   }
 
-  return factoryObject;
+  return factoryObject as WidgetFactory;
 }
