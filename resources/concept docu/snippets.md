@@ -5,52 +5,52 @@ SVG
 -
 text via SVG:
    >`<use id="myLabel" href="#curvedText" >`
-      >>`<set href="#text" attributeName="text-buffer" to="myText" />`
+      >>`<set href="#text" attributeName="text-buffer" to="myStaticText"/></use>`
 
 font-family via SVG:
-   >`<use id="myLabel" href="#curvedText" font-family="Tungsten-Medium" >`
+   >`<use id="myLabel" href="#curvedText" font-family="Tungsten-Medium"/>`
 
 font-size via SVG:
-   >`<use id="myLabel" href="#curvedText" font-size="10" >`
+   >`<use id="myLabel" href="#curvedText" font-size="10"/>`
 
 fill via SVG:
-  >`<use id="myLabel" href="#curvedText" fill="red" >`
+  >`<use id="myLabel" href="#curvedText" fill="red"/>`
 
 opacity via SVG:
-  >`<use id="myLabel" href="#curvedText" opacity="0.1" fill="white" >`
+  >`<use id="myLabel" href="#curvedText" opacity="0.1" fill="white"/>`
 
 display via SVG:
->`<use id="myLabel" href="#curvedText" display="none" fill="white" >`
+>`<use id="myLabel" href="#curvedText" display="none" fill="white"/>`
 
 x via SVG:
->`<use id="myLabel" href="#curvedText" x="50" >`
+>`<use id="myLabel" href="#curvedText" x="50"/>`
 
 y via SVG:
->`<use id="myLabel" href="#curvedText" y="50" >`
+>`<use id="myLabel" href="#curvedText" y="50"/>`
 
 r via SVG:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
->>`<set href="#radius" attributeName="r" to="25" />`
+>>`<set href="#radius" attributeName="r" to="25" /></use>`
 
 text-anchor via SVG:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
->>`<set href="#text" attributeName="text-anchor" to="start" />`
+>>`<set href="#text" attributeName="text-anchor" to="start"/></use>`
 
 letter-spacing via SVG:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
->>`<set href="#text" attributeName="letter-spacing" to="10" />`
+>>`<set href="#text" attributeName="letter-spacing" to="10"/></use>`
 
 start-angle via SVG:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
->>`<set href="#layout" attributeName="start-angle" to="90" />`
+>>`<set href="#layout" attributeName="start-angle" to="90"/></use>`
 
 sweep-angle via SVG:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
->>`<set href="#layout" attributeName="sweep-angle" to="20" />`
+>>`<set href="#layout" attributeName="sweep-angle" to="20"/></use>`
 
 class via SVG:
 >`<use id="myLabel" href="#curvedText" >`
->>`<set href="#text" attributeName="class" to="classx" />`
+>>`<set href="#text" attributeName="class" to="classx"/></use>`
 
 CSS
 -
@@ -65,6 +65,10 @@ font-family via CSS
 font-size via CSS
 >#id: `#myLabel {font-size: 30;}`\
 >.class: `.myClass {font-size: 30;}`
+
+fill via CSS
+>#id: `#myLabel {fill: red;}`\
+>.class: `.myClass {fill: red;}`
 
 opacity via CSS
 >#id: `#myLabel {opacity: 0.5};`\
@@ -110,6 +114,9 @@ font-family via .ts/.js
 
 font-size via .ts/.js
 > `myLabel.style.fontSize = 20;`
+
+fill .ts/.js
+> `myLabel.style.fill = "red";`
 
 opacity via .ts/.js
 > `myLabel.style.opacity = 0.2;`
