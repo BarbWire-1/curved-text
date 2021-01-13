@@ -93,7 +93,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
     //ANGLE FOR FIX ROTATION
     //let charAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
     //-----------------------------------------------------------------------------------------------------------------------------
-    //TODO G Shall we rename the inner vars to match the widget´s / fitbit ones?
+    //TODO B Shall we rename the inner vars to match the widget´s / fitbit ones? Good idea!
     //VARIABLES
     //ASSIGN CHARS
     let chars = (textEl.text.split("")); // array of char set of text to curve
