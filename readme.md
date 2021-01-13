@@ -33,9 +33,11 @@ To ensure high flexibility, most attributes/properties can be set in
 
  and can be changed on runtime.
 
+ Setting the radius r < 0 switches the appearance of your text to bottom-curved.
+
 
 Due to the structure of the `<symbol><use>` which represents the textElement, there are only a few expectations. (For available attributes/properties and how to set/call, please see the table at the end of [installation and usage](usage.md).)\
- Here you also find detailed instructions for installing and getting started.\
+ Here you also find detailed instructions for installing and getting started.
  
 (For extended examples of usage and syntax, please have a look at the [syntax attachment](snippets.md).)
 
