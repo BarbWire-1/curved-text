@@ -42,7 +42,10 @@ In your `/app/index.js` (or `.ts`) start-up code:
 > `const widgets = widgetFactory([curvedText]);`
 
 * Use the ```widgetFactory``` object to add a `getWidgetById()` function to your `document` variable, like this:
-> `widgets.registerContainer(document);`
+> `widgets.registerContainer(document);`\
+
+In order to use `curved-text` / `the widget-factory` in your typescript project, please follow the additional instructions here: [typescript_interface](typescript.md) 
+
 
 Your code
 =
