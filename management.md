@@ -5,7 +5,7 @@ Resolve questions:
 -
 TODO M 20.3 Ensure documentation indicates what values are acceptable (bad values can cause crashes). Document default values where they might differ from expectations.\
 
-TODO M 800.2 convert app/index from .ts to .js\
+
 
 Interface:
 -

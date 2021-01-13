@@ -54,31 +54,4 @@ In your code, use your widget object(s) to interact with the corresponding curve
 
 > `stepsLabel.text = today.adjusted.steps;`
 
-Set up the curve your text gets aligned at:
- -
- * x 
- * y
- * r (use r < 0 for bottom curved text)
-
- Attributes to set text and style
- -
- * text
- * text-buffer
- * font-family
- * font-size
- * fill
- * letter-spacing
- * text-anchor
-
- * opacity
- * display
-
-Rotate whole text
- -
- * start-angle
-
- In the default `auto-mode`, the position of each char gets calculated by its width (using getBBox()), plus additional letter-spacing if set.
-
-If 
- * sweep-angle\
- is set, it switches to `fix-mode` where each character gets rotated by the chosen fix += angle.
+!<div align="center">![set/call](interface_table.png)</div>
