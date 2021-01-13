@@ -1,3 +1,4 @@
+//@ts-nocheck
 import document from "document"
 import {me} from "appbit"
 import { user } from "user-profile"
@@ -11,10 +12,10 @@ import clock from "clock"
 const widgets = widgetFactory([curvedText]);
 widgets.registerContainer(document);   // adds getWidgetById() to document
 
-let classx: CurvedTextWidget, classy: CurvedTextWidget;
+let classx, classy;
 
-classx = (document as WidgetDocumentModule).getWidgetById('classxId') as CurvedTextWidget
-classy = (document as WidgetDocumentModule).getWidgetById('classyId') as CurvedTextWidget
+classx = document.getWidgetById('classxId');
+classy = document.getWidgetById('classyId');
 
 // The declarations below should work in vanilla js:
 //const classx = document.getWidgetById('classxId')
