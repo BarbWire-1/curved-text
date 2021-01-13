@@ -36,8 +36,8 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
   //let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
   let letterSpacing: number = textEl.letterSpacing ?? 0;
-  let charAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
-  if (radius < 0) charAngle = -charAngle;   //PREVENT MIRRORING
+  let sweepAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode.
+  if (radius < 0) sweepAngle = -sweepAngle;   //PREVENT MIRRORING
   let rotateText: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
 
 
@@ -74,7 +74,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
     // centerX is now taken from el.x
     // centerY is now taken from el.y
 
-    //let mode: number = 1; // 0: automatic, 1: rotate fix angle each // no longer used; mode is determined from charAngle (since mode can't be set in SVG)
+    //let mode: number = 1; // 0: automatic, 1: rotate fix angle each // no longer used; mode is determined from sweepAngle (since mode can't be set in SVG)
     //console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
     //CIRCLE
     //let radius: number = 50;//if negative, text is bottom curve
@@ -88,7 +88,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
     //console.log("rotate text: "+ rotateText + "°");
     //console.log("textAnchor: "+ textAnchor);
     //ANGLE FOR FIX ROTATION
-    //let charAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
+    //let sweepAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
     //-----------------------------------------------------------------------------------------------------------------------------
     //TODO B Shall we rename the inner vars to match the widget´s / fitbit ones? Good idea!
     //VARIABLES
@@ -120,7 +120,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
     const degreePx = 360 / circ;
 
     //PREVENT MIRRORING
-    //charAngle = charAngle * (radius < 0 ? -1 : 1);  // moved out of redraw() so charAngle doesn't get negated repeatedly
+    //sweepAngle = sweepAngle * (radius < 0 ? -1 : 1);  // moved out of redraw() so sweepAngle doesn't get negated repeatedly
 
     char[0].text = chars[0];
     let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
@@ -134,7 +134,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       char[i].y = y;
     }
 
-    if (!charAngle) {   // charAngle wasn't specified, so do mode=0 (auto)
+    if (!sweepAngle) {   // sweepAngle wasn't specified, so do mode=0 (auto)
 
       //AUTO MODE
 
@@ -159,13 +159,13 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
           stringAngle = - (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx;
           break;
       }
-    } else {    // charAngle is non-zero, so do mode=1 (fix)
+    } else {    // sweepAngle is non-zero, so do mode=1 (fix)
 
       //FIX MODE
 
       for (let i: number = 0; i < numChars ; i++) {
         //ROTATION PER CHAR
-        (char[i].parent as GroupElement).groupTransform.rotate.angle = i * charAngle;
+        (char[i].parent as GroupElement).groupTransform.rotate.angle = i * sweepAngle;
       } // end of char loop
 
       //TEXT-ANCHOR MODE FIX
@@ -173,16 +173,16 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       const lastChar = char[numChars-1].getBBox().width;
       switch(textAnchor) {
         case 'middle':
-          stringAngle -= (((numChars-1) * charAngle) + (lastChar - firstChar) / 2 * degreePx) / 2;
-          //stringAngle = (1 - numChars)  * charAngle / 2 // start at middle 0/180 - exactly by angle only!
+          stringAngle -= (((numChars-1) * sweepAngle) + (lastChar - firstChar) / 2 * degreePx) / 2;
+          //stringAngle = (1 - numChars)  * sweepAngle / 2 // start at middle 0/180 - exactly by angle only!
           break;
         case 'start':
           stringAngle = firstChar / 2 * degreePx;
           //stringAngle = 0; //centers at o/180 exactly by angle only!
           break;
         case 'end':
-          stringAngle = (numChars - 1 ) * - charAngle - lastChar / 2 * degreePx;
-          //stringAngle = - (numChars - 1 ) * charAngle; // end at middle 0/180 - exactly by angle only!
+          stringAngle = (numChars - 1 ) * - sweepAngle - lastChar / 2 * degreePx;
+          //stringAngle = - (numChars - 1 ) * sweepAngle; // end at middle 0/180 - exactly by angle only!
           break;
       }
     };
