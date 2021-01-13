@@ -42,13 +42,13 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
 
   // INITIALISE LOCAL VARIABLES
-  let stringAngle: number = 0;  // angle by which whole string should be rotated to comply with anchor, excluding startAngle adjustment of anchor
+  let anchorAngle: number = 0;  // angle by which whole string should be rotated to comply with anchor, excluding startAngle adjustment of anchor // former stringAngle
 
 
   // PRIVATE FUNCTIONS:
   const setStartAngle = newValue => {
     startAngle = newValue;
-    alignRotate.groupTransform.rotate.angle = startAngle + stringAngle;
+    alignRotate.groupTransform.rotate.angle = startAngle + anchorAngle;
   }
 
   // ADD PROPERTIES TO SVG ELEMENT OBJECT:
@@ -124,7 +124,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
     char[0].text = chars[0];
     let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
-    stringAngle = 0;
+    anchorAngle = 0;
 
     //INITIALISE char[]
     for (let i: number = 0; i < numChars ; i++) {
@@ -152,11 +152,11 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       //TEXT-ANCHOR MODE AUTO
       switch(textAnchor) {
         case 'middle':
-          stringAngle = - (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
+          anchorAngle = - (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
           break;
         case 'end':
-          //stringAngle = -(stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);// NOT ok
-          stringAngle = - (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx;
+          //anchorAngle = -(anchorAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);// NOT ok
+          anchorAngle = - (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx;
           break;
       }
     } else {    // sweepAngle is non-zero, so do mode=1 (fix)
@@ -173,21 +173,21 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       const lastChar = char[numChars-1].getBBox().width;
       switch(textAnchor) {
         case 'middle':
-          stringAngle -= (((numChars-1) * sweepAngle) + (lastChar - firstChar) / 2 * degreePx) / 2;
-          //stringAngle = (1 - numChars)  * sweepAngle / 2 // start at middle 0/180 - exactly by angle only!
+          anchorAngle -= (((numChars-1) * sweepAngle) + (lastChar - firstChar) / 2 * degreePx) / 2;
+          //anchorAngle = (1 - numChars)  * sweepAngle / 2 // start at middle 0/180 - exactly by angle only!
           break;
         case 'start':
-          stringAngle = firstChar / 2 * degreePx;
-          //stringAngle = 0; //centers at o/180 exactly by angle only!
+          anchorAngle = firstChar / 2 * degreePx;
+          //anchorAngle = 0; //centers at o/180 exactly by angle only!
           break;
         case 'end':
-          stringAngle = (numChars - 1 ) * - sweepAngle - lastChar / 2 * degreePx;
-          //stringAngle = - (numChars - 1 ) * sweepAngle; // end at middle 0/180 - exactly by angle only!
+          anchorAngle = (numChars - 1 ) * - sweepAngle - lastChar / 2 * degreePx;
+          //anchorAngle = - (numChars - 1 ) * sweepAngle; // end at middle 0/180 - exactly by angle only!
           break;
       }
     };
 
-    alignRotate.groupTransform.rotate.angle = startAngle + stringAngle;
+    alignRotate.groupTransform.rotate.angle = startAngle + anchorAngle;
   }
 
   (el as CurvedTextWidget).redraw();
