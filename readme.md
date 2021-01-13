@@ -34,7 +34,9 @@ To ensure high flexibility, most attributes/properties can be set in
  and can be changed on runtime.
 
 
-Due to the structure of the `<symbol><use>` which represents the textElement, there are only a few expectations which are mentioned briefly in [installation and usage](usage.md), where you also find detailed instructions for installing and getting started.\
+Due to the structure of the `<symbol><use>` which represents the textElement, there are only a few expectations. Look also the table at the end of [installation and usage](usage.md).\
+ Here you also find detailed instructions for installing and getting started.\
+ 
 (For extended examples of usage and syntax, please have a look at the [syntax attachment](snippets.md).)
 
 Positioning
