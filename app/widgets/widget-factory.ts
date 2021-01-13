@@ -9,8 +9,10 @@ export default (widgetArray) => {
   })
 
   const getWidgetById = (containerEl, id) => {
+    //console.log(`looking for ${id}`)
     const widgetEl = containerEl.getElementById(id);
-    const widgetName = widgetEl.class;
+    const widgetName = widgetEl.class.split(' ',1)[0];  // assume that the first name is the widget type
+    //console.log(`name='${widgetName}'`)
     let widget;
     widgets.every(
       widgetRego => {
@@ -23,7 +25,7 @@ export default (widgetArray) => {
         } else
           return true;
       }
-    )
+    );
     return widget;
   }
 
@@ -38,7 +40,7 @@ export default (widgetArray) => {
           el.getWidgetById = id => getWidgetById(el, id);
           // Could also implement getWidgetsByClassName, etc.
         }
-      )
+      );
     }
   }
 

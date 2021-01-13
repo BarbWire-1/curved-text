@@ -9,10 +9,11 @@ export interface CurvedTextWidget extends GraphicsElement {
 
 // @ts-ignore
 const construct: CurvedTextWidget = (el:GraphicsElement) => {
+  // TODO G 0 can't call .getWidgetById on an element twice
   const textEl = el.getElementById('text') as TextElement;
   const radiusEl = el.getElementById('radius') as CircleElement;
   const layoutEl = el.getElementById('layout') as ArcElement;
-  const containerEl = el.getElementById('container');
+  const containerEl = el.getElementById('container'); // TODO G 3 not used any more? delete from .view?
   const alignRotate = el.getElementById('alignRotate') as GroupElement;
 
   // INITIALISE SETTINGS FROM SVG or CSS
@@ -55,12 +56,14 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   }
 
   // ADD PROPERTIES TO SVG ELEMENT OBJECT:
+  console.log(`A el.text='${el.text}'`);
   Object.defineProperty(el, 'text', {
     set: function(newValue) {
       textEl.text = newValue;
       (el as CurvedTextWidget).redraw();
     }
   });
+  console.log(`B`);
 
   Object.defineProperty(el, 'startAngle', {
     set: function(newValue) {setRotateText(newValue);}
@@ -71,6 +74,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   });
 
   (el as CurvedTextWidget).redraw = () => {   // redraw() doesn't really need to be public, except to cover unforeseen cases
+    console.log('C');
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
     //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
@@ -134,7 +138,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       //apply text and y
       char[i].text = chars[i];// assign chars to the single textElements
       char[i].style.display = 'inherit';
-      char[i].y = y
+      char[i].y = y;
     }
 
     if (!charAngle) {   // charAngle wasn't specified, so do mode=0 (auto)
@@ -159,7 +163,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
           break;
         case 'end':
           //stringAngle = -(stringAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);// NOT ok
-          stringAngle = - (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx
+          stringAngle = - (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx;
           break;
       }
     } else {    // charAngle is non-zero, so do mode=1 (fix)
@@ -180,7 +184,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
           //stringAngle = (1 - numChars)  * charAngle / 2 // start at middle 0/180 - exactly by angle only!
           break;
         case 'start':
-          stringAngle = firstChar / 2 * degreePx ;
+          stringAngle = firstChar / 2 * degreePx;
           //stringAngle = 0; //centers at o/180 exactly by angle only!
           break;
         case 'end':
@@ -193,9 +197,11 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
     alignRotate.groupTransform.rotate.angle = rotateText + stringAngle;
   }
 
-  (el as CurvedTextWidget).redraw()
+  (el as CurvedTextWidget).redraw();
 
-  return el as CurvedTextWidget
+  console.log('D');
+
+  return el as CurvedTextWidget;
 }
 
 /*export default () => {

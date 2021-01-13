@@ -8,27 +8,48 @@ import clock from "clock"
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
 //Initialise widget system
-const widgets = widgetFactory([curvedText])
-widgets.registerContainer(document)   // adds getWidgetById() to document
+const widgets = widgetFactory([curvedText]);
+widgets.registerContainer(document);   // adds getWidgetById() to document
 
 
 
-// TODO G 2.0 move WidgetDocumentModule definition into widget-factory.ts
-type DocumentType = typeof document
-interface WidgetDocumentModule extends DocumentType {
+// TODO G 2.0 move ts interface and type definitions into widget-factory.ts
+
+interface WidgetSearch {    // similar to ElementSearch
   getWidgetById(id:string): CurvedTextWidget; // TODO G 2.2 virtual base class for CurvedTextWidget?
 }
 
-// TODO G 3.1 we can avoid saying '(document as WidgetDocumentModule).getWidgetById' in ts as below. Put in ts doco.
+type WidgetDocumentModule = typeof document & WidgetSearch;
+
+type WidgetElementSearch = Element & WidgetSearch;
+
+// TODO G 3.0  Put in ts doco.
+let classx: CurvedTextWidget, classy: CurvedTextWidget;
+
+classx = (document as WidgetDocumentModule).getWidgetById('classxId')
+classy = (document as WidgetDocumentModule).getWidgetById('classyId')
+
+
+/*// TS:We can avoid saying '(document as WidgetDocumentModule).getWidgetById' like this:
 const widgetDocument = document as WidgetDocumentModule;
-const widgy = widgetDocument.getWidgetById('classxId');
-const normal = widgetDocument.getElementsByClassName('classyId');  // widgetDocument can be used wherever document can be used (maybe)
+classx = widgetDocument.getWidgetById('classxId');
+classy = widgetDocument.getWidgetById('classyId');
+const myElement = widgetDocument.getElementsByClassName('sectionId');  // widgetDocument can be used wherever document can be used (maybe)
+*/
+
+/*// TS: Using getWidgetById on a non-document element:
+const sectionEl = document.getElementById('sectionId') as WidgetElementSearch;
+widgets.registerContainer(sectionEl);   // adds getWidgetById() to sectionEl
+classx = sectionEl.getWidgetById('classxId');
+classx.text = 'sect';
+classy = sectionEl.getWidgetById('classyId');
+*/
 
 
 
-
-const classx = (document as WidgetDocumentModule).getWidgetById('classxId')
-const classy = (document as WidgetDocumentModule).getWidgetById('classyId')
+// The declarations below should work in vanilla js:
+//const classx = document.getWidgetById('classxId')
+//const classy = document.getWidgetById('classyId')
 classy.anchorAngle = 0;
 classy.text = 'W.W.W.W.W.W.i';  // interestingly, this is declared in the interface for Element
 classy.style.fill = 'red'; // shows that members inherited via 'extends GraphicsElement' work
