@@ -1,20 +1,16 @@
 <svg>
    <rect id="background" />
 
-   <!--HELPLINES-->
+ <!--HELPLINES-->
 
-   <g opacity="0.2">
+   <g opacity="0.2" display="inline">
       <line id="vertical" x1="50%" x2="50%" y1="0" y2="100%" fill="white" stroke-width="1"/>
       <line id="horizontal" x1="0" x2="100%" y1="50%" y2="50%" fill="white" stroke-width="1"/>
-
-      <g transform="translate(50% - 122,50% - 122)"><!--adjust to your circle`s dimensions-->
+      <g transform="translate(50% - 122,50% - 122)"><!--you can adjust to your circle`s dimensions or just delete ;)-->
          <arc width="244" height="244" fill="white" arc-width="1" start-angle="0" sweep-angle="360" opacity = "1" />
       </g>
    </g>
-
-    
-
-
+   
    <!-- WIDGETS -->
 
    <section id="sectionId">

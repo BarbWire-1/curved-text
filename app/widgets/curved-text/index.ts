@@ -69,44 +69,16 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
   (el as CurvedTextWidget).redraw = () => {   // redraw() doesn't really need to be public, except to cover unforeseen cases
 
-    /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
-    //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
-    // centerX is now taken from el.x
-    // centerY is now taken from el.y
-
-    //let mode: number = 1; // 0: automatic, 1: rotate fix angle each // no longer used; mode is determined from sweepAngle (since mode can't be set in SVG)
-    //console.log("mode: "+ (mode == 0 ? "auto" : "fix"));
-    //CIRCLE
-    //let radius: number = 50;//if negative, text is bottom curve
-    //let centerX: number = 250;
-    //console.log("center: x "+centerX);
-    //let centerY: number = 250; // center of the circle
-    //console.log("center: y " + centerY)
-
-    //TEXT
-    //let startAngle: number = 0;//angle to rotate whole text from it´s beginning
-    //console.log("rotate text: "+ startAngle + "°");
-    //console.log("textAnchor: "+ textAnchor);
-    //ANGLE FOR FIX ROTATION
-    //let sweepAngle: number = 25;//angle each char, chars are stacked at 0° if no setting
+    
     //-----------------------------------------------------------------------------------------------------------------------------
-    //TODO B Shall we rename the inner vars to match the widget´s / fitbit ones? Good idea!
+    
     //VARIABLES
     //ASSIGN CHARS
     let chars = (textEl.text.split("")); // array of char set of text to curve
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
     const numChars = chars.length;
 
-    //APPLY FONT FAMILY AND SIZE
-    /* // Not necessary: fontSize and fontFamily can be inherited.
-    if (initFont) {   // might want to break this into initFontSize and initFontFamily if those can be changed separately at run-time
-      const fontSize = el.style.fontSize
-      if (fontSize > 0)
-        for (let i = 0; i < char.length; i++) char[i].style.fontSize = fontSize
-      const fontFamily = el.style.fontFamily
-      for (let i = 0; i < char.length; i++) char[i].style.fontFamily = fontFamily
-    }*/
-
+   
     //REMOVE ANY CHARS THAT ARE NO LONGER NEEDED
     // There's no need to do this initially. It could be done only when text is changed, but that would complicate the code there.
     for (let i=numChars; i<char.length; i++)
@@ -120,8 +92,6 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
     const degreePx = 360 / circ;
 
     //PREVENT MIRRORING
-    //sweepAngle = sweepAngle * (radius < 0 ? -1 : 1);  // moved out of redraw() so sweepAngle doesn't get negated repeatedly
-
     char[0].text = chars[0];
     let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
     anchorAngle = 0;
