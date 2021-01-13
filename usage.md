@@ -49,6 +49,8 @@ Your code
 
 Now, elsewhere in your `/app/index.js` (or `.ts`) file, you can get objects that correspond to the curved-text `<use>` elements in your `index.view` file, like this:
 >`const myLabel = document.getWidgetById('myLabel');`
+>`const myClass = document.getElementsByClassName('myClass');`\
+(Member elements of classes need to be declared before per document.getElementById() individually.)
 
 In your code, use your widget object(s) to interact with the corresponding curved-text element; *eg*:
 
