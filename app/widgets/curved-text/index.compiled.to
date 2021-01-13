@@ -1,0 +1,145 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.curvedText = void 0;
+// @ts-ignore
+var construct = function (el) {
+    var _a, _b, _c, _d;
+    // TODO G 0 can't call .getWidgetById on an element twice
+    var textEl = el.getElementById('text');
+    var radiusEl = el.getElementById('radius');
+    var layoutEl = el.getElementById('layout');
+    var alignRotate = el.getElementById('alignRotate');
+    // INITIALISE SETTINGS FROM SVG or CSS
+    /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer.
+       Therefore, we pick these up from hidden elements within the widget. */
+    if (textEl.class) {
+        el.class = el.class + ' ' + textEl.class;
+        textEl.class = ''; // prevent textEl from being picked up by document.getElementsByClassName()
+    }
+    var radius = (_a = radiusEl.r) !== null && _a !== void 0 ? _a : 100; //if negative, text is bottom curve
+    var textAnchor;
+    try { // textEl.textAnchor throws an error if textAnchor not defined
+        textAnchor = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
+    }
+    catch (e) {
+        textAnchor = 'middle';
+    }
+    //console.log(`textAnchor=${textAnchor}`)
+    //let textAnchor: string = textEl.textAnchor; //0: middle, 1: start,  2: end at 0°
+    var letterSpacing = (_b = textEl.letterSpacing) !== null && _b !== void 0 ? _b : 0;
+    var sweepAngle = (_c = layoutEl.sweepAngle) !== null && _c !== void 0 ? _c : 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode. // former charAngle
+    if (radius < 0)
+        sweepAngle = -sweepAngle; //PREVENT MIRRORING
+    var startAngle = (_d = layoutEl.startAngle) !== null && _d !== void 0 ? _d : 0; //angle to rotate anchor point for whole text // former startAngle
+    // INITIALISE LOCAL VARIABLES
+    var anchorAngle = 0; // angle by which whole string should be rotated to comply with anchor, excluding startAngle adjustment of anchor // former stringAngle
+    // PRIVATE FUNCTIONS:
+    var setStartAngle = function (newValue) {
+        startAngle = newValue;
+        alignRotate.groupTransform.rotate.angle = startAngle + anchorAngle;
+    };
+    // ADD PROPERTIES TO SVG ELEMENT OBJECT:
+    Object.defineProperty(el, 'text', {
+        set: function (newValue) {
+            textEl.text = newValue;
+            el.redraw();
+        }
+    });
+    Object.defineProperty(el, 'startAngle', {
+        set: function (newValue) { setStartAngle(newValue); }
+    });
+    Object.defineProperty(el, 'anchorAngle', {
+        set: function (newValue) { setStartAngle(newValue); }
+    });
+    el.redraw = function () {
+        //-----------------------------------------------------------------------------------------------------------------------------
+        //VARIABLES
+        //ASSIGN CHARS
+        var chars = (textEl.text.split("")); // array of char set of text to curve
+        var char = el.getElementsByClassName("char"); // single char textElements
+        var numChars = chars.length;
+        //REMOVE ANY CHARS THAT ARE NO LONGER NEEDED
+        // There's no need to do this initially. It could be done only when text is changed, but that would complicate the code there.
+        for (var i = numChars; i < char.length; i++)
+            char[i].style.display = 'none';
+        //IF NO TEXT, RETURN
+        if (!numChars)
+            return;
+        //CIRCUMFERENCE FOR AUTO
+        var circ = 2 * radius * Math.PI;
+        var degreePx = 360 / circ;
+        //PREVENT MIRRORING
+        char[0].text = chars[0];
+        var y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2; //define y of text, based on radius
+        anchorAngle = 0;
+        //INITIALISE char[]
+        for (var i = 0; i < numChars; i++) {
+            //apply text and y
+            char[i].text = chars[i]; // assign chars to the single textElements
+            char[i].style.display = 'inherit';
+            char[i].y = y;
+        }
+        if (!sweepAngle) { // sweepAngle wasn't specified, so do mode=0 (auto)
+            //AUTO MODE
+            var cumWidth = 0;
+            for (var i = 0; i < numChars; i++) {
+                //Variables for positioning chars
+                var charWidth = char[i].getBBox().width;
+                cumWidth += charWidth; //  (thank you, Peter for this neat example of simplifying and efficiency!)
+                //ROTATION PER CHAR
+                char[i].parent.groupTransform.rotate.angle =
+                    (cumWidth - charWidth / 2 + (i) * letterSpacing) * degreePx;
+            } // end of char loop
+            //TEXT-ANCHOR MODE AUTO
+            switch (textAnchor) {
+                case 'middle':
+                    anchorAngle = -(cumWidth + ((numChars - 1) * letterSpacing)) * degreePx / 2; //ok
+                    break;
+                case 'end':
+                    //anchorAngle = -(anchorAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);// NOT ok
+                    anchorAngle = -(cumWidth + (numChars - 1) * letterSpacing) * degreePx;
+                    break;
+            }
+        }
+        else { // sweepAngle is non-zero, so do mode=1 (fix)
+            //FIX MODE
+            for (var i = 0; i < numChars; i++) {
+                //ROTATION PER CHAR
+                char[i].parent.groupTransform.rotate.angle = i * sweepAngle;
+            } // end of char loop
+            //TEXT-ANCHOR MODE FIX
+            var firstChar = char[0].getBBox().width;
+            var lastChar = char[numChars - 1].getBBox().width;
+            switch (textAnchor) {
+                case 'middle':
+                    anchorAngle -= (((numChars - 1) * sweepAngle) + (lastChar - firstChar) / 2 * degreePx) / 2;
+                    //anchorAngle = (1 - numChars)  * sweepAngle / 2 // start at middle 0/180 - exactly by angle only!
+                    break;
+                case 'start':
+                    anchorAngle = firstChar / 2 * degreePx;
+                    //anchorAngle = 0; //centers at o/180 exactly by angle only!
+                    break;
+                case 'end':
+                    anchorAngle = (numChars - 1) * -sweepAngle - lastChar / 2 * degreePx;
+                    //anchorAngle = - (numChars - 1 ) * sweepAngle; // end at middle 0/180 - exactly by angle only!
+                    break;
+            }
+        }
+        ;
+        alignRotate.groupTransform.rotate.angle = startAngle + anchorAngle;
+    };
+    el.redraw();
+    return el;
+};
+/*export default () => {
+  return {
+    name: 'curvedText',
+    construct: construct
+  }
+}*/
+exports.curvedText = function () {
+    return {
+        name: 'curvedText',
+        construct: construct
+    };
+};

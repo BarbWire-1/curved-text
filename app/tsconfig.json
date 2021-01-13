@@ -8,5 +8,5 @@
 		"**/*.ts",
 		"**/*.js",
 		"../node_modules/fitbit-sdk-types/types/device"
-	]
+, "index.compiled.to", "widgets/curved-text/index.compiled.to"	]
 }
