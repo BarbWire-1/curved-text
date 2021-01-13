@@ -12,21 +12,18 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   const textEl = el.getElementById('text') as TextElement;
   const radiusEl = el.getElementById('radius') as CircleElement;
   const layoutEl = el.getElementById('layout') as ArcElement;
-  const containerEl = el.getElementById('container'); // TODO G 3 not used any more? delete from .view?
   const alignRotate = el.getElementById('alignRotate') as GroupElement;
 
   // INITIALISE SETTINGS FROM SVG or CSS
   /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer.
      Therefore, we pick these up from hidden elements within the widget. */
-  //containerEl.groupTransform.translate.x = centerX ;
-  //containerEl.groupTransform.translate.y = centerY ;
+  
   if (textEl.class) {
     el.class = el.class + ' ' + textEl.class;
     textEl.class = '';   // prevent textEl from being picked up by document.getElementsByClassName()
   }
 
-  //containerEl.x = positionEl.cx;  // don't use cx,cy
-  //containerEl.y = positionEl.cy;
+  
   let radius = radiusEl.r ?? 100;  //if negative, text is bottom curve
 
   let textAnchor: string;

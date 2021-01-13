@@ -3,10 +3,7 @@
     <text id="text" opacity="0" text-length="24" />          <!-- It's inefficient to have this element, but it allows text to be specified in .view -->
     <circle id="radius" opacity="0" />    <!-- It's inefficient to have this element, but it allows radius to be specified in .view -->
     <arc id="layout" opacity="0" />    <!-- It's inefficient to have this element, but it allows start-angle to be specified in .view -->
-    <svg id="container">
-
-    <!--<g id="container" transform="translate(50%,50%)" fill="white"-->
-      <!--<text id="myText" class="text" text-length="100" display="none">0123456789</text>-->
+    
       <g id="alignRotate">
          <g>
             <text class="char"/>
@@ -85,6 +82,5 @@
          </g>
 
       </g>
-   </svg>
-  </symbol>
+   </symbol>
 </defs>

@@ -13,8 +13,8 @@
 }
 
 .classx #layout  {
-    start-angle:0;
-    sweep-angle: 0;
+    start-angle:50;
+    sweep-angle:0;
 
 }
 #classxId {
@@ -38,7 +38,7 @@
 
 #classyId #radius{
     fill: red;
-    r: 80;
+    r: 100;
 
 }
 
