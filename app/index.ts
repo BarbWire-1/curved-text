@@ -17,12 +17,25 @@ let classx: CurvedTextWidget, classy: CurvedTextWidget;
 classx = (document as WidgetDocumentModule).getWidgetById('classxId') as CurvedTextWidget
 classy = (document as WidgetDocumentModule).getWidgetById('classyId') as CurvedTextWidget
 
+/*// TS:We can avoid saying '(document as WidgetDocumentModule).getWidgetById' like this:
+const widgetDocument = document as WidgetDocumentModule;
+classx = widgetDocument.getWidgetById('classxId');
+classy = widgetDocument.getWidgetById('classyId');
+const myElement = widgetDocument.getElementsByClassName('sectionId');  // widgetDocument can be used wherever document can be used (maybe)
+*/
+/*// TS: Using getWidgetById on a non-document element:
+const sectionEl = document.getElementById('sectionId') as WidgetElementSearch;
+widgets.registerContainer(sectionEl);   // adds getWidgetById() to sectionEl
+classx = sectionEl.getWidgetById('classxId');
+classx.text = 'sect';
+classy = sectionEl.getWidgetById('classyId');
+*/
 // The declarations below should work in vanilla js:
-//classx = document.getWidgetById('classxId');
-//classy = document.getWidgetById('classyId');
+//const classx = document.getWidgetById('classxId')
+//const classy = document.getWidgetById('classyId')
 
 
-classy.anchorAngle = 90;
+classx.anchorAngle = 180;
 classy.text = 'W.W.W.W.W.W.i';  // interestingly, this is declared in the interface for Element
 //classy.style.fill = 'red'; // shows that members inherited via 'extends GraphicsElement' work
 
