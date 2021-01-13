@@ -1,8 +1,18 @@
 // Widget factory
 
+import document from "document";
+
+export interface WidgetSearch {    // similar to ElementSearch
+  getWidgetById(id:string): GraphicsElement;  // it might be safer to use a virtual base class for all widget types
+}
+
+export type WidgetDocumentModule = typeof document & WidgetSearch;
+
+export type WidgetElementSearch = Element & WidgetSearch;
+
 const widgets = []    // each entry is {name:name, construct:constructorFunction}
 
-export default (widgetArray) => {
+export const widgetFactory = (widgetArray) => {
   if (widgetArray) widgetArray.forEach(widget => {
     const widgetRego = widget()
     widgets.push(widgetRego)
@@ -20,7 +30,7 @@ export default (widgetArray) => {
           // We pass the widgetFactory to construct() just in case the widget being constructed uses other widgets.
           // It would also be possible to pass an object containing widget-specific construction args (eg, {maxValue:100}),
           // but this would be inconsistent with the normal Fitbit way of doing things.
-          widget = widgetRego.construct(widgetEl, widgetFactory);
+          widget = widgetRego.construct(widgetEl, factoryObject);
           return false;  // stop iterating
         } else
           return true;
@@ -29,7 +39,7 @@ export default (widgetArray) => {
     return widget;
   }
 
-  const widgetFactory = {
+  const factoryObject = {
     // Could also implement getWidgetsByClassName, getWidgetsByWidgetName, etc
     registerContainer(...elements) {
       // Add methods equivalent to Fitbit's ElementSearch interface to elements.
@@ -44,5 +54,5 @@ export default (widgetArray) => {
     }
   }
 
-  return widgetFactory;
+  return factoryObject;
 }

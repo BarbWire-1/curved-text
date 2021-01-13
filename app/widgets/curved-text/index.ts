@@ -1,4 +1,3 @@
-//import curvedTextOld from "../curved-text-old"
 
 export interface CurvedTextWidget extends GraphicsElement {
   text: string;
@@ -56,14 +55,12 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   }
 
   // ADD PROPERTIES TO SVG ELEMENT OBJECT:
-  console.log(`A el.text='${el.text}'`);
   Object.defineProperty(el, 'text', {
     set: function(newValue) {
       textEl.text = newValue;
       (el as CurvedTextWidget).redraw();
     }
   });
-  console.log(`B`);
 
   Object.defineProperty(el, 'startAngle', {
     set: function(newValue) {setRotateText(newValue);}
@@ -74,7 +71,6 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   });
 
   (el as CurvedTextWidget).redraw = () => {   // redraw() doesn't really need to be public, except to cover unforeseen cases
-    console.log('C');
 
     /*YOUR SETTINGS---------------------------------------------------------------------------------------------------------------*/
     //textEl.text = "widget"// enter text ar data here MiW!MiW!MiW!M
@@ -198,8 +194,6 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   }
 
   (el as CurvedTextWidget).redraw();
-
-  console.log('D');
 
   return el as CurvedTextWidget;
 }

@@ -2,8 +2,8 @@ import document from "document"
 import {me} from "appbit"
 import { user } from "user-profile"
 import { me as device } from "device"
-import widgetFactory from './widgets/widget-factory'
-import { CurvedTextWidget, curvedText } from './widgets/curved-text'  // TODO G 3.0 update documentation re how to use ts interface
+import { WidgetSearch, WidgetDocumentModule, WidgetElementSearch, widgetFactory } from './widgets/widget-factory'  // TODO G 2.0 update documentation re how to use ts interface
+import { CurvedTextWidget, curvedText } from './widgets/curved-text'  // TODO G 2.0 update documentation re how to use ts interface
 import clock from "clock"
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
@@ -11,23 +11,11 @@ import clock from "clock"
 const widgets = widgetFactory([curvedText]);
 widgets.registerContainer(document);   // adds getWidgetById() to document
 
-
-
-// TODO G 2.0 move ts interface and type definitions into widget-factory.ts
-
-interface WidgetSearch {    // similar to ElementSearch
-  getWidgetById(id:string): CurvedTextWidget; // TODO G 2.2 virtual base class for CurvedTextWidget?
-}
-
-type WidgetDocumentModule = typeof document & WidgetSearch;
-
-type WidgetElementSearch = Element & WidgetSearch;
-
-// TODO G 3.0  Put in ts doco.
+// TODO G 2.0  Put in ts doco.
 let classx: CurvedTextWidget, classy: CurvedTextWidget;
 
-classx = (document as WidgetDocumentModule).getWidgetById('classxId')
-classy = (document as WidgetDocumentModule).getWidgetById('classyId')
+classx = (document as WidgetDocumentModule).getWidgetById('classxId') as CurvedTextWidget
+classy = (document as WidgetDocumentModule).getWidgetById('classyId') as CurvedTextWidget
 
 
 /*// TS:We can avoid saying '(document as WidgetDocumentModule).getWidgetById' like this:
