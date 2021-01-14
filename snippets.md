@@ -2,147 +2,147 @@ ________________
 Interface Usage Examples
 =
 SVG
--
-text via SVG:
+___________________
+
+text:
    >`<use id="myLabel" href="#curvedText" >`
       >>`<set href="#text" attributeName="text-buffer" to="myStaticText"/></use>`
 
-font-family via SVG:
+font-family:
    >`<use id="myLabel" href="#curvedText" font-family="Tungsten-Medium"/>`
 
-font-size via SVG:
+font-size:
    >`<use id="myLabel" href="#curvedText" font-size="10"/>`
 
-fill via SVG:
+fill:
   >`<use id="myLabel" href="#curvedText" fill="red"/>`
 
-opacity via SVG:
+opacity:
   >`<use id="myLabel" href="#curvedText" opacity="0.1" fill="white"/>`
 
-display via SVG:
+display:
 >`<use id="myLabel" href="#curvedText" display="none" fill="white"/>`
 
-x via SVG:
+x:
 >`<use id="myLabel" href="#curvedText" x="50"/>`
 
-y via SVG:
+y:
 >`<use id="myLabel" href="#curvedText" y="50"/>`
 
-r via SVG:
+r:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#radius" attributeName="r" to="25" /></use>`
 
-text-anchor via SVG:
+text-anchor:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#text" attributeName="text-anchor" to="start"/></use>`
 
-letter-spacing via SVG:
+letter-spacing:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#text" attributeName="letter-spacing" to="10"/></use>`
 
-start-angle via SVG:
+start-angle:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#layout" attributeName="start-angle" to="90"/></use>`
 
-sweep-angle via SVG:
+sweep-angle:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#layout" attributeName="sweep-angle" to="20"/></use>`
 
-class via SVG:
+class:
 >`<use id="myLabel" href="#curvedText" >`
 >>`<set href="#text" attributeName="class" to="classx"/></use>`
 
 CSS
--
-text via CSS
+___________________
+
+
+text:
 >#id:  `#myLabel #text {text-buffer: "myText";}`\
 >.class: `.myClass #text {text-buffer: "myText";}`
 
-font-family via CSS
+font-family:
 >#id: `#myLabel {font-family: Fabrikat-Regular;}`\
 >.class: `.myClass {font-family: Fabrikat-Regular;}`
 
-font-size via CSS
+font-size:
 >#id: `#myLabel {font-size: 30;}`\
 >.class: `.myClass {font-size: 30;}`
 
-fill via CSS
+fill:
 >#id: `#myLabel {fill: red;}`\
 >.class: `.myClass {fill: red;}`
 
-opacity via CSS
+opacity:
 >#id: `#myLabel {opacity: 0.5};`\
 >.class: `.myClass {opacity: 0.5;}`
 
-display via CSS
+display:
 >#id: `#myLabel {display: none};`\
 >.class: `.myClass {display: none;}`
 
-x,y via CSS
+x,y:
 >#id:  `#myLabel {x: 50;}`\
 >.class: `.myClass {x: 50;}`
 
-r via CSS
+r:
 >#id:  `#myLabel #radius {r: 50;}`\
 >.class: `.myClass #radius {r: 50;}`
 
-text-anchor via CSS
+text-anchor:
 >#id:  `#myLabel #text {text-anchor: middle;}`\
 >.class: `.myClass #text {text-anchor: middle;}`
 
-letter-spacing via CSS
+letter-spacing:
 >#id:  `#myLabel #text {letter-spacing: 5;}`\
 >.class: `.myClass #text {letter-spacing: 5;}`
 
-start-angle via CSS
+start-angle:
 >#id:  `#myLabel #layout {start-angle: 90;}`\
 >.class: `.myClass #layout {start-angle: 90;}`
 
-sweep-angle via CSS
+sweep-angle:
 >#id:  `#myLabel #layout {sweep-angle: 45;}`\
 >.class: `.myClass #layout {sweep-angle: 45;}`
 
 
-
 .ts/.js
--
-text via .ts/.js
+___________________
+
+
+text:
 > `myLabel.text = "myText"`
 
-font-family via .ts/.js
+font-family:
 > `myLabel.style.fontFamily = "Sytem-Regular";`
 
-font-size via .ts/.js
+font-size:
 > `myLabel.style.fontSize = 20;`
 
-fill .ts/.js
+fill:
 > `myLabel.style.fill = "red";`
 
-opacity via .ts/.js
+opacity:
 > `myLabel.style.opacity = 0.2;`
 
-display via .ts/.js
+display:
 > `myLabel.style.display = "none";`
 
-x,y via .ts/.js
+x,y:
 >`myLabel.x = 50;`\
 >`myLabel.y = 50;`
 
-r via .ts/.js
+r:
 > `not appliable here`
 
-text-anchor via .ts/.js
+text-anchor:
 > `not appliable here`
 
-letter-spacing via .ts/.js
+letter-spacing:
 > `not appliable here`
 
-start-angle via .ts/.js
+start-angle:
 > `myLabel.startAngle`
 
-sweep-angle via .ts/.js
+sweep-angle:
 > `not appliable here`
-
-TODO B 2 We could probably lose 'via SVG' (etc) throughout, couldn't we? Originally we didn't have the SVG (etc) headings, but now that we do, the 'via's seem redundant.
-
-TODO B 2 I wonder if we should include notes here (or somewhere) defining usage where it isn't obvious, such as r<0 and auto mode if sweep-angle isn't defined. I know you've mentioned such things elsewhere, but this is the closest thing we've got to a reference document, so maybe they should be here too. start-angle and sweep-angle might need more words too, since curved-text doesn't use them in the same way as arc. It seems wasteful to have to repeat such notes in every section here; should we start this doc with a 'definitions' section that describes each attribute??

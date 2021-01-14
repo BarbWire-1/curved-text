@@ -59,8 +59,8 @@ In your code, use your widget object(s) to interact with the corresponding curve
 
 > `myLabel.text = today.adjusted.steps;`
 
-Summary of Attribute Accessibility
-
+Attributes
+=
 Set up the curve your text gets aligned at:
  -
  * x 
