@@ -2,7 +2,8 @@ curved-text
 =
 (under construction!)\
 \
-**curved-text** is a widget for **Fitbit OS** using inbuilt fonts to create curved texts.
+**curved-text** is a widget for **Fitbit OS** using inbuilt fonts to create curved texts.\
+You can use it under `vanilla javascript` (studio or CLI) as well as running `typescript`.
 
 Supported by the **widget-factory**, it enables you to create multiple curved texts. 
 You can idividually define the dimensons of `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `attributes`.
@@ -22,7 +23,7 @@ There are two different `modes` of curving text:
 
 Settings
 -
-Almost all set-up and manipulation at runtime of your `textElements` work as you are used to from working with **fitbit OS**  built-in elements.
+Almost all set-up and manipulation at runtime of your `curved text` work as you are used to from working with **fitbit OS**  built-in elements.
 
 To ensure high flexibility, most attributes/properties can be set in
  * SVG
@@ -31,7 +32,7 @@ To ensure high flexibility, most attributes/properties can be set in
 
 Setting the radius r < 0 switches the appearance of your text to bottom-curved.
 
-Due to the structure of the `<symbol><use>` which represents the curved-text element, there are only a few exceptions, needing a `<set>` in SVG or specific identifiers in CSS. For available attributes/properties and how to set/call, please see the table at the end of [installation and usage](usage.md). Here you also find detailed instructions for installing and getting started.
+Due to the structure of the `<symbol><use>` which represents the curved-text element, there are only a few exceptions, needing a `<set>` in SVG or specific identifiers in CSS. For available attributes/properties and how to set/call, please see the table at the end of [installation and usage](usage.md). Here you also find instructions for installing and getting started.
 
 
 (For detailed examples of usage and syntax, please have a look at the [syntax attachment](snippets.md).)
