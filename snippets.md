@@ -142,3 +142,7 @@ start-angle via .ts/.js
 
 sweep-angle via .ts/.js
 > `not appliable here`
+
+TODO B 2 We could probably lose 'via SVG' (etc) throughout, couldn't we? Originally we didn't have the SVG (etc) headings, but now that we do, the 'via's seem redundant.
+
+TODO B 2 I wonder if we should include notes here (or somewhere) defining usage where it isn't obvious, such as r<0 and auto mode if sweep-angle isn't defined. I know you've mentioned such things elsewhere, but this is the closest thing we've got to a reference document, so maybe they should be here too. start-angle and sweep-angle might need more words too, since curved-text doesn't use them in the same way as arc. It seems wasteful to have to repeat such notes in every section here; should we start this doc with a 'definitions' section that describes each attribute??

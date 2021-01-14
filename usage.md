@@ -19,7 +19,7 @@ In your `/resources/widget.defs` file, within the `<defs>` section, add the foll
 
 /resources/index.gui (or .view)
 -
-In your `/resources/index.view` file, include `<use>` elements for every instance of curved-text that you want. Your `<use>` elements must include `href="#curvedText"`, and you'll need to give each element an id; *eg*, `id="stepsCurvedText"`like:
+In your `/resources/index.view` file, include `<use>` elements for every instance of curved-text that you want. Your `<use>` elements must include `href="#curvedText"`, and you'll need to give each element an id; *eg*, `id="stepsCurvedText"` like:
   >`<use id="myLabel" href="#curvedText" >`
 
 See detailed documentation below, and examples in this repository.
@@ -44,8 +44,9 @@ In your `/app/index.js` (or `.ts`) start-up code:
 * Use the ```widgetFactory``` object to add a `getWidgetById()` function to your `document` variable, like this:
 > `widgets.registerContainer(document);`\
 
-In order to use `curved-text` / `the widget-factory` in your typescript project, please follow the additional instructions here: [typescript_interface](typescript.md) 
+>**Note:** You can also add `getWidgetById()`to other container elements, such as `svg`, `section` and `g`. To do so, use `getElementById()` to get an object for the container element, then pass that to `registerContainer()`. You can call `registerContainer()` multiple times, or pass multiple arguments in one call. You don't have to use it on the `document` object if you always intend to get widgets from within subordinate container elements.
 
+In order to use `curved-text` and `widget-factory` in your typescript project, please follow the additional instructions here: [typescript_interface](typescript.md).
 
 Your code
 =
@@ -53,10 +54,15 @@ Your code
 Now, elsewhere in your `/app/index.js` (or `.ts`) file, you can get objects that correspond to the curved-text `<use>` elements in your `index.view` file, like this:
 >`const myLabel = document.getWidgetById('myLabel');`\
 >`const myClass = document.getElementsByClassName('myClass');`\
-(Member elements of classes need to be declared before per document.getElementById() individually.)
+>**Note:** Accessing widgets by className requires that each widget has been previously created using `.getWidgetById()`. Hopefully this limitation will be fixed in future.)
 
 In your code, use your widget object(s) to interact with the corresponding curved-text element; *eg*:
 
-> `stepsLabel.text = today.adjusted.steps;`
+> `myLabel.text = today.adjusted.steps;`
+
+Summary of Attribute Accessibility
+-
+
+This table summarises the properties and settings that are available, and where they can be set. For more detail, see [code snippets](snippets.md).
 
 !<div align="center">![set/call](interface_table.png)</div>
