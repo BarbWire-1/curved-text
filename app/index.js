@@ -1,3 +1,4 @@
+//@ts-nocheck
 import document from "document"
 import { widgetFactory } from './widgets/widget-factory'
 import { curvedText } from './widgets/curved-text'

@@ -1,5 +1,5 @@
 // Widget factory
-
+//@ts-nocheck
 import document from "document";
 
 export interface WidgetFactory {
