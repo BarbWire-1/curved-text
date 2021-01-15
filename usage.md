@@ -63,7 +63,7 @@ Attributes
 =
 Set up the curve your text gets aligned at:
  -
- * x 
+ * x
  * y
  * r (use r < 0 for bottom curved text)
 
@@ -75,14 +75,14 @@ Set up the curve your text gets aligned at:
  * font-size
  * fill
  * letter-spacing (only gets applied in mode `auto`)
- * text-anchor (gets per default applied at 0° for r >=0, at 180° for r<0>)
+ * text-anchor (defaults to 0° for r>=0, and 180° for r<0)
  * opacity
  * display
 
  Rotation
- * sweep-angle (Setting `sweep-angle` automatically switches to mode `fix` and rotates each char by += sweep-angle.)
- * start-angle (rotates the whole text in addition to it´s given position/alignment.)\
- 
+ * sweep-angle (setting `sweep-angle` automatically switches to mode `fix` and rotates each char by += sweep-angle)
+ * start-angle (rotates the whole text in addition to its given position/alignment)
+
 This table summarises the properties and settings that are available, and where they can be set. For more detail, see [code snippets](snippets.md).
 
 !<div align="center">![set/call](interface_table.png)</div>

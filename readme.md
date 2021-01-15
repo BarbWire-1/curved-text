@@ -5,8 +5,8 @@ curved-text
 **curved-text** is a widget for **Fitbit OS** using inbuilt fonts to create curved texts.\
 You can use it under `vanilla javascript` (studio or CLI) as well as running `typescript`.
 
-Supported by the **widget-factory**, it enables you to create multiple curved texts. 
-You can idividually define the dimensons of `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `attributes`.
+Supported by the **widget-factory**, it enables you to create multiple curved texts.
+You can individually define the dimensons of `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `attributes`.
 
 
 !<div align="center">![demo](curved_text_demo2.gif#center)</div>
@@ -32,7 +32,7 @@ To ensure high flexibility, most attributes/properties can be set in
 
 Setting the radius r < 0 switches the appearance of your text to bottom-curved.
 
-Due to the structure of the `<symbol><use>` which represents the curved-text element, there are only a few exceptions, needing a `<set>` in SVG or specific identifiers in CSS. For available attributes/properties and how to set/call, please see the table at the end of [installation and usage](usage.md). Here you also find instructions for installing and getting started.
+Due to the structure of the `<symbol><use>` which represents the curved-text element, there are a few cases in which you'll need a `<set>` in SVG or specific identifiers in CSS. For available attributes/properties and how to set/call, please see the table at the end of [installation and usage](usage.md). There you'll also find instructions for installing and getting started.
 
 
 (For detailed examples of usage and syntax, please have a look at the [syntax attachment](snippets.md).)
