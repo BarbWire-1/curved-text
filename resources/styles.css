@@ -33,15 +33,13 @@
 /*
 .classy {
     fill:#14d9e7;
-}
+}*/
 
 
 #classyId #radius{
-   
-    r: 100;
-
+    r: 60;
 }
-*/
+
 .classy {
     fill: #fc9105;
 }
