@@ -86,3 +86,9 @@ Set up the curve your text gets aligned at:
 This table summarises the properties and settings that are available, and where they can be set. For more detail, see [code snippets](snippets.md).
 
 !<div align="center">![set/call](interface_table.png)</div>
+
+Limitations
+=
+* The factory and curved-text widget have not been testing in a dynamic GUI (ie, using `document.location` manipulation).
+* Changing a `curved-text`'s `className` using `.class` will need great care. The `className` must start with the widget's class type identifier, or it will be invisible to the `widget-factory` and may not get necessary styles applied.
+* Calling `getWidgetById()` multiple times on the same element will result in an error.
