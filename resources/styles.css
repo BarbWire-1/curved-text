@@ -11,7 +11,7 @@
     fill: aqua;
     display: inline;
     x: 168;/*ok*/
-    y: 45;/*ok*/
+    y: 36;/*ok*/
 }
 #myLabel2 #text { 
     text-buffer: "*widget-factory*";
@@ -19,8 +19,8 @@
     letter-spacing: 3;
 }
 
-.myLabel2 #radius { 
-    r: -120;
+#myLabel2 #radius { 
+    r: -126;
 }
 
 .myClass {

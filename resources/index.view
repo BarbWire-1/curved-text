@@ -30,14 +30,14 @@
    <!-- example with settings in styles.css-->
    <use id="myLabel2" href="#curvedText"> <!--possible but necessarily to set here-->
       <!--The following <set>s need be set here or might be set - for classes eG in styles.css-->
-       <set href="#text" attributeName="class" to="myLabel2" /> <!--neede to set -className #text {r} in css. so better just <set r>-->
+       <!--set href="#text" attributeName="class" to="myLabel2" /--> <!--neede to set -className #text {r} in css. so better just <set r>--> <!--working in .ts on id #text-->
       
    </use>
 
    <!-- example with class / slass settings in styles.css-->
    <use id="myLabel3" href="#curvedText"  x="90"  opacity="1" display="inline"> <!--possible but necessarily to set here-->
       <set href="#text" attributeName="class" to="myClass" /> 
-      <!--individual settings her - for class in styles.css-->
+      <!--individual settings here - for class in styles.css-->
       
       <set href="#text" attributeName="text-buffer" to="el1.myClass" /> <!--define your fix text here-->
       <set href="#layout" attributeName="start-angle" to="45"/> <!--rotates the whole curved-text-->     
