@@ -52,6 +52,8 @@ const myLabel2 = widgetDocument.getWidgetById('myLabel2');
 const myLabel3 = widgetDocument.getWidgetById('myLabel3');
 const myLabel4 = widgetDocument.getWidgetById('myLabel4');
 
+
+
 //create class
 const myClass = document.getElementsByClassName('myClass');
 /* TODO G if not defined in index.view:
