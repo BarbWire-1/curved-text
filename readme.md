@@ -10,7 +10,7 @@ You can individually define the dimensons of `circles`, the texts gets curved at
 
 !<div align="center">![examples](examples.png#center)</div>
 
-!<div align="center">![demo](curved_text_demo2.gif#center)</div>
+
 
 About
 =
@@ -52,6 +52,7 @@ The `<use>` elements showing your curved text can be animated like other `SVG el
 by BarbWire and Gondwana
 
 (and RTFM! :slightly_smiling_face::vulcan_salute:)
+!<div align="center">![demo](curved_text_demo2.gif#center)</div>
 
 For information on `installation` and `usage`, please follow this link:
 [installation and usage](usage.md).
