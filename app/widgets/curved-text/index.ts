@@ -11,6 +11,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   // TODO G 0 can't call .getWidgetById on an element twice
   const textEl = el.getElementById('text') as TextElement;
   const radiusEl = el.getElementById('radius') as CircleElement;
+  
   const layoutEl = el.getElementById('layout') as ArcElement;
   const alignRotate = el.getElementById('alignRotate') as GroupElement;
 

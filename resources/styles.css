@@ -4,46 +4,43 @@
     fill: black;
 }
 
-.classx {
-   x:168;
-   y:168;
-   fill:#adf505;
-   font-family: Fabrikat-Bold;
-   font-size: 30;
+
+
+/*NEW*/
+#myLabel2 {
+    font-family: System-Regular;/*ok*/
+    font-size: 30;/*ok*/
+    fill: aqua;
+    display: inline;
+    x: 168;/*ok*/
+    y: 45;/*ok*/
 }
-
-.classx #layout  {
-    start-angle:180;
-    sweep-angle:0;
-
-}
-#classxId {
-    font-size:40;
-
-}
-
-#classxId #text {
-    text-buffer: "iWiWiWiWiWi";
-}
-
-.classx #text {
+#myLabel2 #text { 
+    text-buffer: "*widget-factory*";
     text-anchor: middle;
+    letter-spacing: 3;
 }
 
-/*
-.classy {
-    fill:#14d9e7;
-}*/
-
-
-#classyId #radius {
-    r: 60;
+.myLabel2 #radius { 
+    r: -120;
 }
 
-#classyId #layout {
-    start-angle: 90;
-}
+.myClass {
+    font-family: System-Regular;/*ok*/
+    font-size: 20;
+    fill: #84f51a;
+    y: 100%-90;/*ok*/
 
-.classy {
-    fill: #fc9105;
 }
+.myClass #radius {
+    r: -80;
+}
+ /*
+.myClass #layout {
+   would switch to mode fix
+    sweep-angle: 9;
+}
+ */
+ .myClass #text {
+     letter-spacing:2;
+ }
