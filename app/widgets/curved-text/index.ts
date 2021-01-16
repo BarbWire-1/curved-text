@@ -17,13 +17,13 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   // INITIALISE SETTINGS FROM SVG or CSS
   /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer.
      Therefore, we pick these up from hidden elements within the widget. */
-  
-  if (textEl.class) {
-    el.class = el.class + ' ' + textEl.class;
-    textEl.class = '';   // prevent textEl from being picked up by document.getElementsByClassName()
-  }
 
-  
+  if (textEl.class) {
+    el.class = el.class + ' ' + textEl.class;   // TODO G 1 does this need to be done BEFORE accessing radiusEl, and giving the system time to apply the CSS?
+    textEl.class = '';   // prevent textEl from being picked up by document.getElementsByClassName()
+  } else
+    el.class = el.class  // This shouldn't do anything, but seems to cause CSS rules to be reapplied. Without it, CSS selectors such as "#id #radius" don't work.
+
   let radius = radiusEl.r ?? 100;  //if negative, text is bottom curve
 
   let textAnchor: string;
@@ -69,16 +69,16 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
   (el as CurvedTextWidget).redraw = () => {   // redraw() doesn't really need to be public, except to cover unforeseen cases
 
-    
+
     //-----------------------------------------------------------------------------------------------------------------------------
-    
+
     //VARIABLES
     //ASSIGN CHARS
     let chars = (textEl.text.split("")); // array of char set of text to curve
     let char  = el.getElementsByClassName("char") as TextElement[];// single char textElements
     const numChars = chars.length;
 
-   
+
     //REMOVE ANY CHARS THAT ARE NO LONGER NEEDED
     // There's no need to do this initially. It could be done only when text is changed, but that would complicate the code there.
     for (let i=numChars; i<char.length; i++)

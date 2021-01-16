@@ -36,8 +36,12 @@
 }*/
 
 
-#classyId #radius{
+#classyId #radius {
     r: 60;
+}
+
+#classyId #layout {
+    start-angle: 90;
 }
 
 .classy {
