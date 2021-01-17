@@ -18,7 +18,6 @@ TODO M 800.2 User documentation (readme.md, usage.md): proof-read.\
 TODO M 800.3 simple example in app/index.js, using similar names to usage.md\
 TODO M 800.9 Comment and clean up all code\
 TODO M 820 pull widget branch into master branch of repo\
-TODO M 830 licence
 TODO M 850 Approach others to try it and provide feedback?\
 
  Go public:
