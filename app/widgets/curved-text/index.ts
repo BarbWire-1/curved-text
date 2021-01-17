@@ -1,4 +1,4 @@
-
+//@ts-nocheck
 export interface CurvedTextWidget extends GraphicsElement {
   text: string;
   startAngle: Number;
@@ -137,7 +137,6 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
           anchorAngle = - (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
           break;
         case 'end':
-          //anchorAngle = -(anchorAngle -= (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx);// NOT ok
           anchorAngle = - (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx;
           break;
       }

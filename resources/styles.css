@@ -4,36 +4,37 @@
     fill: black;
 }
 
-/*NEW*/
+/*directly on id*/
 #myLabel2 {
-    font-family: System-Regular;/*ok*/
-    font-size: 30;/*ok*/
+    font-family: System-Regular;
+    font-size: 30;
     fill: aqua;
     display: inline;
-    x: 168;/*ok*/
-    y: 36;/*ok*/
+    x: 168;
+    y: 36;
 }
+/*needs specified selectors*/
 #myLabel2 #text { 
     text-buffer: "*widget-factory*";
     text-anchor: middle;
     letter-spacing: 3;
 }
-
+/*needs specified selectors*/
 #myLabel2 #radius { 
     r: -126;
 }
-
+/*only on className*/
 .myClass {
-    font-family: System-Regular;/*ok*/
+    font-family: System-Regular;
     font-size: 20;
     fill: #84f51a;
-    y: 100%-90;/*ok*/
+    y: 100%-90;
 
 }
 .myClass #radius {
     r: -80;
 }
- /*
+ /* needs specified selectors
 .myClass #layout {
    would switch to mode fix
     sweep-angle: 9;
