@@ -89,6 +89,9 @@ This table summarises the properties and settings that are available, and where 
 
 Limitations
 =
+* 'getters' are not implemented for API properties (text, startAngle, anchorAngle). Therefore, those properties are write-only.
+* The widget inherits behaviour from GraphicsElement. While this provides a lot of capability without requiring additional code in the widget, it also means that some standard GraphicsElement functions (eg, getBBox) may not work as expected.
+* The code only targets SDK5. It will require modification to work in earlier SDKs.
 * The factory and curved-text widget have not been testing in a dynamic GUI (ie, using `document.location` manipulation).
 * Changing a `curved-text`'s `className` using `.class` will need great care. The `className` must start with the widget's class type identifier, or it will be invisible to the `widget-factory` and may not get necessary styles applied.
 * Calling `getWidgetById()` multiple times on the same element will result in an error.

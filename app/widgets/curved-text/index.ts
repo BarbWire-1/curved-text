@@ -69,6 +69,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   // ADD PROPERTIES TO SVG ELEMENT OBJECT
   // These properties will be accessible to code outside the widget, and are therefore part of the widget's API.
   // Because they're all implemented as 'setters', they can be used like variables even though they cause functions to run.
+  // 'getters' are not implemented because they would be rarely required and would consume memory.
 
   Object.defineProperty(el, 'text', {
     set: function(newValue) {
