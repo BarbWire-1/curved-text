@@ -17,10 +17,10 @@ TODO M 800.1 readme.md or usage.md to include link to demo repo\
 TODO M 800.2 User documentation (readme.md, usage.md): proof-read.\
 TODO M 800.3 simple example in app/index.js, using similar names to usage.md\
 TODO M 800.9 Comment and clean up all code\
-TODO M 810 delete/hide unnecessary files in repo\
 TODO M 820 pull widget branch into master branch of repo\
 TODO M 850 Approach others to try it and provide feedback?\
 
  Go public:
  -
 TODO M 900 Ask Fitbit to put it in OSS apps.\
+TODO M 910 Integrate with Sergio's "Fitbit Widgets"
