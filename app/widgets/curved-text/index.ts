@@ -45,7 +45,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   let sweepAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode // former charAngle
   if (radius < 0) sweepAngle = -sweepAngle;   //PREVENT MIRRORING
 
-  let startAngle: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text // former startAngle
+  let startAngle: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text 
 
   // INITIALISE OTHER LOCAL VARIABLES
 
@@ -77,14 +77,14 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   Object.defineProperty(el, 'anchorAngle', {  // name descriptive of use; function is identical to startAngle
     set: function(newValue) {setStartAngle(newValue);}
   });
-
+  el.style.fill = el.style.fill ?? 'white';
   // ADD A FUNCTION TO SVG ELEMENT OBJECT
   // This function will be accessible to code outside the widget, and is therefore part of the widget's API.
 
   (el as CurvedTextWidget).redraw = () => {
     // This function populates and positions the widget's visible elements.
     // redraw() doesn't really need to be public, except to cover unforeseen cases.
-
+    
     //VARIABLES
     //ASSIGN CHARS
     let chars = (textEl.text.split("")); // array of char set of text to curve
