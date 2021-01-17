@@ -69,11 +69,11 @@ Set up the curve your text gets aligned at:
 
  Attributes to set text and style
  -
- * text
+ * text (maximum length: 25 characters)
  * text-buffer
  * font-family
  * font-size
- * fill
+ * fill (default: white)
  * letter-spacing (only gets applied in mode `auto`)
  * text-anchor (defaults to 0° for r>=0, and 180° for r<0)
  * opacity

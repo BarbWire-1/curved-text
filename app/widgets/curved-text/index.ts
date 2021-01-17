@@ -46,6 +46,8 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
   let startAngle: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
 
+  el.style.fill = el.style.fill ?? 'white';
+
   // VALIDATE OTHER ATTRIBUTES
 
   const maxLength = el.getElementsByClassName("char").length;
@@ -82,7 +84,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   Object.defineProperty(el, 'anchorAngle', {  // name descriptive of use; function is identical to startAngle
     set: function(newValue) {setStartAngle(newValue);}
   });
-  el.style.fill = el.style.fill ?? 'white';
+
   // ADD A FUNCTION TO SVG ELEMENT OBJECT
   // This function will be accessible to code outside the widget, and is therefore part of the widget's API.
 
