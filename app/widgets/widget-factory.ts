@@ -25,6 +25,7 @@ export const widgetFactory = (widgetArray) => {
   const getWidgetById = (containerEl, id) => {
     //console.log(`looking for ${id}`)
     const widgetEl = containerEl.getElementById(id);
+    if (!widgetEl) return null;
     const widgetName = widgetEl.class.split(' ',1)[0];  // assume that the first name is the widget type
     //console.log(`name='${widgetName}'`)
     let widget;

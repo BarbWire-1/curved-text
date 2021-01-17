@@ -20,7 +20,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
      Therefore, we pick these up from hidden elements within the widget. */
 
   if (textEl.class) {
-    el.class = el.class + ' ' + textEl.class;   // TODO G 1 does this need to be done BEFORE accessing radiusEl, and giving the system time to apply the CSS?
+    el.class = el.class + ' ' + textEl.class;
     textEl.class = '';   // prevent textEl from being picked up by document.getElementsByClassName()
   } else
     el.class = el.class; // This shouldn't do anything, but seems to cause CSS rules to be reapplied. Without it, CSS selectors such as "#id #radius" don't work.

@@ -53,16 +53,8 @@ const myLabel3 = widgetDocument.getWidgetById('myLabel3');
 const myLabel4 = widgetDocument.getWidgetById('myLabel4');
 
 
-
 //create class
 const myClass = document.getElementsByClassName('myClass');
-/* TODO G if not defined in index.view:
-*"TypeError: Cannot read property 'class' of null
-*? at app/widgets/widget-factory.ts:28,11
-*? at app/widgets/widget-factory.ts:54,36
-*? at app/index.js:14,16"
-* not so for .getWidgetById()
-*/
 
 //Change some attributes //TODO G These settings only "trump" if dynamically changed on runtime? Not onload? Needs to be documented, if?
 myLabel1.style.fill = "orange";
