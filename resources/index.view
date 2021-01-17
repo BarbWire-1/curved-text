@@ -12,7 +12,7 @@
       </g>
    </g>
 
-   
+
 
     <!-- WIDGETS -->
 
@@ -25,27 +25,27 @@
       <set href="#radius" attributeName="r" to="120" />                       <!--if r < 0 text gets bottom-curved. default r = 100 -->
       <!--set href="#text" attributeName="text-anchor" to="middle"/-->        <!--default => "middle"-->
       <!--set href="#layout" attributeName="sweep-angle" to="15"/-->          <!--if set, switches to mode "fix"-->
-      <!--set href="#layout" attributeName="start-angle" to="90"/-->          <!--rotates the whole curved-text-->     
+      <!--set href="#layout" attributeName="start-angle" to="90"/-->          <!--rotates the whole curved-text-->
    </use>
 
    <!-- example with settings in styles.css-->
    <use id="myLabel2" href="#curvedText"/>
-     
+
    <!-- example with class / slass settings in styles.css-->
    <use id="myLabel3" href="#curvedText"  x="90"  opacity="1" display="inline">
-      <set href="#text" attributeName="class" to="myClass" /> 
+      <set href="#text" attributeName="class" to="myClass" />
       <!--individual settings here - for class in styles.css-->
-      
+
       <set href="#text" attributeName="text-buffer" to="el1.myClass" />
-      <set href="#layout" attributeName="start-angle" to="45"/>   
+      <set href="#layout" attributeName="start-angle" to="45"/>
    </use>
 
     <use id="myLabel4" href="#curvedText" x="100%-90"   opacity="1" display="inline">
-      <set href="#text" attributeName="class" to="myClass" /> 
+      <set href="#text" attributeName="class" to="myClass" />
        <!--individual settings her - for class in styles.css-->
-      
-      <set href="#text" attributeName="text-buffer" to="el2.myClass" /> 
-      <set href="#layout" attributeName="start-angle" to="-45"/>    
+
+      <set href="#text" attributeName="text-buffer" to="el2.myClass" />
+      <set href="#layout" attributeName="start-angle" to="-45"/>
    </use>
 
 </svg>

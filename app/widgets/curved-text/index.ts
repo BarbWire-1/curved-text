@@ -6,7 +6,6 @@ export interface CurvedTextWidget extends GraphicsElement {
   redraw(): void;
 }
 
-
 // @ts-ignore
 const construct: CurvedTextWidget = (el:GraphicsElement) => {
   // Construct an instance of a CurvedTextWidget by modifying a GraphicsElement that corresponds to a curved-text <use>.
@@ -45,7 +44,13 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   let sweepAngle: number = layoutEl.sweepAngle ?? 0; //"fix" mode angle of each char, chars are stacked at 0° if no setting. If undefined, "auto" mode // former charAngle
   if (radius < 0) sweepAngle = -sweepAngle;   //PREVENT MIRRORING
 
-  let startAngle: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text 
+  let startAngle: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
+
+  // VALIDATE OTHER ATTRIBUTES
+
+  const maxLength = el.getElementsByClassName("char").length;
+  if (textEl.text.length > maxLength)
+    textEl.text = textEl.text.slice(0, maxLength);  // shouldn't be necessary but <set> seems to bypass text-length check
 
   // INITIALISE OTHER LOCAL VARIABLES
 
@@ -84,7 +89,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   (el as CurvedTextWidget).redraw = () => {
     // This function populates and positions the widget's visible elements.
     // redraw() doesn't really need to be public, except to cover unforeseen cases.
-    
+
     //VARIABLES
     //ASSIGN CHARS
     let chars = (textEl.text.split("")); // array of char set of text to curve
