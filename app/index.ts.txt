@@ -27,7 +27,7 @@ const myClass = document.getElementsByClassName('myClass');
 myLabel1.style.fill = "orange";
 //myLabel2.text = '*your-text*';
 
-
+TODO G shall we keep the both app/index files here to rename for user? Seems best to me. easiest adjust at js/ts => just remove //@ts-nocheck in case
 
 
 
