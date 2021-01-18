@@ -5,8 +5,8 @@ import { curvedText } from './widgets/curved-text'
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
 //Initialise widget system
-const widgets = widgetFactory([curvedText]);
-widgets.registerContainer(document);   // adds getWidgetById() to document
+const widgets = widgetFactory([curvedText]);    // create a widgetFactory that can manage curvedText widgets
+widgets.registerContainer(document);            // add getWidgetById() to document
 
 //Create curved-text widgets
 const myLabel1 = document.getWidgetById('myLabel1');
@@ -18,6 +18,6 @@ const myLabel4 = document.getWidgetById('myLabel4');
 const myClass = document.getElementsByClassName('myClass');
 
 
-//Change some attributes 
+//Change some attributes
 myLabel1.style.fill = "orange";
 //myLabel2.text = '*your - text*';
