@@ -16,5 +16,6 @@ TODO M 850 Approach others to try it and provide feedback?\
 
  Go public:
  -
+TODO M 890 'Donate' button.
 TODO M 900 Ask Fitbit to put it in OSS apps.\
 TODO M 910 Integrate with Sergio's "Fitbit Widgets"
