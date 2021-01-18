@@ -26,6 +26,3 @@ const myClass = document.getElementsByClassName('myClass');
 //Change some attributes
 myLabel1.style.fill = "orange";
 //myLabel2.text = '*your-text*';
-
-TODO G shall we keep the both app/index files here to rename for user? Seems best to me. easiest adjust at js/ts => just remove //@ts-nocheck in case
-TODO B ^ Your choice. Maintaining parallel files is a pain in the bottom, and the files are already drifting apart. I was hoping that typescript.md would suffice.

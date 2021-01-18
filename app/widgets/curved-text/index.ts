@@ -12,7 +12,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   // This function isn't exported, and is called from widget-factory.ts when external code calls getWidgetById().
   // Returns the modified element.
 
-  // TODO G 0 can't call .getWidgetById on an element twice
+  // Don't can't call .getWidgetById on an element twice: once it has been converted, it can't be converted again.
 
   // Because the widget is a closure, variables declared here aren't accessible to code outside the widget.
   const textEl = el.getElementById('text') as TextElement;
@@ -45,8 +45,6 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   if (radius < 0) sweepAngle = -sweepAngle;   //PREVENT MIRRORING
 
   let startAngle: number = layoutEl.startAngle ?? 0;  //angle to rotate anchor point for whole text
-
-  el.style.fill = el.style.fill ?? 'white';
 
   // VALIDATE OTHER ATTRIBUTES
 

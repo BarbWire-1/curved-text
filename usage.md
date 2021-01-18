@@ -63,25 +63,24 @@ Attributes
 =
 Set up the curve your text gets aligned at:
  -
- * x
- * y
- * r (use r < 0 for bottom curved text)
+ * x (horizontal center of curve)
+ * y (vertical center of curve)
+ * r (use r < 0 for bottom curved text; default is 100)
 
  Attributes to set text and style
  -
- * text (maximum length: 25 characters)
- * text-buffer
+ * text (API) and text-buffer (SVG and CSS) (maximum length: 25 characters)
  * font-family
  * font-size
- * fill (default: white)
- * letter-spacing (only gets applied in mode `auto`)
- * text-anchor (defaults to 0° for r>=0, and 180° for r<0)
+ * fill (default: black)
+ * letter-spacing (pixels; default is 0; only gets applied in mode `auto`)
+ * text-anchor ("start", "middle" or "end"; defaults to "middle")
  * opacity
  * display
 
  Rotation
  * sweep-angle (setting `sweep-angle` automatically switches to mode `fix` and rotates each char by += sweep-angle)
- * start-angle (rotates the whole text in addition to its given position/alignment)
+ * start-angle (sets the anchor position around the curve; defaults to 0° for r>=0, and 180° for r<0)
 
 This table summarises the properties and settings that are available, and where they can be set. For more detail, see [code snippets](snippets.md).
 
