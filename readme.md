@@ -13,7 +13,8 @@ You can individually define the dimensons of `circles`, the texts gets curved at
 
 
 
-=
+
+
 Modes
 -
 There are two different `modes` of curving text:
