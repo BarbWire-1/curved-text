@@ -12,7 +12,7 @@ You can individually define the dimensons of `circles`, the texts gets curved at
 
 
 
-About
+
 =
 Modes
 -
@@ -33,7 +33,7 @@ To ensure high flexibility, most attributes/properties can be set in
 
 Setting the radius r < 0 switches the appearance of your text to bottom-curved.
 
-Due to the structure of the `<symbol><use>` which represents the curved-text element, there are a few cases in which you'll need a `<set>` in SVG or specific identifiers in CSS. For available attributes/properties and how to set/call, please see the table at the end of [installation and usage](usage.md). There you'll also find instructions for installing and getting started.
+Due to the structure of the `<use>` which represents your curved-text element, there are a few cases in which you'll need a `<set>` in SVG or specified selectors in CSS. For available attributes/properties and how to set/call, please see the table at the end of [installation and usage](usage.md). There you'll also find instructions for installing and getting started.
 
 
 (For detailed examples of usage and syntax, please have a look at the [syntax attachment](snippets.md).)
@@ -51,7 +51,10 @@ The `<use>` elements showing your curved text can be animated like other `SVG el
 ...and now - CURVE IT!\
 by BarbWire and Gondwana
 
+
 (and RTFM! :slightly_smiling_face::vulcan_salute:)
+
+[curved_text_demo](https://github.com/BarbWire-1/curved-text-demo)
 !<div align="center">![demo](curved_text_demo2.gif#center)</div>
 
 For information on `installation` and `usage`, please follow this link:
