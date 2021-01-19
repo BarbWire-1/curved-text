@@ -8,7 +8,7 @@ You can use it under `vanilla javascript` (studio or CLI) as well as running `ty
 Supported by the **widget-factory**, it enables you to create multiple curved texts.
 You can individually define the dimensons of `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `attributes`.
 
-!<div align="center">![examples](examples.png#center)</div>
+!<div align="center">![examples](app/doco/examples.png#center)</div>
 
 
 
@@ -34,10 +34,10 @@ To ensure high flexibility, most attributes/properties can be set in
 
 Setting the radius r < 0 switches the appearance of your text to bottom-curved.
 
-Due to the structure of the `<use>` which represents your curved-text element, there are a few cases in which you'll need a `<set>` in SVG or specified selectors in CSS. For available attributes/properties and how to set/call, please see the table at the end of [installation and usage](usage.md). There you'll also find instructions for installing and getting started.
+Due to the structure of the `<use>` which represents your curved-text element, there are a few cases in which you'll need a `<set>` in SVG or specified selectors in CSS. For available attributes/properties and how to set/call, please see the table at the end of [installation and usage](doco/usage.md). There you'll also find instructions for installing and getting started.
 
 
-(For detailed examples of usage and syntax, please have a look at the [syntax attachment](snippets.md).)
+(For detailed examples of usage and syntax, please have a look at the [syntax attachment](doco/snippets.md).)
 
 Positioning
 -
@@ -56,7 +56,7 @@ by BarbWire and Gondwana
 (and RTFM! :slightly_smiling_face::vulcan_salute:)
 
 
-!<div align="center">![demo](curved_text_demo2.gif#center)</div>
+!<div align="center">![demo](doco/curved_text_demo2.gif#center)</div>
 
 For information on `installation` and `usage`, please follow this link:
 [installation and usage](usage.md).
