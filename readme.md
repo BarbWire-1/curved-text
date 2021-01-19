@@ -8,7 +8,7 @@ You can use it under `vanilla javascript` (studio or CLI) as well as running `ty
 Supported by the **widget-factory**, it enables you to create multiple curved texts.
 You can individually define the dimensons of `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `attributes`.
 
-!<div align="center">![examples](app/doco/examples.png#center)</div>
+!<div align="center">![examples](doco/examples.png#center)</div>
 
 
 
