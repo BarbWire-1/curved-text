@@ -6,6 +6,7 @@ export interface CurvedTextWidget extends GraphicsElement {
   redraw(): void;
 }
 
+
 // @ts-ignore
 const construct: CurvedTextWidget = (el:GraphicsElement) => {
   // Construct an instance of a CurvedTextWidget by modifying a GraphicsElement that corresponds to a curved-text <use>.
@@ -19,6 +20,21 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   const radiusEl = el.getElementById('radius') as CircleElement;
   const layoutEl = el.getElementById('layout') as ArcElement;
   const alignRotate = el.getElementById('alignRotate') as GroupElement;
+
+  // PRIVATE FUNCTIONS
+  // Because the widget is a closure, functions declared here aren't accessible to code outside the widget.
+
+  const initialiseChars = () => {
+    // We do this in a function so that char[] memory can be released.
+    let char = el.getElementsByClassName("char") as TextElement[];// single char textElements
+    let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text based on radius, and prevent mirroring
+    char.forEach(charEl => charEl.y = y);
+  }
+
+  const setStartAngle = newValue => {
+    startAngle = newValue;
+    alignRotate.groupTransform.rotate.angle = startAngle + anchorAngle;
+  }
 
   // INITIALISE SETTINGS FROM SVG or CSS
   /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer, class.
@@ -56,13 +72,9 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
   let anchorAngle: number = 0;  // angle by which whole string should be rotated to comply with anchor, excluding startAngle adjustment of anchor // former stringAngle
 
-  // PRIVATE FUNCTIONS
-  // Because the widget is a closure, functions declared here aren't accessible to code outside the widget.
+  // INITIALISE INVARIANT CHAR[] PROPERTIES
 
-  const setStartAngle = newValue => {
-    startAngle = newValue;
-    alignRotate.groupTransform.rotate.angle = startAngle + anchorAngle;
-  }
+  initialiseChars();
 
   // ADD PROPERTIES TO SVG ELEMENT OBJECT
   // These properties will be accessible to code outside the widget, and are therefore part of the widget's API.
@@ -109,9 +121,6 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
     const circ = 2 * radius * Math.PI;
     const degreePx = 360 / circ;
 
-    //PREVENT MIRRORING
-    char[0].text = chars[0];
-    let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text, based on radius
     anchorAngle = 0;
 
     //INITIALISE char[]
@@ -119,7 +128,6 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       //apply text and y
       char[i].text = chars[i];// assign chars to the single textElements
       char[i].style.display = 'inherit';
-      char[i].y = y;
     }
 
     if (!sweepAngle) {   // sweepAngle wasn't specified, so do mode=0 (auto)
