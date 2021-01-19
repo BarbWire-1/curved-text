@@ -6,7 +6,7 @@
 
       <g id="alignRotate">
          <g>
-            <text class="char"/>
+            <text class="char">l</text>   <!-- this element needs an initial character so getBBox() can be used on it -->
          </g>
             <g>
             <text class="char"/>
