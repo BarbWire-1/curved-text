@@ -6,6 +6,8 @@ Use the following imports to obtain widget-specific interfaces and type definiti
 `import { WidgetSearch, WidgetDocumentModule, WidgetElementSearch, widgetFactory } from './widgets/widget-factory'`\
 `import { CurvedTextWidget, curvedText } from './widgets/curved-text'`
 
+The widgetFactory object implements the `WidgetFactory` interface, and can be declared to be of that type.
+
 You can declare curved-text widgets to be of the appropriate type like this:
 
 `let classx: CurvedTextWidget;`
