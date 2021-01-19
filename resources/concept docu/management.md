@@ -11,6 +11,7 @@ Publishing:
 -
 TODO M 800.0 Purge unnecessary files to avoid confusing users when it goes public. Keep non-widget code somewhere safe.\
 ~~TODO M 800.1 readme.md or usage.md to include link to demo repo~~\
+TODO G 810 Write a how-to-widget.md
 TODO M 820 pull widget branch into master branch of repo\
 TODO M 850 Approach others to try it and provide feedback?\
 
