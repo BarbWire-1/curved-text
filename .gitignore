@@ -107,6 +107,7 @@ dist
 .zip
 build/
 *.docx
+.vscode/
 
 # Backup
 backup.bat
