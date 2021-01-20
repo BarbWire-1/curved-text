@@ -59,7 +59,7 @@ by BarbWire and Gondwana
 !<div align="center">![demo](doco/curved_text_demo2.gif#center)</div>
 
 For information on `installation` and `usage`, please follow this link:
-[installation and usage](usage.md).
+[installation and usage](doco/usage.md).
 
 
 
