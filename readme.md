@@ -54,7 +54,7 @@ by BarbWire and Gondwana
 
 (and RTFM! :slightly_smiling_face::vulcan_salute:)
 
-
+[curved-text-demo](https://github.com/BarbWire-1/curved-text-demo)\
 !<div align="center">![demo](doco/curved_text_demo2.gif#center)</div>
 
 For information on `installation` and `usage`, please follow this link:
