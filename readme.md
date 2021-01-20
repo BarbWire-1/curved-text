@@ -1,7 +1,6 @@
 curved-text
 =
-(under construction!)\
-\
+
 **curved-text** is a widget for **Fitbit OS** using inbuilt fonts to create curved texts.\
 You can use it under `vanilla javascript` (studio or CLI) as well as running `typescript`.
 
