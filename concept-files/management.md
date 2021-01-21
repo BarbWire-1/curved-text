@@ -18,11 +18,12 @@ TODO G 810 Write a how-to-widget.md\
 ~~TODO G 823 populate -dev dev from -dev widget: DONE~~\
 ~~TODO G 824 clean up -dev master: DONE~~\
 TODO B 825 examine and test -dev master and -dev dev\
-TODO B 826 delete widget branch from -dev repo (and hope that commits remain). May need to change default branch first.\
-TODO B 827 delete or rename curved-text repo\
-TODO B 828 if curved-text repo was renamed rather than deleted, make it private\
-TODO B 829 rename -dev repo to curved-text\
-TODO B 830 make (new) curved-text repo public\
+TODO B 826 change -dev repo default branch from widget to master (so widget can be deleted)\
+TODO B 827 delete widget branch from -dev repo (and hope that commits remain)\
+TODO B 828 delete or rename curved-text repo\
+TODO B 829 if curved-text repo was renamed rather than deleted, make it private\
+TODO B 830 rename -dev repo to curved-text\
+TODO B 831 make (new) curved-text repo public\
 TODO M 840 Make demo a branch of curved-text (not worth the effort?)\
 TODO M 850 Approach others to try it and provide feedback?
 
