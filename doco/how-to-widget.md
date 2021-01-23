@@ -56,4 +56,4 @@ Use private variables and functions within your code to keep the public interfac
 
 Installation
 -
-To connect all of the bits of your widget together, adapt the usage instructions from [here](usage.md).
+To connect all of the bits of your widget together, adapt the usage instructions from [here](usage.md). 
