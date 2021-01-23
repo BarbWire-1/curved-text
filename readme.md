@@ -60,7 +60,4 @@ by BarbWire and Gondwana
 For information on `installation` and `usage`, please follow this link:
 [installation and usage](doco/usage.md).
 
-
-
-
-
+If you would like to know how to turn your own elements into a reusable component, see [How to Make a Widget](doco/how-to-widget.md).
