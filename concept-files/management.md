@@ -11,7 +11,6 @@ Publishing:
 -
 ~~TODO M 800.0 Purge unnecessary files to avoid confusing users when it goes public. Keep non-widget code somewhere safe.~~\
 ~~TODO M 800.1 readme.md or usage.md to include link to demo repo~~\
-TODO G 810 Write a how-to-widget.md\
 ~~TODO G 820 apply commits from curved-text to -dev widget: DONE~~\
 ~~TODO G 821 populate -dev master from -dev widget: DONE~~\
 ~~TODO G 822 create -dev dev branch: DONE~~\
@@ -26,6 +25,7 @@ TODO G 810 Write a how-to-widget.md\
 ~~TODO B 831 make (new) curved-text repo public: DONE~~\
 TODO M 840 Make demo a branch of curved-text (not worth the effort?)\
 TODO M 850 Approach others to try it and provide feedback?
+TODO M 860 Align master and dev branches so PRs can be used from dev to master. May require relocating concept-files.
 
  Go public:
  -

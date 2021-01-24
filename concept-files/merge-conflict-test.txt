@@ -1,3 +1,0 @@
-one plus one is two
-two plus two is four
-three plus three is six
