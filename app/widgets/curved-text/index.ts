@@ -26,6 +26,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
   const initialiseChars = () => {
     // We do this in a function so that char[] memory can be released.
+    // This must be done before any elements are rotated, because we need getBBox() for the unrotated char.
     let char = el.getElementsByClassName("char") as TextElement[];// single char textElements
     let y = radius < 0 ? -radius : -radius + char[0].getBBox().height / 2;  //define y of text based on radius, and prevent mirroring
     char.forEach(charEl => charEl.y = y);
@@ -130,25 +131,29 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       char[i].style.display = 'inherit';
     }
 
+    alignRotate.groupTransform.rotate.angle = 0;  // so getBBox() will return unrotated widths
+
     if (!sweepAngle) {   // sweepAngle wasn't specified, so do mode=0 (auto)
 
       //AUTO MODE
 
       let cumWidth: number = 0;
+      let charG: GroupElement;    // <g> that contains the char being rotated
       for (let i: number = 0; i < numChars ; i++) {
         //Variables for positioning chars
+        charG = char[i].parent;
+        charG.groupTransform.rotate.angle = 0;   // so getBBox() will return unrotated widths
         let charWidth = char[i].getBBox().width;
         cumWidth += charWidth;
 
         //ROTATION PER CHAR
-        (char[i].parent as GroupElement).groupTransform.rotate.angle =
-        (cumWidth  - charWidth / 2 +  (i) * letterSpacing )  * degreePx;
+        charG.groupTransform.rotate.angle = (cumWidth - charWidth / 2 + i * letterSpacing) * degreePx;
       } // end of char loop
 
       //TEXT-ANCHOR MODE AUTO
       switch(textAnchor) {
         case 'middle':
-          anchorAngle = - (cumWidth + ((numChars -1) * letterSpacing)) * degreePx / 2;//ok
+          anchorAngle = - (cumWidth + ((numChars - 1) * letterSpacing)) * degreePx / 2;//ok
           break;
         case 'end':
           anchorAngle = - (cumWidth + (numChars - 1 ) * letterSpacing  ) * degreePx;
@@ -159,14 +164,18 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
 
       //FIX MODE
 
+      // Determine unrotated widths of outer chars:
+      (char[0].parent as GroupElement).groupTransform.rotate.angle = 0;
+      const firstChar = char[0].getBBox().width;
+      (char[numChars-1].parent as GroupElement).groupTransform.rotate.angle = 0;
+      const lastChar = char[numChars-1].getBBox().width;
+
       for (let i: number = 0; i < numChars ; i++) {
         //ROTATION PER CHAR
         (char[i].parent as GroupElement).groupTransform.rotate.angle = i * sweepAngle;
       } // end of char loop
 
       //TEXT-ANCHOR MODE FIX
-      const firstChar = char[0].getBBox().width;
-      const lastChar = char[numChars-1].getBBox().width;
       switch(textAnchor) {
         // Commented-out lines here implement an alternative definition of anchor in FIX mode.
         case 'middle':
