@@ -10,7 +10,7 @@
 	"devDependencies": {
 		"@fitbit/sdk": "^5.0.1",
 		"@fitbit/sdk-cli": "^1.7.3",
-		"fitbit-sdk-types": "^6.0.1"
+		"fitbit-sdk-types": "^6.0.3"
 	},
 	"fitbit": {
 		"appUUID": "f6a8d8d6-b958-4f42-8ba7-a1364ba89d7a",

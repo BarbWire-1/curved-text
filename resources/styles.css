@@ -14,13 +14,13 @@
     y: 36;
 }
 /*needs specified selectors*/
-#myLabel2 #text { 
+#myLabel2 #text {
     text-buffer: "*widget-factory*";
     text-anchor: middle;
     letter-spacing: 3;
 }
 /*needs specified selectors*/
-#myLabel2 #radius { 
+#myLabel2 #radius {
     r: -126;
 }
 /*only on className*/
