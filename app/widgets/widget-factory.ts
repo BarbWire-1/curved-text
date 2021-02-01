@@ -21,6 +21,9 @@ export const widgetFactory = (...args) => {
   for (let i = firstWidgetIndex; i < args.length; i++) {
     const widgetRego = args[i]();   // get the registration info for this widget
     const instances = searchElement.getElementsByTypeName(widgetRego.name); // this picks up widgets within widgets
-    instances.forEach(el => {widgetRego.construct(el);});
+    instances.forEach(el => {
+      el.class = el.class; // This shouldn't do anything, but seems to cause CSS rules to be reapplied. Without it, CSS selectors such as "#id #radius" don't work.
+      widgetRego.construct(el);
+    });
   }
 }

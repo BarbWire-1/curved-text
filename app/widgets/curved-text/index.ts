@@ -46,8 +46,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
     el.class = el.class + ' ' + textEl.class;
     textEl.class = '';   // prevent textEl from being picked up by document.getElementsByClassName()
   } else*/
-  el.class = el.class; // This shouldn't do anything, but seems to cause CSS rules to be reapplied. Without it, CSS selectors such as "#id #radius" don't work.
-
+  //el.class = el.class; // This shouldn't do anything, but seems to cause CSS rules to be reapplied. Without it, CSS selectors such as "#id #radius" don't work.
 
   let radius = radiusEl.r ?? 100;  //if negative, text is bottom curve. Default to 100.
 
