@@ -17,7 +17,7 @@
     <!-- WIDGETS -->
 
    <!--example using mostly inline <use>-->
-   <use id="myLabel1" href="#curvedText" type="curvedText" x="168" y="168" font-family="System-Regular" font-size="30" fill="magenta" opacity="1" display="inline"> <!--possible but necessarily to set here-->
+   <use id="myLabel1" href="#curvedText" x="168" y="168" font-family="System-Regular" font-size="30" fill="magenta" opacity="1" display="inline"> <!--possible but necessarily to set here-->
       <!--The following <set>s need be set here or might be set - for classes eG in styles.css-->
 
       <set href="#text" attributeName="text-buffer" to="* curved-text *" />   <!--define your fix text here-->
@@ -29,17 +29,17 @@
    </use>
 
    <!-- example with settings in styles.css-->
-   <use id="myLabel2" href="#curvedText" type="curvedText" />
+   <use id="myLabel2" href="#curvedText" />
 
    <!-- example with class / slass settings in styles.css-->
-   <use id="myLabel3" href="#curvedText" type="curvedText" x="90" class="myClass" opacity="1" display="inline">
+   <use id="myLabel3" href="#curvedText" x="90" class="myClass" opacity="1" display="inline">
       <!--individual settings here - for class in styles.css-->
 
       <set href="#text" attributeName="text-buffer" to="el1.myClass" />
       <set href="#layout" attributeName="start-angle" to="45"/>
    </use>
 
-    <use id="myLabel4" href="#curvedText" type="curvedText" class="myClass" x="100%-90"   opacity="1" display="inline">
+    <use id="myLabel4" href="#curvedText" class="myClass" x="100%-90"   opacity="1" display="inline">
        <!--individual settings her - for class in styles.css-->
 
       <set href="#text" attributeName="text-buffer" to="el2.myClass" />

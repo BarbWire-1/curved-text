@@ -1,5 +1,5 @@
 <defs>
-  <symbol id="curvedText" class="curvedText" >
+  <symbol id="curvedText" type="curvedText" >
     <text id="text" opacity="0" text-length="25" />          <!-- It's inefficient to have this element, but it allows text to be specified in .view -->
     <circle id="radius" opacity="0" />    <!-- It's inefficient to have this element, but it allows radius to be specified in .view -->
     <arc id="layout" opacity="0" />    <!-- It's inefficient to have this element, but it allows start-angle to be specified in .view -->
