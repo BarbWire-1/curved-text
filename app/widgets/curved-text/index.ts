@@ -41,13 +41,6 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer, class.
      Therefore, we pick these up from hidden elements within the widget. */
 
-  // TODO B no need to transplant class from a child element, because class can now be set on the <use>. Widget type now has to be set using type= in <use>.
-  /*if (textEl.class) {     // append textEl's class (if any) to that of widget, so .class-name CSS rules will work
-    el.class = el.class + ' ' + textEl.class;
-    textEl.class = '';   // prevent textEl from being picked up by document.getElementsByClassName()
-  } else*/
-  //el.class = el.class; // This shouldn't do anything, but seems to cause CSS rules to be reapplied. Without it, CSS selectors such as "#id #radius" don't work.
-
   let radius = radiusEl.r ?? 100;  //if negative, text is bottom curve. Default to 100.
 
   let textAnchor: string;
