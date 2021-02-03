@@ -49,10 +49,6 @@ sweep-angle:
 >`<use id="myLabel" href="#curvedText" fill="white" >`
 >>`<set href="#layout" attributeName="sweep-angle" to="20"/></use>`
 
-class:
->`<use id="myLabel" href="#curvedText" >`
->>`<set href="#text" attributeName="class" to="classx"/></use>`
-
 CSS
 ___________________
 
@@ -133,16 +129,16 @@ x,y:
 >`myLabel.y = 50;`
 
 r:
-> `not appliable here`
+> `not applicable here`
 
 text-anchor:
-> `not appliable here`
+> `not applicable here`
 
 letter-spacing:
-> `not appliable here`
+> `not applicable here`
 
 start-angle:
-> `myLabel.startAngle`
+> `myLabel.startAngle` OR `myLabel.anchorAngle`
 
 sweep-angle:
-> `not appliable here`
+> `not applicable here`
