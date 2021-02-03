@@ -135,7 +135,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       let charG: GroupElement;    // <g> that contains the char being rotated
       for (let i: number = 0; i < numChars ; i++) {
         //Variables for positioning chars
-        charG = char[i].parent;
+        charG = char[i].parent as GroupElement;
         charG.groupTransform.rotate.angle = 0;   // so getBBox() will return unrotated widths
         let charWidth = char[i].getBBox().width;
         cumWidth += charWidth;
