@@ -12,8 +12,8 @@ export const widgetFactory = (...args) => {
   //    widgetFactory(myInnerGroup, curvedText, barGraph);  // creates all curvedText and barGraph widgets in myInnerGroup
   // widgetFactory is a closure, so its internal variables and functions are not directly accessible to external code.
 
-  let searchElement = document;
-  let firstWidgetIndex = 0;
+  let searchElement = document;   // the element within which to search for widget instances
+  let firstWidgetIndex = 0;       // the first index into args that refers to a widget type
 
   if (typeof args[0] === 'object') {  // assume the object is an ElementSearch (widgets will be 'function')
     searchElement = args[0];

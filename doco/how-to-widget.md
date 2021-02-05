@@ -39,6 +39,7 @@ Create a folder for your widget's executable files under `/app/widgets`. Within 
 Most of your widget's code goes in the `construct` function. This function:
 * takes a Fitbit [GraphicsElement](https://dev.fitbit.com/build/reference/device-api/document/#interface-graphicselement) as an argument (*eg*, what you get when calling `getElementById`)
 * adds your widget API properties and functions to it
+* initialises local variables by copying attributes from non-visible child elements (if any)
 * if necessary, performs an initial layout of the elements within the widget.
 
 Rather than using a JavaScript class, the widget's code is implemented as a [closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures). This avoids [issues with 'this' reference inconsistency](https://www.digitalocean.com/community/conceptual_articles/understanding-this-bind-call-and-apply-in-javascript), supports private variables and functions, and obviates the need to use `new` to instantiate instances (which would be inconsistent with normal Fitbit coding practice).
@@ -52,6 +53,8 @@ Use a property setter (`Object.defineProperty`) if the capability you need to im
 If the capability you need requires zero or two+ values, add a new function to the element object. An example in `curved-text` is `redraw()`.
 
 Use private variables and functions within your code to keep the public interface of your widget as simple as possible, and to reduce the likelihood that calling code will be able to corrupt the state of your widget by messing with its internal magic. In `curved-text`, `textEl` is an example of a private variable (well, const) and `initialiseChars()` is an example of a private function.
+
+An example of the initialisation of a local variable copying an attribute from a non-visible child element in `curved-text` is `radius`.
 
 Installation
 -

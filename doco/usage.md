@@ -30,9 +30,9 @@ See detailed documentation below, and examples in this repository.
 Imports and setup
 -
 In your `/app/index.js` (or `.ts`) file, add the following two import statements near the top:
-> `import widgetFactory from './widgets/widget-factory'`
+> `import { widgetFactory } from './widgets/widget-factory'`
 
-> `import curvedText from './widgets/curved-text'`
+> `import { curvedText } from './widgets/curved-text'`
 
 If you haven't already got an `import` statement for `document`, add that too.
 
