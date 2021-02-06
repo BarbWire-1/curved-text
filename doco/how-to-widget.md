@@ -48,13 +48,15 @@ Because your widget is just a modified Fitbit `GraphicsElement` object, you won'
 
 You don't need to provide a JavaScript API for all of your widget's properties. Ideally, they should all be settable in SVG and/or CSS. You only need to provide JavaScript APIs for those properties that need to be changed at run-time.
 
-Use a property setter (`Object.defineProperty`) if the capability you need to implement depends on exactly one value. An example in `curved-text` is `text`. Before implementing a getter, consider whether it is really required.
+Use a property setter ([Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)) if the capability you need to implement depends on exactly one value. An example in `curved-text` is `text`. Before implementing a getter, consider whether it is really required.
 
 If the capability you need requires zero or two+ values, add a new function to the element object. An example in `curved-text` is `redraw()`.
 
 Use private variables and functions within your code to keep the public interface of your widget as simple as possible, and to reduce the likelihood that calling code will be able to corrupt the state of your widget by messing with its internal magic. In `curved-text`, `textEl` is an example of a private variable (well, const) and `initialiseChars()` is an example of a private function.
 
 An example of the initialisation of a local variable copying an attribute from a non-visible child element in `curved-text` is `radius`.
+
+The `curved-text` widget takes care of laying out its child elements simply by calling its `redraw()` function.
 
 Installation
 -

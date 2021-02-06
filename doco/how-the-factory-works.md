@@ -5,6 +5,15 @@ This document is only for the curious. It explains how the various bits of code 
 
 If you're interested in creating your own widgets that use the same approach, see [how to make a widget](how-to-widget.md).
 
+Types and Instances
+-
+
+Before we start, it might be helpful to clarify some terminology:
+
+* **Type.** A widget *type* describes the shared characteristics of a *set* of widgets. For example, `curved-text` is a widget *type*.
+
+* **Instance.** A widget *instance* is a single widget of a particular type. For example, your clockface might have one curved-text widget that says 'Steps:', and a second curved-text widget that displays the current value of `today.adjusted.steps`.
+
 app/index.js Imports
 -
 
@@ -55,82 +64,34 @@ It then gets an array of all instances (*ie*, `<use>` elements) of that widget t
 
 `getElementsByTypeName()` is like `getElementsByClassName()`, except that it looks for elements that have the specified `type` rather than `class`.
 
-You might be wondering how this can find `<use>` elements when we never specified a `type` for any of the `<use>`s in `index.view`. This is part of the magic of [template symbols](https://dev.fitbit.com/build/guides/user-interface/svg/#template-symbols): `type` is automatically copied from the `<symbol>` into each `<use>` that refers to it. The linkage between `<use>` and `<symbol>` is established by the `<use>`'s `href` referring to the `<symbol>`'s `id`.
+You might be wondering how `getElementsByTypeName()` can find `<use>` elements when we never specified a `type` for any of the `<use>`s in `index.view`. This is part of the magic of [template symbols](https://dev.fitbit.com/build/guides/user-interface/svg/#template-symbols): `type` is automatically copied from the `<symbol>` into each `<use>` that refers to it. The linkage between `<use>` and `<symbol>` is established by the `<use>`'s `href` referring to the `<symbol>`'s `id`.
+
+We iterate over the array of `<use>` elements for the current wiget type:
+
+> `instances.forEach(el => {`
+
+If you're using CSS to apply styles to your widgets, the CSS system needs a bit of help. It seems that styles are not applied to `<use>` elements automatically, but they will be applied if the system thinks that the element's `class` has changed. Reapplying the `class` is sufficient to trigger this:
+
+> el.class = el.class;
+
+Finally, we call the widget type's `construct()` function for this instance, passing the `<use>` element. We'll describe exactly what `construct()` does below.
+
+When the factory has constructed all relevant instances of all the widget types it's been told about, its job is done.
+
+Constructing the Widget
+-
+
+The `construct()` function is in the widget's [index.js (or .ts)](../app/widgets/curved-text/index.ts). Its main job is to turn the `<use>` element object it receives into a widget of the appropriate type, which requires adding new functions and properties to the object. In addition, `construct()` can initialise local variables based on element attributes, and lay out the widget's child elements so they display correctly. See [how to make a widget](how-to-widget.md) for details.
 
 ---
 
-so now we iterate over that array of <use> elements
+Using the Widget
+-
 
-instances.forEach(el => {
+Finally, in your [app/index](../app/index.js), you can call `getElementById()` (or any other `getElementBy...` function) just like you would for any SVG element.
 
-we do the stupid el.class=el.class to force the CSS system to work :stuck_out_tongue:
+If the element is a widget's `<use>`, the object you get from `getElementById()` is the one that was modified by `construct()`. This means that it has the new functions and properties that were added to it there. Therefore, in addition to being able to use built-in functions and properties (such as `.x`), you can also use widget-specific ones (such as `.startAngle` and `.text`). Whenever you do so, the corresponding code in the widget's [index.js (or .ts)](../app/widgets/curved-text/index.ts) gets executed.
 
-finally, we call construct(), passing the <use> element
+If your widget is static (*ie*, doesn't need to be changed while your program is running), you don't need to mention it in app/index at all. The widget will acquire any relevant styles set in CSS, and its child elements will be laid out by its `construct()` function which will be called by the factory. All you need to do is to call `widgetFactory()` and specify the *type* of widget.
 
-this calls the construct() function in curved-text/index.ts
-
-construct() takes the <use> element it receives as an argument, and adds things to it
-
-the element is just an object, with properties and functions as per fitbit's documentation
-
-construct() takes that object and uses two techniques to add new things to it
-
-the simpler thing is to add a new function to an object
-
-curved-text only dies this once: (el as CurvedTextWidget).redraw = () => {
-
-after this is done, the element knows about a new function (called redraw)
-
-previously, it knew how to do functions like .getBBox(); now it can do .redraw()
-
-the point at this stage is that construct() can add new functions to a built-in element object
-
-again, the point is just that construct() can add new functions
-
-construct() can also add new properties
-
-a simple example of a built-in property is x
-
-we've added properties called startAngle, anchorAngle and text
-
-Object.defineProperty(el, 'text', {
-
-the syntax is horrible, but standard JS
-
-from the point of view of calling code, they work like simple variables
-
-eg, text="My label"
-
-but in the widget's code, we have to provide a function that says what to do with the argument (eg, text)
-
-quick recap: construct() adds functions and properties to the element object that corresponds to a <use>
-
-this is how the js/ts API is implemented in the widget
-
-construct() had to do one final thing
-
-the widget contains heaps of elements (eg, char <text>) that haven't been put into place yet
-
-so it has to do an initial layout of all those child elements
-
-curved-text does this by calling its redraw() function
-
-it made sense to do that layout stuff in a function so it can be reused again, if need be (eg, if user changes the text)
-
-of course, all your magic happens in redraw()
-
-so that's all that construct() does; ok?
-
-and it's also all that the factory does; it just iterates over all instances of all widget types, calling their construct()
-
-now, in your app/index, you can call getElementById just like you would for any SVG element
-
-but if the element is a widget's  <use>, the object you get from getElementById() is the one that was modified by construct()
-
-so it's magically got the new functions and properties we added to it
-
-so you can set .startAngle and .text on that object
-
-and the relevant code in the widget gets executed
-
-I guess it's all about connecting things
+This whole process is obviously quite convoluted. However, hopefully, most of the complexity is hidden away in the factory and widget files, so that using the widget in your app/index is very similar to using a standard Fitbit [element](https://dev.fitbit.com/build/guides/user-interface/svg/) or [component](https://dev.fitbit.com/build/guides/user-interface/svg-components/).
