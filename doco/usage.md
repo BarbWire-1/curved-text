@@ -24,36 +24,33 @@ In your `/resources/index.view` file, include `<use>` elements for every instanc
 
 See detailed documentation below, and examples in this repository.
 
->**Note:** Unlike most Fitbit elements and components, widgets won't be visible just because you've included them in your `.view` file. Widgets need some internal code to be executed to lay them out, and this doesn't happen until you get a reference to them using `document.getWidgetById()` in your code (see below).
+>**Note:** Unlike most Fitbit elements and components, widgets won't be visible just because you've included them in your `.view` file. Widgets need some internal code to be executed to lay them out, and this doesn't happen until the `widgetFactory` is told about them (see below).
 
 /app/index.js (or .ts)\
 Imports and setup
 -
 In your `/app/index.js` (or `.ts`) file, add the following two import statements near the top:
-> `import widgetFactory from './widgets/widget-factory'`
+> `import { widgetFactory } from './widgets/widget-factory'`
 
-> `import curvedText from './widgets/curved-text'`
+> `import { curvedText } from './widgets/curved-text'`
 
 If you haven't already got an `import` statement for `document`, add that too.
 
 In your `/app/index.js` (or `.ts`) start-up code:
 
-* Create a variable for a `widgetFactory` object, and tell it about curved-text widgets, like this:
-> `const widgets = widgetFactory([curvedText]);`
+* tell the `widgetFactory` object to construct all curved-text widgets, like this:
+> `widgetFactory(curvedText);`
 
-* Use the ```widgetFactory``` object to add a `getWidgetById()` function to your `document` variable, like this:
-> `widgets.registerContainer(document);`\
-
->**Note:** You can also add `getWidgetById()`to other container elements, such as `svg`, `section` and `g`. To do so, use `getElementById()` to get an object for the container element, then pass that to `registerContainer()`. You can call `registerContainer()` multiple times, or pass multiple arguments in one call. You don't have to use it on the `document` object if you always intend to get widgets from within subordinate container elements.
+* ...or, if your widgets are all located within a child element called `myGroupElement`, you can use this form:
+> `widgetFactory(myGroupElement, curvedText);`
 
 In order to use `curved-text` and `widget-factory` in your typescript project, please follow the additional instructions here: [typescript_interface](typescript.md).
 
 Your code
 =
-Now, elsewhere in your `/app/index.js` (or `.ts`) file, you can get objects that correspond to the curved-text `<use>` elements in your `index.view` file, like this:
->`const myLabel = document.getWidgetById('myLabel');`\
->`const myClass = document.getElementsByClassName('myClass');`\
->**Note:** Accessing widgets by className requires that each widget has been previously created using `.getWidgetById()`. Hopefully this limitation will be fixed in future.)
+Anywhere in your `/app/index.js` (or `.ts`) file, you can get objects that correspond to the curved-text `<use>` elements in your `index.view` file in the normal way:
+>`const myLabel = document.getElementById('myLabel');`\
+>`const myClass = document.getElementsByClassName('myClass');`
 
 In your code, use your widget object(s) to interact with the corresponding curved-text element; *eg*:
 
@@ -89,8 +86,7 @@ This table summarises the properties and settings that are available, and where 
 Limitations
 =
 * 'getters' are not implemented for API properties (text, startAngle, anchorAngle). Therefore, those properties are write-only.
-* The widget inherits behaviour from GraphicsElement. While this provides a lot of capability without requiring additional code in the widget, it also means that some standard GraphicsElement functions (eg, getBBox) may not work as expected.
+* The widget inherits behaviour from GraphicsElement. While this provides a lot of capability without requiring additional code in the widget, it also means that some standard GraphicsElement functions (*eg*, getBBox) may not work as expected.
+* Rotating the widget by placing it within a `<g>` will result in layout errors. For best results, use the `.anchorAngle` property.
 * The code targets SDK5. It will require the standard modifications to work in earlier SDKs.
 * The factory and curved-text widget have not been testing in a dynamic GUI (ie, using `document.location` manipulation).
-* Changing a `curved-text`'s `className` using `.class` will need great care. The `className` must start with the widget's class type identifier, or it will be invisible to the `widget-factory` and may not get necessary styles applied.
-* Calling `getWidgetById()` multiple times on the same element will result in an error.

@@ -60,4 +60,6 @@ by BarbWire and Gondwana
 For information on `installation` and `usage`, please follow this link:
 [installation and usage](doco/usage.md).
 
+If you're curious about how the code files in this clockface work together to let you create and manipulate widgets, see [How the Widget Factory Works](doco/how-the-factory-works.md).
+
 If you would like to know how to turn your own elements into a reusable component, see [How to Make a Widget](doco/how-to-widget.md).

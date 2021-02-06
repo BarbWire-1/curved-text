@@ -1,34 +1,14 @@
 typescript interfaces
 -
 
-Use the following imports to obtain widget-specific interfaces and type definitions (in addition to the objects themselves):
+Use the following import to obtain a widget-specific interface (type definition), in addition to the widget object itself:
 
-`import { WidgetSearch, WidgetDocumentModule, WidgetElementSearch, widgetFactory } from './widgets/widget-factory'`\
 `import { CurvedTextWidget, curvedText } from './widgets/curved-text'`
-
-The widgetFactory object implements the `WidgetFactory` interface, and can be declared to be of that type.
 
 You can declare curved-text widgets to be of the appropriate type like this:
 
-`let classx: CurvedTextWidget;`
+`let myLabel1: CurvedTextWidget;`
 
-You can typecast the `document` object to access the widget system:
+Alternatively, you can specify their type when you get an object that represents them:
 
-`classx = (document as WidgetDocumentModule).getWidgetById('classxId') as CurvedTextWidget;`
-
-You can avoid saying `(document as WidgetDocumentModule).getWidgetById` like this:
-
-`const widgetDocument = document as WidgetDocumentModule;`\
-`classx = widgetDocument.getWidgetById('classxId');`
-
-If you do this, you can use `widgetDocument` to access document properties as normal; eg:
-
-`const myElement = widgetDocument.getElementsByClassName('sectionId');`
-
-Using `getWidgetById()` on a non-document element:
-
-`const sectionEl = document.getElementById('sectionId') as WidgetElementSearch;`\
-`widgets.registerContainer(sectionEl);   // adds getWidgetById() to sectionEl`\
-`classx = sectionEl.getWidgetById('classxId');`
-
-The `WidgetSearch` interface is where `getWidgetById()` is actually declared. `WidgetDocumentModule` and `WidgetElementSearch` simply add that interface to the standard interfaces for the `document` object and `Element` objects. If you need more control than this, you can add the `WidgetSearch` interface to other container types.
+`let myLabel1 = document.getElementById("myLabel1") as CurvedTextWidget;`
