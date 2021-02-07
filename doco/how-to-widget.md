@@ -4,7 +4,7 @@ A widget is a reusable (usually visible) component. This makes it possible to in
 
 This document assumes that you've already got a project that's suitable for widgetting, probably comprising a visual component comprising multiple SVG elements, and some JavaScript (or TypeScript) code to make it display correctly.
 
-The approach taken here is to use the document-factory object. This makes the use of the widget more 'normal' for the calling code (*ie*, more like using a built-in element or component).
+The approach taken here is to use a `widget-factory` object. This makes the use of the widget more 'normal' for the calling code (*ie*, more like using a built-in [element](https://dev.fitbit.com/build/guides/user-interface/svg/) or [component](https://dev.fitbit.com/build/guides/user-interface/svg-components/)).
 
 SVG
 -
@@ -14,7 +14,7 @@ Within that folder, create a file called `index.view` for the widget's elements.
 
 Place all of the elements within a `<symbol>`, which is itself within  a `<defs>` ([example](../resources/widgets/curved-text/index.view)).
 
-The `id` and `class` of the `<symbol>` must both be the name of your widget.
+The `id` and `type` of the `<symbol>` must both be the name of your widget.
 
 Optionally, you can include non-visible elements that can be used to capture attributes for your widget within `.view` and `.css` files. This means that static widgets can be declared completely in SVG and CSS, and minimises the amount of JavaScript code required to use widgets. In the [curved-text widget](../resources/widgets/curved-text/index.view), the elements with id `text`, `radius` and `layout` perform this role.
 
@@ -38,22 +38,26 @@ Create a folder for your widget's executable files under `/app/widgets`. Within 
 
 Most of your widget's code goes in the `construct` function. This function:
 * takes a Fitbit [GraphicsElement](https://dev.fitbit.com/build/reference/device-api/document/#interface-graphicselement) as an argument (*eg*, what you get when calling `getElementById`)
-* adds your widget API functions to it
-* if necessary, performs an initial layout of the elements within the widget
-* returns the modified element so that other code can access its API functions.
+* adds your widget API properties and functions to it
+* initialises local variables by copying attributes from non-visible child elements (if any)
+* if necessary, performs an initial layout of the elements within the widget.
 
 Rather than using a JavaScript class, the widget's code is implemented as a [closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures). This avoids [issues with 'this' reference inconsistency](https://www.digitalocean.com/community/conceptual_articles/understanding-this-bind-call-and-apply-in-javascript), supports private variables and functions, and obviates the need to use `new` to instantiate instances (which would be inconsistent with normal Fitbit coding practice).
 
-Because your widget is based on a Fitbit `GraphicsElement` object, you won't need to write as much code as you would otherwise. Your widget will automatically inherit properties and functions from `GraphicsElement`, such as `x` and `style`. If those aren't suitable, you can override them. (Be careful if you do this, because Fitbit OS might access the replacement members in your widget, and it will expect them to perform consistently with the members they're replacing.)
+Because your widget is just a modified Fitbit `GraphicsElement` object, you won't need to write as much code as you would otherwise. Your widget will automatically inherit properties and functions from `GraphicsElement`, such as `x` and `style`. If those aren't suitable, you can override them. (Be careful if you do this, because Fitbit OS might access the replacement members in your widget, and it will expect them to perform consistently with the members they're replacing.)
 
 You don't need to provide a JavaScript API for all of your widget's properties. Ideally, they should all be settable in SVG and/or CSS. You only need to provide JavaScript APIs for those properties that need to be changed at run-time.
 
-Use a property setter (`Object.defineProperty`) if the capability you need to implement depends on exactly one value. An example in `curved-text` is `text`. Before implementing a getter, consider whether it is really required.
+Use a property setter ([Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)) if the capability you need to implement depends on exactly one value. An example in `curved-text` is `text`. Before implementing a getter, consider whether it is really required.
 
 If the capability you need requires zero or two+ values, add a new function to the element object. An example in `curved-text` is `redraw()`.
 
 Use private variables and functions within your code to keep the public interface of your widget as simple as possible, and to reduce the likelihood that calling code will be able to corrupt the state of your widget by messing with its internal magic. In `curved-text`, `textEl` is an example of a private variable (well, const) and `initialiseChars()` is an example of a private function.
 
+An example of the initialisation of a local variable copying an attribute from a non-visible child element in `curved-text` is `radius`.
+
+The `curved-text` widget takes care of laying out its child elements simply by calling its `redraw()` function.
+
 Installation
 -
-To connect all of the bits of your widget together, adapt the usage instructions from [here](usage.md). 
+To connect all of the bits of your widget together, adapt the usage instructions from [here](usage.md).

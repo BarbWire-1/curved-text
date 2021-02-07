@@ -41,12 +41,6 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
   /* These attributes can't be specified in <use>: r, start-angle, sweep-angle, text-anchor, letter-spacing, text, text-buffer, class.
      Therefore, we pick these up from hidden elements within the widget. */
 
-  if (textEl.class) {     // append textEl's class (if any) to that of widget, so .class-name CSS rules will work
-    el.class = el.class + ' ' + textEl.class;
-    textEl.class = '';   // prevent textEl from being picked up by document.getElementsByClassName()
-  } else
-    el.class = el.class; // This shouldn't do anything, but seems to cause CSS rules to be reapplied. Without it, CSS selectors such as "#id #radius" don't work.
-
   let radius = radiusEl.r ?? 100;  //if negative, text is bottom curve. Default to 100.
 
   let textAnchor: string;
@@ -141,7 +135,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       let charG: GroupElement;    // <g> that contains the char being rotated
       for (let i: number = 0; i < numChars ; i++) {
         //Variables for positioning chars
-        charG = char[i].parent;
+        charG = char[i].parent as GroupElement;
         charG.groupTransform.rotate.angle = 0;   // so getBBox() will return unrotated widths
         let charWidth = char[i].getBBox().width;
         cumWidth += charWidth;
