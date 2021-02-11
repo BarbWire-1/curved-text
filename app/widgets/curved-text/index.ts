@@ -124,8 +124,9 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       char[i].text = chars[i];// assign chars to the single textElements
       char[i].style.display = 'inherit';
     }
-
-    alignRotate.groupTransform.rotate.angle = 0;  // so getBBox() will return unrotated widths
+    // checks, if the <use> is wrapped in an outer <g> and returns angle
+    let outerGAngle = (el.parent?.["groupTransform"] === undefined) ? 0 : el.parent.groupTransform.rotate.angle;
+    alignRotate.groupTransform.rotate.angle = - outerGAngle;  // so getBBox() will return unrotated widths
 
     if (!sweepAngle) {   // sweepAngle wasn't specified, so do mode=0 (auto)
 

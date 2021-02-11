@@ -77,7 +77,7 @@ Set up the curve your text gets aligned at:
 
  Rotation
  * sweep-angle (setting `sweep-angle` automatically switches to mode `fix` and rotates each char by += sweep-angle)
- * start-angle (sets the anchor position around the curve; defaults to 0° for r>=0, and 180° for r<0)
+ * start-angle (sets text position around the curve; defaults to 0° for r>=0, and 180° for r<0, related to your text-anchor)
 
 This table summarises the properties and settings that are available, and where they can be set. For more detail, see [code snippets](snippets.md).
 
@@ -87,6 +87,6 @@ Limitations
 =
 * 'getters' are not implemented for API properties (text, startAngle, anchorAngle). Therefore, those properties are write-only.
 * The widget inherits behaviour from GraphicsElement. While this provides a lot of capability without requiring additional code in the widget, it also means that some standard GraphicsElement functions (*eg*, getBBox) may not work as expected.
-* Rotating the widget by placing it within a `<g>` will result in layout errors. For best results, use the `.anchorAngle` property.
+* For SVG translate="rotate" animations make sure the animated `<g>` is direct parent of your `<use>(s)`. You can also rotate your curvedWidgetText elements in .js/.ts using the `.anchorAngle` property.
 * The code targets SDK5. It will require the standard modifications to work in earlier SDKs.
-* The factory and curved-text widget have not been testing in a dynamic GUI (ie, using `document.location` manipulation).
+* The factory and curved-text widget have not been tested in a dynamic GUI (ie, using `document.location` manipulation).
