@@ -30,7 +30,7 @@
 
    <!-- example with settings in styles.css-->
    <use id="myLabel2" href="#curvedText" />
-   <g>
+  
    <!-- example with class / slass settings in styles.css-->
    <use id="myLabel3" href="#curvedText" x="90" class="myClass" opacity="1" display="inline">
       <!--individual settings here - for class in styles.css-->
@@ -38,7 +38,7 @@
       <set href="#text" attributeName="text-buffer" to="el1.myClass" />
       <set href="#layout" attributeName="start-angle" to="45"/>
    </use>
-</g>
+
     <use id="myLabel4" href="#curvedText" class="myClass" x="100%-90"   opacity="1" display="inline">
        <!--individual settings her - for class in styles.css-->
 
