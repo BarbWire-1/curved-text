@@ -8,6 +8,7 @@ Possible individual settings:
 
  * Radius of the `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `-attributes`.
  * Setting the radius r < 0 switches the appearance of your text to bottom-curved.
+ * x,y here determine the `center`(!) of your curved-text elements circle.
  * There are two `modes` to rotate text: default is `auto`, setting `sweep-angle` switches to `fix` where the chars get rotated by += sweepAngle.
  
 
