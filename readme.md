@@ -15,7 +15,7 @@ Possible individual settings:
 !<div align="center">![examples](doco/examples.png#center)</div>
 
 
-Installation:
+Installation
 =
 
 **/app**
@@ -31,14 +31,11 @@ In your `/resources/widget.defs` file, within the `<defs>` section, add the foll
 
 
 ```js
-<svg>
-    <defs>
-        ...
-        <link rel="stylesheet" href="widgets/curved-text/styles.css"/>
-        <link rel="import" href="widgets/curved-text/index.view"/>
-    </defs>
-</svg>
-
+<defs>
+    ...
+    <link rel="stylesheet" href="widgets/curved-text/styles.css"/>
+    <link rel="import" href="widgets/curved-text/index.view"/>
+</defs>
 ```
 In your `/resources/index.view` file, include `<use>` elements for every instance of curved-text that you want.\
 Your `<use>` elements must include `href="#curvedText"`, and you'll need to give each element an id
@@ -75,7 +72,7 @@ If you haven't already got an `import` statement for `document`, add that too.
 In order to use `curved-text` and `widget-factory` in your typescript project, please follow the additional instructions here: [typescript_interface](doco/typescript.md).
 
 
-Your code
+Your Code
 =
 Get and use objects that correspond to the curved-text `<use>` elements in your `index.view` file in the normal way:
 ```js
@@ -84,9 +81,8 @@ const myClass = document.getElementsByClassName('myClass');
 
 myLabel.text = today.adjusted.steps;
 ```
-Almost all set-up and manipulation at runtime of your `curved text` work as you are used to from working with **fitbit OS**  built-in elements.
 
-Due to the structure of the `<use>` which represents your curved-text element, there are a few cases in which you'll need a `<set>` in SVG or specified selectors in CSS. 
+Due to the structure of the `<use>` there are a few cases in which you'll need a `<set>` in SVG or specified selectors in CSS for your settings. Others can be written directly into the `<use>` line.. 
 
 Settings
 =
