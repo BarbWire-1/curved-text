@@ -4,14 +4,6 @@ curved-text
 **curved-text** is a widget for **Fitbit OS** using inbuilt fonts to create multilple and independant curved texts supported by the widget-factory.\
 You can use it under `vanilla javascript` (studio or CLI) as well as running `typescript`.
 
-Possible individual settings:
-
- * Radius of the `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `-attributes`.
- * Setting the radius r < 0 switches the appearance of your text to bottom-curved.
- * x,y here determine the `center`(!) of your curved-text elements circle.
- * There are two `modes` to rotate text: default is `auto`, setting `sweep-angle` switches to `fix` where the chars get rotated by += sweepAngle.
- 
-
 !<div align="center">![examples](doco/examples.png#center)</div>
 
 
@@ -86,6 +78,13 @@ Due to the structure of the `<use>` there are a few cases in which you'll need a
 
 Settings
 =
+Possible individual settings:
+
+ * Radius of the `circles`, the texts gets curved at, as well as all `text-` and `font-properties` and `-attributes`.
+ * Setting the radius r < 0 switches the appearance of your text to bottom-curved.
+ * x,y here determine the `center`(!) of your curved-text elements circle.
+ * There are two `modes` to rotate text: default is `auto`, setting `sweep-angle` switches to `fix` where the chars get rotated by += sweepAngle.
+ 
 !<div align="center">![set/call](doco/interface_table.png)</div>
 
 For more detailed information, see [installation and usage](doco/usage.md), detailed examples of usage and syntax at [syntax attachment](doco/snippets.md).
