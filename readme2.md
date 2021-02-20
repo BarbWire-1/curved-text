@@ -96,9 +96,7 @@ Due to the structure of the `<use>` which represents your curved-text element, t
 
 !<div align="center">![set/call](doco/interface_table.png)</div>
 
-For more detailed information, please have a look at[installation and usage](doco/usage.md).
-
-(For detailed examples of usage and syntax, please have a look at the [syntax attachment](doco/snippets.md).)
+For more detailed information, see [installation and usage](doco/usage.md), detailed examples of usage and syntax at [syntax attachment](doco/snippets.md).
 
 ---
 
