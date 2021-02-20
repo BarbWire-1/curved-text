@@ -15,18 +15,16 @@ Possible individual settings:
 
 
 Installation:
--
+=
 
 **/app**
 
-Copy the complete `/app/widgets` folder  into your project's `/app` folder\
- (so that you then have an `/app/widgets` folder in your project).
+Copy the complete `/app/widgets` folder  into your project's `/app` folder (so that you then have an `/app/widgets` folder in your project).
 
 
 **/resources/widgets**
 
-Copy the complete `/resources/widgets` folder  into your project's `/resources` folder\
-(so that you then have a `/resources/widgets` folder in your project).
+Copy the complete `/resources/widgets` folder  into your project's `/resources` folder (so that you then have a `/resources/widgets` folder in your project).
 
 In your `/resources/widget.defs` file, within the `<defs>` section, add the following lines:
 
@@ -87,13 +85,10 @@ myLabel.text = today.adjusted.steps;
 ```
 Almost all set-up and manipulation at runtime of your `curved text` work as you are used to from working with **fitbit OS**  built-in elements.
 
-To ensure high flexibility, most attributes/properties can be set in
- * SVG
- * CSS (by id or class)
- * .ts/.js (at runtime)
-
 Due to the structure of the `<use>` which represents your curved-text element, there are a few cases in which you'll need a `<set>` in SVG or specified selectors in CSS. 
 
+Settings
+=
 !<div align="center">![set/call](doco/interface_table.png)</div>
 
 For more detailed information, see [installation and usage](doco/usage.md), detailed examples of usage and syntax at [syntax attachment](doco/snippets.md).
