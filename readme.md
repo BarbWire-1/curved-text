@@ -33,7 +33,7 @@ To ensure high flexibility, most attributes/properties can be set in
 
 Setting the radius r < 0 switches the appearance of your text to bottom-curved.
 
-Due to the structure of the `<use>` which represents your curved-text element, there are a few cases in which you'll need a `<set>` in SVG (see also: [fitbit Template Symbols](https://dev.fitbit.com/build/guides/user-interface/svg/#template-symbols)) or specified selectors in CSS (see also: [fitbit Selectors](https://dev.fitbit.com/build/guides/user-interface/css/#selectors)). For available attributes/properties and how to set/call, have a look at the [interface table](doco/interface_table.png). There you'll also find instructions for installing and getting started.
+Due to the structure of the `<use>` which represents your curved-text element, there are a few cases in which you'll need a `<set>` in SVG (see also: [fitbit Template Symbols](https://dev.fitbit.com/build/guides/user-interface/svg/#template-symbols)) or specified selectors in CSS (see also: [fitbit Selectors](https://dev.fitbit.com/build/guides/user-interface/css/#selectors)). For available attributes/properties and how to set/call, have a look at the [interface table](doco/interface_table.png).
 
 
 (For detailed examples of usage and syntax, please have a look at the [syntax attachment](doco/snippets.md))
@@ -46,6 +46,11 @@ Animation
 -
 The `<use>` elements showing your curved text can be animated like other `SVG elements`.
 
+Installation and Usage
+-
+For information on `installation` and `usage`, please follow this link:
+[getting started](doco/usage.md)
+
 ---
 
 ...and now - CURVE IT!\
@@ -57,8 +62,7 @@ by BarbWire and Gondwana
 [curved-text-demo](https://github.com/BarbWire-1/curved-text-demo)\
 !<div align="center">![demo](doco/curved_text_demo2.gif#center)</div>
 
-For information on `installation` and `usage`, please follow this link:
-[installation and usage](doco/usage.md).
+
 
 If you're curious about how the code files in this clockface work together to let you create and manipulate widgets, see [How the Widget Factory Works](doco/how-the-factory-works.md).
 
