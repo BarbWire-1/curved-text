@@ -79,7 +79,7 @@ const construct = (el: CurvedTextWidget) => {
   Object.defineProperty(el, 'text', {
     set: function(newValue) {
       textEl.text = newValue;
-      (el as CurvedTextWidget).redraw();
+      el.redraw();
     }
   });
 
@@ -94,7 +94,7 @@ const construct = (el: CurvedTextWidget) => {
   // ADD A FUNCTION TO SVG ELEMENT OBJECT
   // This function will be accessible to code outside the widget, and is therefore part of the widget's API.
 
-  (el as CurvedTextWidget).redraw = () => {
+  el.redraw = () => {
     // This function populates and positions the widget's visible elements.
     // redraw() doesn't really need to be public, except to cover unforeseen cases.
 
@@ -193,11 +193,11 @@ const construct = (el: CurvedTextWidget) => {
 
   // DISPLAY WIDGET BASED ON SVG/CSS ATTRIBUTES
   // Subsequent changes to the widget are handled by API functions, and may involve calling redraw() again.
-  (el as CurvedTextWidget).redraw();
+  el.redraw();
 
   // RETURN THE MODIFIED ELEMENT
   // Since el now has curved-text properties and functions added to it, external code can use it to manipulate the widget.
-  return el as CurvedTextWidget;
+  return el;
 }
 
 
