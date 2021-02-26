@@ -1,4 +1,4 @@
-//@ts-nocheck
+
 export interface CurvedTextWidget extends GraphicsElement {
   text: string;
   startAngle: Number;
@@ -7,8 +7,8 @@ export interface CurvedTextWidget extends GraphicsElement {
 }
 
 
-// @ts-ignore
-const construct: CurvedTextWidget = (el:GraphicsElement) => {
+
+const construct = (el: CurvedTextWidget) => {
   // Construct an instance of a CurvedTextWidget by modifying a GraphicsElement that corresponds to a curved-text <use>.
   // This function isn't exported, and is called from widget-factory.ts when external code calls getWidgetById().
   // Returns the modified element.
@@ -125,7 +125,7 @@ const construct: CurvedTextWidget = (el:GraphicsElement) => {
       char[i].style.display = 'inherit';
     }
     // checks, if the <use> is wrapped in an outer <g> and returns angle
-    let outerGAngle = (el.parent?.["groupTransform"] === undefined) ? 0 : el.parent.groupTransform.rotate.angle;
+    let outerGAngle = (el.parent?.["groupTransform"] === undefined) ? 0 : (el.parent as GroupElement).groupTransform.rotate.angle;
     alignRotate.groupTransform.rotate.angle = - outerGAngle;  // so getBBox() will return unrotated widths
 
     if (!sweepAngle) {   // sweepAngle wasn't specified, so do mode=0 (auto)
