@@ -67,3 +67,7 @@ by BarbWire and Gondwana
 If you're curious about how the code files in this clockface work together to let you create and manipulate widgets, see [How the Widget Factory Works](doco/how-the-factory-works.md).
 
 If you would like to know how to turn your own elements into a reusable component, see [How to Make a Widget](doco/how-to-widget.md).
+
+# Acknowledgement
+This widget gets integrated by the widget-factory written by [Gondwanasoft](https://github.com/gondwanasoft/fitbit-simple-widget).
+Thanks for making my idea (re-)usable :)
